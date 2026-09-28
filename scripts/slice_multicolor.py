@@ -12,7 +12,7 @@ OUT = ROOT/'output/multicolor_v3'
 P = json.loads((ROOT/'cad/multicolor_parameters.json').read_text())
 parser = argparse.ArgumentParser()
 parser.add_argument('bambu_studio', type=Path)
-parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid'])
+parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet'])
 args = parser.parse_args()
 process = json.loads((ROOT/'output/profiles/cube_0.20.json').read_text())
 process.update({'name':'myAI Cube v3 AMS 0.20mm', 'print_settings_id':'myAI Cube v3 AMS 0.20mm',

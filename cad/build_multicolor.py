@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v3: flat, four-material inlay panels sliding into a white cube frame."""
+"""v3.1: AMS inlay panels, underside inlets and concealed lid outlets."""
 import json
 import math
 from pathlib import Path
@@ -18,6 +18,35 @@ OUT = ROOT / 'output/multicolor_v3'
 PW, PH = P['panel_width_mm'], P['panel_height_mm']
 TH, CD = P['panel_thickness_mm'], P['color_depth_mm']
 box, union, around, mesh = mono.box, mono.union, mono.around, mono.mesh
+FOOT_CENTERS = [(x, y) for x in (18, 132) for y in (18, 132)]
+
+
+def feet():
+    pad = m.Manifold.cylinder(P['foot_height_mm'], P['foot_diameter_mm']/2,
+                             P['foot_diameter_mm']/2, 64)
+    peg = m.Manifold.cylinder(P['foot_peg_height_mm'] + .02, P['foot_peg_diameter_mm']/2,
+                             P['foot_peg_diameter_mm']/2, 48).translate((0, 0, P['foot_height_mm'] - .02))
+    return union([(pad + peg).translate((x, y, 0)) for x, y in FOOT_CENTERS])
+
+
+def inlet_slots():
+    return union([around(box(P['inlet_slot_length_mm'], P['inlet_slot_width_mm'], 7,
+                            (x, 16, -1)), q) for x in (35, 87) for q in range(4)])
+
+
+def base():
+    # Assemble at Z=2: a 1 mm outer flange retains the original frame seat
+    # at Z=3. The central plate is reinforced to 3 mm, with LED seat at Z=5.
+    bottom = P['foot_height_mm']
+    assert 0 < bottom < 3
+    plate = union([box(150, 150, 3-bottom, (0, 0, bottom)),
+                   box(134, 134, 2.02, (8, 8, 2.98)),
+                   mono.locators(3, cable_gap=True), mono.led_ring(4.98)])
+    sockets = union([m.Manifold.cylinder(P['foot_socket_depth_mm']+.02,
+                        P['foot_socket_diameter_mm']/2, P['foot_socket_diameter_mm']/2,
+                        48).translate((x, y, bottom-.02)) for x, y in FOOT_CENTERS])
+    # Sockets open on the bed; only their 4.4 mm roofs require bridging.
+    return (plate - inlet_slots() - sockets).translate((0, 0, -bottom))
 
 
 def logo_regions():
@@ -90,13 +119,8 @@ def frame():
         box(134, 3.02, 1, (8, 2.98, 4.3)),
     ])
     shape += union([around(rails, q) for q in range(4)])
-    cuts = []
-    for x in (24, 42, 108, 126):
-        vent = mono.front_prism([(x-2, 3.5), (x, 1.5), (x+2, 3.5), (x, 5.5)], 5, -1)
-        cuts.extend(around(vent, q) for q in range(4))
     cable = mono.front_prism([(72, -1), (78, -1), (78, 4), (75, 7), (72, 4)], 7, -1)
-    cuts.append(around(cable, 2))
-    return shape - union(cuts)
+    return shape - around(cable, 2)
 
 
 def lid():
@@ -104,13 +128,45 @@ def lid():
     parts = [box(150, 150, .8), rim]
     for q in range(4):
         # 0.3 mm end clearance to the frame's corner posts.
-        parts.append(around(box(127.4, 3, 9.02, (11.3, 0, 1.98)), q))
+        parts.append(around(box(127.4, P['lid_baffle_thickness_mm'], 9.02, (11.3, 0, 1.98)), q))
     for x in (4.5, 145.5):
         for y in (4.5, 145.5):
             parts.append(m.Manifold.cylinder(4.02, 1.15, 1.15, 48).translate((x, y, 1.98)))
     cap = union(parts)
-    slots = [around(box(28, 2, 4, (61, 10, -1)), q) for q in range(4)]
-    return cap - union(slots)
+    # Leave the complete 0.8 mm top intact. Shallow channels on its underside
+    # discharge downward behind the outer baffles, in front of the panels.
+    start = (150 - P['outlet_channel_length_mm'])/2
+    channels = [around(box(P['outlet_channel_length_mm'], 9-P['lid_baffle_thickness_mm'],
+                          P['outlet_channel_height_mm']+.02,
+                          (start, P['lid_baffle_thickness_mm'], 2-P['outlet_channel_height_mm'])), q)
+                for q in range(4)]
+    return cap - union(channels)
+
+
+def check_air_paths(assembly):
+    """Collision-free connected clearance volumes, not a thermal simulation."""
+    solid = union(assembly)
+    inlet = union([box(27.8, 18, 1.2, (35.1, -1, .4)),
+                   box(27.8, 1.8, 5.6, (35.1, 16.1, -.2))])
+    outlet = union([box(99.8, 8.7, 1, (25.1, 1.3, 148.1)),
+                    box(99.8, 1.8, 9.8, (25.1, 1.3, 138.5)),
+                    box(99.8, 2.5, .4, (25.1, -1, 138.5))])
+    assert len(inlet.decompose()) == len(outlet.decompose()) == 1
+    for q in range(4):
+        for path in (inlet, inlet.translate((52, 0, 0)), outlet):
+            assert (around(path, q) ^ solid).volume() < .001, ('blocked air path', q)
+    # The old visible side holes are filled; the only wall opening is the
+    # retained rear cable exit. The top surface is continuous over its area.
+    for x in (24, 42, 108, 126):
+        filled = box(1, 2, 1, (x-.5, .5, 6))
+        for q in range(4):
+            assert (around(filled, q) - solid).volume() < .001
+    assert (box(150, 150, .8, (0, 0, 149.2)) - solid).volume() < .001
+    return {'underside_clearance_mm': P['foot_height_mm'],
+            'inlet_count': 8, 'inlet_open_area_mm2': 8*P['inlet_slot_length_mm']*P['inlet_slot_width_mm'],
+            'outlet_count': 4, 'outlet_channel_area_mm2': 4*P['outlet_channel_length_mm']*P['outlet_channel_height_mm'],
+            'connected_clearance_paths_verified': True, 'visible_side_vents': False,
+            'top_surface_closed': True, 'thermal_performance_verified': False}
 
 
 def multipart_3mf(parts, target, title, offset=(53, 40, 0)):
@@ -150,7 +206,7 @@ def main():
         (OUT/folder).mkdir(parents=True, exist_ok=True)
     panel = panel_parts()
     colors = [p['hex'] for p in P['colors']]
-    mono_parts = {'03_frame': frame(), '04_base': mono.base(), '05_lid': lid()}
+    mono_parts = {'03_frame': frame(), '04_base': base(), '05_lid': lid(), '06_feet': feet()}
     report = {'version': P['version'], 'physical_print_verified': False, 'parts': {}}
     for i, solid in enumerate(panel):
         obj = mesh(solid)
@@ -169,7 +225,8 @@ def main():
             assert (panel[i] ^ panel[j]).volume() < .001
     for name, solid in mono_parts.items():
         obj = mesh(solid)
-        assert obj.is_watertight and obj.is_winding_consistent and len(obj.split()) == 1, name
+        assert obj.is_watertight and obj.is_winding_consistent, name
+        assert len(obj.split()) == (4 if name == '06_feet' else 1), name
         assert abs(obj.bounds[0, 2]) < .001
         obj.export(OUT/'stl'/f'{name}.stl')
         mono.core_3mf([(name, obj, (53, 53, 0))], OUT/'geometry'/f'{name}.3mf')
@@ -179,8 +236,9 @@ def main():
     ink = [s.scale((.35, .35, 1)) for s in panel[1:]]
     test = [panel[0].scale((.35,.35,1)), *ink]
     multipart_3mf(test, OUT/'geometry/01_color_test.3mf', 'AMS Farb- und Lichtprobe', (90, 90, 0))
-    assembly = [mono_parts['04_base'], mono_parts['03_frame'].translate((0,0,3)),
+    assembly = [mono_parts['04_base'].translate((0, 0, P['foot_height_mm'])), mono_parts['03_frame'].translate((0,0,3)),
                 mono_parts['05_lid'].rotate((180,0,0)).translate((0,150,150))]
+    assembly.append(mono_parts['06_feet'])
     assembly.extend(around(assemble_panel(complete_panel), q) for q in range(4))
     for i in range(len(assembly)):
         for j in range(i+1,len(assembly)):
@@ -192,12 +250,13 @@ def main():
     bounds = np.asarray(union(assembly).bounding_box()).reshape(2, 3)
     assert np.allclose(bounds[0], [0, 0, 0], atol=.001)
     assert np.allclose(bounds[1] - bounds[0], [150, 150, 150], atol=.001)
+    report['ventilation'] = check_air_paths(assembly)
     report.update({'assembled_size_mm': (bounds[1] - bounds[0]).tolist(),
                    'logo_center_xz_mm': ink_bounds.mean(axis=0)[[0,2]].tolist(),
                    'assembly_interference_mm3': 0, 'vertical_panel_insertion_clear': True,
                    'panel_color_depth_mm': CD, 'panel_white_backing_mm': TH-CD})
     scene = trimesh.Scene()
-    for name, solid in zip(('base','frame','lid'), assembly[:3]):
+    for name, solid in zip(('base','frame','lid','feet'), assembly[:4]):
         obj=mesh(solid); obj.visual.face_colors=[238,240,241,255]
         scene.add_geometry(obj, node_name=name, geom_name=name)
     for q in range(4):

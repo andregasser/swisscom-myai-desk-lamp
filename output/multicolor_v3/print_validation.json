@@ -51,7 +51,7 @@
       "size_mm": [
         150.0,
         150.0,
-        7.0
+        6.980000019073486
       ],
       "components": 1
     },
@@ -63,6 +63,15 @@
         11.0
       ],
       "components": 1
+    },
+    "06_feet.stl": {
+      "watertight": true,
+      "size_mm": [
+        128.0,
+        128.0,
+        3.799999952316284
+      ],
+      "components": 4
     }
   },
   "plates": {
@@ -155,8 +164,8 @@
     "03_frame_P1S.3mf": {
       "sliced_successfully": true,
       "bambu_studio": "02.08.02.61",
-      "estimated_minutes": 353.1,
-      "estimated_filament_g_including_flush_and_tower": 68.98,
+      "estimated_minutes": 352.0,
+      "estimated_filament_g_including_flush_and_tower": 69.56,
       "color_changes": 0,
       "print_extrusion_bounds_mm": [
         [
@@ -174,13 +183,13 @@
       "slicer_print_warnings": "",
       "supports_generated": false,
       "gcode_md5_valid": true,
-      "sha256": "64d9d44f504c6d97456f68192b8c1fd708a2c92bd0a0920b6d19750cb4a91904"
+      "sha256": "869a9d0240e55e28f29dd73cd803c7282c7f6163e9f392fbfae54afcddabcbcb"
     },
     "04_base_P1S.3mf": {
       "sliced_successfully": true,
       "bambu_studio": "02.08.02.61",
-      "estimated_minutes": 254.1,
-      "estimated_filament_g_including_flush_and_tower": 89.08,
+      "estimated_minutes": 230.6,
+      "estimated_filament_g_including_flush_and_tower": 76.27,
       "color_changes": 0,
       "print_extrusion_bounds_mm": [
         [
@@ -198,13 +207,13 @@
       "slicer_print_warnings": "",
       "supports_generated": false,
       "gcode_md5_valid": true,
-      "sha256": "03bb07636e9c146cff7697244dfdee17baa5c01c202c32cf1fb42e54a6153cc5"
+      "sha256": "47c67ffbb00680e3656dc8a3b4ce9afa771b18d402f11940691c23e905ae1f0d"
     },
     "05_lid_P1S.3mf": {
       "sliced_successfully": true,
       "bambu_studio": "02.08.02.61",
-      "estimated_minutes": 179.6,
-      "estimated_filament_g_including_flush_and_tower": 46.0,
+      "estimated_minutes": 119.9,
+      "estimated_filament_g_including_flush_and_tower": 31.66,
       "color_changes": 0,
       "print_extrusion_bounds_mm": [
         [
@@ -222,7 +231,31 @@
       "slicer_print_warnings": "",
       "supports_generated": false,
       "gcode_md5_valid": true,
-      "sha256": "7269035bf2da8ed9039c112ad10a61832ab0eb2c1fe5de26bfd49c4ebb9b0441"
+      "sha256": "80fcfd709efd41d7f587ed5860fc0fa34ae53993f81c08cf30bf075741b1296c"
+    },
+    "06_feet_P1S.3mf": {
+      "sliced_successfully": true,
+      "bambu_studio": "02.08.02.61",
+      "estimated_minutes": 15.1,
+      "estimated_filament_g_including_flush_and_tower": 1.9,
+      "color_changes": 0,
+      "print_extrusion_bounds_mm": [
+        [
+          60.427,
+          58.427,
+          0.2
+        ],
+        [
+          195.573,
+          193.573,
+          3.8
+        ]
+      ],
+      "model_layer_slots": "white only",
+      "slicer_print_warnings": "",
+      "supports_generated": false,
+      "gcode_md5_valid": true,
+      "sha256": "ac39c2120bbe1c3bc535f9a7d765af8f7204a29dcc52a69f6d84a478947fe8f7"
     }
   }
 }

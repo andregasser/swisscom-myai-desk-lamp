@@ -28,7 +28,9 @@ def load(stem, name, color):
     parts.append(obj)
     return obj
 
-load('04_base', 'base', '#EEF0F1')
+base = load('04_base', 'base', '#EEF0F1')
+base.location.z = P['foot_height_mm']/1000
+load('06_feet', 'feet', '#EEF0F1')
 frame = load('03_frame', 'frame', '#EEF0F1')
 frame.location.z = .003
 lid = load('05_lid', 'lid', '#EEF0F1')
@@ -85,6 +87,22 @@ camera.data.ortho_scale = .29
 scene.camera = camera
 scene.render.filepath = str(OUT / 'assembled.png')
 bpy.ops.render.render(write_still=True)
+
+floor.hide_render = True
+data = bpy.data.lights.new('Underside softbox', 'AREA')
+data.energy, data.shape, data.size = 7, 'DISK', .25
+underlight = bpy.data.objects.new('Underside softbox', data)
+scene.collection.objects.link(underlight)
+underlight.location = (.075, -.1, -.25)
+aim(underlight, (.075, .075, .02))
+camera.location = (.32, -.36, -.25)
+aim(camera, (.075, .075, .075))
+camera.data.ortho_scale = .33
+scene.render.filepath = str(OUT / 'underside.png')
+bpy.ops.render.render(write_still=True)
+underlight.hide_render = True
+floor.hide_render = False
+camera.location = (.35, -.39, .29)
 
 for obj in parts:
     if obj.name == 'lid':

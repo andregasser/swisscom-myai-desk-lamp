@@ -13,9 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/multicolor_v3'
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
 report = {'physical_print_verified': False, 'stl': {}, 'plates': {}}
-assert len(list((OUT / 'stl').glob('*.stl'))) == 7
+assert len(list((OUT / 'stl').glob('*.stl'))) == 8
 assert {p.stem for p in (OUT / 'print').glob('*.3mf')} == {
-    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S'}
+    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S'}
 for file in sorted((OUT / 'stl').glob('*.stl')):
     mesh = trimesh.load_mesh(file)
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0, file
