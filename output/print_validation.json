@@ -1,0 +1,175 @@
+{
+  "stl": {
+    "01a_light_0.6mm.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    },
+    "01b_light_0.8mm.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    },
+    "01c_light_1.0mm.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    },
+    "01d_light_1.2mm.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    },
+    "01e_led_fit.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        70.0,
+        69.76596069335938,
+        4.78000020980835
+      ]
+    },
+    "01f_joint_socket.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        150.0,
+        12.0,
+        8.0
+      ]
+    },
+    "01g_joint_rail.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        150.0,
+        12.0,
+        7.0
+      ]
+    },
+    "02_body.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        145.0
+      ]
+    },
+    "03_base.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        7.0
+      ]
+    },
+    "04_lid.stl": {
+      "closed_solid": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        6.0
+      ]
+    }
+  },
+  "plates": {
+    "01_tests_P1S.3mf": {
+      "bambu_studio": "02.08.02.61",
+      "sliced_successfully": true,
+      "slicer_print_warnings": "",
+      "estimated_minutes": 115.8,
+      "estimated_filament_g": 28.4,
+      "model_and_brim_extrusion_bounds_mm": [
+        [
+          16.422,
+          26.422,
+          0.2
+        ],
+        [
+          207.578,
+          217.578,
+          8.0
+        ]
+      ],
+      "gcode_md5_valid": true,
+      "supports_generated": false,
+      "sha256": "b3a4e99846aed8bbef5d542e0cd63c1843bd5e40146c3e7c8efe0f38bced0e76"
+    },
+    "02_body_P1S.3mf": {
+      "bambu_studio": "02.08.02.61",
+      "sliced_successfully": true,
+      "slicer_print_warnings": "",
+      "estimated_minutes": 559.3,
+      "estimated_filament_g": 115.55,
+      "model_and_brim_extrusion_bounds_mm": [
+        [
+          49.422,
+          47.422,
+          0.2
+        ],
+        [
+          206.578,
+          204.578,
+          145.0
+        ]
+      ],
+      "gcode_md5_valid": true,
+      "supports_generated": false,
+      "sha256": "db60884a4e1b5458e5103facbe2cb2d22fecbb7cf54e6bda4c265703054026f1"
+    },
+    "03_base_P1S.3mf": {
+      "bambu_studio": "02.08.02.61",
+      "sliced_successfully": true,
+      "slicer_print_warnings": "",
+      "estimated_minutes": 254.1,
+      "estimated_filament_g": 89.08,
+      "model_and_brim_extrusion_bounds_mm": [
+        [
+          49.422,
+          47.422,
+          0.2
+        ],
+        [
+          206.578,
+          204.578,
+          7.0
+        ]
+      ],
+      "gcode_md5_valid": true,
+      "supports_generated": false,
+      "sha256": "2e21ba105f1a23681e998f4b9bedba3d7a61b293b5c87754d85a585ebe5985e5"
+    },
+    "04_lid_P1S.3mf": {
+      "bambu_studio": "02.08.02.61",
+      "sliced_successfully": true,
+      "slicer_print_warnings": "",
+      "estimated_minutes": 128.8,
+      "estimated_filament_g": 33.57,
+      "model_and_brim_extrusion_bounds_mm": [
+        [
+          49.422,
+          47.422,
+          0.2
+        ],
+        [
+          206.578,
+          204.578,
+          6.0
+        ]
+      ],
+      "gcode_md5_valid": true,
+      "supports_generated": false,
+      "sha256": "f3738d3e3912c51d94e2a980c8d5d09348d561bcca430d84af0bf463897efd68"
+    }
+  },
+  "physical_print_verified": false
+}

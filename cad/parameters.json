@@ -1,0 +1,17 @@
+{
+  "outside_mm": 150.0,
+  "base_mm": 3.0,
+  "lid_edge_mm": 2.0,
+  "diffuser_mm": 0.8,
+  "frame_mm": 3.0,
+  "corner_mm": 4.0,
+  "logo_canvas_mm": 116.0,
+  "logo_relief_mm": 0.8,
+  "fit_clearance_per_side_mm": 0.35,
+  "locator_height_mm": 4.0,
+  "led_nominal_diameter_mm": 59.0,
+  "led_pocket_diameter_mm": 60.0,
+  "led_ring_wall_mm": 2.0,
+  "led_ring_height_mm": 4.0,
+  "cable_slot_width_mm": 6.0
+}

@@ -1,0 +1,255 @@
+{
+  "02_body": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        150.0,
+        150.0,
+        145.0
+      ]
+    ],
+    "size_mm": [
+      150.0,
+      150.0,
+      145.0
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 16888,
+    "solid_volume_cm3": 97.36
+  },
+  "03_base": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        150.0,
+        150.0,
+        7.0
+      ]
+    ],
+    "size_mm": [
+      150.0,
+      150.0,
+      7.0
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 1600,
+    "solid_volume_cm3": 72.677
+  },
+  "04_lid": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        150.0,
+        150.0,
+        6.0
+      ]
+    ],
+    "size_mm": [
+      150.0,
+      150.0,
+      6.0
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 196,
+    "solid_volume_cm3": 27.027
+  },
+  "01e_led_fit": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        70.0,
+        69.76596069335938,
+        4.78000020980835
+      ]
+    ],
+    "size_mm": [
+      70.0,
+      69.76596069335938,
+      4.78000020980835
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 2976,
+    "solid_volume_cm3": 2.681
+  },
+  "01a_light_0.6mm": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    ],
+    "size_mm": [
+      40.0,
+      50.0,
+      2.380000114440918
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 4312,
+    "solid_volume_cm3": 2.465
+  },
+  "01b_light_0.8mm": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    ],
+    "size_mm": [
+      40.0,
+      50.0,
+      2.380000114440918
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 4318,
+    "solid_volume_cm3": 2.697
+  },
+  "01c_light_1.0mm": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    ],
+    "size_mm": [
+      40.0,
+      50.0,
+      2.380000114440918
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 4254,
+    "solid_volume_cm3": 2.926
+  },
+  "01d_light_1.2mm": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        40.0,
+        50.0,
+        2.380000114440918
+      ]
+    ],
+    "size_mm": [
+      40.0,
+      50.0,
+      2.380000114440918
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 4248,
+    "solid_volume_cm3": 3.157
+  },
+  "01f_joint_socket": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        150.0,
+        12.0,
+        8.0
+      ]
+    ],
+    "size_mm": [
+      150.0,
+      12.0,
+      8.0
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 48,
+    "solid_volume_cm3": 2.256
+  },
+  "01g_joint_rail": {
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        150.0,
+        12.0,
+        7.0
+      ]
+    ],
+    "size_mm": [
+      150.0,
+      12.0,
+      7.0
+    ],
+    "watertight": true,
+    "connected_solids": 1,
+    "triangles": 276,
+    "solid_volume_cm3": 5.78
+  },
+  "assembly": {
+    "size_mm": [
+      150.0,
+      150.0,
+      150.0
+    ],
+    "pairwise_intersection_mm3": 0,
+    "nominal_guide_clearance_per_side_mm": 0.35,
+    "nominal_led_cylinder_collision_free": true,
+    "physical_fit_tested": false
+  },
+  "logo": {
+    "centering": "projected contour bounds, including relief slope",
+    "assembled_face_center_xz_mm": [
+      75.0,
+      75.0
+    ],
+    "projected_size_xz_mm": [
+      86.88437592983246,
+      99.93895594328642
+    ],
+    "identical_on_all_four_sides": true
+  }
+}
