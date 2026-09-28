@@ -1,0 +1,214 @@
+#!/usr/bin/env python3
+"""v3: flat, four-material inlay panels sliding into a white cube frame."""
+import json
+import math
+from pathlib import Path
+import xml.etree.ElementTree as ET
+import zipfile
+
+import manifold3d as m
+import numpy as np
+from svgpathtools import parse_path, Line
+import trimesh
+import build as mono
+
+ROOT = mono.ROOT
+P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
+OUT = ROOT / 'output/multicolor_v3'
+PW, PH = P['panel_width_mm'], P['panel_height_mm']
+TH, CD = P['panel_thickness_mm'], P['color_depth_mm']
+box, union, around, mesh = mono.box, mono.union, mono.around, mono.mesh
+
+
+def logo_regions():
+    source = ET.parse(ROOT / 'assets/logos/Mode=Light, Type=Stacked.svg').getroot()
+    scale = mono.P['logo_canvas_mm'] / 216
+    sections = []
+    for el in source.findall('{http://www.w3.org/2000/svg}path'):
+        contours = []
+        for path in parse_path(el.attrib['d']).continuous_subpaths():
+            points = []
+            for segment in path:
+                count = 1 if isinstance(segment, Line) else max(4, math.ceil(segment.length() * scale / .2))
+                for i in range(count):
+                    pt = segment.point(i / count)
+                    points.append((pt.real * scale, pt.imag * scale))
+            contours.append(points)
+        section = m.CrossSection(contours, m.FillRule.EvenOdd)
+        if section.area() >= .02:
+            sections.append((section, el.attrib['fill'].startswith('url')))
+    navy = m.CrossSection.batch_boolean([s for s, gradient in sections if not gradient], m.OpType.Add)
+    stars = m.CrossSection.batch_boolean([s for s, gradient in sections if gradient], m.OpType.Add)
+    unsplit_outline = navy + stars
+    # Quantize the source's diagonal gradient to three real filament colors.
+    # Dark gradient blue shares the navy text filament to fit one four-slot AMS.
+    p0 = np.array([50.7131, 16.4763]) * scale
+    direction = np.array([158.089 - 50.7131, 116.656 - 16.4763]) * scale
+    perpendicular = np.array([-direction[1], direction[0]])
+    perpendicular *= 500 / np.linalg.norm(perpendicular)
+    def band(low, high):
+        a, b = p0 + low * direction, p0 + high * direction
+        return m.CrossSection([[a - perpendicular, b - perpendicular, b + perpendicular, a + perpendicular]], m.FillRule.EvenOdd)
+    red = stars ^ band(-5, .18)
+    cyan = stars ^ band(.38, .70)
+    navy += stars - red - cyan
+    all_logo = navy + cyan + red
+    xmin, ymin, xmax, ymax = all_logo.bounds()
+    # Local print Y maps downwards on the assembled face; the artwork is
+    # correctly readable from the outward (bed-contact) face after assembly.
+    target_x = 75 - P['panel_left_mm']
+    target_y = P['panel_bottom_mm'] + PH - 75
+    delta = (target_x - (xmin + xmax) / 2, target_y - (ymin + ymax) / 2)
+    return [s.translate(delta) for s in (navy, cyan, red, unsplit_outline)]
+
+
+def panel_parts():
+    regions = logo_regions()
+    inks = [m.Manifold.extrude(region, CD) for region in regions[:3]]
+    white = box(PW, PH, TH) - m.Manifold.extrude(regions[3], CD)
+    return [white, *inks]
+
+
+def assemble_panel(part):
+    return part.transform(((1, 0, 0, P['panel_left_mm']),
+                           (0, 0, 1, P['panel_front_depth_mm']),
+                           (0, -1, 0, P['panel_bottom_mm'] + PH)))
+
+
+def frame():
+    height = mono.H
+    shape = box(150, 150, height) - box(144, 144, height + 2, (3, 3, -1))
+    # Open at the top: no unsupported 128 mm lintel. The lid carries the
+    # removable top bezel, so the panels can slide down from above.
+    cut = box(128, 5, height + 2, (11, -1, 8))
+    shape -= union([around(cut, q) for q in range(4)])
+    rails = union([
+        box(1.5, 3.02, height - 4.3, (6.5, 2.98, 4.3)),
+        box(4, 1.6, height - 4.3, (6.5, 4.4, 4.3)),
+        box(1.5, 3.02, height - 4.3, (142, 2.98, 4.3)),
+        box(4, 1.6, height - 4.3, (139.5, 4.4, 4.3)),
+        box(134, 3.02, 1, (8, 2.98, 4.3)),
+    ])
+    shape += union([around(rails, q) for q in range(4)])
+    cuts = []
+    for x in (24, 42, 108, 126):
+        vent = mono.front_prism([(x-2, 3.5), (x, 1.5), (x+2, 3.5), (x, 5.5)], 5, -1)
+        cuts.extend(around(vent, q) for q in range(4))
+    cable = mono.front_prism([(72, -1), (78, -1), (78, 4), (75, 7), (72, 4)], 7, -1)
+    cuts.append(around(cable, 2))
+    return shape - union(cuts)
+
+
+def lid():
+    rim = box(150, 150, 2) - box(134, 134, 4, (8, 8, -1))
+    parts = [box(150, 150, .8), rim]
+    for q in range(4):
+        # 0.3 mm end clearance to the frame's corner posts.
+        parts.append(around(box(127.4, 3, 9.02, (11.3, 0, 1.98)), q))
+    for x in (4.5, 145.5):
+        for y in (4.5, 145.5):
+            parts.append(m.Manifold.cylinder(4.02, 1.15, 1.15, 48).translate((x, y, 1.98)))
+    cap = union(parts)
+    slots = [around(box(28, 2, 4, (61, 10, -1)), q) for q in range(4)]
+    return cap - union(slots)
+
+
+def multipart_3mf(parts, target, title, offset=(53, 40, 0)):
+    ns = 'http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
+    ET.register_namespace('', ns)
+    tag = lambda s: '{' + ns + '}' + s
+    root = ET.Element(tag('model'), {'unit': 'millimeter'})
+    ET.SubElement(root, tag('metadata'), {'name': 'Title'}).text = title
+    resources = ET.SubElement(root, tag('resources'))
+    mats = ET.SubElement(resources, tag('basematerials'), {'id': '10'})
+    for color in P['colors']:
+        ET.SubElement(mats, tag('base'), {'name': color['name'], 'displaycolor': color['hex'] + 'FF'})
+    for i, solid in enumerate(parts, 1):
+        obj = mesh(solid)
+        objel = ET.SubElement(resources, tag('object'), {'id': str(i), 'type': 'model', 'pid': '10', 'pindex': str(i-1)})
+        me = ET.SubElement(objel, tag('mesh'))
+        vertices = ET.SubElement(me, tag('vertices'))
+        for v in obj.vertices:
+            ET.SubElement(vertices, tag('vertex'), dict(zip(('x', 'y', 'z'), (f'{c:.6f}' for c in v))))
+        triangles = ET.SubElement(me, tag('triangles'))
+        for f in obj.faces:
+            ET.SubElement(triangles, tag('triangle'), dict(zip(('v1', 'v2', 'v3'), map(str, f))))
+    group = ET.SubElement(resources, tag('object'), {'id': '5', 'type': 'model', 'name': title})
+    components = ET.SubElement(group, tag('components'))
+    for i in range(1, 5):
+        ET.SubElement(components, tag('component'), {'objectid': str(i)})
+    build = ET.SubElement(root, tag('build'))
+    ET.SubElement(build, tag('item'), {'objectid': '5', 'transform': '1 0 0 0 1 0 0 0 1 ' + ' '.join(map(str, offset))})
+    with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr('[Content_Types].xml', '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/><Default Extension="config" ContentType="application/xml"/></Types>')
+        archive.writestr('_rels/.rels', '<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Target="/3D/3dmodel.model" Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel"/></Relationships>')
+        archive.writestr('3D/3dmodel.model', ET.tostring(root, encoding='utf-8', xml_declaration=True))
+
+
+def main():
+    for folder in ('stl', 'geometry', 'preview', 'print', 'profiles'):
+        (OUT/folder).mkdir(parents=True, exist_ok=True)
+    panel = panel_parts()
+    colors = [p['hex'] for p in P['colors']]
+    mono_parts = {'03_frame': frame(), '04_base': mono.base(), '05_lid': lid()}
+    report = {'version': P['version'], 'physical_print_verified': False, 'parts': {}}
+    for i, solid in enumerate(panel):
+        obj = mesh(solid)
+        assert obj.is_watertight and obj.is_winding_consistent and obj.volume > 0
+        obj.export(OUT/'stl'/f'02_panel_{i+1}_{P["colors"][i]["name"]}.stl')
+        report['parts'][f'panel_slot_{i+1}'] = {'watertight': True, 'volume_mm3': float(obj.volume), 'components': len(obj.split())}
+    # Coplanar interfaces between materials can leave sub-micron Boolean
+    # slivers. Validate their coverage against the analytic panel envelope;
+    # export the separately watertight material volumes for the slicer.
+    complete_panel = box(PW, PH, TH)
+    combined = union(panel)
+    assert (complete_panel - combined).volume() < .001
+    assert (combined - complete_panel).volume() < .001
+    for i in range(4):
+        for j in range(i+1, 4):
+            assert (panel[i] ^ panel[j]).volume() < .001
+    for name, solid in mono_parts.items():
+        obj = mesh(solid)
+        assert obj.is_watertight and obj.is_winding_consistent and len(obj.split()) == 1, name
+        assert abs(obj.bounds[0, 2]) < .001
+        obj.export(OUT/'stl'/f'{name}.stl')
+        mono.core_3mf([(name, obj, (53, 53, 0))], OUT/'geometry'/f'{name}.3mf')
+        report['parts'][name] = {'watertight': True, 'size_mm': obj.extents.tolist()}
+    multipart_3mf(panel, OUT/'geometry/02_panel.3mf', 'Logo-Paneel — 4x drucken')
+    # A small, flat four-color sample uses the same 0.4 + 0.4 mm layer stack.
+    ink = [s.scale((.35, .35, 1)) for s in panel[1:]]
+    test = [panel[0].scale((.35,.35,1)), *ink]
+    multipart_3mf(test, OUT/'geometry/01_color_test.3mf', 'AMS Farb- und Lichtprobe', (90, 90, 0))
+    assembly = [mono_parts['04_base'], mono_parts['03_frame'].translate((0,0,3)),
+                mono_parts['05_lid'].rotate((180,0,0)).translate((0,150,150))]
+    assembly.extend(around(assemble_panel(complete_panel), q) for q in range(4))
+    for i in range(len(assembly)):
+        for j in range(i+1,len(assembly)):
+            assert (assembly[i] ^ assembly[j]).volume() < .001, ('collision',i,j)
+    for height in (1, 30, 100, 150):
+        assert (assemble_panel(complete_panel).translate((0,0,height)) ^ assembly[1]).volume() < .001
+    ink_bounds = np.asarray(assemble_panel(union(panel[1:])).bounding_box()).reshape(2,3)
+    assert np.allclose(ink_bounds.mean(axis=0)[[0,2]], [75,75], atol=.001)
+    bounds = np.asarray(union(assembly).bounding_box()).reshape(2, 3)
+    assert np.allclose(bounds[0], [0, 0, 0], atol=.001)
+    assert np.allclose(bounds[1] - bounds[0], [150, 150, 150], atol=.001)
+    report.update({'assembled_size_mm': (bounds[1] - bounds[0]).tolist(),
+                   'logo_center_xz_mm': ink_bounds.mean(axis=0)[[0,2]].tolist(),
+                   'assembly_interference_mm3': 0, 'vertical_panel_insertion_clear': True,
+                   'panel_color_depth_mm': CD, 'panel_white_backing_mm': TH-CD})
+    scene = trimesh.Scene()
+    for name, solid in zip(('base','frame','lid'), assembly[:3]):
+        obj=mesh(solid); obj.visual.face_colors=[238,240,241,255]
+        scene.add_geometry(obj, node_name=name, geom_name=name)
+    for q in range(4):
+        for slot, part in enumerate(panel):
+            obj=mesh(around(assemble_panel(part),q))
+            obj.visual.face_colors=[int(colors[slot][j:j+2],16) for j in (1,3,5)]+[255]
+            scene.add_geometry(obj, node_name=f'panel_{q}_slot_{slot+1}', geom_name=f'panel_{q}_slot_{slot+1}')
+    scene.export(OUT/'preview/assembly.glb')
+    (OUT/'geometry_validation.json').write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps(report,indent=2))
+
+
+if __name__ == '__main__':
+    main()

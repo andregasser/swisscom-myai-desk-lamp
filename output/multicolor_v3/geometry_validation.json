@@ -1,0 +1,63 @@
+{
+  "version": "v3-AMS",
+  "physical_print_verified": false,
+  "parts": {
+    "panel_slot_1": {
+      "watertight": true,
+      "volume_mm3": 14095.053629372736,
+      "components": 1
+    },
+    "panel_slot_2": {
+      "watertight": true,
+      "volume_mm3": 595.5111178589749,
+      "components": 8
+    },
+    "panel_slot_3": {
+      "watertight": true,
+      "volume_mm3": 154.09761946971358,
+      "components": 2
+    },
+    "panel_slot_4": {
+      "watertight": true,
+      "volume_mm3": 32.104504804034,
+      "components": 1
+    },
+    "03_frame": {
+      "watertight": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        145.0
+      ]
+    },
+    "04_base": {
+      "watertight": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        7.0
+      ]
+    },
+    "05_lid": {
+      "watertight": true,
+      "size_mm": [
+        150.0,
+        150.0,
+        11.0
+      ]
+    }
+  },
+  "assembled_size_mm": [
+    150.0,
+    150.0,
+    150.0
+  ],
+  "logo_center_xz_mm": [
+    75.0,
+    75.0
+  ],
+  "assembly_interference_mm3": 0,
+  "vertical_panel_insertion_clear": true,
+  "panel_color_depth_mm": 0.4,
+  "panel_white_backing_mm": 0.4
+}

@@ -1,0 +1,95 @@
+{
+  "error_string": "Success.",
+  "export_time": 32,
+  "layer_height": 0.20000000298023224,
+  "plate_index": 0,
+  "prepare_time": 22,
+  "return_code": 0,
+  "sliced_plates": [
+    {
+      "feature_type_times": {
+        "Bottom surface": 109.68146514892578,
+        "Brim": 65.34447479248047,
+        "Custom": 380.412353515625,
+        "Flush": 759.53955078125,
+        "Inner wall": 48.98057174682617,
+        "Internal solid infill": 148.4881591796875,
+        "Outer wall": 66.70027923583984,
+        "Prime tower": 220.1956329345703,
+        "Top surface": 150.9565887451172,
+        "Travel": 118.98326873779297,
+        "Undefined": 103.53984832763672
+      },
+      "filament_change_times": 6,
+      "filaments": [
+        {
+          "filament_id": "GFL99",
+          "id": 1,
+          "main_used_g": 2.0983288288116455,
+          "total_used_g": 3.983184576034546
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 2,
+          "main_used_g": 0.08654019981622696,
+          "total_used_g": 0.736484706401825
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 3,
+          "main_used_g": 0.022436290979385376,
+          "total_used_g": 1.295346975326538
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 4,
+          "main_used_g": 0.27891722321510315,
+          "total_used_g": 1.034563422203064
+        }
+      ],
+      "generate_support_material_time": 2,
+      "id": 1,
+      "infill_time": 16,
+      "layer_filament_change": 0,
+      "main_predication": 680.164306640625,
+      "make_perimeters_time": 45,
+      "obj_cached_cnt": 0,
+      "objects": [
+        {
+          "bbox": {
+            "depth": 48.790000915527344,
+            "height": 0.800000011920929,
+            "width": 46.689998626708984,
+            "x": 90.0,
+            "y": 90.0,
+            "z": 1.9767770753631453e-11
+          },
+          "id": 5,
+          "name": "AMS Farb- und Lichtprobe",
+          "triangle_count": 8244
+        }
+      ],
+      "sliced_time": 99,
+      "sliced_time_with_cache": 22,
+      "total_predication": 2053.837890625,
+      "triangle_count": 8244,
+      "warning_message": ""
+    }
+  ],
+  "sparse_infill_density": 100.0,
+  "upward_compatible_machine": [
+    "Bambu Lab P1P 0.4 nozzle",
+    "Bambu Lab X1 0.4 nozzle",
+    "Bambu Lab X1 Carbon 0.4 nozzle",
+    "Bambu Lab X1E 0.4 nozzle",
+    "Bambu Lab A1 0.4 nozzle",
+    "Bambu Lab H2D 0.4 nozzle",
+    "Bambu Lab H2D Pro 0.4 nozzle",
+    "Bambu Lab H2S 0.4 nozzle",
+    "Bambu Lab P2S 0.4 nozzle",
+    "Bambu Lab H2C 0.4 nozzle",
+    "Bambu Lab X2D 0.4 nozzle",
+    "Bambu Lab A2L 0.4 nozzle"
+  ],
+  "wall_loops": 2
+}

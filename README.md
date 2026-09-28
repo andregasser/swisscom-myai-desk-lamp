@@ -10,7 +10,17 @@ Eine kleine Würfellampe zum Selberdrucken: weißes PLA, sanftes Licht und das m
 
 Ein **15 × 15 × 15 cm** großer Würfel aus drei Teilen: Lampenkörper, Boden mit LED-Aufnahme und abnehmbarer Deckel. Die **0,8 mm dünnen Leuchtflächen** lassen Licht durch; das direkt mitgedruckte, innen verstärkte Logo soll sich dunkler abzeichnen. Außen bleibt die Oberfläche glatt. Kein Kleben der Logos, kein AMS erforderlich.
 
-## Selber drucken
+## Neu: mehrfarbig mit AMS
+
+![Vierfarben-Entwurf mit integriertem myAI-Logo](output/multicolor_v3/preview/assembled.png)
+
+**Prototyp v3 für ein AMS mit vier Farben:** Weiß, Dunkelblau, Hellblau und Rot. Vier identische 0,8-mm-Paneele mit bündig mitgedruckten Logos gleiten in einen weißen Rahmen. Der Logo-Verlauf wird durch feste Farbflächen angenähert. Sechs Farbwechsel pro Paneel; Montage ohne Aufkleben der Logos.
+
+[Druckdateien & Montage v3](docs/MEHRFARBIG_V3.md) · [Kleine Farbprobe](output/multicolor_v3/print/01_color_test_P1S.3mf) · [Komplettpaket v3](output/myAI_Cube_150_P1S_AMS_v3.zip)
+
+*Ansicht der CAD-Geometrie; Lichtwirkung und reale Filamentfarben sind noch nicht getestet. Digital geprüft und geslict, physischer Probedruck ausstehend.*
+
+## Einfarbige Variante v2 drucken
 
 Die 3MF-Projekte sind ausgerichtet und für **P1S · 0,4-mm-Düse · weißes PLA · strukturierte PEI-Platte** vorbereitet. In Bambu Studio **als Projekt** öffnen, eigenes Filament und Druckplatte prüfen und bei Änderungen neu slicen.
 
