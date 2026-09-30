@@ -4,11 +4,11 @@ import hashlib
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
-name = 'myAI_Cube_150_P1S_AMS_v3_2_1'
+name = 'myAI_Cube_150_P1S_AMS_v4'
 target = root / 'output' / (name + '.zip')
 files = [root / 'README.md', root / '.gitignore']
 for folder in ('assets', 'cad', 'docs', 'scripts', 'output/stl', 'output/3mf',
-               'output/print', 'output/profiles', 'output/preview', 'output/multicolor_v3'):
+               'output/print', 'output/profiles', 'output/preview', 'output/multicolor_v3', 'output/multicolor_v4'):
     files.extend(p for p in (root / folder).rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts)
 files.extend(root / 'output' / n for n in ('validation.json', 'print_validation.json'))

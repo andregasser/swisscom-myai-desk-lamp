@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'cad'))
 import build_multicolor as cad
 
-OUT = ROOT / 'output/multicolor_v3/preview'
+OUT = cad.OUT / 'preview'
 pieces = ['<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="570" viewBox="0 0 1080 570">',
           '<rect width="1080" height="570" fill="#F1F3F7"/>',
           '<g font-family="DejaVu Sans, sans-serif" fill="#182337">',

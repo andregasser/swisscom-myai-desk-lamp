@@ -6,8 +6,8 @@ import xml.etree.ElementTree as ET
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'output/multicolor_v3'
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
+OUT = ROOT / 'output' / P['output_folder']
 source = ET.parse(ROOT / 'assets/logos' / P['logo_source']).getroot()
 stops = {e.attrib['stop-color'].upper() for e in source.iter() if 'stop-color' in e.attrib}
 reference = Image.open(OUT / 'preview/color_reference.png').convert('RGB')

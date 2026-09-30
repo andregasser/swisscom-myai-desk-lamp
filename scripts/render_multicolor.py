@@ -6,10 +6,10 @@ import bpy
 from mathutils import Vector, Matrix
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'output/multicolor_v3/preview'
+P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
+OUT = ROOT / 'output' / P['output_folder'] / 'preview'
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
-P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
 parts = []
 def load(stem, name, color):
     bpy.ops.wm.stl_import(filepath=str(OUT.parent / 'stl' / (stem + '.stl')))
@@ -46,7 +46,7 @@ base = load('04_base', 'base', '#EEF0F1')
 base.location.z = P['foot_height_mm']/1000
 load('06_feet', 'feet', '#EEF0F1')
 frame = load('03_frame', 'frame', '#EEF0F1')
-frame.location.z = .003
+frame.location.z = P['frame_bottom_mm']/1000
 lid = load('05_lid', 'lid', '#EEF0F1')
 lid.rotation_euler.x = math.pi
 lid.location = (0, .150, .150)

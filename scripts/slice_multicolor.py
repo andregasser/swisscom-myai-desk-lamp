@@ -8,14 +8,14 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT/'output/multicolor_v3'
 P = json.loads((ROOT/'cad/multicolor_parameters.json').read_text())
+OUT = ROOT/'output'/P['output_folder']
 parser = argparse.ArgumentParser()
 parser.add_argument('bambu_studio', type=Path)
-parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet'])
+parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit'])
 args = parser.parse_args()
 process = json.loads((ROOT/'output/profiles/cube_0.20.json').read_text())
-process.update({'name':'myAI Cube v3 AMS 0.20mm', 'print_settings_id':'myAI Cube v3 AMS 0.20mm',
+process.update({'name':f'myAI Cube {P["version"]} 0.20mm', 'print_settings_id':f'myAI Cube {P["version"]} 0.20mm',
                 'enable_prime_tower':'1', 'prime_tower_width':'35',
                 'flush_into_infill':'0', 'flush_into_objects':'0', 'flush_into_support':'0'})
 (OUT/'profiles/process.json').write_text(json.dumps(process,indent=2)+'\n')
@@ -28,7 +28,7 @@ for color in P['colors']:
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
 for plate in args.plates:
     multicolor=plate in ('01_color_test','02_panel')
-    scratch=ROOT/'output/logs'/('v3_'+plate)
+    scratch=ROOT/'output/logs'/(P['version']+'_'+plate)
     scratch.mkdir(parents=True,exist_ok=True)
     profile=OUT/'profiles'/('process.json' if multicolor else 'process_white.json')
     filaments=';'.join(str(OUT/'profiles'/f'filament_{i}.json') for i in range(1,5 if multicolor else 2))

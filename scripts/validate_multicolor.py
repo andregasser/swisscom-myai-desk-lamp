@@ -10,12 +10,12 @@ import numpy as np
 import trimesh
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'output/multicolor_v3'
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
+OUT = ROOT / 'output' / P['output_folder']
 report = {'physical_print_verified': False, 'stl': {}, 'plates': {}}
-assert len(list((OUT / 'stl').glob('*.stl'))) == 8
+assert len(list((OUT / 'stl').glob('*.stl'))) == 10
 assert {p.stem for p in (OUT / 'print').glob('*.3mf')} == {
-    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S'}
+    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S'}
 for file in sorted((OUT / 'stl').glob('*.stl')):
     mesh = trimesh.load_mesh(file)
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0, file
@@ -78,7 +78,10 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
                 layers[round(z, 3)].add(tool + 1)
         assert len(points) > 100
         if multi:
-            assert dict(layers) == {.2: {1, 2, 3, 4}, .4: {1, 2, 3, 4}, .6: {1}, .8: {1}}, layers
+            assert layers[.2] == layers[.4] == {1, 2, 3, 4}, layers
+            assert all(slots == {1} for z, slots in layers.items() if z > .4), layers
+            count = 14 if file.name.startswith('02_') else 4
+            assert set(layers) == {round(i*.2, 1) for i in range(1, count+1)}, layers
         result = json.loads(file.with_name(file.stem.replace('_P1S', '_slicer_result') + '.json').read_text())
         assert result['return_code'] == 0
         plate = result['sliced_plates'][0]

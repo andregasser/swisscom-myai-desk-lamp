@@ -1,5 +1,7 @@
 # myAI Cube v3.2.1 — Logo direkt mit dem AMS drucken
 
+> Archivierter Entwurf mit zurückgesetzten Seitenfeldern. Der aktuelle Entwurf mit planen Seiten ist [v4](MEHRFARBIG_V4.md). Die folgenden Reproduktionsbefehle gelten für die Quellen im v3.2.1-Archiv; die aktuellen Quellen im Repository erzeugen v4.
+
 Der Würfel bleibt **150 × 150 × 150 mm einschließlich Füßen** groß. Vier identische, flach gedruckte Leuchtpaneele werden von oben in einen weißen Rahmen eingeschoben. Das mehrfarbige Logo ist bündig in jedes Paneel integriert. Der abnehmbare Deckel schließt die Führungen. Die Logos benötigen keinen Klebstoff.
 
 ![Zusammengesetzter AMS-Entwurf](../output/multicolor_v3/preview/assembled.png)

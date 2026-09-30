@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v3.2: red/violet/blue logo inlays, including the wordmark gradient."""
+"""v4: full-face flush AMS panels with concealed sliding dovetail rails."""
 import json
 import math
 from pathlib import Path
@@ -14,11 +14,12 @@ import build as mono
 
 ROOT = mono.ROOT
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
-OUT = ROOT / 'output/multicolor_v3'
+OUT = ROOT / 'output' / P['output_folder']
 PW, PH = P['panel_width_mm'], P['panel_height_mm']
 TH, CD = P['panel_thickness_mm'], P['color_depth_mm']
 box, union, around, mesh = mono.box, mono.union, mono.around, mono.mesh
 FOOT_CENTERS = [(x, y) for x in (18, 132) for y in (18, 132)]
+POST_CENTERS = [(x, y) for x in (6.5, 143.5) for y in (6.5, 143.5)]
 
 
 def feet():
@@ -30,23 +31,26 @@ def feet():
 
 
 def inlet_slots():
-    return union([around(box(P['inlet_slot_length_mm'], P['inlet_slot_width_mm'], 7,
+    return union([around(box(P['inlet_slot_length_mm'], P['inlet_slot_width_mm'], 10,
                             (x, 16, -1)), q) for x in (35, 87) for q in range(4)])
 
 
 def base():
-    # Assemble at Z=2: a 1 mm outer flange retains the original frame seat
-    # at Z=3. The central plate is reinforced to 3 mm, with LED seat at Z=5.
+    # Inset beneath the four uninterrupted faces. The feet leave room for
+    # both intake air and the cable, which now exits entirely underneath.
     bottom = P['foot_height_mm']
-    assert 0 < bottom < 3
-    plate = union([box(150, 150, 3-bottom, (0, 0, bottom)),
-                   box(134, 134, 2.02, (8, 8, 2.98)),
-                   mono.locators(3, cable_gap=True), mono.led_ring(4.98)])
+    seat = P['frame_bottom_mm']
+    plate = union([box(148, 148, seat-bottom, (1, 1, bottom)),
+                   box(130, 130, 1.02, (10, 10, seat-.02)),
+                   mono.led_ring(seat+.98),
+                   *[m.Manifold.cylinder(2.02, 1.5, 1.5, 48).translate((x, y, seat-.02))
+                     for x, y in POST_CENTERS]])
     sockets = union([m.Manifold.cylinder(P['foot_socket_depth_mm']+.02,
                         P['foot_socket_diameter_mm']/2, P['foot_socket_diameter_mm']/2,
                         48).translate((x, y, bottom-.02)) for x, y in FOOT_CENTERS])
     # Sockets open on the bed; only their 4.4 mm roofs require bridging.
-    return (plate - inlet_slots() - sockets).translate((0, 0, -bottom))
+    cable_slot = box(6, 19, 10, (72, 133, bottom-.1))
+    return (plate - inlet_slots() - sockets - cable_slot).translate((0, 0, -bottom))
 
 
 def logo_regions():
@@ -106,10 +110,25 @@ def logo_regions():
     return [s.translate(delta) for s in (blue, violet, red, unsplit_outline)]
 
 
-def panel_parts():
+def rail_profile(center):
+    return [(center-1, TH-.02), (center+1, TH-.02),
+            (center+2, TH+2), (center-2, TH+2)]
+
+
+def panel_envelope(with_rails=True):
+    # Mitred vertical edges leave only narrow corner assembly seams.
+    panel = mono.front_prism([(0, 0), (PW, 0), (PW-TH, TH), (TH, TH)], PH)
+    if with_rails:
+        length = PH-P['rail_top_margin_mm']-P['rail_bottom_margin_mm']
+        for center in (6-P['panel_left_mm'], 144-P['panel_left_mm']):
+            panel += mono.front_prism(rail_profile(center), length, P['rail_top_margin_mm'])
+    return panel
+
+
+def panel_parts(with_rails=True):
     regions = logo_regions()
     inks = [m.Manifold.extrude(region, CD) for region in regions[:3]]
-    white = box(PW, PH, TH) - m.Manifold.extrude(regions[3], CD)
+    white = panel_envelope(with_rails) - m.Manifold.extrude(regions[3], CD)
     return [white, *inks]
 
 
@@ -120,40 +139,33 @@ def assemble_panel(part):
 
 
 def frame():
-    height = mono.H
-    shape = box(150, 150, height) - box(144, 144, height + 2, (3, 3, -1))
-    # Open at the top: no unsupported 128 mm lintel. The lid carries the
-    # removable top bezel, so the panels can slide down from above.
-    cut = box(128, 5, height + 2, (11, -1, 8))
-    shape -= union([around(cut, q) for q in range(4)])
-    rails = union([
-        box(1.5, 3.02, height - 4.3, (6.5, 2.98, 4.3)),
-        box(4, 1.6, height - 4.3, (6.5, 4.4, 4.3)),
-        box(1.5, 3.02, height - 4.3, (142, 2.98, 4.3)),
-        box(4, 1.6, height - 4.3, (139.5, 4.4, 4.3)),
-        box(134, 3.02, 1, (8, 2.98, 4.3)),
-    ])
-    shape += union([around(rails, q) for q in range(4)])
-    cable = mono.front_prism([(72, -1), (78, -1), (78, 4), (75, 7), (72, 4)], 7, -1)
-    return shape - around(cable, 2)
+    height = P['frame_height_mm']
+    ring = box(148, 148, 2, (1, 1, 0)) - box(136, 136, 4, (7, 7, -1))
+    shape = ring + union([box(9, 9, height, (x, y, 0)) for x in (1, 140) for y in (1, 140)])
+    channels = []
+    for center in (6, 144):
+        profile = m.CrossSection([rail_profile(center)]).offset(P['rail_clearance_mm'])
+        channel = m.Manifold.extrude(profile, height).translate((0, 0, 2))
+        channels.extend(around(channel, q) for q in range(4))
+    for x, y in POST_CENTERS:
+        channels.append(m.Manifold.cylinder(3.3, 1.7, 1.7, 48).translate((x, y, -1)))
+        channels.append(m.Manifold.cylinder(5.4, 1.5, 1.5, 48).translate((x, y, height-4.4)))
+    return shape - union(channels)
 
 
 def lid():
-    rim = box(150, 150, 2) - box(134, 134, 4, (8, 8, -1))
-    parts = [box(150, 150, .8), rim]
-    for q in range(4):
-        # 0.3 mm end clearance to the frame's corner posts.
-        parts.append(around(box(127.4, P['lid_baffle_thickness_mm'], 9.02, (11.3, 0, 1.98)), q))
-    for x in (4.5, 145.5):
-        for y in (4.5, 145.5):
-            parts.append(m.Manifold.cylinder(4.02, 1.15, 1.15, 48).translate((x, y, 1.98)))
+    inset = P['lid_inset_mm']
+    rim = box(150-2*inset, 150-2*inset, 2, (inset, inset, 0)) - box(134, 134, 4, (8, 8, -1))
+    parts = [box(150-2*inset, 150-2*inset, .8, (inset, inset, 0)), rim]
+    for x, y in POST_CENTERS:
+        parts.append(m.Manifold.cylinder(4.02, 1.3, 1.3, 48).translate((x, y, 1.98)))
     cap = union(parts)
-    # Leave the complete 0.8 mm top intact. Shallow channels on its underside
-    # discharge downward behind the outer baffles, in front of the panels.
+    # Intact lid surface, with outlets in the 0.8 mm perimeter joint on top.
+    # No exterior side bezel or step remains in front of the panels.
     start = (150 - P['outlet_channel_length_mm'])/2
-    channels = [around(box(P['outlet_channel_length_mm'], 9-P['lid_baffle_thickness_mm'],
+    channels = [around(box(P['outlet_channel_length_mm'], 9-inset+.1,
                           P['outlet_channel_height_mm']+.02,
-                          (start, P['lid_baffle_thickness_mm'], 2-P['outlet_channel_height_mm'])), q)
+                          (start, inset-.1, 2-P['outlet_channel_height_mm'])), q)
                 for q in range(4)]
     return cap - union(channels)
 
@@ -161,30 +173,32 @@ def lid():
 def check_air_paths(assembly):
     """Collision-free connected clearance volumes, not a thermal simulation."""
     solid = union(assembly)
-    inlet = union([box(27.8, 18, 1.2, (35.1, -1, .4)),
-                   box(27.8, 1.8, 5.6, (35.1, 16.1, -.2))])
-    outlet = union([box(99.8, 8.7, 1, (25.1, 1.3, 148.1)),
-                    box(99.8, 1.8, 9.8, (25.1, 1.3, 138.5)),
-                    box(99.8, 2.5, .4, (25.1, -1, 138.5))])
+    inlet = union([box(27.8, 18, 2, (35.1, -1, 1)),
+                   box(27.8, 1.8, 6.5, (35.1, 16.1, 1))])
+    outlet = union([box(119.8, 8.1, 1, (15.1, .9, 148.1)),
+                    box(119.8, .6, 2.4, (15.1, .9, 148.1))])
     assert len(inlet.decompose()) == len(outlet.decompose()) == 1
     for q in range(4):
         for path in (inlet, inlet.translate((52, 0, 0)), outlet):
             assert (around(path, q) ^ solid).volume() < .001, ('blocked air path', q)
-    # The old visible side holes are filled; the only wall opening is the
-    # retained rear cable exit. The top surface is continuous over its area.
-    for x in (24, 42, 108, 126):
-        filled = box(1, 2, 1, (x-.5, .5, 6))
-        for q in range(4):
-            assert (around(filled, q) - solid).volume() < .001
-    assert (box(150, 150, .8, (0, 0, 149.2)) - solid).volume() < .001
+    cable = union([box(4, 4, 8, (73, 134, 1)), box(4, 18, 2, (73, 135, 1))])
+    assert (cable ^ solid).volume() < .001, 'Cable path obstructed'
+    # Entire visible face, including the area where the frame used to be.
+    face_skin = box(PW-2*TH, .1, PH, (P['panel_left_mm']+TH, 0, P['panel_bottom_mm']))
+    for q in range(4):
+        assert (around(face_skin, q) - solid).volume() < .001, ('recessed face', q)
+    inset = P['lid_inset_mm']
+    assert (box(150-2*inset, 150-2*inset, .8, (inset, inset, 149.2)) - solid).volume() < .001
     return {'underside_clearance_mm': P['foot_height_mm'],
             'inlet_count': 8, 'inlet_open_area_mm2': 8*P['inlet_slot_length_mm']*P['inlet_slot_width_mm'],
             'outlet_count': 4, 'outlet_channel_area_mm2': 4*P['outlet_channel_length_mm']*P['outlet_channel_height_mm'],
+            'top_joint_width_mm': inset-TH, 'outlet_joint_area_mm2': 4*P['outlet_channel_length_mm']*(inset-TH),
+            'cable_exits_under_base': True, 'side_recess_mm': 0,
             'connected_clearance_paths_verified': True, 'visible_side_vents': False,
             'top_surface_closed': True, 'thermal_performance_verified': False}
 
 
-def multipart_3mf(parts, target, title, offset=(53, 40, 0)):
+def multipart_3mf(parts, target, title, offset=(35, 40, 0)):
     ns = 'http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
     ET.register_namespace('', ns)
     tag = lambda s: '{' + ns + '}' + s
@@ -242,7 +256,7 @@ def main():
     # Coplanar interfaces between materials can leave sub-micron Boolean
     # slivers. Validate their coverage against the analytic panel envelope;
     # export the separately watertight material volumes for the slicer.
-    complete_panel = box(PW, PH, TH)
+    complete_panel = panel_envelope()
     combined = union(panel)
     assert (complete_panel - combined).volume() < .001
     assert (combined - complete_panel).volume() < .001
@@ -257,12 +271,23 @@ def main():
         obj.export(OUT/'stl'/f'{name}.stl')
         mono.core_3mf([(name, obj, (53, 53, 0))], OUT/'geometry'/f'{name}.3mf')
         report['parts'][name] = {'watertight': True, 'size_mm': obj.extents.tolist()}
+    # Small pieces cut directly from the actual guide geometries, in their
+    # production print orientations, to test tolerances before a full frame.
+    fit_parts = [
+        ('07_fit_panel', (complete_panel ^ box(12, 20, 4, (0, 20, 0))).translate((0, -20, 0)), (90, 110, 0)),
+        ('07_fit_corner', (mono_parts['03_frame'] ^ box(10, 10, 20, (0, 0, 10))).translate((-1, -1, -10)), (120, 110, 0)),
+    ]
+    for name, solid, offset in fit_parts:
+        obj = mesh(solid)
+        assert obj.is_watertight and obj.is_winding_consistent and len(obj.split()) == 1
+        obj.export(OUT/'stl'/f'{name}.stl')
+        report['parts'][name] = {'watertight': True, 'size_mm': obj.extents.tolist()}
+    mono.core_3mf([(name, mesh(solid), offset) for name, solid, offset in fit_parts], OUT/'geometry/07_fit.3mf')
     multipart_3mf(panel, OUT/'geometry/02_panel.3mf', 'Logo-Paneel — 4x drucken')
     # A small, flat four-color sample uses the same 0.4 + 0.4 mm layer stack.
-    ink = [s.scale((.35, .35, 1)) for s in panel[1:]]
-    test = [panel[0].scale((.35,.35,1)), *ink]
+    test = [s.scale((.35, .35, 1)) for s in panel_parts(with_rails=False)]
     multipart_3mf(test, OUT/'geometry/01_color_test.3mf', 'AMS Farb- und Lichtprobe', (90, 90, 0))
-    assembly = [mono_parts['04_base'].translate((0, 0, P['foot_height_mm'])), mono_parts['03_frame'].translate((0,0,3)),
+    assembly = [mono_parts['04_base'].translate((0, 0, P['foot_height_mm'])), mono_parts['03_frame'].translate((0,0,P['frame_bottom_mm'])),
                 mono_parts['05_lid'].rotate((180,0,0)).translate((0,150,150))]
     assembly.append(mono_parts['06_feet'])
     assembly.extend(around(assemble_panel(complete_panel), q) for q in range(4))
@@ -271,6 +296,7 @@ def main():
             assert (assembly[i] ^ assembly[j]).volume() < .001, ('collision',i,j)
     for height in (1, 30, 100, 150):
         assert (assemble_panel(complete_panel).translate((0,0,height)) ^ assembly[1]).volume() < .001
+    assert (assemble_panel(complete_panel).translate((0, -.8, 0)) ^ assembly[1]).volume() > 10
     ink_bounds = np.asarray(assemble_panel(union(panel[1:])).bounding_box()).reshape(2,3)
     assert np.allclose(ink_bounds.mean(axis=0)[[0,2]], [75,75], atol=.001)
     bounds = np.asarray(union(assembly).bounding_box()).reshape(2, 3)

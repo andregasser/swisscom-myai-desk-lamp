@@ -1,0 +1,120 @@
+{
+  "version": "v4-AMS",
+  "physical_print_verified": false,
+  "parts": {
+    "panel_slot_1": {
+      "watertight": true,
+      "volume_mm3": 18271.63391376786,
+      "components": 1
+    },
+    "panel_slot_2": {
+      "watertight": true,
+      "volume_mm3": 345.0151548287354,
+      "components": 4
+    },
+    "panel_slot_3": {
+      "watertight": true,
+      "volume_mm3": 305.445084898022,
+      "components": 6
+    },
+    "panel_slot_4": {
+      "watertight": true,
+      "volume_mm3": 131.25206959120442,
+      "components": 2
+    },
+    "03_frame": {
+      "watertight": true,
+      "size_mm": [
+        148.0,
+        148.0,
+        142.0
+      ]
+    },
+    "04_base": {
+      "watertight": true,
+      "size_mm": [
+        148.0,
+        148.0,
+        6.980000019073486
+      ]
+    },
+    "05_lid": {
+      "watertight": true,
+      "size_mm": [
+        146.79999387264252,
+        146.79999387264252,
+        6.0
+      ]
+    },
+    "06_feet": {
+      "watertight": true,
+      "size_mm": [
+        128.0,
+        128.0,
+        5.800000190734863
+      ]
+    },
+    "07_fit_panel": {
+      "watertight": true,
+      "size_mm": [
+        12.0,
+        20.0,
+        2.799999952316284
+      ]
+    },
+    "07_fit_corner": {
+      "watertight": true,
+      "size_mm": [
+        9.0,
+        9.0,
+        20.0
+      ]
+    }
+  },
+  "logo_colors": {
+    "source": "Mode=Dark, Type=Stacked.svg",
+    "gradient_band_edges": [
+      0.18,
+      0.5
+    ],
+    "sequence": [
+      "Rot",
+      "Violett",
+      "Blau"
+    ],
+    "lower_wordmark_area_mm2_by_slot_2_3_4": [
+      513.359587892402,
+      468.7470275772174,
+      182.43263073523104
+    ],
+    "continuous_gradient": false
+  },
+  "ventilation": {
+    "underside_clearance_mm": 4.0,
+    "inlet_count": 8,
+    "inlet_open_area_mm2": 448.0,
+    "outlet_count": 4,
+    "outlet_channel_area_mm2": 576.0,
+    "top_joint_width_mm": 0.8,
+    "outlet_joint_area_mm2": 384.0,
+    "cable_exits_under_base": true,
+    "side_recess_mm": 0,
+    "connected_clearance_paths_verified": true,
+    "visible_side_vents": false,
+    "top_surface_closed": true,
+    "thermal_performance_verified": false
+  },
+  "assembled_size_mm": [
+    150.0,
+    150.0,
+    150.0
+  ],
+  "logo_center_xz_mm": [
+    75.0,
+    75.0
+  ],
+  "assembly_interference_mm3": 0,
+  "vertical_panel_insertion_clear": true,
+  "panel_color_depth_mm": 0.4,
+  "panel_white_backing_mm": 0.4
+}
