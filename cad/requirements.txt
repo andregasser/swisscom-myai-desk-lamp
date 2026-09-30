@@ -2,3 +2,5 @@ numpy==2.5.3
 trimesh==5.1.0
 manifold3d==3.5.4
 svgpathtools==1.8.0
+cairosvg==2.9.1
+pillow==12.3.0

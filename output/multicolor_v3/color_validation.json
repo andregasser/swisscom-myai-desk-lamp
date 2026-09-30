@@ -1,0 +1,30 @@
+{
+  "version": "v3.2.1-AMS",
+  "render_mode": "nominal sRGB camera colors; shaded white geometry",
+  "predicts_physical_filament_color": false,
+  "colors": {
+    "Weiss": {
+      "hex": "#FFFFFF",
+      "reference_swatch_exact": true
+    },
+    "Blau": {
+      "hex": "#0445C8",
+      "reference_swatch_exact": true,
+      "exact_render_pixels": 13633,
+      "is_original_svg_stop": true
+    },
+    "Violett": {
+      "hex": "#8734B8",
+      "reference_swatch_exact": true,
+      "exact_render_pixels": 11742,
+      "is_original_svg_stop": false
+    },
+    "Rot": {
+      "hex": "#F23232",
+      "reference_swatch_exact": true,
+      "exact_render_pixels": 4933,
+      "is_original_svg_stop": true
+    }
+  },
+  "violet_note": "Chosen intermediate printing color, not an original SVG stop."
+}

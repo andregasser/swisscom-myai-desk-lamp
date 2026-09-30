@@ -1,10 +1,10 @@
-# myAI Cube v3.2 — Logo direkt mit dem AMS drucken
+# myAI Cube v3.2.1 — Logo direkt mit dem AMS drucken
 
 Der Würfel bleibt **150 × 150 × 150 mm einschließlich Füßen** groß. Vier identische, flach gedruckte Leuchtpaneele werden von oben in einen weißen Rahmen eingeschoben. Das mehrfarbige Logo ist bündig in jedes Paneel integriert. Der abnehmbare Deckel schließt die Führungen. Die Logos benötigen keinen Klebstoff.
 
 ![Zusammengesetzter AMS-Entwurf](../output/multicolor_v3/preview/assembled.png)
 
-*Ansicht der tatsächlichen CAD-Geometrie bei illustrativer Studiobeleuchtung. Keine Vorhersage der Leuchtwirkung oder realer Filamentfarben.*
+*Technische Farbansicht der tatsächlichen CAD-Geometrie. Die Logo-Flächen zeigen nominelle sRGB-Farben ohne Aufhellung durch Szenenbeleuchtung. Keine Vorhersage der Leuchtwirkung oder realer Filamentfarben.*
 
 ## Vier Farben in einem AMS
 
@@ -20,6 +20,16 @@ Die Konturen stammen jetzt aus der unveränderten **dunklen Logo-SVG**: Sie enth
 Die gewünschte Druckfolge ist **Rot → Violett → Blau**. Sterne und Schrift behalten ihre jeweils eigene Verlaufsrichtung aus der SVG; der Generator liest die Gradientenzuordnung jedes Pfads. Die Farbpalette wird für diesen Entwurf bewusst angepasst: Weiß `#FFFFFF`, Blau `#0445C8`, Violett `#8734B8`, Rot `#F23232`. Die Original-SVG enthält zusätzlich hellblaue/cyanfarbene Zwischenstufen, die hier durch die gewünschte dreistufige Folge ersetzt werden. Die Hexwerte dienen der Vorschau und sind keine gemessenen Filamentfarben.
 
 Es ist eine **druckbare Vierfarben-Annäherung mit sichtbaren Farbkanten**, kein stufenloser Verlauf. Entlang jedes originalen Gradientenvektors wird bis t = 0,18 Rot, von t = 0,18 bis 0,50 Violett und danach Blau verwendet; auch innerhalb einzelner Buchstaben entstehen Farbwechsel. Diese Grenzen stehen in `gradient_band_edges` in den CAD-Parametern. Eine winzige separate Kontur unterhalb der Düsenauflösung entfällt wie bei den bisherigen Versionen.
+
+### Farbvergleich und Vorschaukorrektur v3.2.1
+
+![Originale Light/Dark und unbeleuchtete Druckpalette im direkten Vergleich](../output/multicolor_v3/preview/color_reference.png)
+
+Die vorherige 3D-Vorschau hellte die Farben durch Beleuchtung und fotografische Tonwertkorrektur stark auf. Rot `#F23232` und Blau `#0445C8` entsprechen bereits Farbstopps der dunklen Original-SVG; diese Werte bleiben erhalten. Violett `#8734B8` ist eine gewählte Zwischenfarbe, kein eigener Farbstopp in der Originaldatei.
+
+Die neue technische Ansicht gibt die Logo-Farben direkt zur Kamera aus, ohne Beleuchtungsaufhellung und mit Standard-sRGB-Ausgabe. Weiße Gehäuseteile bleiben schattiert. Die farbigen Flächen sind dadurch **keine Simulation leuchtenden Filaments**. Der [Farbprüfbericht](../output/multicolor_v3/color_validation.json) prüft die Farbfelder der Vergleichsgrafik und große Innenflächen der gerenderten Logos gegen die CAD-Farbwerte.
+
+**V3.2.1 ändert nur Darstellung, Prüfungen und Dokumentation.** Geometrie, Filamentprofile und geslicte Druckdateien sind identisch zu v3.2; kein erneuter Druck wegen dieser Vorschaukorrektur nötig. Wie dunkel die reale Lampe erscheint, hängt vom tatsächlich eingelegten Filament und der Beleuchtung ab. Hexwerte im Projekt ändern die Farbe einer realen Spule nicht.
 
 Die Paneele sind **133,4 × 139,4 × 0,8 mm** groß. Außen liegen 0,4 mm tiefe Farbeinlagen und weißer Hintergrund, dahinter eine durchgehende 0,4-mm-Schicht aus Weiß. Das Logo ist auf jeder montierten Würfelseite bei **75 / 75 mm** zentriert. Farbflächen dämpfen das Licht anders als weißes PLA; Farbe und Kontrast müssen mit dem eigenen Filament geprüft werden.
 
@@ -38,7 +48,7 @@ Alle Links führen zu geslicten **Bambu-Studio-Projekten** für P1S, 0,4-mm-Düs
 
 ¹ Einschließlich Brim, Spülmaterial und Reinigungsturm, soweit vom Slicer erfasst. Lampe ohne Testprobe insgesamt etwa **272 g PLA und 18 h 2 min**. Es werden keine Stützen erzeugt. Jedes Paneel benötigt sechs Farbwechsel. Der Boden druckt mit der flachen Unterseite auf dem Bett; lediglich die kleinen, 4,4 mm breiten Fußaufnahmen werden oben überbrückt. Die Füße drucken mit dem runden Pad auf dem Bett und dem Zapfen nach oben.
 
-**[Komplettes Druck- und Quellenpaket v3.2 herunterladen](../output/myAI_Cube_150_P1S_AMS_v3_2.zip)**. Das Paket enthält zusätzlich die bisherige einfarbige v2; für diesen Entwurf die Dateien unter `output/multicolor_v3/print/` verwenden. Die älteren v3- und v3.1-Pakete bleiben als Archive erhalten.
+**[Komplettes Druck- und Quellenpaket v3.2.1 herunterladen](../output/myAI_Cube_150_P1S_AMS_v3_2_1.zip)**. Das Paket enthält zusätzlich die bisherige einfarbige v2; für diesen Entwurf die Dateien unter `output/multicolor_v3/print/` verwenden. Die älteren v3-, v3.1- und v3.2-Pakete bleiben als Archive erhalten.
 
 1. Die Farbprobe **als Projekt** öffnen. Die vier Projekt-Filamente beim Senden den passenden realen AMS-Fächern zuordnen; die Datei kennt deine geladenen Spulen nicht. Für die weißen Druckprojekte Projekt-Filament 1 dem weißen Fach zuweisen.
 2. Eigenes PLA und Druckplatte prüfen. Voreinstellung: Generic PLA, 220 °C Düse, 55 °C Bett. Bei Profil- oder Materialänderungen neu slicen und die Vorschau prüfen.
@@ -81,6 +91,8 @@ Maße/Farben: [Parameter](../cad/multicolor_parameters.json). Konturen, Rahmen, 
 .venv/bin/python scripts/slice_multicolor.py /pfad/zu/bambu-studio
 .venv/bin/python scripts/validate_multicolor.py
 blender -b -t 4 --python scripts/render_multicolor.py
+.venv/bin/python scripts/render_color_reference.py
+.venv/bin/python scripts/validate_colors.py
 .venv/bin/python scripts/package.py
 ```
 

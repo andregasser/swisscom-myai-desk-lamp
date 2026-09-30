@@ -1,4 +1,4 @@
-"""Render the actual v3 meshes; studio colors, not a light-output simulation."""
+"""Technical color views: exact sRGB logo colors, shaded white CAD geometry."""
 from pathlib import Path
 import json
 import math
@@ -24,6 +24,20 @@ def load(stem, name, color):
     bsdf = mat.node_tree.nodes.get('Principled BSDF')
     bsdf.inputs['Base Color'].default_value = mat.diffuse_color
     bsdf.inputs['Roughness'].default_value = .65
+    if name.startswith('panel_') and not name.endswith('_slot_1'):
+        # Show nominal logo sRGB values directly to the camera. Lighting and
+        # photographic tone mapping previously washed them out to pastels.
+        # Other rays still see a diffuse surface: this is not an emissive lamp.
+        nodes, links = mat.node_tree.nodes, mat.node_tree.links
+        camera_color = nodes.new('ShaderNodeEmission')
+        camera_color.inputs['Color'].default_value = mat.diffuse_color
+        camera_color.inputs['Strength'].default_value = 1
+        light_path = nodes.new('ShaderNodeLightPath')
+        mix = nodes.new('ShaderNodeMixShader')
+        links.new(light_path.outputs['Is Camera Ray'], mix.inputs[0])
+        links.new(bsdf.outputs['BSDF'], mix.inputs[1])
+        links.new(camera_color.outputs[0], mix.inputs[2])
+        links.new(mix.outputs[0], nodes.get('Material Output').inputs['Surface'])
     obj.data.materials.append(mat)
     parts.append(obj)
     return obj
@@ -53,8 +67,13 @@ scene.cycles.use_denoising = True
 scene.render.resolution_x = 1200
 scene.render.resolution_y = 1100
 scene.render.resolution_percentage = 100
-scene.world.color = (.2, .2, .2)
-scene.view_settings.view_transform = 'AgX'
+scene.world.use_nodes = True
+scene.world.node_tree.nodes.get('Background').inputs['Color'].default_value = (1, 1, 1, 1)
+scene.world.node_tree.nodes.get('Background').inputs['Strength'].default_value = .2
+scene.view_settings.view_transform = 'Standard'
+scene.view_settings.look = 'None'
+scene.view_settings.exposure = 0
+scene.view_settings.gamma = 1
 
 bpy.ops.mesh.primitive_plane_add(size=200, location=(0, 0, -.0002))
 floor = bpy.context.object
@@ -68,9 +87,9 @@ def aim(obj, target):
     obj.rotation_euler = (Vector(target) - obj.location).to_track_quat('-Z', 'Y').to_euler()
 
 for name, location, power, size in (
-    ('Softbox', (-.15, -.25, .42), 10, .3),
-    ('Fill', (.4, -.1, .18), 5, .3),
-    ('Rim', (.2, .3, .36), 12, .25),
+    ('Softbox', (-.15, -.25, .42), 2, .3),
+    ('Fill', (.4, -.1, .18), 1, .3),
+    ('Rim', (.2, .3, .36), 2.4, .25),
 ):
     data = bpy.data.lights.new(name, 'AREA')
     data.energy, data.shape, data.size = power, 'DISK', size
@@ -90,7 +109,7 @@ bpy.ops.render.render(write_still=True)
 
 floor.hide_render = True
 data = bpy.data.lights.new('Underside softbox', 'AREA')
-data.energy, data.shape, data.size = 7, 'DISK', .25
+data.energy, data.shape, data.size = 1.4, 'DISK', .25
 underlight = bpy.data.objects.new('Underside softbox', data)
 scene.collection.objects.link(underlight)
 underlight.location = (.075, -.1, -.25)

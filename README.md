@@ -2,21 +2,23 @@
 
 Eine kleine Würfellampe zum Selberdrucken: weißes PLA, sanftes Licht und das myAI-Logo mittig auf allen vier Seiten. Entwickelt für den **Bambu Lab P1S** und das **LED Lamp Kit 001 / MH001**.
 
-![myAI Cube v3.2: integrierte farbige Logos und verdeckte Belüftung](output/multicolor_v3/preview/assembled.png)
+![myAI Cube v3.2.1: integrierte farbige Logos und verdeckte Belüftung](output/multicolor_v3/preview/assembled.png)
 
-*Ansicht der tatsächlichen CAD-Geometrie bei illustrativer Studiobeleuchtung. Lichtwirkung und reale Filamentfarben sind noch nicht getestet.*
+*Technische Farbansicht der CAD-Geometrie: Die Logos zeigen die nominellen sRGB-Farben ohne Aufhellung durch Beleuchtung. Keine Vorhersage realer Filamentfarben oder Lichtwirkung.*
 
 ## Die Idee
 
 Ein **15 × 15 × 15 cm** großer Würfel mit **0,8 mm dünnen Leuchtflächen**, integrierten Logos, Boden mit LED-Aufnahme und abnehmbarem Deckel. Für das Logo gibt es eine farbige AMS-Variante und eine einfarbige Alternative.
 
-## Mehrfarbig mit AMS — v3.2
+## Mehrfarbig mit AMS — v3.2.1
 
 **Für ein AMS mit vier Farben:** Weiß, Blau, Violett und Rot. Vier identische Paneele mit bündig mitgedruckten Logos gleiten in einen weißen Rahmen. **Sterne und Schriftzug „myAI“ folgen Rot → Violett → Blau**, als feste Farbstufen entlang der Verlaufsrichtungen aus der dunklen Original-SVG. Sechs Farbwechsel pro Paneel; Montage ohne Aufkleben der Logos.
 
+[Farbvergleich mit beiden Original-SVGs](output/multicolor_v3/preview/color_reference.png): Rot und Blau entsprechen Originalfarbwerten; Violett ist eine gewählte Zwischenfarbe. V3.2.1 korrigiert die zuvor zu helle Vorschau, die Druckdateien bleiben identisch zu v3.2.
+
 Die Belüftung ist verdeckt: Lufteinlässe unter dem Boden, vier 2-mm-Druckfüße und Auslässe hinter der Deckelblende. Die Seiten haben keine sichtbaren Lüftungslöcher, die Deckelfläche ist geschlossen. **150 mm Gesamthöhe einschließlich Füßen.** Die Füße werden eingesteckt und mit etwas Klebstoff fixiert.
 
-[Druckdateien & Montage v3.2](docs/MEHRFARBIG_V3.md) · [Kleine Farbprobe](output/multicolor_v3/print/01_color_test_P1S.3mf) · [Komplettpaket v3.2](output/myAI_Cube_150_P1S_AMS_v3_2.zip)
+[Druckdateien & Montage v3.2.1](docs/MEHRFARBIG_V3.md) · [Kleine Farbprobe](output/multicolor_v3/print/01_color_test_P1S.3mf) · [Komplettpaket v3.2.1](output/myAI_Cube_150_P1S_AMS_v3_2_1.zip)
 
 **Stand: Prototyp.** Digital geprüft und geslict. Physischer Probedruck und Temperaturtest stehen noch aus.
 

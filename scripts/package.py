@@ -4,7 +4,7 @@ import hashlib
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
-name = 'myAI_Cube_150_P1S_AMS_v3_2'
+name = 'myAI_Cube_150_P1S_AMS_v3_2_1'
 target = root / 'output' / (name + '.zip')
 files = [root / 'README.md', root / '.gitignore']
 for folder in ('assets', 'cad', 'docs', 'scripts', 'output/stl', 'output/3mf',
