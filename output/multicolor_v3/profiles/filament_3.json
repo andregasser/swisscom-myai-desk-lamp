@@ -1,6 +1,6 @@
 {
   "type": "filament",
-  "name": "myAI PLA Hellblau",
+  "name": "myAI PLA Violett",
   "from": "User",
   "instantiation": "true",
   "activate_air_filtration": [
@@ -222,7 +222,7 @@
     "none"
   ],
   "filament_settings_id": [
-    "myAI PLA Hellblau"
+    "myAI PLA Violett"
   ],
   "filament_shrink": [
     "100%"
@@ -419,6 +419,6 @@
   "description": "The generic presets are conservatively tuned for compatibility with a wider range of filaments. For higher printing quality and speeds, please use Bambu filaments with Bambu presets.",
   "setting_id": "GFSL99",
   "filament_colour": [
-    "#1FB9FF"
+    "#8734B8"
   ]
 }

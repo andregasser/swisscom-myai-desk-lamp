@@ -10,32 +10,32 @@
       ],
       "components": 1
     },
-    "02_panel_2_Dunkelblau.stl": {
+    "02_panel_2_Blau.stl": {
       "watertight": true,
       "size_mm": [
-        86.8843765258789,
-        92.41915321350098,
+        51.14576721191406,
+        75.8368034362793,
         0.4000000059604645
       ],
-      "components": 8
+      "components": 4
     },
-    "02_panel_3_Hellblau.stl": {
+    "02_panel_3_Violett.stl": {
       "watertight": true,
       "size_mm": [
-        40.237205505371094,
-        41.89698028564453,
+        56.031185150146484,
+        90.21846389770508,
         0.4000000059604645
       ],
-      "components": 2
+      "components": 6
     },
     "02_panel_4_Rot.stl": {
       "watertight": true,
       "size_mm": [
-        14.348957061767578,
-        14.739847183227539,
+        32.40330123901367,
+        89.51159858703613,
         0.4000000059604645
       ],
-      "components": 1
+      "components": 2
     },
     "03_frame.stl": {
       "watertight": true,
@@ -116,12 +116,12 @@
       "slicer_print_warnings": "",
       "supports_generated": false,
       "gcode_md5_valid": true,
-      "sha256": "7817aceab37c39f314b44ea8b616713678ac6d74f99757197dbbbda4d6aaaa8c"
+      "sha256": "7e8d8409bdfd22022d5d9ee7b079dbe3d1fbdbcd96775846238087d9b3641618"
     },
     "02_panel_P1S.3mf": {
       "sliced_successfully": true,
       "bambu_studio": "02.08.02.61",
-      "estimated_minutes": 90.9,
+      "estimated_minutes": 91.0,
       "estimated_filament_g_including_flush_and_tower": 23.24,
       "color_changes": 6,
       "print_extrusion_bounds_mm": [
@@ -159,7 +159,7 @@
       "slicer_print_warnings": "",
       "supports_generated": false,
       "gcode_md5_valid": true,
-      "sha256": "6bcf6824f24c74e1f295caf96050749077da3dda6197135a2120eadc54039c18"
+      "sha256": "dfe4179f40baafadf0735fc838895ddcfdea491402cc700bf7be52ae2332490e"
     },
     "03_frame_P1S.3mf": {
       "sliced_successfully": true,

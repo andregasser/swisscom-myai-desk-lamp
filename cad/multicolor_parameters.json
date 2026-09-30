@@ -1,5 +1,7 @@
 {
-  "version": "v3.1-AMS",
+  "version": "v3.2-AMS",
+  "logo_source": "Mode=Dark, Type=Stacked.svg",
+  "gradient_band_edges": [0.18, 0.50],
   "foot_height_mm": 2.0,
   "foot_diameter_mm": 14.0,
   "foot_peg_diameter_mm": 4.0,
@@ -20,8 +22,8 @@
   "panel_front_depth_mm": 3.25,
   "colors": [
     {"slot": 1, "name": "Weiss", "hex": "#FFFFFF"},
-    {"slot": 2, "name": "Dunkelblau", "hex": "#001155"},
-    {"slot": 3, "name": "Hellblau", "hex": "#1FB9FF"},
-    {"slot": 4, "name": "Rot", "hex": "#F20505"}
+    {"slot": 2, "name": "Blau", "hex": "#0445C8"},
+    {"slot": 3, "name": "Violett", "hex": "#8734B8"},
+    {"slot": 4, "name": "Rot", "hex": "#F23232"}
   ]
 }

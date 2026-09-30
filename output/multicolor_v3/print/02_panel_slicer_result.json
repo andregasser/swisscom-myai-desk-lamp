@@ -1,58 +1,58 @@
 {
   "error_string": "Success.",
-  "export_time": 42,
+  "export_time": 44,
   "layer_height": 0.20000000298023224,
   "plate_index": 0,
-  "prepare_time": 22,
+  "prepare_time": 23,
   "return_code": 0,
   "sliced_plates": [
     {
       "feature_type_times": {
-        "Bottom surface": 1016.3268432617188,
-        "Brim": 178.85452270507812,
+        "Bottom surface": 1015.6746215820312,
+        "Brim": 178.8543243408203,
         "Custom": 380.5272521972656,
-        "Flush": 759.53955078125,
-        "Inner wall": 140.74110412597656,
-        "Internal solid infill": 1235.3280029296875,
-        "Outer wall": 176.4059295654297,
-        "Prime tower": 220.31878662109375,
+        "Flush": 759.5396118164062,
+        "Inner wall": 141.69277954101562,
+        "Internal solid infill": 1235.267822265625,
+        "Outer wall": 178.7957305908203,
+        "Prime tower": 220.24754333496094,
         "Top surface": 1224.088134765625,
-        "Travel": 140.1483612060547,
-        "Undefined": 124.46621704101562
+        "Travel": 140.25570678710938,
+        "Undefined": 124.57356262207031
       },
       "filament_change_times": 6,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 1,
-          "main_used_g": 17.13486099243164,
-          "total_used_g": 19.019716262817383
+          "main_used_g": 17.134714126586914,
+          "total_used_g": 19.01957130432129
         },
         {
           "filament_id": "GFL99",
           "id": 2,
-          "main_used_g": 0.7262148857116699,
-          "total_used_g": 1.376159429550171
+          "main_used_g": 1.009895920753479,
+          "total_used_g": 1.7655420303344727
         },
         {
           "filament_id": "GFL99",
           "id": 3,
-          "main_used_g": 0.18771719932556152,
-          "total_used_g": 1.460627794265747
+          "main_used_g": 0.37211084365844727,
+          "total_used_g": 1.0220553874969482
         },
         {
           "filament_id": "GFL99",
           "id": 4,
-          "main_used_g": 0.6286441087722778,
-          "total_used_g": 1.384290337562561
+          "main_used_g": 0.16006305813789368,
+          "total_used_g": 1.4329737424850464
         }
       ],
-      "generate_support_material_time": 2,
+      "generate_support_material_time": 1,
       "id": 1,
-      "infill_time": 50,
+      "infill_time": 52,
       "layer_filament_change": 0,
-      "main_predication": 4082.94091796875,
-      "make_perimeters_time": 68,
+      "main_predication": 4085.68115234375,
+      "make_perimeters_time": 66,
       "obj_cached_cnt": 0,
       "objects": [
         {
@@ -66,13 +66,13 @@
           },
           "id": 5,
           "name": "Logo-Paneel \u2014 4x drucken",
-          "triangle_count": 8244
+          "triangle_count": 8240
         }
       ],
-      "sliced_time": 179,
-      "sliced_time_with_cache": 33,
-      "total_predication": 5456.61376953125,
-      "triangle_count": 8244,
+      "sliced_time": 184,
+      "sliced_time_with_cache": 36,
+      "total_predication": 5459.28271484375,
+      "triangle_count": 8240,
       "warning_message": ""
     }
   ],

@@ -419,6 +419,6 @@
   "description": "The generic presets are conservatively tuned for compatibility with a wider range of filaments. For higher printing quality and speeds, please use Bambu filaments with Bambu presets.",
   "setting_id": "GFSL99",
   "filament_colour": [
-    "#F20505"
+    "#F23232"
   ]
 }

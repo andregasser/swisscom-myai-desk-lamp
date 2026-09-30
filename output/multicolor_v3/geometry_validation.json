@@ -1,26 +1,26 @@
 {
-  "version": "v3.1-AMS",
+  "version": "v3.2-AMS",
   "physical_print_verified": false,
   "parts": {
     "panel_slot_1": {
       "watertight": true,
-      "volume_mm3": 14095.053629372736,
+      "volume_mm3": 14095.054611835107,
       "components": 1
     },
     "panel_slot_2": {
       "watertight": true,
-      "volume_mm3": 595.5111178589749,
-      "components": 8
+      "volume_mm3": 345.0150420793014,
+      "components": 4
     },
     "panel_slot_3": {
       "watertight": true,
-      "volume_mm3": 154.09761946971358,
-      "components": 2
+      "volume_mm3": 305.4451389006602,
+      "components": 6
     },
     "panel_slot_4": {
       "watertight": true,
-      "volume_mm3": 32.104504804034,
-      "components": 1
+      "volume_mm3": 131.25203887137008,
+      "components": 2
     },
     "03_frame": {
       "watertight": true,
@@ -54,6 +54,24 @@
         3.799999952316284
       ]
     }
+  },
+  "logo_colors": {
+    "source": "Mode=Dark, Type=Stacked.svg",
+    "gradient_band_edges": [
+      0.18,
+      0.5
+    ],
+    "sequence": [
+      "Rot",
+      "Violett",
+      "Blau"
+    ],
+    "lower_wordmark_area_mm2_by_slot_2_3_4": [
+      513.3595878924014,
+      468.74702757721667,
+      182.43263073523005
+    ],
+    "continuous_gradient": false
   },
   "ventilation": {
     "underside_clearance_mm": 2.0,

@@ -3,56 +3,56 @@
   "export_time": 32,
   "layer_height": 0.20000000298023224,
   "plate_index": 0,
-  "prepare_time": 22,
+  "prepare_time": 24,
   "return_code": 0,
   "sliced_plates": [
     {
       "feature_type_times": {
-        "Bottom surface": 109.68146514892578,
-        "Brim": 65.34447479248047,
+        "Bottom surface": 109.6745834350586,
+        "Brim": 65.3449478149414,
         "Custom": 380.412353515625,
-        "Flush": 759.53955078125,
-        "Inner wall": 48.98057174682617,
-        "Internal solid infill": 148.4881591796875,
-        "Outer wall": 66.70027923583984,
-        "Prime tower": 220.1956329345703,
-        "Top surface": 150.9565887451172,
-        "Travel": 118.98326873779297,
-        "Undefined": 103.53984832763672
+        "Flush": 759.5396118164062,
+        "Inner wall": 48.843135833740234,
+        "Internal solid infill": 148.26687622070312,
+        "Outer wall": 67.1250228881836,
+        "Prime tower": 220.1706085205078,
+        "Top surface": 147.9565887451172,
+        "Travel": 121.60017395019531,
+        "Undefined": 106.15675354003906
       },
       "filament_change_times": 6,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 1,
-          "main_used_g": 2.0983288288116455,
-          "total_used_g": 3.983184576034546
+          "main_used_g": 2.098339080810547,
+          "total_used_g": 3.983194589614868
         },
         {
           "filament_id": "GFL99",
           "id": 2,
-          "main_used_g": 0.08654019981622696,
-          "total_used_g": 0.736484706401825
+          "main_used_g": 0.3244927227497101,
+          "total_used_g": 1.080138921737671
         },
         {
           "filament_id": "GFL99",
           "id": 3,
-          "main_used_g": 0.022436290979385376,
-          "total_used_g": 1.295346975326538
+          "main_used_g": 0.0444866381585598,
+          "total_used_g": 0.6944311857223511
         },
         {
           "filament_id": "GFL99",
           "id": 4,
-          "main_used_g": 0.27891722321510315,
-          "total_used_g": 1.034563422203064
+          "main_used_g": 0.019008684903383255,
+          "total_used_g": 1.2919193506240845
         }
       ],
-      "generate_support_material_time": 2,
+      "generate_support_material_time": 3,
       "id": 1,
-      "infill_time": 16,
+      "infill_time": 17,
       "layer_filament_change": 0,
-      "main_predication": 680.164306640625,
-      "make_perimeters_time": 45,
+      "main_predication": 679.8435668945312,
+      "make_perimeters_time": 59,
       "obj_cached_cnt": 0,
       "objects": [
         {
@@ -66,13 +66,13 @@
           },
           "id": 5,
           "name": "AMS Farb- und Lichtprobe",
-          "triangle_count": 8244
+          "triangle_count": 8240
         }
       ],
-      "sliced_time": 99,
-      "sliced_time_with_cache": 22,
-      "total_predication": 2053.837890625,
-      "triangle_count": 8244,
+      "sliced_time": 123,
+      "sliced_time_with_cache": 24,
+      "total_predication": 2053.4921875,
+      "triangle_count": 8240,
       "warning_message": ""
     }
   ],

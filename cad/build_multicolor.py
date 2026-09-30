@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v3.1: AMS inlay panels, underside inlets and concealed lid outlets."""
+"""v3.2: red/violet/blue logo inlays, including the wordmark gradient."""
 import json
 import math
 from pathlib import Path
@@ -50,9 +50,14 @@ def base():
 
 
 def logo_regions():
-    source = ET.parse(ROOT / 'assets/logos/Mode=Light, Type=Stacked.svg').getroot()
+    source = ET.parse(ROOT / 'assets/logos' / P['logo_source']).getroot()
+    ns = '{http://www.w3.org/2000/svg}'
+    gradients = {g.attrib['id']: g for g in source.findall(f'{ns}defs/{ns}linearGradient')}
     scale = mono.P['logo_canvas_mm'] / 216
     sections = []
+    red_parts, violet_parts, blue_parts = [], [], []
+    edge_red, edge_violet = P['gradient_band_edges']
+    assert 0 < edge_red < edge_violet < 1
     for el in source.findall('{http://www.w3.org/2000/svg}path'):
         contours = []
         for path in parse_path(el.attrib['d']).continuous_subpaths():
@@ -64,31 +69,41 @@ def logo_regions():
                     points.append((pt.real * scale, pt.imag * scale))
             contours.append(points)
         section = m.CrossSection(contours, m.FillRule.EvenOdd)
-        if section.area() >= .02:
-            sections.append((section, el.attrib['fill'].startswith('url')))
-    navy = m.CrossSection.batch_boolean([s for s, gradient in sections if not gradient], m.OpType.Add)
-    stars = m.CrossSection.batch_boolean([s for s, gradient in sections if gradient], m.OpType.Add)
-    unsplit_outline = navy + stars
-    # Quantize the source's diagonal gradient to three real filament colors.
-    # Dark gradient blue shares the navy text filament to fit one four-slot AMS.
-    p0 = np.array([50.7131, 16.4763]) * scale
-    direction = np.array([158.089 - 50.7131, 116.656 - 16.4763]) * scale
-    perpendicular = np.array([-direction[1], direction[0]])
-    perpendicular *= 500 / np.linalg.norm(perpendicular)
-    def band(low, high):
-        a, b = p0 + low * direction, p0 + high * direction
-        return m.CrossSection([[a - perpendicular, b - perpendicular, b + perpendicular, a + perpendicular]], m.FillRule.EvenOdd)
-    red = stars ^ band(-5, .18)
-    cyan = stars ^ band(.38, .70)
-    navy += stars - red - cyan
-    all_logo = navy + cyan + red
-    xmin, ymin, xmax, ymax = all_logo.bounds()
+        if section.area() < .02:
+            continue
+        sections.append(section)
+        fill = el.attrib['fill']
+        assert fill.startswith('url(#') and fill.endswith(')'), 'Every logo path must use its SVG gradient'
+        gradient = gradients[fill[5:-1]]
+        assert gradient.attrib['gradientUnits'] == 'userSpaceOnUse'
+        assert 'gradientTransform' not in gradient.attrib
+        # Preserve each source path's gradient vector. The wordmark and stars
+        # have separate coordinate systems. Re-map their colors to the user's
+        # requested red -> violet -> blue three-band palette; no cyan return.
+        p0 = np.array([float(gradient.attrib[k]) for k in ('x1', 'y1')]) * scale
+        p1 = np.array([float(gradient.attrib[k]) for k in ('x2', 'y2')]) * scale
+        direction = p1 - p0
+        perpendicular = np.array([-direction[1], direction[0]])
+        perpendicular *= 500 / np.linalg.norm(perpendicular)
+        def band(low, high):
+            a, b = p0 + low * direction, p0 + high * direction
+            return m.CrossSection([[a-perpendicular, b-perpendicular, b+perpendicular, a+perpendicular]], m.FillRule.EvenOdd)
+        red = section ^ band(-5, edge_red)
+        violet = section ^ band(edge_red, edge_violet)
+        blue = section ^ band(edge_violet, 5)
+        red_parts.append(red)
+        violet_parts.append(violet)
+        blue_parts.append(blue)
+    combine = lambda parts: m.CrossSection.batch_boolean(parts, m.OpType.Add)
+    blue, violet, red = map(combine, (blue_parts, violet_parts, red_parts))
+    unsplit_outline = combine(sections)
+    xmin, ymin, xmax, ymax = unsplit_outline.bounds()
     # Local print Y maps downwards on the assembled face; the artwork is
     # correctly readable from the outward (bed-contact) face after assembly.
     target_x = 75 - P['panel_left_mm']
     target_y = P['panel_bottom_mm'] + PH - 75
     delta = (target_x - (xmin + xmax) / 2, target_y - (ymin + ymax) / 2)
-    return [s.translate(delta) for s in (navy, cyan, red, unsplit_outline)]
+    return [s.translate(delta) for s in (blue, violet, red, unsplit_outline)]
 
 
 def panel_parts():
@@ -213,6 +228,17 @@ def main():
         assert obj.is_watertight and obj.is_winding_consistent and obj.volume > 0
         obj.export(OUT/'stl'/f'02_panel_{i+1}_{P["colors"][i]["name"]}.stl')
         report['parts'][f'panel_slot_{i+1}'] = {'watertight': True, 'volume_mm3': float(obj.volume), 'components': len(obj.split())}
+    # Fail if the wordmark accidentally regresses to a single solid color.
+    # The lower 40 mm of the artwork contain only text, below both stars.
+    regions = logo_regions()
+    logo_ymax = regions[3].bounds()[3]
+    wordmark = m.CrossSection.square((PW, 40)).translate((0, logo_ymax-40))
+    wordmark_areas = [float((s ^ wordmark).area()) for s in regions[:3]]
+    assert all(area > 5 for area in wordmark_areas), wordmark_areas
+    report['logo_colors'] = {'source': P['logo_source'], 'gradient_band_edges': P['gradient_band_edges'],
+                             'sequence': ['Rot', 'Violett', 'Blau'],
+                             'lower_wordmark_area_mm2_by_slot_2_3_4': wordmark_areas,
+                             'continuous_gradient': False}
     # Coplanar interfaces between materials can leave sub-micron Boolean
     # slivers. Validate their coverage against the analytic panel envelope;
     # export the separately watertight material volumes for the slicer.

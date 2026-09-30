@@ -1,4 +1,4 @@
-# myAI Cube v3.1 — Logo direkt mit dem AMS drucken
+# myAI Cube v3.2 — Logo direkt mit dem AMS drucken
 
 Der Würfel bleibt **150 × 150 × 150 mm einschließlich Füßen** groß. Vier identische, flach gedruckte Leuchtpaneele werden von oben in einen weißen Rahmen eingeschoben. Das mehrfarbige Logo ist bündig in jedes Paneel integriert. Der abnehmbare Deckel schließt die Führungen. Die Logos benötigen keinen Klebstoff.
 
@@ -11,11 +11,15 @@ Der Würfel bleibt **150 × 150 × 150 mm einschließlich Füßen** groß. Vier 
 | Projekt-Filament | PLA-Farbe | Verwendung |
 |---|---|---|
 | 1 | Weiß | Paneel, Rückschicht, Rahmen, Boden, Deckel, Füße |
-| 2 | Dunkelblau | Schrift und dunkle Sternflächen |
-| 3 | Hellblau | Helle Sternflächen |
-| 4 | Rot | Rote Sternfläche |
+| 2 | Blau | Blaue Bereiche in Sternen und Schrift |
+| 3 | Violett | Mittlere Farbstufe in Sternen und Schrift |
+| 4 | Rot | Rote Bereiche in Sternen und Schrift |
 
-Die Konturen stammen aus der unveränderten hellen Logo-SVG. Der ursprüngliche Farbverlauf wird in klar getrennte Farbflächen aufgeteilt; dunkles Sternblau und Schrift teilen sich ein Filament. Es ist eine **druckbare Vierfarben-Annäherung**, keine exakte Wiedergabe des Verlaufs. Eine winzige separate Kontur unterhalb der Düsenauflösung entfällt wie bei v2.
+Die Konturen stammen jetzt aus der unveränderten **dunklen Logo-SVG**: Sie enthält Farbverläufe sowohl in den Sternen als auch in „myAI“. Die zuvor verwendete helle SVG besitzt einfarbig dunkelblaue Schrift. Beide Originaldateien bleiben unverändert.
+
+Die gewünschte Druckfolge ist **Rot → Violett → Blau**. Sterne und Schrift behalten ihre jeweils eigene Verlaufsrichtung aus der SVG; der Generator liest die Gradientenzuordnung jedes Pfads. Die Farbpalette wird für diesen Entwurf bewusst angepasst: Weiß `#FFFFFF`, Blau `#0445C8`, Violett `#8734B8`, Rot `#F23232`. Die Original-SVG enthält zusätzlich hellblaue/cyanfarbene Zwischenstufen, die hier durch die gewünschte dreistufige Folge ersetzt werden. Die Hexwerte dienen der Vorschau und sind keine gemessenen Filamentfarben.
+
+Es ist eine **druckbare Vierfarben-Annäherung mit sichtbaren Farbkanten**, kein stufenloser Verlauf. Entlang jedes originalen Gradientenvektors wird bis t = 0,18 Rot, von t = 0,18 bis 0,50 Violett und danach Blau verwendet; auch innerhalb einzelner Buchstaben entstehen Farbwechsel. Diese Grenzen stehen in `gradient_band_edges` in den CAD-Parametern. Eine winzige separate Kontur unterhalb der Düsenauflösung entfällt wie bei den bisherigen Versionen.
 
 Die Paneele sind **133,4 × 139,4 × 0,8 mm** groß. Außen liegen 0,4 mm tiefe Farbeinlagen und weißer Hintergrund, dahinter eine durchgehende 0,4-mm-Schicht aus Weiß. Das Logo ist auf jeder montierten Würfelseite bei **75 / 75 mm** zentriert. Farbflächen dämpfen das Licht anders als weißes PLA; Farbe und Kontrast müssen mit dem eigenen Filament geprüft werden.
 
@@ -32,9 +36,9 @@ Alle Links führen zu geslicten **Bambu-Studio-Projekten** für P1S, 0,4-mm-Düs
 | [Deckel](../output/multicolor_v3/print/05_lid_P1S.3mf) | 1 | 2 h | 31,66 g |
 | [Vier Füße auf einer Platte](../output/multicolor_v3/print/06_feet_P1S.3mf) | 1 Satz | 15 min | 1,90 g |
 
-¹ Einschließlich Brim, Spülmaterial und Reinigungsturm, soweit vom Slicer erfasst. Lampe ohne Testprobe insgesamt etwa **272 g PLA und 18 h 1 min**. Es werden keine Stützen erzeugt. Jedes Paneel benötigt sechs Farbwechsel. Der Boden druckt mit der flachen Unterseite auf dem Bett; lediglich die kleinen, 4,4 mm breiten Fußaufnahmen werden oben überbrückt. Die Füße drucken mit dem runden Pad auf dem Bett und dem Zapfen nach oben.
+¹ Einschließlich Brim, Spülmaterial und Reinigungsturm, soweit vom Slicer erfasst. Lampe ohne Testprobe insgesamt etwa **272 g PLA und 18 h 2 min**. Es werden keine Stützen erzeugt. Jedes Paneel benötigt sechs Farbwechsel. Der Boden druckt mit der flachen Unterseite auf dem Bett; lediglich die kleinen, 4,4 mm breiten Fußaufnahmen werden oben überbrückt. Die Füße drucken mit dem runden Pad auf dem Bett und dem Zapfen nach oben.
 
-**[Komplettes Druck- und Quellenpaket v3.1 herunterladen](../output/myAI_Cube_150_P1S_AMS_v3_1.zip)**. Das Paket enthält zusätzlich die bisherige einfarbige v2; für diesen Entwurf die Dateien unter `output/multicolor_v3/print/` verwenden. Das ältere v3-Paket bleibt als Archiv erhalten.
+**[Komplettes Druck- und Quellenpaket v3.2 herunterladen](../output/myAI_Cube_150_P1S_AMS_v3_2.zip)**. Das Paket enthält zusätzlich die bisherige einfarbige v2; für diesen Entwurf die Dateien unter `output/multicolor_v3/print/` verwenden. Die älteren v3- und v3.1-Pakete bleiben als Archive erhalten.
 
 1. Die Farbprobe **als Projekt** öffnen. Die vier Projekt-Filamente beim Senden den passenden realen AMS-Fächern zuordnen; die Datei kennt deine geladenen Spulen nicht. Für die weißen Druckprojekte Projekt-Filament 1 dem weißen Fach zuweisen.
 2. Eigenes PLA und Druckplatte prüfen. Voreinstellung: Generic PLA, 220 °C Düse, 55 °C Bett. Bei Profil- oder Materialänderungen neu slicen und die Vorschau prüfen.
@@ -65,7 +69,7 @@ Das CAD prüft zusammenhängende freie Luftwege vom Raum unter der Lampe bis zum
 4. Vier Paneele von oben in die Führungen schieben, bedruckte Bettseite nach außen und Schrift aufrecht. Seitlich sind nominal 0,3 mm Spiel je Kante vorgesehen; durch die Dicke ergibt sich 0,25 mm vorne und 0,35 mm hinten. Paneele nicht gewaltsam einschieben.
 5. Deckel aufsetzen. Seine seitlichen Blenden schließen die oberen Fenster und halten die Paneele in den Führungen. Den Luftspalt hinter der Blende frei lassen. Beim Tragen den Boden unterstützen.
 
-**Rahmen, Boden, Deckel und Füße als Satz aus v3.1 verwenden.** Der frühere geschlossene Boden aus v2/v3 hat keine Lufteinlässe und ist dafür ungeeignet. Bereits gedruckte AMS-Paneele aus v3 können weiterverwendet werden; ihre Geometrie und Druckdatei bleiben identisch. Den ersten Betrieb beaufsichtigen und die Temperatur an LED-Aufnahme, Boden und Deckel über einen längeren Betrieb bis zum stabilen Zustand prüfen. Wärmeverhalten und Passung sind noch nicht praktisch bestätigt.
+**Rahmen, Boden, Deckel und Füße aus v3.1 passen unverändert zu v3.2.** Neu sind die Farbprobe und die Logo-Paneele mit der geänderten Farbaufteilung; ihre Außenmaße und Passungen bleiben gleich. Für die neuen Farben müssen die Paneele neu gedruckt werden. Der frühere geschlossene Boden aus v2/v3 hat keine Lufteinlässe und ist dafür ungeeignet. Den ersten Betrieb beaufsichtigen und die Temperatur an LED-Aufnahme, Boden und Deckel über einen längeren Betrieb bis zum stabilen Zustand prüfen. Wärmeverhalten und Passung sind noch nicht praktisch bestätigt.
 
 ## Quellen und digitale Prüfung
 
@@ -82,7 +86,7 @@ blender -b -t 4 --python scripts/render_multicolor.py
 
 Python-Abhängigkeiten und Bambu-Studio-Einrichtung: [CAD & Validierung](CAD_UND_VALIDIERUNG.md). Verwendet: Bambu Studio 2.8.2.61. Der Slicer erzeugt zuerst eine native Mehrteil-Projektdatei; anschließend werden die vier Teile explizit den Filamenten zugeordnet und regulär geslict. G-Code wird nicht nachbearbeitet.
 
-- [Geometrieprüfung](../output/multicolor_v3/geometry_validation.json): geschlossene Materialvolumen, vollständige Paneelabdeckung, keine relevanten Volumenüberschneidungen, kollisionsfreie Montage und Einschubbewegung, Außenmaße einschließlich Füßen und Logo-Zentrierung. Zusätzlich: freie verbundene Luftwege, geschlossene Deckelfläche und geschlossene frühere Seitenöffnungen. Getrennte Buchstaben/Sternflächen sind absichtlich mehrere Inseln eines Materialteils; die Füße sind vier getrennte Körper auf einer Druckplatte. Boolesche Abweichungen an gemeinsamen Grenzflächen werden mit 0,001 mm³ Toleranz bewertet.
+- [Geometrieprüfung](../output/multicolor_v3/geometry_validation.json): geschlossene Materialvolumen, vollständige Paneelabdeckung, keine relevanten Volumenüberschneidungen, kollisionsfreie Montage und Einschubbewegung, Außenmaße einschließlich Füßen und Logo-Zentrierung. Zusätzlich: alle drei Druckfarben auch im Schriftbereich, freie verbundene Luftwege, geschlossene Deckelfläche und geschlossene frühere Seitenöffnungen. Getrennte Buchstaben/Sternflächen sind absichtlich mehrere Inseln eines Materialteils; die Füße sind vier getrennte Körper auf einer Druckplatte. Boolesche Abweichungen an gemeinsamen Grenzflächen werden mit 0,001 mm³ Toleranz bewertet.
 - [Druckprüfung](../output/multicolor_v3/print_validation.json): geschlossene exportierte STL-Netze, vier korrekte Materialzuordnungen ohne Slicer-Netzreparatur, G-Code-Prüfsummen, Bettgrenzen einschließlich Brim/Reinigungsturm, keine Stützen oder Slicer-Druckwarnungen. Farbausgabe bei Z = 0,2/0,4 mm, ausschließlich Weiß im Paneel bei Z = 0,6/0,8 mm.
 
 **Stand: digital geprüfter und geslicter Prototyp, noch kein physisch getestetes Modell.** Passung, Verzug, Lichtdurchlässigkeit, Farbsauberkeit und Dauerbetrieb bleiben durch Probedruck und Betrieb zu prüfen.
