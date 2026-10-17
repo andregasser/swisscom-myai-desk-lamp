@@ -2,7 +2,7 @@
 
 Eine kleine Würfellampe zum Selberdrucken: weißes PLA, sanftes Licht und das myAI-Logo mittig auf allen vier Seiten. Entwickelt für den **Bambu Lab P1S** und das **LED Lamp Kit 001 / MH001**.
 
-![myAI Cube v4.1: durchgehend plane Seiten mit integrierten farbigen Logos](output/multicolor_v4_1/preview/assembled.png)
+![myAI Cube v4.2: durchgehend plane Seiten mit integrierten farbigen Logos](output/multicolor_v4_2/preview/assembled.png)
 
 *Technische Farbansicht der CAD-Geometrie: Die Logos zeigen die nominellen sRGB-Farben ohne Aufhellung durch Beleuchtung. Keine Vorhersage realer Filamentfarben oder Lichtwirkung.*
 
@@ -10,19 +10,19 @@ Eine kleine Würfellampe zum Selberdrucken: weißes PLA, sanftes Licht und das m
 
 Ein **15 × 15 × 15 cm** großer Würfel mit **0,6 mm dünnen Leuchtflächen**, integrierten Logos, Boden mit LED-Aufnahme und abnehmbarem Deckel. Für das Logo gibt es eine farbige AMS-Variante und eine einfarbige Alternative.
 
-## Plane Seiten mit AMS — v4.1
+## Plane Seiten mit AMS — v4.2
 
 **Vier vollflächige Seitenplatten, außen ohne Vertiefungen oder vorstehende Rahmen.** Die Befestigung liegt innen; nur schmale Montagefugen bleiben an den Würfelkanten. Die 0,6-mm-Leuchtflächen und Logos sind bündig. Innenliegende Führungsleisten erlauben das Einschieben von oben.
 
-**Für ein AMS mit vier Farben:** Weiß, Blau, Violett und Rot. Sterne und Schriftzug „myAI“ folgen Rot → Violett → Blau als feste Farbstufen. Sechs Farbwechsel pro Platte. [Farbvergleich mit den Original-SVGs](output/multicolor_v4_1/preview/color_reference.png).
+**Für ein AMS mit vier Farben:** Weiß, Blau, Violett und Rot. Sterne und Schriftzug „myAI“ folgen Rot → Violett → Blau als feste Farbstufen. Vier Farbwechsel pro Platte. [Farbvergleich mit den Original-SVGs](output/multicolor_v4_2/preview/color_reference.png).
 
 Luft und Kabel führen unter dem Boden hindurch. Vier 4-mm-Druckfüße schaffen Abstand; die Gesamthöhe bleibt **150 mm einschließlich Füßen**. Die obere Entlüftung liegt in der 1,0-mm-Deckelfuge auf der Oberseite. Die Füße werden eingesteckt und angeklebt; die Seitenplatten kommen ohne Klebstoff aus.
 
-[Druckdateien & Montage v4.1](docs/MEHRFARBIG_V4.md) · [Farbprobe](output/multicolor_v4_1/print/01_color_test_P1S.3mf) · [Führungs-Passprobe](output/multicolor_v4_1/print/07_fit_P1S.3mf) · [Komplettpaket v4.1](output/myAI_Cube_150_P1S_AMS_v4_1.zip)
+[Druckdateien & Montage v4.2](docs/MEHRFARBIG_V4.md) · [Farbprobe](output/multicolor_v4_2/print/01_color_test_P1S.3mf) · [Führungs-Passprobe](output/multicolor_v4_2/print/07_fit_P1S.3mf) · [Komplettpaket v4.2](output/myAI_Cube_150_P1S_AMS_v4_2.zip)
 
-Acht vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. Lampe ohne Proben laut Slicer etwa **247 g PLA und 16 h 34 min**. [Aktueller Farbtest: 0,2 gegen 0,4 mm Farbeinlage](docs/LICHTVERGLEICH.md). Die neue Führung separat mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
+Acht vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. Lampe ohne Proben laut Slicer etwa **241 g PLA und 16 h 10 min**. Der [Schichtvergleich](docs/LICHTVERGLEICH.md) ist abgeschlossen: **0,2 mm Farbe + 0,4 mm Weiß** für alle drei Logofarben. Die neue Führung separat mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
 
-**Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Die komplette Montage, das AMS-Logo und Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
+**Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
 ## Einfarbige Variante v2 drucken
 

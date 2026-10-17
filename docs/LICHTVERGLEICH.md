@@ -1,8 +1,10 @@
-# Aktueller Test: Farbeinlagen hinterleuchten
+# Abgeschlossener Schichtvergleich: Farbeinlagen hinterleuchten
 
-**Für den nächsten Farbtest nur diese Datei drucken:** [08_transmission_test_P1S.3mf](../output/multicolor_v4_1/print/08_transmission_test_P1S.3mf). Eine zusammenhängende Vergleichskarte, 142 × 80 mm, etwa **1 h 10 min und 16,64 g PLA** einschließlich Spülmaterial und Reinigungsturm. Der separate Reinigungsturm dient dem Farbwechsel und wird nach dem Druck entsorgt.
+**Ergebnis:** Der Benutzer wählt für Rot, Violett und Blau **0,2 mm Farbe + 0,4 mm Weiß**. Violett sieht damit deutlich besser aus. Dieser Aufbau ist seit v4.2 in Logo-Probe und Seitenplatte umgesetzt. Ein weiterer Druck dieser Vergleichskarte ist nicht erforderlich.
 
-![Farbseite der tatsächlichen CAD-Geometrie](../output/multicolor_v4_1/preview/transmission_test.png)
+**Vergleichskarte zum späteren Nachtesten:** [08_transmission_test_P1S.3mf](../output/multicolor_v4_2/print/08_transmission_test_P1S.3mf). Eine zusammenhängende Vergleichskarte, 142 × 80 mm, etwa **1 h 10 min und 16,64 g PLA** einschließlich Spülmaterial und Reinigungsturm. Der separate Reinigungsturm dient dem Farbwechsel und wird nach dem Druck entsorgt.
+
+![Farbseite der tatsächlichen CAD-Geometrie](../output/multicolor_v4_2/preview/transmission_test.png)
 
 *Schemafarben zur Orientierung, keine Simulation realer Filamente oder der Hinterleuchtung. Die rein weißen Referenzfelder rechts sind auf der Vorderseite farblich nicht vom Rahmen zu unterscheiden; auf der Rückseite erkennt man ihre dünneren Bereiche.*
 
@@ -41,9 +43,9 @@ Der Test vergleicht zwei komplette Schichtaufbauten bei gleicher Gesamtdicke. Er
 
 ## Digitaler Prüfstand
 
-Die CAD-Prüfung bestätigt geschlossene Materialvolumen, eine zusammenhängende Karte, überschneidungsfreie Farben und den Materialaufbau in allen acht Feldern. Die G-Code-Prüfung kontrolliert je Feld die tatsächlich extrudierten Filamente auf 0,2 / 0,4 / 0,6 mm Höhe, zusätzlich AMS-Zuordnung, Bettgrenzen, Stützfreiheit und Prüfsummen. Ein physischer Druck dieser Karte steht aus.
+Die CAD-Prüfung bestätigt geschlossene Materialvolumen, eine zusammenhängende Karte, überschneidungsfreie Farben und den Materialaufbau in allen acht Feldern. Die G-Code-Prüfung kontrolliert je Feld die tatsächlich extrudierten Filamente auf 0,2 / 0,4 / 0,6 mm Höhe, zusätzlich AMS-Zuordnung, Bettgrenzen, Stützfreiheit und Prüfsummen. Die Karte wurde vom Benutzer beurteilt: 0,2 mm Farbe wird für alle drei Farben gewählt, mit deutlich besserer Wirkung von Violett. Die digitale Prüfung ist von dieser subjektiven Praxisbewertung zu unterscheiden.
 
-Quellen: [Generator](../cad/build_transmission_test.py), [Geometrieprüfung](../output/multicolor_v4_1/transmission_test/geometry_validation.json), [Druckprüfung](../output/multicolor_v4_1/print_validation.json).
+Quellen: [Generator](../cad/build_transmission_test.py), [Geometrieprüfung](../output/multicolor_v4_2/transmission_test/geometry_validation.json), [Druckprüfung](../output/multicolor_v4_2/print_validation.json).
 
 ```sh
 .venv/bin/python cad/build_transmission_test.py

@@ -61,7 +61,7 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert config['enable_support'] == '0'
         assert config['sparse_infill_density'] == '100%'
         assert config['wall_generator'] == 'arachne'
-        if transmission:
+        if multi:
             assert config['nozzle_temperature'][2] == '210'
             assert config['nozzle_temperature_initial_layer'][2] == '210'
         if multi:
@@ -113,8 +113,9 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
                             window_layers[index][round(z,3)].add(tool+1)
         assert len(points) > 100
         if multi:
-            assert layers[.2] == layers[.4] == {1, 2, 3, 4}, layers
-            assert all(slots == {1} for z, slots in layers.items() if z > .4), layers
+            color_depth = .4 if transmission else P['color_depth_mm']
+            assert all(slots == ({1,2,3,4} if z <= color_depth+.001 else {1})
+                       for z,slots in layers.items()), layers
             height = card['size_mm'][2] if transmission else P['rail_anchor_mm'] + 2 if file.name.startswith('02_') else P['panel_thickness_mm']
             count = round(height / .2)
             assert set(layers) == {round(i*.2, 1) for i in range(1, count+1)}, layers
@@ -127,7 +128,7 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert result['return_code'] == 0
         plate = result['sliced_plates'][0]
         assert not plate['warning_message']
-        assert plate['filament_change_times'] == (6 if multi else 0)
+        assert plate['filament_change_times'] == (6 if transmission else 4 if multi else 0)
         report['plates'][file.name] = {
             'sliced_successfully': True, 'bambu_studio': '02.08.02.61',
             'estimated_minutes': round(plate['total_predication'] / 60, 1),

@@ -1,6 +1,6 @@
 {
-  "version": "v4.1-AMS",
-  "output_folder": "multicolor_v4_1",
+  "version": "v4.2-AMS",
+  "output_folder": "multicolor_v4_2",
   "logo_source": "Mode=Dark, Type=Stacked.svg",
   "gradient_band_edges": [0.18, 0.50],
   "foot_height_mm": 4.0,
@@ -23,7 +23,7 @@
   "panel_width_mm": 149.6,
   "panel_height_mm": 146.0,
   "panel_thickness_mm": 0.6,
-  "color_depth_mm": 0.4,
+  "color_depth_mm": 0.2,
   "panel_left_mm": 0.2,
   "panel_bottom_mm": 4.0,
   "panel_front_depth_mm": 0.0,

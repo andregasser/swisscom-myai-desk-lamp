@@ -1,0 +1,96 @@
+{
+  "error_string": "Success.",
+  "export_time": 37,
+  "layer_height": 0.20000000298023224,
+  "plate_index": 0,
+  "prepare_time": 23,
+  "return_code": 0,
+  "sliced_plates": [
+    {
+      "feature_type_times": {
+        "Bottom surface": 1191.1654052734375,
+        "Brim": 193.2964630126953,
+        "Custom": 380.5034484863281,
+        "Flush": 532.610595703125,
+        "Inner wall": 207.6119842529297,
+        "Internal solid infill": 840.3541870117188,
+        "Outer wall": 258.864501953125,
+        "Prime tower": 190.33653259277344,
+        "Sparse infill": 77.32191467285156,
+        "Top surface": 1474.645751953125,
+        "Travel": 143.1308135986328,
+        "Undefined": 127.45255279541016
+      },
+      "filament_change_times": 4,
+      "filaments": [
+        {
+          "filament_id": "GFL99",
+          "id": 1,
+          "main_used_g": 17.525117874145508,
+          "total_used_g": 19.32614517211914
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 2,
+          "main_used_g": 0.8426647186279297,
+          "total_used_g": 0.975344717502594
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 3,
+          "main_used_g": 0.18893593549728394,
+          "total_used_g": 0.8388804197311401
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 4,
+          "main_used_g": 0.08168836683034897,
+          "total_used_g": 0.7316329479217529
+        }
+      ],
+      "generate_support_material_time": 2,
+      "id": 1,
+      "infill_time": 90,
+      "layer_filament_change": 0,
+      "main_predication": 4357.3544921875,
+      "make_perimeters_time": 62,
+      "obj_cached_cnt": 0,
+      "objects": [
+        {
+          "bbox": {
+            "depth": 146.0,
+            "height": 2.799999952316284,
+            "width": 149.60000610351562,
+            "x": 35.0,
+            "y": 40.0,
+            "z": -4.901161143600063e-10
+          },
+          "id": 5,
+          "name": "Logo-Paneel \u2014 4x drucken",
+          "triangle_count": 8304
+        }
+      ],
+      "sliced_time": 208,
+      "sliced_time_with_cache": 32,
+      "total_predication": 5474.09619140625,
+      "triangle_count": 8304,
+      "warning_message": ""
+    }
+  ],
+  "sparse_infill_density": 100.0,
+  "upward_compatible_machine": [
+    "Bambu Lab P1P 0.4 nozzle",
+    "Bambu Lab X1 0.4 nozzle",
+    "Bambu Lab X1 Carbon 0.4 nozzle",
+    "Bambu Lab X1E 0.4 nozzle",
+    "Bambu Lab A1 0.4 nozzle",
+    "Bambu Lab H2D 0.4 nozzle",
+    "Bambu Lab H2D Pro 0.4 nozzle",
+    "Bambu Lab H2S 0.4 nozzle",
+    "Bambu Lab P2S 0.4 nozzle",
+    "Bambu Lab H2C 0.4 nozzle",
+    "Bambu Lab X2D 0.4 nozzle",
+    "Bambu Lab A2L 0.4 nozzle"
+  ],
+  "wall_loops": 2
+}

@@ -25,6 +25,11 @@ for color in P['colors']:
     data=json.loads((ROOT/'output/profiles/pla_white.json').read_text())
     data.update({'name':'myAI PLA '+color['name'], 'from':'User',
                  'filament_settings_id':['myAI PLA '+color['name']], 'filament_colour':[color['hex']]})
+    if color['slot'] == 3:
+        # Use the same ecoPLA Purple profile as the successful comparison card.
+        data.update({'name':'myAI ecoPLA Purple 210C', 'filament_settings_id':['myAI ecoPLA Purple 210C']})
+        for key in ('nozzle_temperature', 'nozzle_temperature_initial_layer'):
+            data[key]=['210']*len(data[key])
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
 for plate in args.plates:
     multicolor=plate in ('01_color_test','02_panel','08_transmission_test')
@@ -32,14 +37,6 @@ for plate in args.plates:
     scratch.mkdir(parents=True,exist_ok=True)
     profile=OUT/'profiles'/('process.json' if multicolor else 'process_white.json')
     filament_paths=[OUT/'profiles'/f'filament_{i}.json' for i in range(1,5 if multicolor else 2)]
-    if plate == '08_transmission_test':
-        # The user identified their purple as ecoPLA, rated at 195–215 C.
-        data=json.loads(filament_paths[2].read_text())
-        data.update({'name':'myAI ecoPLA Purple 210C', 'filament_settings_id':['myAI ecoPLA Purple 210C']})
-        for key in ('nozzle_temperature', 'nozzle_temperature_initial_layer'):
-            data[key]=['210']*len(data[key])
-        filament_paths[2]=OUT/'profiles/filament_3_transmission_test.json'
-        filament_paths[2].write_text(json.dumps(data,indent=2)+'\n')
     filaments=';'.join(map(str,filament_paths))
     common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',
              '--load-settings',f'{ROOT/"output/profiles/p1s_0.4.json"};{profile}',
