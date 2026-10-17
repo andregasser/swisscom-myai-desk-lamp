@@ -325,6 +325,215 @@
       "supports_generated": false,
       "gcode_md5_valid": true,
       "sha256": "6c124b6e5b62610d4c5adb6f58ccfb4ddbc94ac2d56caa3fc04cdb89b43495be"
+    },
+    "08_transmission_test_P1S.3mf": {
+      "sliced_successfully": true,
+      "bambu_studio": "02.08.02.61",
+      "estimated_minutes": 70.2,
+      "estimated_filament_g_including_flush_and_tower": 16.64,
+      "color_changes": 6,
+      "print_extrusion_bounds_mm": [
+        [
+          26.422,
+          34.422,
+          0.2
+        ],
+        [
+          246.47,
+          208.807,
+          1.0
+        ]
+      ],
+      "model_layer_slots": {
+        "0.2": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "0.4": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "0.6": [
+          1
+        ],
+        "0.8": [
+          1
+        ],
+        "1.0": [
+          1
+        ]
+      },
+      "slicer_print_warnings": "",
+      "supports_generated": false,
+      "gcode_md5_valid": true,
+      "sha256": "24bfbfec0248d62e617b46b8c26f371a8a042c615f24f2730faf1148d0b4dedf",
+      "all_eight_window_layer_assignments_verified": true,
+      "window_layer_slots": [
+        {
+          "x_mm": 23.0,
+          "y_mm": 8.0,
+          "size_mm": 24.0,
+          "slot": 4,
+          "row_color_depth_mm": 0.2,
+          "color_depth_mm": 0.2,
+          "white_depth_mm": 0.39999999999999997,
+          "sliced_layers": {
+            "0.2": [
+              4
+            ],
+            "0.4": [
+              1
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 53.0,
+          "y_mm": 8.0,
+          "size_mm": 24.0,
+          "slot": 3,
+          "row_color_depth_mm": 0.2,
+          "color_depth_mm": 0.2,
+          "white_depth_mm": 0.39999999999999997,
+          "sliced_layers": {
+            "0.2": [
+              3
+            ],
+            "0.4": [
+              1
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 83.0,
+          "y_mm": 8.0,
+          "size_mm": 24.0,
+          "slot": 2,
+          "row_color_depth_mm": 0.2,
+          "color_depth_mm": 0.2,
+          "white_depth_mm": 0.39999999999999997,
+          "sliced_layers": {
+            "0.2": [
+              2
+            ],
+            "0.4": [
+              1
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 113.0,
+          "y_mm": 8.0,
+          "size_mm": 24.0,
+          "slot": 1,
+          "row_color_depth_mm": 0.2,
+          "color_depth_mm": 0,
+          "white_depth_mm": 0.6,
+          "sliced_layers": {
+            "0.2": [
+              1
+            ],
+            "0.4": [
+              1
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 23.0,
+          "y_mm": 44.0,
+          "size_mm": 24.0,
+          "slot": 4,
+          "row_color_depth_mm": 0.4,
+          "color_depth_mm": 0.4,
+          "white_depth_mm": 0.19999999999999996,
+          "sliced_layers": {
+            "0.2": [
+              4
+            ],
+            "0.4": [
+              4
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 53.0,
+          "y_mm": 44.0,
+          "size_mm": 24.0,
+          "slot": 3,
+          "row_color_depth_mm": 0.4,
+          "color_depth_mm": 0.4,
+          "white_depth_mm": 0.19999999999999996,
+          "sliced_layers": {
+            "0.2": [
+              3
+            ],
+            "0.4": [
+              3
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 83.0,
+          "y_mm": 44.0,
+          "size_mm": 24.0,
+          "slot": 2,
+          "row_color_depth_mm": 0.4,
+          "color_depth_mm": 0.4,
+          "white_depth_mm": 0.19999999999999996,
+          "sliced_layers": {
+            "0.2": [
+              2
+            ],
+            "0.4": [
+              2
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        },
+        {
+          "x_mm": 113.0,
+          "y_mm": 44.0,
+          "size_mm": 24.0,
+          "slot": 1,
+          "row_color_depth_mm": 0.4,
+          "color_depth_mm": 0,
+          "white_depth_mm": 0.6,
+          "sliced_layers": {
+            "0.2": [
+              1
+            ],
+            "0.4": [
+              1
+            ],
+            "0.6": [
+              1
+            ]
+          }
+        }
+      ]
     }
   }
 }

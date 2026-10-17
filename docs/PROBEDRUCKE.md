@@ -19,9 +19,15 @@ Die v2-Testplatte und die archivierten v2-Druckdateien bleiben unverändert. Die
 - Die inneren Führungen behalten Position, Profil und 2,8 mm Gesamttiefe. Ein schmaler innerer Hals verbindet sie mit der dünneren Leuchtfläche. Rahmen, Boden, Deckel und Füße bleiben gegenüber v4 geometrisch unverändert.
 - Durch die dünnere Seitenplatte wächst die obere Montagefuge von 0,8 auf 1,0 mm. Die äußeren Seitenflächen bleiben plan; das Gesamtmaß bleibt 150 × 150 × 150 mm.
 
+## Weitere Rückmeldung: AMS und Violett
+
+Der Benutzer meldet den AMS-Druck als technisch in Ordnung; die harten drei Farbbänder gefallen ihm nicht. Ein gerasterter Verlauf liegt als separater Gestaltungsvorschlag vor. Das verwendete **3DJake ecoPLA Purple** wirkt ohne Hinterleuchtung zu hell für den Übergang und mit LED dahinter fast schwarz. Das spricht für geringe Lichtdurchlässigkeit im bisherigen Aufbau, ist aber noch keine isolierte Materialmessung. Eine Kaufentscheidung nur nach dem Oberflächenfarbton genügt deshalb nicht.
+
+Als nächstes ist der [Schichtvergleich mit 0,2 und 0,4 mm Farbe](LICHTVERGLEICH.md) vorgesehen. Beide Varianten besitzen insgesamt 0,6 mm Materialstärke. Ergebnis ausstehend.
+
 ## Noch zu prüfen
 
-1. **Neue AMS-Farbprobe:** Helligkeit, Logokontrast und sauberes Weiß mit der 0,2-mm-Rückschicht, ausgeschaltet und hinterleuchtet.
+1. **Aktuell: Schichtvergleich 08:** Entscheiden, ob die dünnere Farbeinlage bei Violett hilft. Danach den gewählten Aufbau und gegebenenfalls das Raster am Logo prüfen.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.

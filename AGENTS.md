@@ -24,6 +24,7 @@ Diese Hinweise gelten für das gesamte Repository. Konkrete Anforderungen der ak
 | P1S-, Prozess- und Filamentprofile ableiten | `scripts/prepare_profiles.py` |
 | Druckprojekte slicen und prüfen | `scripts/slice.py`, `scripts/validate_prints.py` |
 | AMS-Projekte slicen und prüfen | `scripts/slice_multicolor.py`, `scripts/validate_multicolor.py` |
+| Vergleich Farbe/Weiß | `cad/build_transmission_test.py`, `scripts/render_transmission_test.py`, `docs/LICHTVERGLEICH.md` |
 | Modellansichten und Druckpaket erzeugen | `scripts/render.py`, `scripts/package.py` |
 | Kurzer Projekteinstieg | `README.md` |
 | Aufbau, Montage und Prüfdetails | `docs/PROJEKTDETAILS.md`, `docs/DRUCK_UND_MONTAGE.md`, `docs/CAD_UND_VALIDIERUNG.md` |
@@ -51,7 +52,7 @@ Für Slicing eine lokale Bambu-Studio-Installation und deren offizielle Ressourc
 
 `--plates` entsprechend den tatsächlich betroffenen Platten wählen; ohne diese Option werden alle vier geslict. Profiländerungen erfordern das erneute Slicen aller betroffenen Druckprojekte. Nach Geometrieänderungen sind die bisherigen geslicten Dateien nicht automatisch aktuell.
 
-Für v4 stattdessen `cad/build_multicolor.py`, `scripts/slice_multicolor.py` (sieben Platten einschließlich Fußsatz und Führungs-Passprobe) und `scripts/validate_multicolor.py` verwenden. `output_folder` in den AMS-Parametern wählt aktuell `output/multicolor_v4_1/`. V3-/V4-Ausgaben und frühere ZIPs unverändert erhalten. V4 verwendet Funktionen aus `cad/build.py` und das gemeinsame P1S-Profil; Änderungen an gemeinsamen Quellen auf die betroffenen Varianten prüfen. Die Farbvolumen bleiben Teile eines gemeinsamen Objekts mit vier expliziten Filamentzuordnungen. Keine fremden Farben in die weißen Leuchtflächen spülen. Die Führungs-Passprobe wird direkt aus den echten Rahmen-/Paneelgeometrien ausgeschnitten.
+Für v4 stattdessen `cad/build_multicolor.py`, `scripts/slice_multicolor.py` (acht Platten einschließlich Fußsatz, Führungs-Passprobe und Schichtvergleich) und `scripts/validate_multicolor.py` verwenden. `output_folder` in den AMS-Parametern wählt aktuell `output/multicolor_v4_1/`. Die zusätzliche Vergleichskarte 08 zuvor mit `cad/build_transmission_test.py` erzeugen. Sie verwendet für ecoPLA Purple 210 °C; die übrigen Platten behalten ihre Profile. V3-/V4-Ausgaben und frühere ZIPs unverändert erhalten. V4 verwendet Funktionen aus `cad/build.py` und das gemeinsame P1S-Profil; Änderungen an gemeinsamen Quellen auf die betroffenen Varianten prüfen. Die Farbvolumen bleiben Teile eines gemeinsamen Objekts mit vier expliziten Filamentzuordnungen. Keine fremden Farben in die weißen Leuchtflächen spülen. Die Führungs-Passprobe wird direkt aus den echten Rahmen-/Paneelgeometrien ausgeschnitten.
 
 ## Prüfen und ausliefern
 

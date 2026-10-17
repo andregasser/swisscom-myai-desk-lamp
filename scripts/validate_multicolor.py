@@ -12,10 +12,26 @@ import trimesh
 ROOT = Path(__file__).resolve().parents[1]
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
 OUT = ROOT / 'output' / P['output_folder']
+
+
+def crosses_window(start, end, xmin, ymin, xmax, ymax):
+    """Clip an extrusion segment; long white infill can cross with both ends outside."""
+    lo, hi = 0., 1.
+    for a, b, low, high in zip(start, end, (xmin,ymin), (xmax,ymax)):
+        delta=b-a
+        if abs(delta) < 1e-9:
+            if not low < a < high:
+                return False
+        else:
+            t0,t1=sorted(((low-a)/delta,(high-a)/delta))
+            lo,hi=max(lo,t0),min(hi,t1)
+    return (hi-lo)*np.linalg.norm(np.subtract(end,start)) > .2
+
+
 report = {'physical_print_verified': False, 'stl': {}, 'plates': {}}
 assert len(list((OUT / 'stl').glob('*.stl'))) == 10
 assert {p.stem for p in (OUT / 'print').glob('*.3mf')} == {
-    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S'}
+    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S', '08_transmission_test_P1S'}
 for file in sorted((OUT / 'stl').glob('*.stl')):
     mesh = trimesh.load_mesh(file)
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0, file
@@ -25,7 +41,16 @@ for file in sorted((OUT / 'stl').glob('*.stl')):
                                'components': len(mesh.split())}
 
 for file in sorted((OUT / 'print').glob('*.3mf')):
-    multi = file.name.startswith(('01_', '02_'))
+    multi = file.name.startswith(('01_', '02_', '08_'))
+    transmission = file.name.startswith('08_')
+    window_layers = defaultdict(lambda: defaultdict(set))
+    if transmission:
+        card = json.loads((OUT/'transmission_test/geometry_validation.json').read_text())
+        test_meshes=list((OUT/'transmission_test/stl').glob('*.stl'))
+        assert {p.name for p in test_meshes} == {f'slot_{i}.stl' for i in range(1,5)}
+        for stl in test_meshes:
+            mesh=trimesh.load_mesh(stl)
+            assert mesh.is_watertight and mesh.is_winding_consistent
     with zipfile.ZipFile(file) as archive:
         assert archive.testzip() is None
         config = json.loads(archive.read('Metadata/project_settings.config'))
@@ -36,6 +61,9 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert config['enable_support'] == '0'
         assert config['sparse_infill_density'] == '100%'
         assert config['wall_generator'] == 'arachne'
+        if transmission:
+            assert config['nozzle_temperature'][2] == '210'
+            assert config['nozzle_temperature_initial_layer'][2] == '210'
         if multi:
             assert config['filament_colour'] == [c['hex'] for c in P['colors']]
             assert config['enable_prime_tower'] == '1'
@@ -68,6 +96,7 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             if not re.match(r'^G[0123] ', line):
                 continue
             fields = {k: float(v) for k, v in re.findall(r'\b([XYZE])(-?\d*\.?\d+)', line)}
+            previous_xy=(x,y)
             x, y, z = fields.get('X', x), fields.get('Y', y), fields.get('Z', z)
             if feature == 'Custom' or changing or fields.get('E', 0) <= 0 or not ('X' in fields or 'Y' in fields):
                 continue
@@ -76,13 +105,24 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             points.append((x, y, z))
             if feature not in ('Prime tower', 'Brim'):
                 layers[round(z, 3)].add(tool + 1)
+                if transmission:
+                    for index, window in enumerate(card['windows']):
+                        wx=window['x_mm']+card['print_offset_mm'][0]
+                        wy=window['y_mm']+card['print_offset_mm'][1]
+                        if crosses_window(previous_xy,(x,y),wx+2,wy+2,wx+22,wy+22):
+                            window_layers[index][round(z,3)].add(tool+1)
         assert len(points) > 100
         if multi:
             assert layers[.2] == layers[.4] == {1, 2, 3, 4}, layers
             assert all(slots == {1} for z, slots in layers.items() if z > .4), layers
-            height = P['rail_anchor_mm'] + 2 if file.name.startswith('02_') else P['panel_thickness_mm']
+            height = card['size_mm'][2] if transmission else P['rail_anchor_mm'] + 2 if file.name.startswith('02_') else P['panel_thickness_mm']
             count = round(height / .2)
             assert set(layers) == {round(i*.2, 1) for i in range(1, count+1)}, layers
+        if transmission:
+            for index, window in enumerate(card['windows']):
+                expected={z: {window['slot'] if z <= window['color_depth_mm']+.001 else 1}
+                          for z in (.2,.4,.6)}
+                assert dict(window_layers[index]) == expected, (index,window_layers[index],expected)
         result = json.loads(file.with_name(file.stem.replace('_P1S', '_slicer_result') + '.json').read_text())
         assert result['return_code'] == 0
         plate = result['sliced_plates'][0]
@@ -98,5 +138,10 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             'slicer_print_warnings': plate['warning_message'], 'supports_generated': False,
             'gcode_md5_valid': True, 'sha256': hashlib.sha256(file.read_bytes()).hexdigest(),
         }
+        if transmission:
+            report['plates'][file.name]['all_eight_window_layer_assignments_verified'] = True
+            report['plates'][file.name]['window_layer_slots'] = [
+                {**window, 'sliced_layers': {str(z): sorted(slots) for z,slots in window_layers[i].items()}}
+                for i,window in enumerate(card['windows'])]
 (OUT / 'print_validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report['plates'], indent=2))

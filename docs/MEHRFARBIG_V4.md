@@ -34,9 +34,11 @@ Sterne und Schrift folgen **Rot → Violett → Blau**. Konturen und Verlaufsric
 
 ## Druckdateien
 
+**Aktueller nächster Farbtest:** [Schichtvergleich 08 mit Anleitung](LICHTVERGLEICH.md). Er untersucht das hinterleuchtet sehr dunkle ecoPLA Purple bei 0,2 und 0,4 mm Farbeinlage. Dafür ist kein weiterer Druck der bisherigen Logo-Farbprobe nötig.
+
 **[Komplettes Druck- und Quellenpaket v4.1](../output/myAI_Cube_150_P1S_AMS_v4_1.zip)**. Im Paket die aktuellen Projekte unter `output/multicolor_v4_1/print/` verwenden; ältere Varianten liegen separat bei.
 
-Alle Projekte sind für **P1S · 0,4-mm-Düse · PLA · 0,20-mm-Schichten · strukturierte PEI-Platte** ausgerichtet und geslict. Als Projekt in Bambu Studio öffnen und die Projekt-Filamente beim Senden den richtigen AMS-Fächern zuordnen. Bei Änderungen an Filament oder Druckplatte neu slicen. Voreinstellung: Generic PLA, 220 °C Düse und 55 °C Bett.
+Alle Projekte sind für **P1S · 0,4-mm-Düse · PLA · 0,20-mm-Schichten · strukturierte PEI-Platte** ausgerichtet und geslict. Als Projekt in Bambu Studio öffnen und die Projekt-Filamente beim Senden den richtigen AMS-Fächern zuordnen. Bei Änderungen an Filament oder Druckplatte neu slicen. Voreinstellung: Generic PLA, 220 °C Düse und 55 °C Bett. Ausnahme: Schichtvergleich 08 verwendet für ecoPLA Purple 210 °C.
 
 | Druckprojekt | Anzahl | Zeit je Druck | PLA je Druck¹ |
 |---|---:|---:|---:|
@@ -47,10 +49,11 @@ Alle Projekte sind für **P1S · 0,4-mm-Düse · PLA · 0,20-mm-Schichten · str
 | [Boden mit LED-Aufnahme](../output/multicolor_v4_1/print/04_base_P1S.3mf) | 1 | 3 h 38 min | 74,32 g |
 | [Deckel](../output/multicolor_v4_1/print/05_lid_P1S.3mf) | 1 | 1 h 24 min | 22,42 g |
 | [Vier Füße auf einer Platte](../output/multicolor_v4_1/print/06_feet_P1S.3mf) | 1 Satz | 20 min | 3,41 g |
+| [Schichtvergleich Farbe/Weiß](../output/multicolor_v4_1/print/08_transmission_test_P1S.3mf) | aktuell 1 | 1 h 10 min | 16,64 g |
 
 ¹ Einschließlich Brim, Spülmaterial und Reinigungsturm, soweit vom Slicer erfasst. Lampe ohne Proben etwa **247 g PLA und 16 h 34 min**. Keine Stützen. Jedes Paneel benötigt sechs Farbwechsel.
 
-1. Zuerst Farbprobe und Passprobe drucken. Die Farbprobe besitzt denselben 0,4 + 0,2-mm-Schichtaufbau, verkleinertes Logo und keine Führungsleisten. Sie beurteilt Farben und Licht, keine Details in Originalgröße.
+1. Für die laufende Farbabklärung zuerst den [Schichtvergleich 08](LICHTVERGLEICH.md) drucken; die Führungs-Passprobe separat prüfen, falls noch offen. Die bisherige Logo-Farbprobe 01 dient anschließend wieder zur Beurteilung des Logos. Sie besitzt denselben 0,4 + 0,2-mm-Schichtaufbau, verkleinertes Logo und keine Führungsleisten. Sie beurteilt Farben und Licht, keine Details in Originalgröße.
 2. Die Passprobe besteht aus einem 20 mm hohen Ausschnitt des echten Eckpfostens und einem passenden Plattenstreifen mit Führungsleiste, jeweils in der späteren Druckorientierung. Den Streifen aufrichten und die Leiste von oben in eine der beiden Nuten schieben. Die Verbindung soll gleiten, ohne Gewalt oder Aufspreizen des Pfostens. Diese Probe prüft den Querschnitt, noch nicht den Verzug über die volle Führungslänge.
 3. Danach zunächst einen Rahmen und eine vollständige Seitenplatte drucken und montieren. Erst nach erfolgreicher Passprobe die übrigen drei Platten drucken. Dünne Platten vom abgekühlten Bett lösen; Brim und lose Fäden sorgfältig entfernen.
 4. Die Logo-Vorderseite ist die Bettseite. **Nicht zusätzlich spiegeln oder wenden.** Die vier Farbvolumen bleiben Teile eines gemeinsamen Objekts. Die breitere Platte ist auf dem Bett seitlich versetzt, damit Brim und Reinigungsturm ausreichend Abstand haben.
@@ -84,10 +87,12 @@ Quellen: [AMS-Parameter](../cad/multicolor_parameters.json), [Generator](../cad/
 
 ```sh
 .venv/bin/python cad/build_multicolor.py
+.venv/bin/python cad/build_transmission_test.py
 .venv/bin/python scripts/prepare_profiles.py /pfad/zu/BambuStudio/resources/profiles/BBL
 .venv/bin/python scripts/slice_multicolor.py /pfad/zu/bambu-studio
 .venv/bin/python scripts/validate_multicolor.py
 blender -b -t 4 --python scripts/render_multicolor.py
+blender -b -t 4 --python scripts/render_transmission_test.py
 .venv/bin/python scripts/render_color_reference.py
 .venv/bin/python scripts/validate_colors.py
 .venv/bin/python scripts/package.py
@@ -97,5 +102,5 @@ Verwendeter Slicer: Bambu Studio 2.8.2.61. Die Prüfungen stehen in [Geometrie](
 
 - Geschlossene Materialvolumen, vollständige Abdeckung der Platte einschließlich Leisten, keine relevanten Materialüberschneidungen, kollisionsfreie Montage und Einschubbewegung. Seitliches Herausziehen wird durch die Führungsgeometrie blockiert.
 - Außenmaß 150³ mm, Logo-Zentrierung 75/75 mm und durchgehende ebene Außenhaut auf allen vier Seiten, mit Ausnahme der vorgesehenen schmalen Kantenfugen. Freie Luft- und Kabelwege. Die Boolesche Volumentoleranz beträgt 0,001 mm³.
-- Sieben geslicte P1S-Projekte, korrekte AMS-Zuordnung, gültige G-Code-Prüfsummen, Bettgrenzen einschließlich Brim/Reinigungsturm, keine Stützen oder Slicer-Druckwarnungen.
+- Acht geslicte P1S-Projekte, korrekte AMS-Zuordnung, gültige G-Code-Prüfsummen, Bettgrenzen einschließlich Brim/Reinigungsturm, keine Stützen oder Slicer-Druckwarnungen.
 - Nominelle RGB-Farben in den technischen Vorschauen; kein gemessener Farb- oder Helligkeitsnachweis am gedruckten Material.

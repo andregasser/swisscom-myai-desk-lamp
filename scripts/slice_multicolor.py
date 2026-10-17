@@ -1,4 +1,4 @@
-"""Prepare and slice the v3 four-slot AMS design using Bambu Studio."""
+"""Prepare and slice the current four-slot AMS design using Bambu Studio."""
 import argparse
 import json
 from pathlib import Path
@@ -12,7 +12,7 @@ P = json.loads((ROOT/'cad/multicolor_parameters.json').read_text())
 OUT = ROOT/'output'/P['output_folder']
 parser = argparse.ArgumentParser()
 parser.add_argument('bambu_studio', type=Path)
-parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit'])
+parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit','08_transmission_test'])
 args = parser.parse_args()
 process = json.loads((ROOT/'output/profiles/cube_0.20.json').read_text())
 process.update({'name':f'myAI Cube {P["version"]} 0.20mm', 'print_settings_id':f'myAI Cube {P["version"]} 0.20mm',
@@ -27,11 +27,20 @@ for color in P['colors']:
                  'filament_settings_id':['myAI PLA '+color['name']], 'filament_colour':[color['hex']]})
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
 for plate in args.plates:
-    multicolor=plate in ('01_color_test','02_panel')
+    multicolor=plate in ('01_color_test','02_panel','08_transmission_test')
     scratch=ROOT/'output/logs'/(P['version']+'_'+plate)
     scratch.mkdir(parents=True,exist_ok=True)
     profile=OUT/'profiles'/('process.json' if multicolor else 'process_white.json')
-    filaments=';'.join(str(OUT/'profiles'/f'filament_{i}.json') for i in range(1,5 if multicolor else 2))
+    filament_paths=[OUT/'profiles'/f'filament_{i}.json' for i in range(1,5 if multicolor else 2)]
+    if plate == '08_transmission_test':
+        # The user identified their purple as ecoPLA, rated at 195–215 C.
+        data=json.loads(filament_paths[2].read_text())
+        data.update({'name':'myAI ecoPLA Purple 210C', 'filament_settings_id':['myAI ecoPLA Purple 210C']})
+        for key in ('nozzle_temperature', 'nozzle_temperature_initial_layer'):
+            data[key]=['210']*len(data[key])
+        filament_paths[2]=OUT/'profiles/filament_3_transmission_test.json'
+        filament_paths[2].write_text(json.dumps(data,indent=2)+'\n')
+    filaments=';'.join(map(str,filament_paths))
     common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',
              '--load-settings',f'{ROOT/"output/profiles/p1s_0.4.json"};{profile}',
              '--load-filaments',filaments,'--arrange','0','--orient','0']

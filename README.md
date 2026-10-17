@@ -20,7 +20,7 @@ Luft und Kabel führen unter dem Boden hindurch. Vier 4-mm-Druckfüße schaffen 
 
 [Druckdateien & Montage v4.1](docs/MEHRFARBIG_V4.md) · [Farbprobe](output/multicolor_v4_1/print/01_color_test_P1S.3mf) · [Führungs-Passprobe](output/multicolor_v4_1/print/07_fit_P1S.3mf) · [Komplettpaket v4.1](output/myAI_Cube_150_P1S_AMS_v4_1.zip)
 
-Sieben vorbereitete P1S-Projekte, keine Stützen. Lampe ohne Proben laut Slicer etwa **247 g PLA und 16 h 34 min**. Zuerst die neue Führung mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
+Acht vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. Lampe ohne Proben laut Slicer etwa **247 g PLA und 16 h 34 min**. [Aktueller Farbtest: 0,2 gegen 0,4 mm Farbeinlage](docs/LICHTVERGLEICH.md). Die neue Führung separat mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
 
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Die komplette Montage, das AMS-Logo und Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
