@@ -17,3 +17,7 @@ Reproduzieren, vom Repository-Stamm:
 ```
 
 `logo_dither.svg` besitzt eine 116 × 116 mm große Zeichenfläche entsprechend der Skalierung im CAD. Für eine spätere Integration ist weiterhin die tatsächliche Logokontur auf der Seitenplatte zu zentrieren.
+
+## Flächenprüfung der Druckversuche
+
+Die neue vollständige Prüfung findet auch außerhalb der Zellmitten Restlücken. [Versuchsübersicht](surface_trials.json) dokumentiert verworfene Profil- und Rastervarianten; sie enthält keine reproduzierbaren Druckartefakte dieser Zwischenstände. Der aktuelle [2-mm-Entwurf](../../docs/RASTERPROBE.md) bleibt experimentell und besteht die Flächenprüfung weiterhin nicht.

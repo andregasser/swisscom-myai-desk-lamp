@@ -1,67 +1,77 @@
-# Rasterprobe 10 aus dem Originalverlauf
+# Rasterprobe 10 — gröberer 2-mm-Entwurf
 
-**Aktuelle Datei:** [10_raster_original_test_P1S.3mf](../output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf). Die frühere Probe 09 ist verworfen und bleibt als [dokumentierter Vergleich](RASTERPROBE_09.md) erhalten.
+**Status: experimentelle Probe für die vorhandene 0,4-mm-Düse. Der Fehler ist noch nicht vollständig behoben.** Die Geometrie und das Druckprojekt sind geprüft, die neue vollständige Flächenprüfung findet weiterhin Restlücken. Deshalb keine bestätigte Lösung und noch kein Übertrag auf die vier Lampenseiten.
 
-![Unveränderte Original-SVG neben dem neuen Raster](../output/multicolor_v4_2/preview/raster_original_comparison.png)
+[Experimentelle P1S-Datei](../output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf) · [Prüfbericht](../output/multicolor_v4_2/raster_original_test/surface_coverage.json)
 
-*Nominelle Bildschirmfarben, keine Vorhersage realer Filamentfarben oder Hinterleuchtung. Weiße Punkte im neuen Logo sind gewollte Rasterelemente.*
+![Original-SVG und gröberer Entwurf](../output/multicolor_v4_2/preview/raster_original_comparison.png)
 
-## Was korrigiert wurde
+*Nominelle Bildschirmfarben, keine Vorhersage realer Filamentfarben oder Hinterleuchtung. Weiße Rasterfelder sind beabsichtigt. Die Darstellung zeigt die CAD-Flächen, keine zugesicherte Druckqualität.*
 
-Die bisherige Probe las die Originalkonturen und Verlaufsrichtungen, ersetzte aber die tatsächlichen Farbstopps durch einen künstlichen Rot–Violett–Blau-Verlauf. Das entsprach nicht dem gewünschten Raster des Originals. Die neue Probe liest **alle Farbstopps, Farben und Positionen direkt aus der unveränderten dunklen Original-SVG**, auch für den Schriftzug. Die helle SVG besitzt einen einfarbigen Schriftzug und ist deshalb hier nicht die Quelle.
+## Befund am bisherigen Druck
 
-Der originale Verlauf enthält deutlich mehr Hellblau und Cyan als der frühere Entwurf. Mit Weiß, dem vorhandenen dunklen Blau, Violett und Rot ist dieser Farbraum nicht vollständig erreichbar. Das neue Raster verwendet Weiß zum Aufhellen. **Cyan bleibt eine sichtbare Grenze dieser Filamentpalette; ein feineres Raster allein behebt das nicht.** Für eine nähere Cyan-Wiedergabe müsste die Palette geändert und mit realen Filamentproben kalibriert werden.
+Das Foto der alten Probe 09 zeigt helle Stellen besonders an Rasterübergängen in Sternen und Schrift. Es gab keine sichtbaren Rückstände auf der noch lauwarmen Druckplatte. Ein Abreißen beim Ablösen ist damit nicht bewiesen. In den Druckbahnen lassen sich unabhängig davon unbedeckte Bereiche nachweisen; diese sind eine plausible Erklärung für einen Teil der sichtbaren Stellen. Glanz, mechanische Aufhellung und echte Schichttrennung lassen sich aus dem Foto nicht sicher ausschließen.
 
-Aus den Originalfarben werden angenäherte Flächenanteile der vorhandenen Palette berechnet. Eine zeilenweise wechselnde Fehlerverteilung ersetzt das regelmäßige Bayer-Schachbrett. Bei der aktuellen nominellen Palette und 0,8-mm-Auflösung werden im Logo Weiß, Blau und Rot gewählt; **Violett wird nicht künstlich in den Verlauf erzwungen**. Drei kleine Referenzfelder unter dem Logo zeigen Rot, Violett und Blau unabhängig von der Rasterberechnung. Damit bleibt auch das tatsächlich geladene Violett vergleichbar.
+Die bisherige Prüfung kontrollierte nur den zentralen Bereich vollständiger Rasterzellen. Sie übersah Lücken zwischen den Bahnen und an angeschnittenen Zellen. Auch die erste Version der Probe 10 mit 0,8-mm-Raster war damit nicht ausreichend geprüft. Das Umdrehen auf die weiße Rückseite beseitigt solche Lücken nicht.
 
-Die Vorschau sollte vor einem weiteren Druck beurteilt werden: Die Berechnungsgrundlage ist korrigiert, die Farbtreue zum Original ist mit den vorhandenen Spulen weiterhin begrenzt.
+Die neue Prüfung schneidet **die vollständigen Materialflächen aus den exportierten STL-Dateien** und vergleicht sie mit den tatsächlichen G-Code-Bahnen einschließlich Linienbreite, runden Bahnenden und Kreisbögen. Gewollte weiße Rasterfelder zählen nicht als fehlende Farbe. Die Prüfung betrachtet zusätzlich die richtige Farbe und beide weißen Rückschichten.
 
-## Druck und Ablösen
+| Variante | Rechnerisch unbedeckte Farbfläche | Physisch beurteilt |
+|---|---:|---|
+| Alte Probe 09, 0,8 mm | rund 3,3 % | ja, weiße Stellen und Farbwirkung beanstandet |
+| Frühere Probe 10, 0,8 mm | rund 3,6 % | nein |
+| Neuer 2-mm-Entwurf | **0,78 % / 13,08 mm²** | nein |
 
-- **P1S, 0,4-mm-Düse, PLA, strukturierte PEI-Platte und AMS.** Datei in Bambu Studio **als Projekt** öffnen. Bei einer anderen Druckplatte das passende Profil wählen und neu slicen.
-- Projekt-Filamente: **1 Weiß · 2 Blau · 3 Violett · 4 Rot**. Wie bisher 210 °C für ecoPLA Purple, 220 °C für die übrigen Generic-PLA-Profile und 55 °C Bett. Keine pauschale Temperaturerhöhung.
-- **Neu: weiße Rückseite unten, farbige Sichtseite oben.** Orientierung beibehalten, nicht spiegeln. Zuerst 0,4 mm durchgehendes Weiß, anschließend 0,2 mm Farbe beziehungsweise weiße Rasterpunkte. Gesamtdicke weiterhin 0,6 mm. Die Sichtseite zeigt Druckbahnen statt PEI-Struktur, bleibt geometrisch bündig.
-- Karte **96,9 × 109,1 mm**, Logo **86,9 × 99,1 mm** in späterer Originalgröße, Raster **0,8 mm**.
-- Etwa **1 h 9 min und 10,62 g PLA** laut Slicer, einschließlich Reinigungsturm und Spülmaterial. Drei Farbwechsel, keine Stützen. Turm und Haftrand sind keine weiteren Prüfteile.
-- **Bis auf Raumtemperatur abkühlen lassen.** Die Federstahlplatte vorsichtig biegen und die Karte flächig unterstützen, statt die dünne Karte warm abzuziehen. Nicht stark durchknicken. Bambu empfiehlt bei strukturierter PEI mindestens auf 35 °C oder darunter abzukühlen; für diese empfindliche Karte warten wir bis Raumtemperatur. [Herstellerhinweis](https://us.store.bambulab.com/collections/accessories-for-a1-mini/products/bambu-textured-pei-plate).
+Das sind **geometrische Modellwerte, keine Messungen am Druck**. Selbst mit 0,03 mm rechnerischer Toleranz bleiben beim neuen Entwurf 5,08 mm² unbedeckt; die größte zusammenhängende Restfläche beträgt 0,20 mm². Die festgelegte Flächenprüfung wird weiterhin **nicht bestanden**. Eine geschlossene Farbfläche ist damit nicht nachgewiesen.
 
-Das eigene Profil druckt Außenwände, Oberseite und Lückenfüllung mit 25 mm/s, Innenwände mit 30 mm/s und die weiße Vollfüllung mit 40 mm/s. Es verwendet klassische Wandbahnen mit Dünnwand-Erkennung, 0,4-mm-Linien auf der Farbseite und keine absichtliche Nahtlücke. Im digitalen Vergleich blieben damit die geprüften Zellmitten besser erhalten als mit den untersuchten Arachne-Einstellungen. Zusatzlüfter aus, Bauteillüfter in den ersten beiden Schichten aus und anschließend auf 50 %. Diese Maßnahmen sind ein **noch nicht physisch bestätigter Versuch**, die Flächen zu schließen und die Verbindung der Schichten zu verbessern. Andere Druckprojekte behalten ihre Profile.
+![Grün markiert rechnerische Restlücken, Weiß zeigt gewollte Rasterfelder und Hintergrund](../output/multicolor_v4_2/raster_original_test/surface_coverage.png)
 
-## Warum können weiße Stellen sichtbar werden?
+*Grün markiert unbedeckte Farbflächen jenseits von 0,03 mm Toleranz. Die Markierung zeigt Lage und Verteilung, nicht die tatsächliche Sichtbarkeit unter LED-Licht.*
 
-Rückmeldung vom 18. Oktober 2026: Die alte Rasterprobe gefällt farblich nicht. Beim Ablösen wirken manche Farbstellen weggerissen; Weiß schimmert durch. Auf der Platte sind **keine sichtbaren Rückstände**, sie war **noch lauwarm**. Der konkrete Plattentyp wurde nicht bestätigt.
+## Was am gröberen Entwurf geändert wurde
 
-Damit ist ein Abreißen der Farbe vom weißen Untergrund noch nicht nachgewiesen. Drei Erklärungen bleiben offen:
+Der Benutzer möchte die vorhandene **0,4-mm-Düse behalten und ein gröberes Raster erproben**. Die Zellen sind jetzt 2,0 statt 0,8 mm breit. Die tatsächliche Originalkontur und die spätere Logo-Größe bleiben erhalten.
 
-1. **Drucklücken:** Die Farbe ist nur eine Schicht dick. Jede kleine Lücke zeigt die weiße Rückschicht. Die alte Druckbahnprüfung belegte den Erhalt der Rasterzellen, ausdrücklich keine vollständig geschlossene Oberfläche. Digitale Restlücken sind deshalb eine plausible Ursache.
-2. **Mechanische Aufhellung:** Starkes Biegen kann Kunststoff lokal aufhellen, ohne dass ein Stück auf der Platte zurückbleibt. Eine solche Spannungsaufhellung wurde auch an gedrucktem PLA unter Biegebelastung beobachtet; das ist ein möglicher Mechanismus, keine Diagnose dieser Karte. [PLA-Biegeuntersuchung](https://www.mdpi.com/2673-4591/119/1/18).
-3. **Schwache Schichtverbindung:** Falls tatsächlich Material fehlt, können unzureichende Verschmelzung, zu starke Kühlung oder unvollständige Extrusion beteiligt sein. Die alte Probe hatte viele kleine, direkt auf dem Bett liegende Farbinseln. Eine zu schwache Verbindung zur Rückschicht kann beim Ablösen nachgeben. Temperatur und Kühlung beeinflussen die Schichthaftung. [Prusa: Schichttrennung](https://help.prusa3d.com/article/layer-separation-and-splitting-fdm_1806).
+Am Rand werden Zellen, die nicht vollständig innerhalb einer um 0,45 mm zurückgesetzten Kontur liegen, mit der lokal vorherrschenden Logofarbe belegt. Dadurch entstehen weniger schmale Farbreste. Diese Vorgabe fließt in die Fehlerverteilung zurück, damit die entfernten weißen Flächen nicht einfach unberücksichtigt bleiben. Sie ist keine exakte farbmetrische Kompensation. Diagonale Verbindungen haben jetzt 0,28 mm Radius. Die blaue Geometrie besteht aus neun, die rote aus drei zusammenhängenden Körpern statt zuvor 22 beziehungsweise 23.
 
-Die neue Druckrichtung entfernt den direkten Kontakt der Farbinseln zur Platte. Sie verhindert weder garantiert Spannungsaufhellung noch schlechte Schichthaftung. Vor dem Ablösen die jetzt oben sichtbare Farbseite fotografieren und nach vollständigem Abkühlen vergleichen: Bereits vorhandene Lücken sprechen für Druckbahnen/Extrusion; erst beim Biegen auftretende Aufhellung ohne fehlendes Material eher für mechanische Belastung. Vertiefungen oder lose farbige Stücke würden echten Materialverlust stützen. Die geplanten weißen Rasterpunkte mit der Vorschau vergleichen.
+Der Verlauf stammt weiterhin aus **allen tatsächlichen Farbstopps der unveränderten dunklen Original-SVG**, separat für Sterne und Schrift. Die helle SVG besitzt einen einfarbigen Schriftzug. Das Raster verwendet Weiß, Blau und Rot; Violett wird bei der nominellen Palette nicht künstlich erzwungen und erscheint im Referenzfeld. Drei kleine Referenzfelder zeigen die realen Spulen Rot, Violett und Blau.
 
-## Was die neue Probe beantwortet
+Das originale Cyan und Hellblau sind mit der nominellen Palette nur eingeschränkt erreichbar. Weiße Rasterfelder hellen auf, ersetzen aber keine passende Cyan-Farbe. Der gröbere Entwurf ist sichtbar körniger. Weder die Bildschirmansicht noch die Palettenrechnung sagen die Farbe realer, hinterleuchteter Filamente voraus.
 
-Den Verlauf ohne Beleuchtung und mit LED hinter der weißen Rückseite beurteilen. Für den Vergleich denselben LED-Abstand verwenden. Aus etwa 50–100 cm Entfernung prüfen, ob die Körnung akzeptabel ist. Zusätzlich vor/nach dem Ablösen auf neue weiße Stellen achten. Die Änderung von Raster, Orientierung und Profil ist kein isolierter Materialversuch; damit lässt sich eine einzelne Ursache nicht abschließend bestimmen.
+## Druckdaten des Versuchsmodells
 
-Die regulären Seitenplatten bleiben beim bisherigen Entwurf. Diese flache Probe prüft weder Führungen noch Montage oder Wärmeverhalten. Ein direkter Übertrag der neuen Druckrichtung auf Platten mit inneren Führungsleisten ist noch nicht konstruiert.
+- **P1S, 0,4-mm-Düse, PLA, strukturierte PEI-Platte und AMS.** Datei als Projekt in Bambu Studio öffnen. Keine andere Düse einplanen.
+- Slots: **1 Weiß · 2 Blau · 3 Violett · 4 Rot**. EcoPLA Purple 210 °C, übrige PLA-Profile 220 °C, Bett 55 °C.
+- **Weiße Rückseite unten, Sichtseite oben:** zwei weiße Schichten mit zusammen 0,4 mm, anschließend 0,2 mm Farbe beziehungsweise weiße Rasterfelder. Gesamtdicke 0,6 mm. Nicht spiegeln oder wenden.
+- Karte **96,9 × 109,1 mm**, Logo **86,9 × 99,1 mm**. Raster 2,0 mm.
+- Etwa **1 h 7 min und 10,64 g PLA**, einschließlich Reinigungsturm und Spülmaterial. Drei Farbwechsel, keine Stützen.
+- Eigenes langsames Profil: klassische Wandbahnen, 0,4-mm-Linien auf der Farbseite, keine absichtliche Nahtlücke. Außenwände/Oberseite/Lückenfüllung 25 mm/s, Innenwände 30 mm/s, Vollfüllung 40 mm/s. Zusatzlüfter aus, Bauteillüfter nach den ersten beiden Schichten 50 %.
 
-## Digitaler Prüfstand und Reproduktion
+Wenn diese experimentelle Karte gedruckt wird, die Farbseite **bereits auf der Platte fotografieren**, bevor sie abgelöst wird. Danach bis Raumtemperatur abkühlen lassen, die Federstahlplatte vorsichtig biegen und die dünne Karte flächig unterstützen. Bereits vorher vorhandene helle Stellen sprechen für Druck/Extrusion; erst danach auftretende Veränderungen eher für mechanische Einflüsse. Bambu empfiehlt bei strukturierter PEI mindestens auf 35 °C oder darunter abzukühlen; hier warten wir bis Raumtemperatur. [Herstellerhinweis](https://us.store.bambulab.com/collections/accessories-for-a1-mini/products/bambu-textured-pei-plate).
 
-- Original-SVG unverändert; alle Farbstopps geprüft. **2.899 innere Bildpunkte** gegen den unabhängigen CairoSVG-Renderer verglichen: höchstens **0,53 von 255 Kanalwerten** Abweichung. Das prüft das Einlesen der Quelle, nicht die Qualität der Filamentapproximation.
-- Originalkontur und Originalgröße erhalten. 60 winzige Randinseln mit zusammen 6,75 mm² benachbarten Farben zugeordnet; 0,08-mm-Rundungen lösen diagonale Punktkontakte geometrisch auf. Keine zugesicherte Druckauflösung dieser Rundungen.
-- Geschlossene Materialnetze, zusammenhängende Karte, Materialabdeckung und Überschneidungen geometrisch geprüft. Weiße Basis über die gesamte Karte, Farbvolumen ausschließlich bei Z = 0,4–0,6 mm.
-- Geslicte P1S-Datei: korrekte AMS-Zuordnung, gültige G-Code-Prüfsumme, Bettgrenzen, keine Stützen oder Slicer-Druckwarnungen. Schichten bei 0,2 und 0,4 mm nur Weiß; bei 0,6 mm alle vier Farben einschließlich Referenzfelder.
-- In allen **2.366 vollständigen Rasterzellen** und den drei Referenzfeldern erreicht die vorgesehene Farbe den zentralen Bereich mit 0,2 mm Durchmesser; die weißen Basisschichten decken die Zellmitten. Größter berechneter Abstand einer Zellmitte zum Farbauftrag: **0,083 mm**. **Keine Zusicherung einer lückenlosen Oberfläche**, exakter Randpixel oder realer Schichthaftung.
+Geplante weiße Felder mit der Vorschau vergleichen. Die Restlückenprüfung fällt weiterhin negativ aus; ein weiterer Druck ist ein Versuch zur Beurteilung der Verbesserung, keine zugesicherte Fehlerbehebung. Lampe, Führungen und Kühlung werden damit nicht geprüft.
 
-[Geometrie](../output/multicolor_v4_2/raster_original_test/geometry_validation.json) · [Originalfarben](../output/multicolor_v4_2/raster_original_test/color_validation.json) · [Druckbahnen](../output/multicolor_v4_2/raster_original_test/toolpath_validation.json) · [Farbige Deckschicht als Druckbahnansicht](../output/multicolor_v4_2/preview/raster_original_toolpaths.png).
+## Prüfung und Reproduktion
+
+- Original-Farbstopps gegen CairoSVG geprüft: 2.899 innere Bildpunkte, höchstens 0,53 von 255 Kanalwerten Abweichung beim Einlesen der Quelle.
+- Geschlossene Materialnetze, unveränderte Außenkontur und Größe, zusammenhängende Karte, Materialabdeckung und fehlende Volumenüberschneidungen geprüft. Zwei winzige Randinseln mit zusammen 0,01 mm² wurden benachbarten Farben zugeordnet.
+- P1S-Projekt geslict; AMS-Zuordnung, Bettgrenzen, G-Code-Prüfsumme, Schichten und fehlender Stützbedarf geprüft. Die Mittelpunkte von 238 vollständigen Rasterzellen und drei Referenzfeldern sind abgedeckt. **Dieser erfolgreiche Teilcheck ersetzt die fehlgeschlagene Flächenprüfung nicht.**
+- Die Flächenprüfung verwendet nominelle, abgerundete Bahnbreiten; Kreisbögen werden mit höchstens 0,001 mm Sehnenfehler angenähert. Sie simuliert weder Schmelzfluss noch reale Haftung, optische Deckung oder die Druckreihenfolge an überlappenden Farbgrenzen.
+- Das konservative Freigabekriterium erlaubt nach 0,03 mm Toleranz höchstens 0,1 % fehlende Farbfläche und keine einzelne Restfläche über 0,01 mm². Es ist ein Entwicklungsfilter, keine kalibrierte Sichtbarkeitsschwelle. Die weiße Rückseite und die richtige Farbe werden ebenfalls geprüft. **Aktueller Status: nicht bestanden.**
+
+[Geometrie](../output/multicolor_v4_2/raster_original_test/geometry_validation.json) · [Originalfarben](../output/multicolor_v4_2/raster_original_test/color_validation.json) · [Zellmitten](../output/multicolor_v4_2/raster_original_test/toolpath_validation.json) · [Flächenprüfung](../output/multicolor_v4_2/raster_original_test/surface_coverage.json) · [Alte Probe 09](RASTERPROBE_09.md).
 
 ```sh
 .venv/bin/python cad/build_raster_original_test.py
 .venv/bin/python scripts/validate_original_colors.py
 .venv/bin/python scripts/slice_multicolor.py /pfad/zu/bambu-studio --plates 10_raster_original_test
+.venv/bin/python scripts/test_raster_coverage.py
 .venv/bin/python scripts/validate_multicolor.py
+# Der letzte Befehl scheitert derzeit ausdrücklich an der Flächendeckung.
+# Nur für ein Bestandsaudit mit dokumentierter, weiterhin fehlender Freigabe:
+.venv/bin/python scripts/validate_multicolor.py --allow-withheld-raster
 blender -b -t 4 --python scripts/render_raster_original_test.py
 .venv/bin/python scripts/package.py
 ```
 
-Bambu Studio 2.8.2.61. Die Druckdatei enthält Geometrie und G-Code, jedoch kein eingebettetes Vorschaubild. Die ältere Probe 09 und ihre Druckdateien bleiben unverändert archiviert.
+Bambu Studio 2.8.2.61. Die ältere Probe 09 und ihre Druckdateien bleiben archiviert. Die frühere 0,8-mm-Version der Probe 10 ist über Git-Commit `fcbab89` reproduzierbar. Die aktuelle Probe 10 ersetzt sie ausdrücklich als **gröberer, noch unbestätigter Entwurf**.

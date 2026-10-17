@@ -81,18 +81,24 @@ def palette_weights(targets):
     return weights
 
 
-def diffuse(cells, targets):
-    """Serpentine Floyd–Steinberg in palette-area weights, clipped to each glyph."""
+def diffuse(cells, targets, forced=None):
+    """Serpentine Floyd–Steinberg, accounting for forced contour assignments.
+
+    A forced color participates in error propagation, so its deviation from the
+    original target is carried into later cells. This is not an exact optical
+    or area-weighted color reproduction, especially along clipped boundaries.
+    """
     weights = palette_weights(linear_rgb(targets))
     positions = {cell: i for i, cell in enumerate(cells)}
     errors = np.zeros_like(weights)
     result = {}
+    forced = forced or {}
     for row in sorted({cell[0] for cell in cells}):
         step = 1 if row % 2 == 0 else -1
         for cell in sorted((c for c in cells if c[0] == row), key=lambda c: step*c[1]):
             i = positions[cell]
             value = weights[i]+errors[i]
-            index = int(np.argmax(value))
+            index = forced.get(cell, int(np.argmax(value)))
             result[cell] = index
             error = value-np.eye(4)[index]
             r, c = cell

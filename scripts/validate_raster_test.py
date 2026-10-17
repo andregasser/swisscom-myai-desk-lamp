@@ -16,7 +16,7 @@ OUT = ROOT/'output'/P['output_folder']
 
 
 def model_segments(code, config):
-    """Polyline approximation of G2/G3 to <=0.05 mm steps, in model XY space."""
+    """G2/G3 polyline with <=0.001 mm chord error, in model XY space."""
     offset = np.array([float(v) for v in config['extruder_offset'][0].split('x')])
     feature, tool, changing = 'Custom', 0, False
     x = y = z = 0.
@@ -38,19 +38,24 @@ def model_segments(code, config):
         x, y, z = fields.get('X', x), fields.get('Y', y), fields.get('Z', z)
         if changing or feature in ('Custom', 'Prime tower', 'Brim') or fields.get('E', 0) <= 0:
             continue
-        if not ('X' in fields or 'Y' in fields):
+        is_arc = line.startswith(('G2 ', 'G3 '))
+        if not ('X' in fields or 'Y' in fields or is_arc and ('I' in fields or 'J' in fields)):
             continue
         assert width is not None and 0 < width < 2
         end = np.array((x, y))
         points = [start, end]
-        if line.startswith(('G2 ', 'G3 ')):
+        if is_arc:
             assert 'I' in fields or 'J' in fields
             center = start + (fields.get('I', 0), fields.get('J', 0))
             radius = np.linalg.norm(start-center)
             a = math.atan2(*(start-center)[::-1])
             b = math.atan2(*(end-center)[::-1])
             angle = (b-a) % (2*math.pi) if line.startswith('G3 ') else -((a-b) % (2*math.pi))
-            count = max(1, math.ceil(abs(angle)*radius/.05))
+            if np.linalg.norm(end-start) < 1e-7:
+                angle = 2*math.pi if line.startswith('G3 ') else -2*math.pi
+            assert radius > 0
+            step = 2*math.acos(max(-1., 1-.001/radius))
+            count = max(1, math.ceil(abs(angle)/min(step, math.pi/2)))
             points = [start, *[center+radius*np.array((math.cos(a+angle*i/count),
                        math.sin(a+angle*i/count))) for i in range(1, count)], end]
         for a, b in zip(points, points[1:]):

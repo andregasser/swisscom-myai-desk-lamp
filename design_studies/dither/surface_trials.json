@@ -1,0 +1,218 @@
+{
+  "status": "Fine-raster candidates rejected. A coarse 2.0 mm candidate is retained as experimental, with coverage still failing.",
+  "scope": "Diagnostic summary, not reproducible candidate artifacts or physical test results.",
+  "geometric_allowance_mm": 0.03,
+  "acceptance": {
+    "max_unresolved_ink_percent": 0.1,
+    "max_connected_unresolved_area_mm2": 0.01
+  },
+  "trials": [
+    {
+      "description": "Original geometry; Arachne, no walls, aligned 0.4 mm infill",
+      "print_sha256": "0176a624db3ebd22f363283638c4d7a29183084ba1553fa639373feeb2354c0b",
+      "mesh_sha256_by_slot": {
+        "1": "1431b5df01779acb57343e6bb3caf7210c745ee74507aaaca07790351eafe8e0",
+        "2": "fcb80e8f767ecb34bdacfae53ca385a6ff8748dc51b648ce057ad720567384ed",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "775957e546d179ef191873ff2cc28bae1203139255ecb2b1611f2ad42c2785c8"
+      },
+      "nominal_unprinted_ink_percent": 6.57183210238752,
+      "unprinted_ink_beyond_allowance_percent": 3.996484336241663,
+      "largest_unresolved_area_mm2": 1.501078859351665,
+      "digital_coverage_passed": false
+    },
+    {
+      "description": "Original geometry; Arachne, 0.3 mm lines, two walls",
+      "print_sha256": "cc23243c4f0c0a1360235903c4972531caa7d1429165db988c42c976d7be0cd3",
+      "mesh_sha256_by_slot": {
+        "1": "1431b5df01779acb57343e6bb3caf7210c745ee74507aaaca07790351eafe8e0",
+        "2": "fcb80e8f767ecb34bdacfae53ca385a6ff8748dc51b648ce057ad720567384ed",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "775957e546d179ef191873ff2cc28bae1203139255ecb2b1611f2ad42c2785c8"
+      },
+      "nominal_unprinted_ink_percent": 1.2768059010242647,
+      "unprinted_ink_beyond_allowance_percent": 0.43492572484962266,
+      "largest_unresolved_area_mm2": 0.1258539972831658,
+      "digital_coverage_passed": false
+    },
+    {
+      "description": "Dominant ink at clipped contour cells; Arachne, 0.3 mm lines",
+      "print_sha256": "f67cfe8d34756961fe9a5ec5cd51f1044466570c08757e2291af2bd7134c3129",
+      "mesh_sha256_by_slot": {
+        "1": "fc4201e299bd09cc7ebdbf713f7b23c89de6d6286440b8995379c8274622da3d",
+        "2": "d7d7faa26fab16de00c41a91f0b2e8987e9f497c242f6ca6e3bce135a5dc3940",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "0fd25e9b93615eb8cd3daeb2e6017e750c7760fcac01966fe66fbc52bffb39e8"
+      },
+      "nominal_unprinted_ink_percent": 1.0761198529796465,
+      "unprinted_ink_beyond_allowance_percent": 0.3696265432862133,
+      "largest_unresolved_area_mm2": 0.1694470878514781,
+      "digital_coverage_passed": false
+    },
+    {
+      "description": "Dominant ink at clipped contour cells; classic, one wall, 0.3 mm lines",
+      "print_sha256": "28f47d704bd650454a875e511c8ec8bd7d2c4ce4206704d1e697721bc0edd2fb",
+      "mesh_sha256_by_slot": {
+        "1": "fc4201e299bd09cc7ebdbf713f7b23c89de6d6286440b8995379c8274622da3d",
+        "2": "d7d7faa26fab16de00c41a91f0b2e8987e9f497c242f6ca6e3bce135a5dc3940",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "0fd25e9b93615eb8cd3daeb2e6017e750c7760fcac01966fe66fbc52bffb39e8"
+      },
+      "nominal_unprinted_ink_percent": 0.8576502753482452,
+      "unprinted_ink_beyond_allowance_percent": 0.394005629880443,
+      "largest_unresolved_area_mm2": 0.29393113737236476,
+      "digital_coverage_passed": false
+    },
+    {
+      "description": "Dominant ink at clipped contour cells, 0.28 mm junctions; classic, one wall, 0.3 mm lines",
+      "print_sha256": "ba8be1d257589808bcb831904f99700145841077d536ba0f9852ce4f9e971933",
+      "mesh_sha256_by_slot": {
+        "1": "ff4661cefbcc4c40a76fd994b6de31ccc3558c9f480ffa66104bd92277f9f4c2",
+        "2": "3c9aa77141bcc34fbdb93d76223bdf887f572c3cfbe3ea7e09dff12883a9ceb5",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "027ff6766c7f0b3f92d6c56a12ec019fe5106dcee9e43317269a787b75bed9c7"
+      },
+      "nominal_unprinted_ink_percent": 0.8023694323860309,
+      "unprinted_ink_beyond_allowance_percent": 0.3499022635792942,
+      "largest_unresolved_area_mm2": 0.29393113737236476,
+      "digital_coverage_passed": false
+    },
+    {
+      "description": "1.6 mm raster; dominant ink at partial boundary cells, 0.28 mm junctions; classic 0.4 mm",
+      "print_sha256": "693c4121ef9b04705b4f214a4618ebc91c09c4e527d3b930668be8b76acd1f1d",
+      "mesh_sha256_by_slot": {
+        "1": "5e5e068f608916a01222cf7de7c0e9b2327c6c56ea674535f0d102e829e7d95e",
+        "2": "31a4410af4ae3747024461ea180474c584daa497ecac3b5c50c85805cef93848",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "4b752de538e61fd41942fc2fd9602024dd615bac870b26c42bdae4d90b24d39b"
+      },
+      "nominal_unprinted_ink_percent": 1.069239423675785,
+      "unprinted_ink_beyond_allowance_percent": 0.5219019454189897,
+      "largest_unresolved_area_mm2": 0.2563671851842477,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.05 mm segments"
+    },
+    {
+      "description": "1.6 mm raster; same boundary rule; Arachne concentric 0.4 mm",
+      "print_sha256": "7730bbc82a5608fe1ad99926b4758d71600a9af045b20ee8e7012bf1793ebd6d",
+      "mesh_sha256_by_slot": {
+        "1": "5e5e068f608916a01222cf7de7c0e9b2327c6c56ea674535f0d102e829e7d95e",
+        "2": "31a4410af4ae3747024461ea180474c584daa497ecac3b5c50c85805cef93848",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "4b752de538e61fd41942fc2fd9602024dd615bac870b26c42bdae4d90b24d39b"
+      },
+      "nominal_unprinted_ink_percent": 1.028529014455487,
+      "unprinted_ink_beyond_allowance_percent": 0.391103225510811,
+      "largest_unresolved_area_mm2": 0.16551874167316127,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.05 mm segments"
+    },
+    {
+      "description": "2.0 mm; 0.45 mm guard WITHOUT feedback; Arachne concentric 0.4 mm",
+      "print_sha256": "148b062e09a67880aabb2ef34b8a0c51424b766403a1d16efbbbd513ad8e09e0",
+      "mesh_sha256_by_slot": {
+        "1": "895c5ff12b0cb358f47ecd3d5c2cb9a558068fb713349befe04ea95f204336eb",
+        "2": "b518716e21534e0f0bac599cf086855ac962616f746c803f58936dd4cbf56691",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "1a25557b725c86dbd9bb1cf7c5f07d6ae40e0db910546348795136b24c1b6266"
+      },
+      "nominal_unprinted_ink_percent": 0.449612303788639,
+      "unprinted_ink_beyond_allowance_percent": 0.13330647671863632,
+      "largest_unresolved_area_mm2": 0.11875411050433446,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "Same geometry; one wall, 50 percent infill overlap",
+      "print_sha256": "f30bd0f3cab9ddf89c43824a2b00fdfabb72b92477c7146ef24816d448fc46de",
+      "mesh_sha256_by_slot": {
+        "1": "895c5ff12b0cb358f47ecd3d5c2cb9a558068fb713349befe04ea95f204336eb",
+        "2": "b518716e21534e0f0bac599cf086855ac962616f746c803f58936dd4cbf56691",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "1a25557b725c86dbd9bb1cf7c5f07d6ae40e0db910546348795136b24c1b6266"
+      },
+      "nominal_unprinted_ink_percent": 0.473316350939976,
+      "unprinted_ink_beyond_allowance_percent": 0.14327992676199128,
+      "largest_unresolved_area_mm2": 0.1035583964184128,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "2.0 mm WITH contour feedback; no walls, concentric 0.4 mm",
+      "print_sha256": "aa25102e295d88d7f84f28db5253b2559dc0710d490152bbbf31739be326279a",
+      "mesh_sha256_by_slot": {
+        "1": "284bf5db7a69e8029a9edd76bd107c94086ffbe43637afc68a40b5e3ac6d234a",
+        "2": "a1278cf77e5e63ee73d4c9dc07b7602f30a6f4b6ec197d00c6c6b1a234760ee5",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "0a879230d223c91dd76a9a3815bfeee113e65adbe8362a83dbac5cd4e81bacd2"
+      },
+      "nominal_unprinted_ink_percent": 1.1109065578591206,
+      "unprinted_ink_beyond_allowance_percent": 0.431977017374819,
+      "largest_unresolved_area_mm2": 0.5438267714068328,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "2.0 mm with contour feedback; Arachne concentric 0.5 mm",
+      "print_sha256": "cd7ef2b380a2adda4ce2bbb87373b3debb3c062369790bfba6f2e8e6aab89222",
+      "mesh_sha256_by_slot": {
+        "1": "284bf5db7a69e8029a9edd76bd107c94086ffbe43637afc68a40b5e3ac6d234a",
+        "2": "a1278cf77e5e63ee73d4c9dc07b7602f30a6f4b6ec197d00c6c6b1a234760ee5",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "0a879230d223c91dd76a9a3815bfeee113e65adbe8362a83dbac5cd4e81bacd2"
+      },
+      "nominal_unprinted_ink_percent": 1.0697239631936624,
+      "unprinted_ink_beyond_allowance_percent": 0.461497082397913,
+      "largest_unresolved_area_mm2": 0.2168417646803782,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "1.2 mm with contour feedback; Arachne concentric 0.3 mm",
+      "print_sha256": "3a8ea252315766a237b7d00e1dd4adbf01f82047a8e090b09bbed945e5d4e13a",
+      "mesh_sha256_by_slot": {
+        "1": "c1cae769cc4645c799a71119b91ebad27fbe63d961f220187cbedcc751827990",
+        "2": "0308714fa6e8c38c261f15b6d97c899215f19184a505314f9f49de38cdf4e7a2",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "1b823ed1078b6e399c3db0cb575ac8aca364c646cfe0d953e22bc99823230cf1"
+      },
+      "nominal_unprinted_ink_percent": 1.2357067362301453,
+      "unprinted_ink_beyond_allowance_percent": 0.4425462058620751,
+      "largest_unresolved_area_mm2": 0.16516135059863046,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "1.6 mm with contour feedback; Arachne concentric 0.4 mm, minimum bead width 50 percent",
+      "print_sha256": "0f7fb16c5f290a5398202d68e75879041d11b12c98cb432751776fa48cd6dd36",
+      "mesh_sha256_by_slot": {
+        "1": "b38cd8ea025d9e4a6503299028ace844c31bd8773ba1d40025193cefe70b5767",
+        "2": "f324ab262a4b049db91495723736522d6cf6c428f099e3aeb28972e647f13a59",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "4e381faf65531ddb9fcb64882b34ab4ec55ea8338825a6b161a1d3a10597126e"
+      },
+      "nominal_unprinted_ink_percent": 1.093529723269463,
+      "unprinted_ink_beyond_allowance_percent": 0.4309291715494206,
+      "largest_unresolved_area_mm2": 0.35599750326243473,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    },
+    {
+      "description": "2.0 mm with contour feedback; original classic 0.4 mm profile; retained experimental geometry",
+      "print_sha256": "9a9b41efb7a3c0e1ad0566b3f6e3d0784bfb703829d4f2f918ac1b990547a75a",
+      "mesh_sha256_by_slot": {
+        "1": "284bf5db7a69e8029a9edd76bd107c94086ffbe43637afc68a40b5e3ac6d234a",
+        "2": "a1278cf77e5e63ee73d4c9dc07b7602f30a6f4b6ec197d00c6c6b1a234760ee5",
+        "3": "67fbe9977907849efdb194cf20754f68514f83d42a47491bfe63f2e378bc0b14",
+        "4": "0a879230d223c91dd76a9a3815bfeee113e65adbe8362a83dbac5cd4e81bacd2"
+      },
+      "nominal_unprinted_ink_percent": 0.780345772935418,
+      "unprinted_ink_beyond_allowance_percent": 0.30286290208227695,
+      "largest_unresolved_area_mm2": 0.2023327722185877,
+      "digital_coverage_passed": false,
+      "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
+    }
+  ],
+  "additional_experiments": "Two 0.1 mm color layers did not close all projected gaps. A zero-transition-length Arachne trial stalled and was stopped. Neither is released.",
+  "retained_current_report": "../../output/multicolor_v4_2/raster_original_test/surface_coverage.json"
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "print_file": "09_raster_test_P1S.3mf",
+  "print_sha256": "18606d7dc4e937ff315269d647e1dc0df125fd56acc0490bfd2f82053744c28a",
+  "gcode_sha256": "867dfce4fa49a7ecaa95c7611c8ce9de7ea0b9e8b53a61acb39bd8aab1880954",
+  "mesh_sha256_by_slot": {
+    "1": "2b8fa8445c5516b91f451a2549d9c69b713ca095754c34c7cec03519d98f1827",
+    "2": "e76a4bb8cbd1074657e89a68b39518ab8134ea19bf5695c3522b7b94c0e27489",
+    "3": "fb393806aaf012ac0e0fb839dd993ae74be5e1d06979ec303ba2711a5b7251ac",
+    "4": "bcd04cf538561ded78972ac7dc127909f2986dcd7562269db574d08263eee932"
+  },
+  "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+  "color_layer_z_mm": 0.2,
+  "intentional_white_excluded_from_ink_metrics": true,
+  "ink_area_mm2": 1954.280528255602,
+  "nominal_unprinted_ink_area_mm2": 64.39717871751354,
+  "nominal_unprinted_ink_percent": 3.295186017894509,
+  "geometric_allowance_mm": 0.03,
+  "unprinted_ink_beyond_allowance_mm2": 24.822850086731997,
+  "unprinted_ink_beyond_allowance_percent": 1.2701784481723801,
+  "largest_unresolved_area_mm2": 0.5016848703005701,
+  "own_ink_missing_beyond_allowance_mm2": 38.62062114386117,
+  "largest_own_ink_deficit_mm2": 0.5678295346003468,
+  "largest_unresolved_regions": [
+    {
+      "area_mm2": 0.5016848703005701,
+      "bounds_mm": [
+        20.766703478991985,
+        85.18272543698549,
+        21.486859798431396,
+        86.20884098112583
+      ]
+    },
+    {
+      "area_mm2": 0.3099644468375189,
+      "bounds_mm": [
+        91.23878476768732,
+        60.630994997918606,
+        91.85400500148535,
+        61.28739005327225
+      ]
+    },
+    {
+      "area_mm2": 0.2750136617909079,
+      "bounds_mm": [
+        24.70533076673746,
+        19.261401377618313,
+        25.26460912078619,
+        20.40937229245901
+      ]
+    },
+    {
+      "area_mm2": 0.2719174761578626,
+      "bounds_mm": [
+        36.96572791785002,
+        43.261222921311855,
+        38.064417116343975,
+        43.83682166785002
+      ]
+    },
+    {
+      "area_mm2": 0.2118041425749858,
+      "bounds_mm": [
+        47.65917042642832,
+        91.26142547279596,
+        48.187035262584686,
+        92.29234159737825
+      ]
+    },
+    {
+      "area_mm2": 0.20213961179730142,
+      "bounds_mm": [
+        75.99083606898785,
+        88.86140473932028,
+        76.46460911631584,
+        89.87128443270922
+      ]
+    },
+    {
+      "area_mm2": 0.18894266131023396,
+      "bounds_mm": [
+        58.361622758209705,
+        93.97258169203997,
+        58.98240099847317,
+        94.48200500011444
+      ]
+    },
+    {
+      "area_mm2": 0.13554696297608623,
+      "bounds_mm": [
+        63.9372952580452,
+        37.195706740021706,
+        64.75129532068968,
+        37.6113308519125
+      ]
+    },
+    {
+      "area_mm2": 0.13129820367150757,
+      "bounds_mm": [
+        50.39062757790089,
+        85.38102108240128,
+        50.80312617123127,
+        86.19002321362495
+      ]
+    },
+    {
+      "area_mm2": 0.12482102096094216,
+      "bounds_mm": [
+        68.97332952171564,
+        34.53733058273792,
+        69.78564304858446,
+        34.94134671986103
+      ]
+    },
+    {
+      "area_mm2": 0.10245899906797945,
+      "bounds_mm": [
+        80.76997538655996,
+        85.94763355702162,
+        81.1464165598154,
+        86.7525747269392
+      ]
+    },
+    {
+      "area_mm2": 0.10102883245128547,
+      "bounds_mm": [
+        56.878938511013985,
+        26.14368286728859,
+        57.21061336994171,
+        26.678282029926777
+      ]
+    }
+  ],
+  "slots": {
+    "1": {
+      "intended_area_mm2": 8619.595056114702,
+      "not_covered_by_own_color_mm2": 13.175350517011209,
+      "not_covered_by_any_color_mm2": 12.87722044490714,
+      "own_color_missing_beyond_allowance_mm2": 2.8262684710458505
+    },
+    "2": {
+      "intended_area_mm2": 665.6775115873904,
+      "not_covered_by_own_color_mm2": 25.337762016093844,
+      "not_covered_by_any_color_mm2": 21.627973604878957,
+      "own_color_missing_beyond_allowance_mm2": 13.075315378325696
+    },
+    "3": {
+      "intended_area_mm2": 984.1930854310497,
+      "not_covered_by_own_color_mm2": 37.14256985510633,
+      "not_covered_by_any_color_mm2": 32.31090335380248,
+      "own_color_missing_beyond_allowance_mm2": 19.397363506835504
+    },
+    "4": {
+      "intended_area_mm2": 304.4099312371618,
+      "not_covered_by_own_color_mm2": 11.855549309058642,
+      "not_covered_by_any_color_mm2": 10.45830175256296,
+      "own_color_missing_beyond_allowance_mm2": 6.147942278727405
+    }
+  },
+  "white_backing_layers": {
+    "0.4": {
+      "area_mm2": 10573.875705752289,
+      "nominal_uncovered_mm2": 4.408938002418026,
+      "uncovered_beyond_allowance_mm2": 0.48566034896610166,
+      "largest_unresolved_area_mm2": 0.031611839492794336
+    },
+    "0.6": {
+      "area_mm2": 10573.875705752289,
+      "nominal_uncovered_mm2": 0.43315354450220356,
+      "uncovered_beyond_allowance_mm2": 0.06385011897170206,
+      "largest_unresolved_area_mm2": 0.025673496087890157
+    }
+  },
+  "acceptance": {
+    "max_unresolved_ink_percent": 0.1,
+    "max_connected_unresolved_area_mm2": 0.01,
+    "apply_limits_to_own_ink_and_each_backing_layer_also": true
+  },
+  "digital_coverage_passed": false,
+  "physical_print_verified": false,
+  "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+}

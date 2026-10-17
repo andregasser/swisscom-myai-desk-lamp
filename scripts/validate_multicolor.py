@@ -1,5 +1,6 @@
 """Check current AMS meshes, assignment, sliced layers and print-bed bounds."""
 from pathlib import Path
+import argparse
 from collections import defaultdict
 import hashlib
 import json
@@ -9,6 +10,12 @@ import zipfile
 import numpy as np
 import trimesh
 from validate_raster_test import validate as validate_raster
+from validate_raster_coverage import analyze as analyze_coverage
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--allow-withheld-raster', action='store_true',
+                    help='Audit archived/withheld raster files without approving them for printing')
+args = parser.parse_args()
 
 ROOT = Path(__file__).resolve().parents[1]
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
@@ -158,9 +165,25 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
                 for i,window in enumerate(card['windows'])]
         if original:
             report['plates'][file.name]['raster_toolpaths'] = validate_raster(file, original=True)
+            coverage = analyze_coverage(file, 'raster_original_test', .6,
+                                        OUT/'raster_original_test/surface_coverage')
+            report['plates'][file.name]['surface_coverage'] = coverage
+            report['raster_print_release_allowed'] = coverage['digital_coverage_passed']
         if file.name.startswith('09_'):
             assert config['initial_layer_line_width'] == '0.4'
             assert config['elefant_foot_compensation'] == '0'
             report['plates'][file.name]['raster_toolpaths'] = validate_raster(file)
 (OUT / 'print_validation.json').write_text(json.dumps(report, indent=2) + '\n')
+(OUT/'print/RASTER_STATUS.md').write_text(
+    '# Status der Rasterprobe 10\n\n'
+    + ('Die digitale Flächenprüfung ist bestanden; ein physischer Probedruck bleibt erforderlich.\n\n'
+       if report['raster_print_release_allowed'] else
+       '**Experimenteller Entwurf: Die vollständige Flächenprüfung ist nicht bestanden.** '
+       'Es bleiben rechnerische Lücken in der Farbfläche. Diese Datei ist keine bestätigte '
+       'Behebung der weißen Stellen und noch nicht auf die Lampenseiten zu übertragen.\n\n')
+    + '[Prüfbericht](../raster_original_test/surface_coverage.json) · '
+      '[Versuchsaufbau und Grenzen](../../../docs/RASTERPROBE.md).\n')
 print(json.dumps(report['plates'], indent=2))
+if not report['raster_print_release_allowed'] and not args.allow_withheld_raster:
+    raise SystemExit('Rasterprobe 10: Flächendeckung ungenügend. Keine Freigabe als geschlossene Farbfläche. '
+                     'Zum reinen Bestandsaudit --allow-withheld-raster verwenden.')

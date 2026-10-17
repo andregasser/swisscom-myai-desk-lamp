@@ -37,11 +37,15 @@ Die Farbqualität der Probe 09 ist ungenügend. Gewünscht ist eine Neuberechnun
 
 Beim Ablösen erscheinen einzelne Farbstellen weggerissen und Weiß scheint durch. Rückfrage: **keine sichtbaren Rückstände auf der Platte**, Platte **noch lauwarm**. Der Plattentyp ist nicht bestätigt. Echter Materialverlust, Drucklücken und Spannungsaufhellung sind noch nicht voneinander unterschieden. Eine sichere Ursache lässt sich daraus nicht ableiten.
 
-Probe 10 wird mit weißer Rückseite auf dem Bett und Farben oben gedruckt, weiterhin 0,2 mm Farbe + 0,4 mm Weiß. Langsamere Farbbahnen, weniger Kühlung und angepasste Wandbahnen sollen Haftung und Flächenschluss verbessern; Wirkung noch nicht physisch geprüft. Bis Raumtemperatur abkühlen lassen und vor/nach dem Ablösen vergleichen. Die gewollten weißen Rasterpunkte mit der Vorschau abgleichen.
+Das nachgereichte Foto zeigt helle Stellen insbesondere an Rasterübergängen in Sternen und Schrift. Die neue Prüfung der gesamten Fläche findet auch in den Druckbahnen der Probe 09 Lücken: nominell etwa 3,3 % der Farbfläche. Das stützt Drucklücken als mögliche Ursache, beweist aber nicht die Ursache jedes hellen Fotopunkts. Die bisherige Prüfung der Zellmitten war unzureichend.
+
+Die erste Probe 10 mit 0,8-mm-Raster hatte ebenfalls digitale Restlücken; ihre Druckempfehlung ist zurückgenommen. Der Benutzer möchte die **0,4-mm-Düse behalten und ein gröberes Raster erproben**. Der neue 2-mm-Entwurf verwendet breitere diagonale Verbindungen und einen zusammenhängenden Farbrand an der Kontur. Die nominell unbedeckte Farbfläche sinkt auf 0,78 %, bleibt aber vorhanden. **Die vollständige Flächenprüfung ist weiterhin nicht bestanden; keine bestätigte Fehlerbehebung und kein physischer Test des neuen Entwurfs.**
+
+Der Aufbau bleibt bei 0,2 mm Farbe + 0,4 mm Weiß, weiße Rückseite auf dem Bett und Farben oben. Falls der experimentelle Entwurf gedruckt wird, vor dem Ablösen fotografieren, bis Raumtemperatur abkühlen lassen und danach vergleichen. Gewollte weiße Rasterfelder mit der Vorschau abgleichen. Die digitalen Prozentwerte sind keine Messung am realen Druck.
 
 ## Noch zu prüfen
 
-1. **Logo mit gewähltem Aufbau:** Die Wirkung von 0,2 mm Farbe + 0,4 mm Weiß am vollständigen Logo beurteilen. Dafür liegt die korrigierte [Rasterprobe 10 in Originalgröße](RASTERPROBE.md) geslict vor. Die verworfene Probe 09 ist physisch beurteilt; die neue Farbumsetzung, Oberfläche und Ablösung sind noch offen.
+1. **Logo mit gewähltem Aufbau:** Flächenschluss und Farbumsetzung sind noch ungelöst. Der [gröbere Entwurf 10 in Originalgröße](RASTERPROBE.md) ist geslict, fällt aber durch die vollständige Flächenprüfung. Eine Erprobung ist ausdrücklich experimentell. Die verworfene Probe 09 ist physisch beurteilt; Wirkung und Ablösung des neuen Entwurfs sind offen.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.

@@ -25,8 +25,8 @@ raster_process = dict(process, name='myAI Rasterprobe 0.20mm',
                       print_settings_id='myAI Rasterprobe 0.20mm',
                       initial_layer_line_width='0.4', elefant_foot_compensation='0')
 (OUT/'profiles/process_raster.json').write_text(json.dumps(raster_process,indent=2)+'\n')
-original_process = dict(raster_process, name='myAI Original-SVG Rasterprobe 0.20mm',
-                        print_settings_id='myAI Original-SVG Rasterprobe 0.20mm',
+original_process = dict(raster_process, name='myAI Original-SVG Rasterprobe 2mm experimentell',
+                        print_settings_id='myAI Original-SVG Rasterprobe 2mm experimentell',
                         top_surface_line_width='0.4', outer_wall_line_width='0.4',
                         inner_wall_line_width='0.4', top_surface_speed=['25','25'],
                         wall_generator='classic', detect_thin_wall='1',

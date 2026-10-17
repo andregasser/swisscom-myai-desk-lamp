@@ -1,4 +1,4 @@
-"""Full-size original-SVG raster test, printed white first and color face up."""
+"""Coarse original-SVG raster candidate, printed white first and color face up."""
 import json
 import math
 
@@ -12,7 +12,7 @@ OUT = ams.OUT
 import hashlib
 import raster_original as raster
 
-PITCH, BORDER = .8, 5.
+PITCH, BORDER = 2.0, 5.
 OFFSET = (40., 40., 0.)
 TEST = OUT/'raster_original_test'
 
@@ -32,6 +32,7 @@ def main():
     pixels, probes = [[], [], [], []], []  # white, blue, violet, red
     junctions = [[], [], [], []]
     source_samples = []
+    contour_cells = 0
     for region, p0, direction, stops in sources:
         x0, y0, x1, y1 = region.bounds()
         cells, clipped_cells, centers = [], [], []
@@ -45,7 +46,16 @@ def main():
                 clipped_cells.append(clipped)
                 centers.append(((col+.5)*PITCH, (row+.5)*PITCH))
         targets = raster.sample_srgb(centers, p0, direction, stops)
-        assignments, weights = raster.diffuse(cells, targets)
+        weights = raster.palette_weights(raster.linear_rgb(targets))
+        # Keep a printable ink band at the outline. Feed its forced palette
+        # assignment back into diffusion, rather than silently losing white.
+        interior = region.offset(-.45)
+        forced = {}
+        for i, (cell, clipped) in enumerate(zip(cells, clipped_cells)):
+            if abs((clipped ^ interior).area()-PITCH**2) >= 1e-6:
+                forced[cell] = int(np.argmax(weights[i,1:]))+1
+                contour_cells += 1
+        assignments, weights = raster.diffuse(cells, targets, forced=forced)
         source_samples.append({'stops': stops, 'sample_count': len(cells),
                                'mean_target_srgb': targets.mean(axis=0).tolist(),
                                'mean_palette_weights': weights.mean(axis=0).tolist()})
@@ -54,9 +64,9 @@ def main():
             pixels[index].append(clipped)
             if abs(clipped.area()-PITCH**2) < 1e-6:
                 probes.append({'xy_mm': (np.array(center)+shift).tolist(), 'slot': index+1})
-        # Checkerboard pixels otherwise share a vertical edge with their diagonal
-        # neighbor: a non-manifold mesh after vertex welding. Small round junctions
-        # resolve that ambiguity without introducing another palette color.
+        # Broader junctions connect diagonal neighbors without point contacts.
+        # This changes local color areas; it is still subject to the independent
+        # G-code coverage check, not a guarantee of a closed printed surface.
         for row in range(math.floor(y0/PITCH), math.ceil(y1/PITCH)+1):
             for col in range(math.floor(x0/PITCH), math.ceil(x1/PITCH)+1):
                 neighbors = [assignments.get((row+dy, col+dx), -1)
@@ -64,7 +74,7 @@ def main():
                 a, b, c, d = neighbors
                 chosen = a if a == c and a != b and a != d else b if b == d and b != a and b != c else None
                 if chosen is not None and chosen >= 0:
-                    joint = m.CrossSection.circle(.08, 16).translate((col*PITCH, row*PITCH)) ^ region
+                    joint = m.CrossSection.circle(.28, 32).translate((col*PITCH, row*PITCH)) ^ region
                     if joint.area() > 1e-8:
                         junctions[chosen].append(joint)
     colors = [combine(items) for items in pixels]
@@ -136,7 +146,7 @@ def main():
     for probe in probes:
         probe['xy_mm'][1] = height-probe['xy_mm'][1]
     ams.multipart_3mf(parts, OUT/'geometry/10_raster_original_test.3mf',
-                      'Original-SVG Rasterprobe: Weiss zuerst, Logo oben', OFFSET)
+                      'Original-SVG Rasterprobe 2mm - experimentell', OFFSET)
     # Vector preview of the exact final color regions, before print rotation.
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}mm" height="{height}mm" viewBox="0 0 {width} {height}">',
            f'<rect width="{width}" height="{height}" fill="white"/>']
@@ -148,9 +158,10 @@ def main():
               'logo_size_mm': [xmax-xmin, ymax-ymin], 'production_logo_scale': 1.,
               'source_contour_preserved': True, 'raster_pitch_mm': PITCH,
               'source_sha256': hashlib.sha256((mono.ROOT/'assets/logos'/ams.P['logo_source']).read_bytes()).hexdigest(),
-              'gradient_sources': source_samples, 'method': 'original sRGB stops, linear-RGB convex palette projection, serpentine Floyd-Steinberg',
+              'gradient_sources': source_samples, 'method': 'original sRGB stops, linear-RGB convex palette projection, constrained serpentine Floyd-Steinberg with ink contour guard',
               'logo_area_mm2_by_slot': logo_areas, 'reference_fields': reference_fields,
-              'corner_junction_radius_mm': .08,
+              'corner_junction_radius_mm': .28,
+              'contour_guard_mm': .45, 'dominant_ink_contour_cells': contour_cells,
               'color_depth_mm': ams.CD, 'white_backing_mm': ams.TH-ams.CD,
               'front_is_bed_face': False, 'color_layer_z_mm': .6, 'print_offset_mm': OFFSET,
               'one_connected_card': True, 'watertight_slot_components': components,

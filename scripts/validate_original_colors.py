@@ -63,6 +63,8 @@ original = ET.fromstring(source)
 original.set('viewBox', f'{(x0-border)/scale} {(y0-border)/scale} {w/scale} {h/scale}')
 original.set('x','24'); original.set('y','86')
 original.set('width','480'); original.set('height',str(480*h/w))
+card = json.loads((OUT/'raster_original_test/geometry_validation.json').read_text())
+pitch = str(card['raster_pitch_mm']).replace('.', ',')
 new = ET.parse(OUT/'raster_original_test/raster.svg').getroot()
 new.set('x','536'); new.set('y','86')
 new.set('width','480'); new.set('height',str(480*h/w))
@@ -71,7 +73,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" view
 <g font-family="DejaVu Sans, sans-serif" fill="#182337">
 <text x="24" y="34" font-size="22" font-weight="bold">Original-SVG → Raster mit vorhandenen Filamentfarben</text>
 <text x="24" y="66" font-size="18">Original: vollständiger SVG-Verlauf</text>
-<text x="536" y="66" font-size="18">Neue Druckprobe: 0,8-mm-Raster</text>
+<text x="536" y="66" font-size="18">Experimenteller Entwurf: {pitch}-mm-Raster</text>
 {ET.tostring(original,encoding='unicode')}
 {ET.tostring(new,encoding='unicode')}
 <text x="24" y="660" font-size="16">Weiß im Raster ist beabsichtigt. Cyan liegt außerhalb der vorhandenen Druckpalette.</text>
