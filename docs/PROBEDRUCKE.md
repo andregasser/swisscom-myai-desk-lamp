@@ -33,7 +33,7 @@ V4.2 verwendet deshalb **0,2 mm Farbe + 0,4 mm Weiß** für Rot, Violett und Bla
 
 ## Noch zu prüfen
 
-1. **Logo mit gewähltem Aufbau:** Die Wirkung von 0,2 mm Farbe + 0,4 mm Weiß am vollständigen Logo beurteilen. Der Rastervorschlag ist weiterhin eine separate, noch nicht geslicte Studie.
+1. **Logo mit gewähltem Aufbau:** Die Wirkung von 0,2 mm Farbe + 0,4 mm Weiß am vollständigen Logo beurteilen. Dafür liegt jetzt die [Rasterprobe 09 in Originalgröße](RASTERPROBE.md) geslict vor. Raster und Leuchtwirkung sind noch nicht physisch beurteilt.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.

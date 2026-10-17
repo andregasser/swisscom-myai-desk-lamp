@@ -8,7 +8,7 @@ Die Originalkonturen und die separaten Verlaufsrichtungen von Sternen und Schrif
 
 Der Vorschlag zeigt eine optische Mischung durch benachbarte Flächen. Aus der Nähe bleibt die Körnung sichtbar. Er enthält weder zusätzliche Filamentfarben noch einen tatsächlich kontinuierlich gemischten Farbton.
 
-**Prüfstand:** SVG-/PNG-Vorschlag, kein freigegebenes Druckmodell. An den Logokonturen entstehen angeschnittene Zellen, die deutlich schmaler als 0,8 mm sein können. Vor einer Druckprobe sind diese Konturen für die 0,4-mm-Düse aufzubereiten und die tatsächlichen Slicer-Bahnen zu prüfen. Die Bildschirmansicht sagt weder die echten Filamentfarben noch die beleuchtete Wirkung voraus. Die aktuelle v4.1 wird weiterhin aus `cad/build_multicolor.py` erzeugt; diese Studie ist separat und gehört nicht zum Druckpaket.
+**Historische Gestaltungsstudie:** Die Bilder hier sind SVG-/PNG-Vorschläge. Inzwischen steht eine [geslicte Rasterprobe in Originalgröße](../../docs/RASTERPROBE.md) mit 0,2 mm Farbe + 0,4 mm Weiß bereit; sie bereinigt winzige Randinseln und prüft den Erhalt der vollständigen Rasterzellen in den Druckbahnen. Die reale Wirkung ist noch offen. An den Logokonturen entstehen angeschnittene Zellen, die deutlich schmaler als 0,8 mm sein können. Die Druckprobe übernimmt deshalb nicht jede angeschnittene Farbinsel unverändert. Die Bildschirmansicht sagt weder die echten Filamentfarben noch die beleuchtete Wirkung voraus. Die reguläre v4.2 wird weiterhin aus `cad/build_multicolor.py` erzeugt; diese Studie ist separat und gehört nicht zum Druckpaket.
 
 Reproduzieren, vom Repository-Stamm:
 

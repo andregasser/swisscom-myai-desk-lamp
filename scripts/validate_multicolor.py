@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 import numpy as np
 import trimesh
+from validate_raster_test import validate as validate_raster
 
 ROOT = Path(__file__).resolve().parents[1]
 P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
@@ -31,7 +32,7 @@ def crosses_window(start, end, xmin, ymin, xmax, ymax):
 report = {'physical_print_verified': False, 'stl': {}, 'plates': {}}
 assert len(list((OUT / 'stl').glob('*.stl'))) == 10
 assert {p.stem for p in (OUT / 'print').glob('*.3mf')} == {
-    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S', '08_transmission_test_P1S'}
+    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S', '08_transmission_test_P1S', '09_raster_test_P1S'}
 for file in sorted((OUT / 'stl').glob('*.stl')):
     mesh = trimesh.load_mesh(file)
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0, file
@@ -41,7 +42,7 @@ for file in sorted((OUT / 'stl').glob('*.stl')):
                                'components': len(mesh.split())}
 
 for file in sorted((OUT / 'print').glob('*.3mf')):
-    multi = file.name.startswith(('01_', '02_', '08_'))
+    multi = file.name.startswith(('01_', '02_', '08_', '09_'))
     transmission = file.name.startswith('08_')
     window_layers = defaultdict(lambda: defaultdict(set))
     if transmission:
@@ -144,5 +145,9 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             report['plates'][file.name]['window_layer_slots'] = [
                 {**window, 'sliced_layers': {str(z): sorted(slots) for z,slots in window_layers[i].items()}}
                 for i,window in enumerate(card['windows'])]
+        if file.name.startswith('09_'):
+            assert config['initial_layer_line_width'] == '0.4'
+            assert config['elefant_foot_compensation'] == '0'
+            report['plates'][file.name]['raster_toolpaths'] = validate_raster(file)
 (OUT / 'print_validation.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report['plates'], indent=2))

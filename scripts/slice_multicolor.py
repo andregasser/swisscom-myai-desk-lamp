@@ -12,7 +12,7 @@ P = json.loads((ROOT/'cad/multicolor_parameters.json').read_text())
 OUT = ROOT/'output'/P['output_folder']
 parser = argparse.ArgumentParser()
 parser.add_argument('bambu_studio', type=Path)
-parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit','08_transmission_test'])
+parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit','08_transmission_test','09_raster_test'])
 args = parser.parse_args()
 process = json.loads((ROOT/'output/profiles/cube_0.20.json').read_text())
 process.update({'name':f'myAI Cube {P["version"]} 0.20mm', 'print_settings_id':f'myAI Cube {P["version"]} 0.20mm',
@@ -21,6 +21,10 @@ process.update({'name':f'myAI Cube {P["version"]} 0.20mm', 'print_settings_id':f
 (OUT/'profiles/process.json').write_text(json.dumps(process,indent=2)+'\n')
 mono_process = dict(process, enable_prime_tower='0')
 (OUT/'profiles/process_white.json').write_text(json.dumps(mono_process,indent=2)+'\n')
+raster_process = dict(process, name='myAI Rasterprobe 0.20mm',
+                      print_settings_id='myAI Rasterprobe 0.20mm',
+                      initial_layer_line_width='0.4', elefant_foot_compensation='0')
+(OUT/'profiles/process_raster.json').write_text(json.dumps(raster_process,indent=2)+'\n')
 for color in P['colors']:
     data=json.loads((ROOT/'output/profiles/pla_white.json').read_text())
     data.update({'name':'myAI PLA '+color['name'], 'from':'User',
@@ -32,10 +36,11 @@ for color in P['colors']:
             data[key]=['210']*len(data[key])
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
 for plate in args.plates:
-    multicolor=plate in ('01_color_test','02_panel','08_transmission_test')
+    multicolor=plate in ('01_color_test','02_panel','08_transmission_test','09_raster_test')
     scratch=ROOT/'output/logs'/(P['version']+'_'+plate)
     scratch.mkdir(parents=True,exist_ok=True)
-    profile=OUT/'profiles'/('process.json' if multicolor else 'process_white.json')
+    profile=OUT/'profiles'/('process_raster.json' if plate == '09_raster_test' else
+                           'process.json' if multicolor else 'process_white.json')
     filament_paths=[OUT/'profiles'/f'filament_{i}.json' for i in range(1,5 if multicolor else 2)]
     filaments=';'.join(map(str,filament_paths))
     common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',
