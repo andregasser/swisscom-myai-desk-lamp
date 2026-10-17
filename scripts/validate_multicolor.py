@@ -1,4 +1,4 @@
-"""Check v3 mesh integrity, AMS assignment, sliced layers and print-bed bounds."""
+"""Check current AMS meshes, assignment, sliced layers and print-bed bounds."""
 from pathlib import Path
 from collections import defaultdict
 import hashlib
@@ -80,7 +80,8 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         if multi:
             assert layers[.2] == layers[.4] == {1, 2, 3, 4}, layers
             assert all(slots == {1} for z, slots in layers.items() if z > .4), layers
-            count = 14 if file.name.startswith('02_') else 4
+            height = P['rail_anchor_mm'] + 2 if file.name.startswith('02_') else P['panel_thickness_mm']
+            count = round(height / .2)
             assert set(layers) == {round(i*.2, 1) for i in range(1, count+1)}, layers
         result = json.loads(file.with_name(file.stem.replace('_P1S', '_slicer_result') + '.json').read_text())
         assert result['return_code'] == 0

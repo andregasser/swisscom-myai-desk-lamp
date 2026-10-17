@@ -17,6 +17,8 @@ P = json.loads((ROOT / 'cad/multicolor_parameters.json').read_text())
 OUT = ROOT / 'output' / P['output_folder']
 PW, PH = P['panel_width_mm'], P['panel_height_mm']
 TH, CD = P['panel_thickness_mm'], P['color_depth_mm']
+RA = P['rail_anchor_mm']
+assert 0 < CD < TH <= RA
 box, union, around, mesh = mono.box, mono.union, mono.around, mono.mesh
 FOOT_CENTERS = [(x, y) for x in (18, 132) for y in (18, 132)]
 POST_CENTERS = [(x, y) for x in (6.5, 143.5) for y in (6.5, 143.5)]
@@ -111,8 +113,9 @@ def logo_regions():
 
 
 def rail_profile(center):
-    return [(center-1, TH-.02), (center+1, TH-.02),
-            (center+2, TH+2), (center-2, TH+2)]
+    # Keep the v4 mating profile in place when thinning the light field.
+    return [(center-1, RA-.02), (center+1, RA-.02),
+            (center+2, RA+2), (center-2, RA+2)]
 
 
 def panel_envelope(with_rails=True):
@@ -121,6 +124,10 @@ def panel_envelope(with_rails=True):
     if with_rails:
         length = PH-P['rail_top_margin_mm']-P['rail_bottom_margin_mm']
         for center in (6-P['panel_left_mm'], 144-P['panel_left_mm']):
+            # An internal neck joins the thinner skin to the unchanged rail.
+            panel += mono.front_prism([(center-1, TH-.02), (center+1, TH-.02),
+                                        (center+1, RA), (center-1, RA)],
+                                       length, P['rail_top_margin_mm'])
             panel += mono.front_prism(rail_profile(center), length, P['rail_top_margin_mm'])
     return panel
 
@@ -160,7 +167,7 @@ def lid():
     for x, y in POST_CENTERS:
         parts.append(m.Manifold.cylinder(4.02, 1.3, 1.3, 48).translate((x, y, 1.98)))
     cap = union(parts)
-    # Intact lid surface, with outlets in the 0.8 mm perimeter joint on top.
+    # Intact lid surface, with outlets in the perimeter joint on top.
     # No exterior side bezel or step remains in front of the panels.
     start = (150 - P['outlet_channel_length_mm'])/2
     channels = [around(box(P['outlet_channel_length_mm'], 9-inset+.1,
@@ -284,7 +291,7 @@ def main():
         report['parts'][name] = {'watertight': True, 'size_mm': obj.extents.tolist()}
     mono.core_3mf([(name, mesh(solid), offset) for name, solid, offset in fit_parts], OUT/'geometry/07_fit.3mf')
     multipart_3mf(panel, OUT/'geometry/02_panel.3mf', 'Logo-Paneel — 4x drucken')
-    # A small, flat four-color sample uses the same 0.4 + 0.4 mm layer stack.
+    # The flat color sample preserves the production color/backing depths.
     test = [s.scale((.35, .35, 1)) for s in panel_parts(with_rails=False)]
     multipart_3mf(test, OUT/'geometry/01_color_test.3mf', 'AMS Farb- und Lichtprobe', (90, 90, 0))
     assembly = [mono_parts['04_base'].translate((0, 0, P['foot_height_mm'])), mono_parts['03_frame'].translate((0,0,P['frame_bottom_mm'])),
@@ -306,7 +313,8 @@ def main():
     report.update({'assembled_size_mm': (bounds[1] - bounds[0]).tolist(),
                    'logo_center_xz_mm': ink_bounds.mean(axis=0)[[0,2]].tolist(),
                    'assembly_interference_mm3': 0, 'vertical_panel_insertion_clear': True,
-                   'panel_color_depth_mm': CD, 'panel_white_backing_mm': TH-CD})
+                   'panel_thickness_mm': TH, 'panel_color_depth_mm': CD,
+                   'panel_white_backing_mm': TH-CD, 'rail_anchor_mm': RA})
     scene = trimesh.Scene()
     for name, solid in zip(('base','frame','lid','feet'), assembly[:4]):
         obj=mesh(solid); obj.visual.face_colors=[238,240,241,255]

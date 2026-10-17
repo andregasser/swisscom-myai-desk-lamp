@@ -1,0 +1,96 @@
+{
+  "error_string": "Success.",
+  "export_time": 32,
+  "layer_height": 0.20000000298023224,
+  "plate_index": 0,
+  "prepare_time": 22,
+  "return_code": 0,
+  "sliced_plates": [
+    {
+      "feature_type_times": {
+        "Bottom surface": 130.6085968017578,
+        "Brim": 70.41035461425781,
+        "Custom": 380.4179992675781,
+        "Flush": 759.5396118164062,
+        "Gap infill": 0.03179347887635231,
+        "Inner wall": 46.5973014831543,
+        "Internal solid infill": 84.8526382446289,
+        "Outer wall": 64.20370483398438,
+        "Prime tower": 220.17047119140625,
+        "Top surface": 175.94635009765625,
+        "Travel": 119.58536529541016,
+        "Undefined": 104.13631439208984
+      },
+      "filament_change_times": 6,
+      "filaments": [
+        {
+          "filament_id": "GFL99",
+          "id": 1,
+          "main_used_g": 1.8242241144180298,
+          "total_used_g": 3.7090797424316406
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 2,
+          "main_used_g": 0.33855140209198,
+          "total_used_g": 1.0941976308822632
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 3,
+          "main_used_g": 0.044489290565252304,
+          "total_used_g": 0.6944338083267212
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 4,
+          "main_used_g": 0.019002599641680717,
+          "total_used_g": 1.291913390159607
+        }
+      ],
+      "generate_support_material_time": 2,
+      "id": 1,
+      "infill_time": 17,
+      "layer_filament_change": 0,
+      "main_predication": 663.2665405273438,
+      "make_perimeters_time": 47,
+      "obj_cached_cnt": 0,
+      "objects": [
+        {
+          "bbox": {
+            "depth": 51.099998474121094,
+            "height": 0.6000000238418579,
+            "width": 52.36000061035156,
+            "x": 90.0,
+            "y": 90.0,
+            "z": 1.9767770753631453e-11
+          },
+          "id": 5,
+          "name": "AMS Farb- und Lichtprobe",
+          "triangle_count": 8240
+        }
+      ],
+      "sliced_time": 102,
+      "sliced_time_with_cache": 22,
+      "total_predication": 2036.9149169921875,
+      "triangle_count": 8240,
+      "warning_message": ""
+    }
+  ],
+  "sparse_infill_density": 100.0,
+  "upward_compatible_machine": [
+    "Bambu Lab P1P 0.4 nozzle",
+    "Bambu Lab X1 0.4 nozzle",
+    "Bambu Lab X1 Carbon 0.4 nozzle",
+    "Bambu Lab X1E 0.4 nozzle",
+    "Bambu Lab A1 0.4 nozzle",
+    "Bambu Lab H2D 0.4 nozzle",
+    "Bambu Lab H2D Pro 0.4 nozzle",
+    "Bambu Lab H2S 0.4 nozzle",
+    "Bambu Lab P2S 0.4 nozzle",
+    "Bambu Lab H2C 0.4 nozzle",
+    "Bambu Lab X2D 0.4 nozzle",
+    "Bambu Lab A2L 0.4 nozzle"
+  ],
+  "wall_loops": 2
+}

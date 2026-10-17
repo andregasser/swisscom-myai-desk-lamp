@@ -1,5 +1,7 @@
 # Reproduzierbarkeit und Prüfstand
 
+> Diese Anleitung beschreibt die archivierte einfarbige v2. Aktuell: [AMS v4.1](MEHRFARBIG_V4.md). Neue Praxisbeobachtungen zu LED-Passring und 0,6-mm-Lichtprobe stehen in [Probedruck-Ergebnisse](PROBEDRUCKE.md); Prüfstand-Angaben unten beschreiben die ursprüngliche digitale Auslieferung.
+
 ## Geometrie
 
 `cad/build.py` erzeugt die Geometrie mit Manifold3D. Die SVG-Kontur wird aus dem unveränderten Light-Logo abgeleitet und als Relief mit der Wand vereinigt. Kurven werden mit höchstens etwa 0,2 mm Abtastabstand polygonisiert. Das separate Dreiecksfragment am A mit weniger als 0,02 mm² wird beim Ableiten ausgelassen, um einen nicht druckbaren Punktkontakt zu vermeiden.

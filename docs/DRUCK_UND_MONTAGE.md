@@ -1,5 +1,7 @@
 # Drucken und zusammenbauen
 
+> Diese Anleitung beschreibt die archivierte einfarbige v2. Aktuell: [AMS v4.1](MEHRFARBIG_V4.md). Neue Praxisbeobachtungen zu LED-Passring und 0,6-mm-Lichtprobe stehen in [Probedruck-Ergebnisse](PROBEDRUCKE.md); Prüfstand-Angaben unten beschreiben die ursprüngliche digitale Auslieferung.
+
 ## 1. Testplatte
 
 Die vier beschrifteten Lichtproben haben freie Flächen mit **0,6 / 0,8 / 1,0 / 1,2 mm** Materialstärke. Der Rahmen ist dicker; das kleine Logo trägt jeweils weitere 0,8 mm auf.
