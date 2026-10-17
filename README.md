@@ -20,9 +20,9 @@ Luft und Kabel führen unter dem Boden hindurch. Vier 4-mm-Druckfüße schaffen 
 
 [Druckdateien & Montage v4.2](docs/MEHRFARBIG_V4.md) · [Farbprobe](output/multicolor_v4_2/print/01_color_test_P1S.3mf) · [Führungs-Passprobe](output/multicolor_v4_2/print/07_fit_P1S.3mf) · [Komplettpaket v4.2](output/myAI_Cube_150_P1S_AMS_v4_2.zip)
 
-Neun vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. Lampe ohne Proben laut Slicer etwa **241 g PLA und 16 h 10 min**. Der [Schichtvergleich](docs/LICHTVERGLEICH.md) ist abgeschlossen: **0,2 mm Farbe + 0,4 mm Weiß** für alle drei Logofarben. Die neue Führung separat mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
+Zehn vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. Lampe ohne Proben laut Slicer etwa **241 g PLA und 16 h 10 min**. Der [Schichtvergleich](docs/LICHTVERGLEICH.md) ist abgeschlossen: **0,2 mm Farbe + 0,4 mm Weiß** für alle drei Logofarben. Die neue Führung separat mit der Passprobe prüfen. [Frühere AMS-Variante v3](docs/MEHRFARBIG_V3.md).
 
-**Aktueller Test: [Rasterprobe in Logo-Originalgröße](docs/RASTERPROBE.md).** Eine Karte mit 0,8-mm-Raster und 0,2 mm Farbe + 0,4 mm Weiß: [druckfertige 3MF](output/multicolor_v4_2/print/09_raster_test_P1S.3mf), etwa 1 h 2 min und 11 g PLA. Damit Verlauf und Körnung ohne Licht und mit LED dahinter beurteilen.
+**Aktueller Test: [Rasterprobe 10 aus dem Originalverlauf](docs/RASTERPROBE.md).** Alle SVG-Farbstopps werden direkt ausgewertet. 0,8-mm-Raster, 0,2 mm Farbe + 0,4 mm Weiß, jetzt **Sichtseite oben**: [druckfertige 3MF](output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf), etwa 1 h 9 min und 10,62 g PLA. Weiße Rasterpunkte sind beabsichtigt; Cyan bleibt mit der vorhandenen Palette nur eingeschränkt darstellbar. Probe 09 wurde nach dem Probedruck verworfen.
 
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 

@@ -58,13 +58,15 @@ def model_segments(code, config):
                 yield round(z, 3), tool+1, a+offset, b+offset, width
 
 
-def validate(file=OUT/'print/09_raster_test_P1S.3mf'):
-    card = json.loads((OUT/'raster_test/geometry_validation.json').read_text())
+def validate(file=OUT/'print/09_raster_test_P1S.3mf', original=False):
+    folder = 'raster_original_test' if original else 'raster_test'
+    color_layer = .6 if original else .2
+    card = json.loads((OUT/folder/'geometry_validation.json').read_text())
     for slot in range(1, 5):
-        mesh = trimesh.load_mesh(OUT/'raster_test/stl'/f'slot_{slot}.stl')
+        mesh = trimesh.load_mesh(OUT/folder/'stl'/f'slot_{slot}.stl')
         assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0
-        assert abs(mesh.bounds[0, 2]) < 1e-6
-        assert abs(mesh.bounds[1, 2]-(card['size_mm'][2] if slot == 1 else card['color_depth_mm'])) < 1e-6
+        assert abs(mesh.bounds[0, 2]-(.4 if original and slot != 1 else 0)) < 1e-6
+        assert abs(mesh.bounds[1, 2]-(card['size_mm'][2] if slot == 1 or original else card['color_depth_mm'])) < 1e-6
     with zipfile.ZipFile(file) as archive:
         config = json.loads(archive.read('Metadata/project_settings.config'))
         code = archive.read('Metadata/plate_1.gcode').decode()
@@ -76,10 +78,13 @@ def validate(file=OUT/'print/09_raster_test_P1S.3mf'):
     origin = np.array(card['print_offset_mm'][:2])
     for z, slot, a, b, line_width in model_segments(code, config):
         segments[z, slot].append([*a, *b, line_width/2])
-        if z == .2:
-            xy = ((np.array([a, b])-origin+margin)*draw_scale).flatten().tolist()
+        if z == color_layer:
+            coords = np.array([a,b])-origin
+            if original:
+                coords[:, 1] = height-coords[:, 1]
+            xy = ((coords+margin)*draw_scale).flatten().tolist()
             draw.line(xy, fill=P['colors'][slot-1]['hex'], width=max(1, round(line_width*draw_scale)))
-    picture.save(OUT/'preview/raster_toolpaths.png')
+    picture.save(OUT/'preview'/('raster_original_toolpaths.png' if original else 'raster_toolpaths.png'))
     arrays = {key: np.array(value) for key, value in segments.items()}
     failures, worst = [], 0.
     counts = defaultdict(int)
@@ -87,29 +92,29 @@ def validate(file=OUT/'print/09_raster_test_P1S.3mf'):
     # can leave small central gaps between variable-width paths; this is a cell
     # retention check, not a claim of complete coverage. Both white backing layers
     # must cover the centers, with 0.03 mm rounding/arc approximation tolerance.
-    for probe in card['full_cell_probes']:
+    for probe in [*card['full_cell_probes'], *card.get('reference_fields', [])]:
         point = np.array(probe['xy_mm'])+origin
         for layer in (.2, .4, .6):
-            slot = probe['slot'] if layer == .2 else 1
+            slot = probe['slot'] if layer == color_layer else 1
             lines = arrays[layer, slot]
             a, delta = lines[:, :2], lines[:, 2:4]-lines[:, :2]
             t = np.clip(np.sum((point-a)*delta, axis=1)/np.sum(delta*delta, axis=1), 0, 1)
             clearance = np.linalg.norm(a+t[:, None]*delta-point, axis=1)-lines[:, 4]
             gap = float(np.min(clearance))
             worst = max(worst, gap)
-            if gap > (.1 if layer == .2 else .03):
+            if gap > (.1 if layer == color_layer else .03):
                 failures.append({'layer': layer, **probe, 'gap_mm': gap})
         counts[probe['slot']] += 1
     assert not failures, f'{len(failures)} uncovered cell/layer samples: {failures[:8]}'
     report = {'full_cell_count': len(card['full_cell_probes']),
-              'first_layer_cell_central_disks_verified_by_slot': dict(counts),
+              ('color_layer_cells_and_references_by_slot' if original else 'first_layer_cell_central_disks_verified_by_slot'): dict(counts),
               'central_disk_diameter_mm': .2,
               'both_white_backing_layers_verified_at_all_cell_centers': True,
               'missing_cell_layer_samples': len(failures), 'max_center_gap_mm': worst,
               'extrusion_widths_and_arcs_considered': True,
               'physical_print_verified': False,
               'scope': 'Ink reaches central 0.2 mm disks of full cells. Not complete surface coverage, exact corners, partial boundary cells or real optical mixing.'}
-    (OUT/'raster_test/toolpath_validation.json').write_text(json.dumps(report, indent=2)+'\n')
+    (OUT/folder/'toolpath_validation.json').write_text(json.dumps(report, indent=2)+'\n')
     return report
 
 

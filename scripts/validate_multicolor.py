@@ -32,7 +32,7 @@ def crosses_window(start, end, xmin, ymin, xmax, ymax):
 report = {'physical_print_verified': False, 'stl': {}, 'plates': {}}
 assert len(list((OUT / 'stl').glob('*.stl'))) == 10
 assert {p.stem for p in (OUT / 'print').glob('*.3mf')} == {
-    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S', '08_transmission_test_P1S', '09_raster_test_P1S'}
+    '01_color_test_P1S', '02_panel_P1S', '03_frame_P1S', '04_base_P1S', '05_lid_P1S', '06_feet_P1S', '07_fit_P1S', '08_transmission_test_P1S', '09_raster_test_P1S', '10_raster_original_test_P1S'}
 for file in sorted((OUT / 'stl').glob('*.stl')):
     mesh = trimesh.load_mesh(file)
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume > 0, file
@@ -42,8 +42,9 @@ for file in sorted((OUT / 'stl').glob('*.stl')):
                                'components': len(mesh.split())}
 
 for file in sorted((OUT / 'print').glob('*.3mf')):
-    multi = file.name.startswith(('01_', '02_', '08_', '09_'))
+    multi = file.name.startswith(('01_', '02_', '08_', '09_', '10_'))
     transmission = file.name.startswith('08_')
+    original = file.name.startswith('10_')
     window_layers = defaultdict(lambda: defaultdict(set))
     if transmission:
         card = json.loads((OUT/'transmission_test/geometry_validation.json').read_text())
@@ -61,7 +62,7 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert config['curr_bed_type'] == 'Textured PEI Plate'
         assert config['enable_support'] == '0'
         assert config['sparse_infill_density'] == '100%'
-        assert config['wall_generator'] == 'arachne'
+        assert config['wall_generator'] == ('classic' if original else 'arachne')
         if multi:
             assert config['nozzle_temperature'][2] == '210'
             assert config['nozzle_temperature_initial_layer'][2] == '210'
@@ -115,8 +116,18 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert len(points) > 100
         if multi:
             color_depth = .4 if transmission else P['color_depth_mm']
-            assert all(slots == ({1,2,3,4} if z <= color_depth+.001 else {1})
-                       for z,slots in layers.items()), layers
+            if original:
+                assert dict(layers) == {.2: {1}, .4: {1}, .6: {1,2,3,4}}, layers
+                assert config['additional_cooling_fan_speed'] == ['0']*4
+                assert config['fan_max_speed'] == ['50']*4
+                assert config['close_fan_the_first_x_layers'] == ['2']*4
+                assert config['top_surface_speed'] == ['25','25']
+                assert config['seam_gap'] == '0%'
+                assert config['detect_thin_wall'] == '1'
+                assert config['top_surface_line_width'] == '0.4'
+            else:
+                assert all(slots == ({1,2,3,4} if z <= color_depth+.001 else {1})
+                           for z,slots in layers.items()), layers
             height = card['size_mm'][2] if transmission else P['rail_anchor_mm'] + 2 if file.name.startswith('02_') else P['panel_thickness_mm']
             count = round(height / .2)
             assert set(layers) == {round(i*.2, 1) for i in range(1, count+1)}, layers
@@ -129,7 +140,7 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
         assert result['return_code'] == 0
         plate = result['sliced_plates'][0]
         assert not plate['warning_message']
-        assert plate['filament_change_times'] == (6 if transmission else 4 if multi else 0)
+        assert plate['filament_change_times'] == (6 if transmission else 3 if original else 4 if multi else 0)
         report['plates'][file.name] = {
             'sliced_successfully': True, 'bambu_studio': '02.08.02.61',
             'estimated_minutes': round(plate['total_predication'] / 60, 1),
@@ -145,6 +156,8 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             report['plates'][file.name]['window_layer_slots'] = [
                 {**window, 'sliced_layers': {str(z): sorted(slots) for z,slots in window_layers[i].items()}}
                 for i,window in enumerate(card['windows'])]
+        if original:
+            report['plates'][file.name]['raster_toolpaths'] = validate_raster(file, original=True)
         if file.name.startswith('09_'):
             assert config['initial_layer_line_width'] == '0.4'
             assert config['elefant_foot_compensation'] == '0'

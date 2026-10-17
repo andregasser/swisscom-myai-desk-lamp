@@ -31,9 +31,17 @@ Rückmeldung: „wir sollten für rot, violett und blau 0.2 verwenden. violett s
 
 V4.2 verwendet deshalb **0,2 mm Farbe + 0,4 mm Weiß** für Rot, Violett und Blau. Die 0,6-mm-Gesamtdicke und die äußere Geometrie bleiben erhalten. Die subjektive Verbesserung von Violett ist bestätigt; dies ist keine quantitative Transmissionsmessung und noch kein Test des vollständigen Logos. Das ecoPLA-Purple-Profil mit 210 °C aus der Vergleichskarte wird für alle AMS-Projekte übernommen.
 
+## Rückmeldung zur Rasterprobe — 18. Oktober 2026
+
+Die Farbqualität der Probe 09 ist ungenügend. Gewünscht ist eine Neuberechnung aus den tatsächlichen Originalfarben. Die alte Probe verwendete zwar Originalkonturen und -richtungen, aber künstliche Rot–Violett–Blau-Farbstopps. Dieser Fehler wird in [Probe 10](RASTERPROBE.md) korrigiert; die Original-SVG bleibt unverändert. Die vorhandene Palette kann das originale Cyan weiterhin nicht exakt wiedergeben.
+
+Beim Ablösen erscheinen einzelne Farbstellen weggerissen und Weiß scheint durch. Rückfrage: **keine sichtbaren Rückstände auf der Platte**, Platte **noch lauwarm**. Der Plattentyp ist nicht bestätigt. Echter Materialverlust, Drucklücken und Spannungsaufhellung sind noch nicht voneinander unterschieden. Eine sichere Ursache lässt sich daraus nicht ableiten.
+
+Probe 10 wird mit weißer Rückseite auf dem Bett und Farben oben gedruckt, weiterhin 0,2 mm Farbe + 0,4 mm Weiß. Langsamere Farbbahnen, weniger Kühlung und angepasste Wandbahnen sollen Haftung und Flächenschluss verbessern; Wirkung noch nicht physisch geprüft. Bis Raumtemperatur abkühlen lassen und vor/nach dem Ablösen vergleichen. Die gewollten weißen Rasterpunkte mit der Vorschau abgleichen.
+
 ## Noch zu prüfen
 
-1. **Logo mit gewähltem Aufbau:** Die Wirkung von 0,2 mm Farbe + 0,4 mm Weiß am vollständigen Logo beurteilen. Dafür liegt jetzt die [Rasterprobe 09 in Originalgröße](RASTERPROBE.md) geslict vor. Raster und Leuchtwirkung sind noch nicht physisch beurteilt.
+1. **Logo mit gewähltem Aufbau:** Die Wirkung von 0,2 mm Farbe + 0,4 mm Weiß am vollständigen Logo beurteilen. Dafür liegt die korrigierte [Rasterprobe 10 in Originalgröße](RASTERPROBE.md) geslict vor. Die verworfene Probe 09 ist physisch beurteilt; die neue Farbumsetzung, Oberfläche und Ablösung sind noch offen.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.

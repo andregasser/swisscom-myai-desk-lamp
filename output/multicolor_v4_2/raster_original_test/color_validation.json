@@ -1,0 +1,10 @@
+{
+  "source": "Mode=Dark, Type=Stacked.svg",
+  "independent_renderer": "CairoSVG",
+  "opaque_source_samples_checked": 2899,
+  "max_source_channel_difference_8bit": 0.5291692942173114,
+  "all_original_gradient_stops_checked": true,
+  "mean_linear_rgb_projection_error": 0.28196068248317313,
+  "scope": "Source sampling and ideal nominal palette mixtures only; not final pixel accuracy or measured filament color.",
+  "physical_color_match_verified": false
+}

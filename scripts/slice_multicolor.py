@@ -12,7 +12,7 @@ P = json.loads((ROOT/'cad/multicolor_parameters.json').read_text())
 OUT = ROOT/'output'/P['output_folder']
 parser = argparse.ArgumentParser()
 parser.add_argument('bambu_studio', type=Path)
-parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit','08_transmission_test','09_raster_test'])
+parser.add_argument('--plates', nargs='+', default=['01_color_test','02_panel','03_frame','04_base','05_lid','06_feet','07_fit','08_transmission_test','09_raster_test','10_raster_original_test'])
 args = parser.parse_args()
 process = json.loads((ROOT/'output/profiles/cube_0.20.json').read_text())
 process.update({'name':f'myAI Cube {P["version"]} 0.20mm', 'print_settings_id':f'myAI Cube {P["version"]} 0.20mm',
@@ -25,6 +25,15 @@ raster_process = dict(process, name='myAI Rasterprobe 0.20mm',
                       print_settings_id='myAI Rasterprobe 0.20mm',
                       initial_layer_line_width='0.4', elefant_foot_compensation='0')
 (OUT/'profiles/process_raster.json').write_text(json.dumps(raster_process,indent=2)+'\n')
+original_process = dict(raster_process, name='myAI Original-SVG Rasterprobe 0.20mm',
+                        print_settings_id='myAI Original-SVG Rasterprobe 0.20mm',
+                        top_surface_line_width='0.4', outer_wall_line_width='0.4',
+                        inner_wall_line_width='0.4', top_surface_speed=['25','25'],
+                        wall_generator='classic', detect_thin_wall='1',
+                        outer_wall_speed=['25','25'], inner_wall_speed=['30','30'],
+                        internal_solid_infill_speed=['40','40'], seam_gap='0%',
+                        gap_infill_speed=['25','25'])
+(OUT/'profiles/process_raster_original.json').write_text(json.dumps(original_process,indent=2)+'\n')
 for color in P['colors']:
     data=json.loads((ROOT/'output/profiles/pla_white.json').read_text())
     data.update({'name':'myAI PLA '+color['name'], 'from':'User',
@@ -35,13 +44,21 @@ for color in P['colors']:
         for key in ('nozzle_temperature', 'nozzle_temperature_initial_layer'):
             data[key]=['210']*len(data[key])
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
+    original_filament = dict(data, name=data['name']+' Raster10',
+                             filament_settings_id=[data['name']+' Raster10'],
+                             additional_cooling_fan_speed=['0'],
+                             fan_min_speed=['50'], fan_max_speed=['50'],
+                             close_fan_the_first_x_layers=['2'])
+    (OUT/'profiles'/f'filament_original_{color["slot"]}.json').write_text(json.dumps(original_filament,indent=2)+'\n')
 for plate in args.plates:
-    multicolor=plate in ('01_color_test','02_panel','08_transmission_test','09_raster_test')
+    multicolor=plate in ('01_color_test','02_panel','08_transmission_test','09_raster_test','10_raster_original_test')
     scratch=ROOT/'output/logs'/(P['version']+'_'+plate)
     scratch.mkdir(parents=True,exist_ok=True)
-    profile=OUT/'profiles'/('process_raster.json' if plate == '09_raster_test' else
+    profile=OUT/'profiles'/('process_raster_original.json' if plate == '10_raster_original_test' else
+                           'process_raster.json' if plate == '09_raster_test' else
                            'process.json' if multicolor else 'process_white.json')
-    filament_paths=[OUT/'profiles'/f'filament_{i}.json' for i in range(1,5 if multicolor else 2)]
+    filament_prefix = 'filament_original' if plate == '10_raster_original_test' else 'filament'
+    filament_paths=[OUT/'profiles'/f'{filament_prefix}_{i}.json' for i in range(1,5 if multicolor else 2)]
     filaments=';'.join(map(str,filament_paths))
     common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',
              '--load-settings',f'{ROOT/"output/profiles/p1s_0.4.json"};{profile}',

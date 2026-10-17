@@ -580,6 +580,59 @@
         "physical_print_verified": false,
         "scope": "Ink reaches central 0.2 mm disks of full cells. Not complete surface coverage, exact corners, partial boundary cells or real optical mixing."
       }
+    },
+    "10_raster_original_test_P1S.3mf": {
+      "sliced_successfully": true,
+      "bambu_studio": "02.08.02.61",
+      "estimated_minutes": 69.3,
+      "estimated_filament_g_including_flush_and_tower": 10.62,
+      "color_changes": 3,
+      "print_extrusion_bounds_mm": [
+        [
+          36.458,
+          34.458,
+          0.2
+        ],
+        [
+          246.47,
+          208.823,
+          0.6
+        ]
+      ],
+      "model_layer_slots": {
+        "0.2": [
+          1
+        ],
+        "0.4": [
+          1
+        ],
+        "0.6": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "slicer_print_warnings": "",
+      "supports_generated": false,
+      "gcode_md5_valid": true,
+      "sha256": "76cbb37d29259fc9a8d950262fca3c96789754d808a1cbf7a457325b2d4f52f7",
+      "raster_toolpaths": {
+        "full_cell_count": 2366,
+        "color_layer_cells_and_references_by_slot": {
+          "1": 452,
+          "2": 1579,
+          "4": 337,
+          "3": 1
+        },
+        "central_disk_diameter_mm": 0.2,
+        "both_white_backing_layers_verified_at_all_cell_centers": true,
+        "missing_cell_layer_samples": 0,
+        "max_center_gap_mm": 0.0828194999134424,
+        "extrusion_widths_and_arcs_considered": true,
+        "physical_print_verified": false,
+        "scope": "Ink reaches central 0.2 mm disks of full cells. Not complete surface coverage, exact corners, partial boundary cells or real optical mixing."
+      }
     }
   }
 }

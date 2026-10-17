@@ -10,7 +10,7 @@ Der Würfel misst **150 × 150 × 150 mm einschließlich Füßen**. Jede Seite b
 
 Der Benutzer hat die v2-Testplatte gedruckt: Der offene LED-Passring passt perfekt, das Kabel hat genügend Platz. Von 0,6 / 0,8 / 1,0 / 1,2 mm gefällt die **0,6-mm-Lichtprobe** am besten: gute Helligkeit, keine einzelnen LEDs sichtbar. V4.1 übernimmt diese Stärke für die Seitenflächen. Das bisherige einfarbige Relief-Logo prüft noch nicht die mehrfarbigen Einlagen. [Prüfstand und nächste Schritte](PROBEDRUCKE.md).
 
-Der nachfolgende Schichtvergleich wurde ebenfalls beurteilt: **0,2 mm Farbe** wird für alle drei Logofarben übernommen, mit **0,4 mm weißer Rückschicht**. Das besonders dunkle Violett wirkt damit deutlich besser. Der gerasterte Verlauf ist jetzt als [separate Druckprobe 09](RASTERPROBE.md) vorbereitet; die regulären v4.2-Seitenplatten verwenden weiterhin die vorhandenen Farbflächen.
+Der nachfolgende Schichtvergleich wurde ebenfalls beurteilt: **0,2 mm Farbe** wird für alle drei Logofarben übernommen, mit **0,4 mm weißer Rückschicht**. Das besonders dunkle Violett wirkt damit deutlich besser. Der gerasterte Verlauf ist jetzt als [separate Druckprobe 10 aus den Original-Farbstopps](RASTERPROBE.md) vorbereitet; die regulären v4.2-Seitenplatten verwenden weiterhin die vorhandenen Farbflächen.
 
 ## Aufbau und Oberfläche
 
@@ -51,17 +51,18 @@ Alle Projekte sind für **P1S · 0,4-mm-Düse · PLA · 0,20-mm-Schichten · str
 | [Boden mit LED-Aufnahme](../output/multicolor_v4_2/print/04_base_P1S.3mf) | 1 | 3 h 38 min | 74,32 g |
 | [Deckel](../output/multicolor_v4_2/print/05_lid_P1S.3mf) | 1 | 1 h 24 min | 22,42 g |
 | [Vier Füße auf einer Platte](../output/multicolor_v4_2/print/06_feet_P1S.3mf) | 1 Satz | 20 min | 3,41 g |
-| [Rasterprobe in Originalgröße](../output/multicolor_v4_2/print/09_raster_test_P1S.3mf) | aktueller Test: 1 | 1 h 2 min | 11,16 g |
+| [Original-Rasterprobe, Sichtseite oben](../output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf) | aktueller Test: 1 | 1 h 9 min | 10,62 g |
+| [Frühere Rasterprobe 09](../output/multicolor_v4_2/print/09_raster_test_P1S.3mf) | verworfen / Archiv | 1 h 2 min | 11,16 g |
 | [Schichtvergleich Farbe/Weiß](../output/multicolor_v4_2/print/08_transmission_test_P1S.3mf) | bereits beurteilt | 1 h 10 min | 16,64 g |
 
 ¹ Einschließlich Brim, Spülmaterial und Reinigungsturm, soweit vom Slicer erfasst. Lampe ohne Proben etwa **241 g PLA und 16 h 10 min**. Keine Stützen. Jedes Paneel benötigt vier Farbwechsel.
 
-1. Für den gerasterten Verlauf jetzt nur **[Rasterprobe 09](RASTERPROBE.md)** drucken. Sie zeigt das vollständige Logo in Originalgröße. Schichtvergleich 08 ist abgeschlossen. Die aktualisierte Logo-Farbprobe 01 zeigt den gewählten Aufbau am vollständigen, verkleinerten Logo; die Führungs-Passprobe separat prüfen, falls noch offen. Probe 01 besitzt denselben 0,2 + 0,4-mm-Schichtaufbau, verkleinertes Logo und keine Führungsleisten. Sie beurteilt Farben und Licht, keine Details in Originalgröße.
+1. Für den gerasterten Verlauf jetzt nur **[Rasterprobe 10](RASTERPROBE.md)** drucken. Sie zeigt das vollständige Logo in Originalgröße, jetzt mit den Original-Farbstopps angenähert. Bei dieser Probe liegt die weiße Rückseite unten und die Farbseite oben. Schichtvergleich 08 ist abgeschlossen. Die aktualisierte Logo-Farbprobe 01 zeigt den gewählten Aufbau am vollständigen, verkleinerten Logo; die Führungs-Passprobe separat prüfen, falls noch offen. Probe 01 besitzt denselben 0,2 + 0,4-mm-Schichtaufbau, verkleinertes Logo und keine Führungsleisten. Sie beurteilt Farben und Licht, keine Details in Originalgröße.
 2. Die Passprobe besteht aus einem 20 mm hohen Ausschnitt des echten Eckpfostens und einem passenden Plattenstreifen mit Führungsleiste, jeweils in der späteren Druckorientierung. Den Streifen aufrichten und die Leiste von oben in eine der beiden Nuten schieben. Die Verbindung soll gleiten, ohne Gewalt oder Aufspreizen des Pfostens. Diese Probe prüft den Querschnitt, noch nicht den Verzug über die volle Führungslänge.
 3. Danach zunächst einen Rahmen und eine vollständige Seitenplatte drucken und montieren. Erst nach erfolgreicher Passprobe die übrigen drei Platten drucken. Dünne Platten vom abgekühlten Bett lösen; Brim und lose Fäden sorgfältig entfernen.
-4. Die Logo-Vorderseite ist die Bettseite. **Nicht zusätzlich spiegeln oder wenden.** Die vier Farbvolumen bleiben Teile eines gemeinsamen Objekts. Die breitere Platte ist auf dem Bett seitlich versetzt, damit Brim und Reinigungsturm ausreichend Abstand haben.
+4. Bei den regulären Seitenplatten und Probe 01 ist die Logo-Vorderseite die Bettseite; Probe 10 hat eine eigene Orientierung mit der Sichtseite oben. **Nicht zusätzlich spiegeln oder wenden.** Die vier Farbvolumen bleiben Teile eines gemeinsamen Objekts. Die breitere Platte ist auf dem Bett seitlich versetzt, damit Brim und Reinigungsturm ausreichend Abstand haben.
 
-Der Reinigungsturm ist aktiviert; Fremdfarben werden nicht in die weiße Rückschicht gespült. Vorgesehene Spülmengen: 650 mm³ beim Wechsel auf Weiß, 450 mm³ bei anderen Farbwechseln, anhand des eigenen Filaments prüfen. Bei Logo-Probe und Seitenplatte enthält nur die erste Schicht alle vier Farben; darüber wird ausschließlich Weiß einschließlich der Führungsleisten gedruckt. Die Vergleichskarte 08 behält beide Dickenvarianten und sechs Farbwechsel. Rasterprobe 09 hat ebenfalls nur eine farbige Schicht und vier Farbwechsel; ihr eigenes Prozessprofil nutzt 0,4 mm Linienbreite in der ersten Schicht und keine Elefantenfuß-Kompensation. Die CLI-Dateien enthalten Geometrie und G-Code, aber keine integrierten Vorschaubilder.
+Der Reinigungsturm ist aktiviert; Fremdfarben werden nicht in die weiße Rückschicht gespült. Vorgesehene Spülmengen: 650 mm³ beim Wechsel auf Weiß, 450 mm³ bei anderen Farbwechseln, anhand des eigenen Filaments prüfen. Bei Logo-Probe und Seitenplatte enthält nur die erste Schicht alle vier Farben; darüber wird ausschließlich Weiß einschließlich der Führungsleisten gedruckt. Die Vergleichskarte 08 behält beide Dickenvarianten und sechs Farbwechsel. Rasterprobe 09 hat ebenfalls nur eine farbige Schicht und vier Farbwechsel; ihr eigenes Prozessprofil nutzt 0,4 mm Linienbreite in der ersten Schicht und keine Elefantenfuß-Kompensation. Probe 10 verwendet ein eigenes langsameres Profil mit weniger Kühlung und klassischen Wandbahnen; zuerst zwei weiße Schichten, dann die farbige Deckschicht, drei Farbwechsel. Weiße Punkte im Originalraster sind gewollt. Details und Ursachenabgrenzung der Ablöseprobleme stehen in der [Rasteranleitung](RASTERPROBE.md). Die CLI-Dateien enthalten Geometrie und G-Code, aber keine integrierten Vorschaubilder.
 
 ## Montage und Belüftung
 
@@ -92,12 +93,15 @@ Quellen: [AMS-Parameter](../cad/multicolor_parameters.json), [Generator](../cad/
 .venv/bin/python cad/build_multicolor.py
 .venv/bin/python cad/build_transmission_test.py
 .venv/bin/python cad/build_raster_test.py
+.venv/bin/python cad/build_raster_original_test.py
+.venv/bin/python scripts/validate_original_colors.py
 .venv/bin/python scripts/prepare_profiles.py /pfad/zu/BambuStudio/resources/profiles/BBL
 .venv/bin/python scripts/slice_multicolor.py /pfad/zu/bambu-studio
 .venv/bin/python scripts/validate_multicolor.py
 blender -b -t 4 --python scripts/render_multicolor.py
 blender -b -t 4 --python scripts/render_transmission_test.py
 blender -b -t 4 --python scripts/render_raster_test.py
+blender -b -t 4 --python scripts/render_raster_original_test.py
 .venv/bin/python scripts/render_color_reference.py
 .venv/bin/python scripts/validate_colors.py
 .venv/bin/python scripts/package.py
@@ -107,5 +111,5 @@ Verwendeter Slicer: Bambu Studio 2.8.2.61. Die Prüfungen stehen in [Geometrie](
 
 - Geschlossene Materialvolumen, vollständige Abdeckung der Platte einschließlich Leisten, keine relevanten Materialüberschneidungen, kollisionsfreie Montage und Einschubbewegung. Seitliches Herausziehen wird durch die Führungsgeometrie blockiert.
 - Außenmaß 150³ mm, Logo-Zentrierung 75/75 mm und durchgehende ebene Außenhaut auf allen vier Seiten, mit Ausnahme der vorgesehenen schmalen Kantenfugen. Freie Luft- und Kabelwege. Die Boolesche Volumentoleranz beträgt 0,001 mm³.
-- Neun geslicte P1S-Projekte, korrekte AMS-Zuordnung, gültige G-Code-Prüfsummen, Bettgrenzen einschließlich Brim/Reinigungsturm, keine Stützen oder Slicer-Druckwarnungen.
+- Zehn geslicte P1S-Projekte, korrekte AMS-Zuordnung, gültige G-Code-Prüfsummen, Bettgrenzen einschließlich Brim/Reinigungsturm, keine Stützen oder Slicer-Druckwarnungen.
 - Nominelle RGB-Farben in den technischen Vorschauen; kein gemessener Farb- oder Helligkeitsnachweis am gedruckten Material.

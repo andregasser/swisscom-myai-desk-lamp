@@ -1,0 +1,96 @@
+{
+  "error_string": "Success.",
+  "export_time": 138,
+  "layer_height": 0.20000000298023224,
+  "plate_index": 0,
+  "prepare_time": 86,
+  "return_code": 0,
+  "sliced_plates": [
+    {
+      "feature_type_times": {
+        "Bottom surface": 745.3616333007812,
+        "Brim": 169.9305877685547,
+        "Custom": 400.1337585449219,
+        "Flush": 369.39434814453125,
+        "Gap infill": 18.31232452392578,
+        "Inner wall": 30.105873107910156,
+        "Internal solid infill": 687.62255859375,
+        "Outer wall": 357.3179016113281,
+        "Prime tower": 200.47930908203125,
+        "Top surface": 974.5406494140625,
+        "Travel": 220.8377227783203,
+        "Undefined": 205.63339233398438
+      },
+      "filament_change_times": 3,
+      "filaments": [
+        {
+          "filament_id": "GFL99",
+          "id": 1,
+          "main_used_g": 7.759906768798828,
+          "total_used_g": 8.52164363861084
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 2,
+          "main_used_g": 0.2911406457424164,
+          "total_used_g": 0.9141068458557129
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 3,
+          "main_used_g": 0.002084981184452772,
+          "total_used_g": 0.6250511407852173
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 4,
+          "main_used_g": 0.06933235377073288,
+          "total_used_g": 0.5596185326576233
+        }
+      ],
+      "generate_support_material_time": 7,
+      "id": 1,
+      "infill_time": 134,
+      "layer_filament_change": 0,
+      "main_predication": 3174.94921875,
+      "make_perimeters_time": 126,
+      "obj_cached_cnt": 0,
+      "objects": [
+        {
+          "bbox": {
+            "depth": 109.1390609741211,
+            "height": 0.6000000238418579,
+            "width": 96.88442993164062,
+            "x": 40.0,
+            "y": 40.0,
+            "z": 7.907102750337458e-11
+          },
+          "id": 5,
+          "name": "Original-SVG Rasterprobe: Weiss zuerst, Logo oben",
+          "triangle_count": 48688
+        }
+      ],
+      "sliced_time": 367,
+      "sliced_time_with_cache": 69,
+      "total_predication": 4158.7216796875,
+      "triangle_count": 48688,
+      "warning_message": ""
+    }
+  ],
+  "sparse_infill_density": 100.0,
+  "upward_compatible_machine": [
+    "Bambu Lab P1P 0.4 nozzle",
+    "Bambu Lab X1 0.4 nozzle",
+    "Bambu Lab X1 Carbon 0.4 nozzle",
+    "Bambu Lab X1E 0.4 nozzle",
+    "Bambu Lab A1 0.4 nozzle",
+    "Bambu Lab H2D 0.4 nozzle",
+    "Bambu Lab H2D Pro 0.4 nozzle",
+    "Bambu Lab H2S 0.4 nozzle",
+    "Bambu Lab P2S 0.4 nozzle",
+    "Bambu Lab H2C 0.4 nozzle",
+    "Bambu Lab X2D 0.4 nozzle",
+    "Bambu Lab A2L 0.4 nozzle"
+  ],
+  "wall_loops": 2
+}

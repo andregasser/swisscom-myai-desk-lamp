@@ -1,0 +1,16 @@
+{
+  "full_cell_count": 2366,
+  "color_layer_cells_and_references_by_slot": {
+    "1": 452,
+    "2": 1579,
+    "4": 337,
+    "3": 1
+  },
+  "central_disk_diameter_mm": 0.2,
+  "both_white_backing_layers_verified_at_all_cell_centers": true,
+  "missing_cell_layer_samples": 0,
+  "max_center_gap_mm": 0.0828194999134424,
+  "extrusion_widths_and_arcs_considered": true,
+  "physical_print_verified": false,
+  "scope": "Ink reaches central 0.2 mm disks of full cells. Not complete surface coverage, exact corners, partial boundary cells or real optical mixing."
+}
