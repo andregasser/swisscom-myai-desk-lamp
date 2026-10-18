@@ -64,6 +64,8 @@ Alle Projekte sind für **P1S · 0,4-mm-Düse · PLA · 0,20-mm-Schichten · str
 
 Der Reinigungsturm ist aktiviert; Fremdfarben werden nicht in die weiße Rückschicht gespült. Vorgesehene Spülmengen: 650 mm³ beim Wechsel auf Weiß, 450 mm³ bei anderen Farbwechseln, anhand des eigenen Filaments prüfen. Bei Logo-Probe und Seitenplatte enthält nur die erste Schicht alle vier Farben; darüber wird ausschließlich Weiß einschließlich der Führungsleisten gedruckt. Die Vergleichskarte 08 behält beide Dickenvarianten und sechs Farbwechsel. Rasterprobe 09 hat ebenfalls nur eine farbige Schicht und vier Farbwechsel; ihr eigenes Prozessprofil nutzt 0,4 mm Linienbreite in der ersten Schicht und keine Elefantenfuß-Kompensation. Die verworfene Probe 10 verwendet ein eigenes langsameres Profil mit weniger Kühlung und klassischen Wandbahnen; zuerst zwei weiße Schichten, dann die farbige Deckschicht, drei Farbwechsel. Weiße Punkte im Originalraster sind gewollt. Details und Ursachenabgrenzung der Ablöseprobleme stehen in der [Rasteranleitung](RASTERPROBE.md). Die CLI-Dateien enthalten Geometrie und G-Code, aber keine integrierten Vorschaubilder.
 
+Die zusätzliche [Testkarte 11 mit geraden 0,48-mm-Farbbahnen](FARBBAHNEN_TEST.md) verwendet **Cyanblau statt Violett** und liegt separat unter `output/line_gradient_test/`. Sie ist geslict, besteht die vollständige Flächenprüfung aber nicht. Die Datei ist zur Inspektion enthalten und keine Empfehlung für einen lückenfreien Probedruck. Die regulären Seitenplatten oben behalten ihre bisherige Palette.
+
 ## Montage und Belüftung
 
 ![Deckel abgenommen und vordere Seitenplatte angehoben](../output/multicolor_v4_2/preview/insertion.png)

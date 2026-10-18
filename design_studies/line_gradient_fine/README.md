@@ -26,4 +26,4 @@ Vorgesehen bleiben 0,2 mm Farbe und 0,4 mm weisse Rückschicht. Die nominellen B
 
 Vom Repository-Stamm mit Python, NumPy, Shapely, svgpathtools und CairoSVG ausführen: `python design_studies/line_gradient_fine/build_preview.py`. Die Vergleichsansicht liest zusätzlich die vorherige Vorschau aus `design_studies/line_gradient/proposal.svg`.
 
-Die Studie liegt ausserhalb des Druckpakets. Produktionsprofile, CAD und vorhandene Druckdateien bleiben unverändert. Eine Druckprobe folgt erst nach der optischen Beurteilung.
+**Nachfolgender Prüfstand:** Der Benutzer hat diese Vorschau zum Erstellen einer Testdatei freigegeben. Die separate [Testkarte 11](../../docs/FARBBAHNEN_TEST.md) wurde erstellt und mit vier Profileinstellungen geslict. Keine besteht die vollständige Flächenprüfung; die Datei ist nicht als lückenfreier Druck freigegeben. Die Vorschauquellen sind zur Reproduktion der Karte im Druckpaket enthalten. Die regulären Lampenseiten bleiben unverändert.

@@ -1,0 +1,122 @@
+{
+  "scope": "All four profiles sliced against identical approved geometry; none passes coverage. Intermediate files are not distributed. Final default uses classic040, the least nominal total gap area.",
+  "trials": [
+    {
+      "name": "arachne048",
+      "process": {
+        "wall_generator": "arachne",
+        "detect_thin_wall": "0",
+        "wall_loops": "1",
+        "outer_wall_line_width": "0.48",
+        "inner_wall_line_width": "0.48",
+        "top_surface_line_width": "0.48",
+        "resolution": "0.005",
+        "seam_gap": "0%"
+      },
+      "additional_overrides": {},
+      "print_sha256": "fbb8e5bfd76831f51182639adf12f783ab5adacf45d101dd697fe9a2b1fc660a",
+      "gcode_sha256": "15b4d0b665433c64e04a39906dccd90b025288feb425f01a722a6fdddc1cac2e",
+      "mesh_sha256_by_slot": {
+        "1": "d429560a4c16375b5112973462b9573cf2b54eb474bd1070cc24fa0339fc6750",
+        "2": "024bab34f1931a9fe277ca1c4c62f27b1f774dc93e1b4ea6a8a92f78581e90d1",
+        "3": "8352e6cc2161fc85042ffab01e1b2b39e45850c73230ec20f4040680e8b73b8d",
+        "4": "3dc89aaa2c037a185bf64072815094d6a2e47d4e9e1d0bc18b041fe62ef99499"
+      },
+      "nominal_unprinted_ink_percent": 2.0789144686611114,
+      "unprinted_ink_beyond_allowance_percent": 1.0709303895519642,
+      "largest_unresolved_area_mm2": 0.3591050782633225,
+      "own_ink_missing_beyond_allowance_mm2": 32.191491161979215,
+      "digital_coverage_passed": false,
+      "selected_profile": false
+    },
+    {
+      "name": "classic040",
+      "process": {
+        "wall_generator": "classic",
+        "detect_thin_wall": "1",
+        "wall_loops": "1",
+        "outer_wall_line_width": "0.4",
+        "inner_wall_line_width": "0.4",
+        "top_surface_line_width": "0.4",
+        "resolution": "0.005",
+        "seam_gap": "0%"
+      },
+      "additional_overrides": {},
+      "print_sha256": "1acbd1dd3811f7e5b983b37b5e09956e602537741d15b90f3f58fcc25556ddd8",
+      "gcode_sha256": "80f8372389bcb10e3440773d5233b9218082a075db15794428a46c376ddf2d80",
+      "mesh_sha256_by_slot": {
+        "1": "d429560a4c16375b5112973462b9573cf2b54eb474bd1070cc24fa0339fc6750",
+        "2": "024bab34f1931a9fe277ca1c4c62f27b1f774dc93e1b4ea6a8a92f78581e90d1",
+        "3": "8352e6cc2161fc85042ffab01e1b2b39e45850c73230ec20f4040680e8b73b8d",
+        "4": "3dc89aaa2c037a185bf64072815094d6a2e47d4e9e1d0bc18b041fe62ef99499"
+      },
+      "nominal_unprinted_ink_percent": 0.7203002573631551,
+      "unprinted_ink_beyond_allowance_percent": 0.33843749262383693,
+      "largest_unresolved_area_mm2": 0.4122555386862814,
+      "own_ink_missing_beyond_allowance_mm2": 11.774023163095388,
+      "digital_coverage_passed": false,
+      "selected_profile": true
+    },
+    {
+      "name": "arachne040",
+      "process": {
+        "wall_generator": "arachne",
+        "detect_thin_wall": "0",
+        "wall_loops": "1",
+        "outer_wall_line_width": "0.4",
+        "inner_wall_line_width": "0.4",
+        "top_surface_line_width": "0.4",
+        "resolution": "0.005",
+        "seam_gap": "0%"
+      },
+      "additional_overrides": {
+        "min_bead_width": "75%",
+        "min_feature_size": "15%",
+        "wall_transition_length": "50%"
+      },
+      "print_sha256": "489ff905ba9056468184c575bf967a16b3cf3e1852f595ce8eb9fbe65f5de6a1",
+      "gcode_sha256": "1d6cc41d9ba6a591fbbad79ff108f7a747a5ff7002de8cc7e4735cdcfe331640",
+      "mesh_sha256_by_slot": {
+        "1": "d429560a4c16375b5112973462b9573cf2b54eb474bd1070cc24fa0339fc6750",
+        "2": "024bab34f1931a9fe277ca1c4c62f27b1f774dc93e1b4ea6a8a92f78581e90d1",
+        "3": "8352e6cc2161fc85042ffab01e1b2b39e45850c73230ec20f4040680e8b73b8d",
+        "4": "3dc89aaa2c037a185bf64072815094d6a2e47d4e9e1d0bc18b041fe62ef99499"
+      },
+      "nominal_unprinted_ink_percent": 1.804897826101928,
+      "unprinted_ink_beyond_allowance_percent": 0.8876843414110107,
+      "largest_unresolved_area_mm2": 0.19855316101572074,
+      "own_ink_missing_beyond_allowance_mm2": 27.735099122856944,
+      "digital_coverage_passed": false,
+      "selected_profile": false
+    },
+    {
+      "name": "classic030",
+      "process": {
+        "wall_generator": "classic",
+        "detect_thin_wall": "1",
+        "wall_loops": "1",
+        "outer_wall_line_width": "0.3",
+        "inner_wall_line_width": "0.3",
+        "top_surface_line_width": "0.3",
+        "resolution": "0.005",
+        "seam_gap": "0%"
+      },
+      "additional_overrides": {},
+      "print_sha256": "ca903dea0c95c3d9555dc8d0025bdba6825c85474f9cfc876fe7ae9f72b88213",
+      "gcode_sha256": "fc4d05d8a42d71d8b3d57b82e051968b170dae0e51cfa3ec0301cb185599be9b",
+      "mesh_sha256_by_slot": {
+        "1": "d429560a4c16375b5112973462b9573cf2b54eb474bd1070cc24fa0339fc6750",
+        "2": "024bab34f1931a9fe277ca1c4c62f27b1f774dc93e1b4ea6a8a92f78581e90d1",
+        "3": "8352e6cc2161fc85042ffab01e1b2b39e45850c73230ec20f4040680e8b73b8d",
+        "4": "3dc89aaa2c037a185bf64072815094d6a2e47d4e9e1d0bc18b041fe62ef99499"
+      },
+      "nominal_unprinted_ink_percent": 1.0009121623714203,
+      "unprinted_ink_beyond_allowance_percent": 0.4255333233778356,
+      "largest_unresolved_area_mm2": 0.08219183821917575,
+      "own_ink_missing_beyond_allowance_mm2": 14.566214240230567,
+      "digital_coverage_passed": false,
+      "selected_profile": false
+    }
+  ],
+  "final_print_sha256": "9d27cc814ff4bd6f468c59c35fe0fee0adffbbdd47dbb8beb9b14ad13e2c1a2a"
+}

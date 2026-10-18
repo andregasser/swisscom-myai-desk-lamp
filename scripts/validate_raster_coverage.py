@@ -39,8 +39,10 @@ def svg_path(region, height, flip_y=True):
                     for p in region.to_polygons())
 
 
-def analyze(file, folder, color_layer, output_prefix=None):
-    card = json.loads((OUT/folder/'geometry_validation.json').read_text())
+def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, palette=None):
+    root = OUT if output_root is None else Path(output_root)
+    palette = P['colors'] if palette is None else palette
+    card = json.loads((root/folder/'geometry_validation.json').read_text())
     origin = np.array(card['print_offset_mm'][:2])
     width, height = card['size_mm'][:2]
     with zipfile.ZipFile(file) as archive:
@@ -55,7 +57,7 @@ def analyze(file, folder, color_layer, output_prefix=None):
                            for i in range(0,len(items),512)) for key,items in polygons.items()}
     meshes = {}
     for slot in range(1,5):
-        mesh = trimesh.load_mesh(OUT/folder/'stl'/f'slot_{slot}.stl')
+        mesh = trimesh.load_mesh(root/folder/'stl'/f'slot_{slot}.stl')
         assert mesh.is_watertight and mesh.is_winding_consistent
         meshes[slot] = m.Manifold(m.Mesh(np.float32(mesh.vertices), np.uint32(mesh.faces)))
     regions = {s: mesh.slice(color_layer-.1) for s,mesh in meshes.items()}
@@ -105,7 +107,7 @@ def analyze(file, folder, color_layer, output_prefix=None):
         'schema_version': 1, 'print_file': str(Path(file).name),
         'print_sha256': hashlib.sha256(Path(file).read_bytes()).hexdigest(),
         'gcode_sha256': hashlib.sha256(raw).hexdigest(),
-        'mesh_sha256_by_slot': {str(s):hashlib.sha256((OUT/folder/'stl'/f'slot_{s}.stl').read_bytes()).hexdigest() for s in range(1,5)},
+        'mesh_sha256_by_slot': {str(s):hashlib.sha256((root/folder/'stl'/f'slot_{s}.stl').read_bytes()).hexdigest() for s in range(1,5)},
         'method': 'CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error',
         'color_layer_z_mm': color_layer, 'intentional_white_excluded_from_ink_metrics': True,
         'ink_area_mm2': ink.area(), 'nominal_unprinted_ink_area_mm2': unprinted.area(),
@@ -131,7 +133,7 @@ def analyze(file, folder, color_layer, output_prefix=None):
         svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">',
                f'<rect width="{width}" height="{height}" fill="white"/>']
         for slot in (2,3,4):
-            svg.append(f'<path d="{svg_path(regions[slot],height,flip_y)}" fill="{P["colors"][slot-1]["hex"]}" fill-rule="evenodd"/>')
+            svg.append(f'<path d="{svg_path(regions[slot],height,flip_y)}" fill="{palette[slot-1]["hex"]}" fill-rule="evenodd"/>')
         svg.append(f'<path d="{svg_path(unresolved,height,flip_y)}" fill="#00D37F" fill-rule="evenodd"/>')
         svg.append('</svg>')
         prefix.with_suffix('.svg').write_text('\n'.join(svg))

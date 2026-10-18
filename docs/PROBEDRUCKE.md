@@ -45,6 +45,8 @@ Die erste Probe 10 mit 0,8-mm-Raster hatte ebenfalls digitale Restlücken; ihre 
 
 ## Noch zu prüfen
 
+**Neuer digitaler Prüfstand:** Die Vorschau mit Cyanblau und geraden 0,48-mm-Farbbahnen wurde anschliessend vom Benutzer zum Test freigegeben. Die [Testkarte 11](FARBBAHNEN_TEST.md) ist erstellt und geslict. Vier Profileinstellungen wurden geprüft; keine besteht die vollständige Flächenprüfung. Die ausgewählte Variante lässt nominell rund 0,72 % der Farbfläche rechnerisch unbedeckt. Kein physischer Test dieser Karte und keine bestätigte Behebung der weissen Stellen. Wellen und Kurzlinienraster sind verworfen.
+
 1. **Logo mit gewähltem Aufbau:** Flächenschluss und Farbumsetzung sind noch ungelöst. Der [2-mm-Entwurf 10](RASTERPROBE.md) ist nach Sichtung der Vorschau verworfen; kein weiterer Druck dieser Variante. Derzeit gibt es keine empfohlene Rasterprobe. Die verworfene Probe 09 wurde physisch beurteilt, Probe 10 nicht.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.

@@ -205,7 +205,7 @@ def check_air_paths(assembly):
             'top_surface_closed': True, 'thermal_performance_verified': False}
 
 
-def multipart_3mf(parts, target, title, offset=(35, 40, 0)):
+def multipart_3mf(parts, target, title, offset=(35, 40, 0), colors=None):
     ns = 'http://schemas.microsoft.com/3dmanufacturing/core/2015/02'
     ET.register_namespace('', ns)
     tag = lambda s: '{' + ns + '}' + s
@@ -213,7 +213,7 @@ def multipart_3mf(parts, target, title, offset=(35, 40, 0)):
     ET.SubElement(root, tag('metadata'), {'name': 'Title'}).text = title
     resources = ET.SubElement(root, tag('resources'))
     mats = ET.SubElement(resources, tag('basematerials'), {'id': '10'})
-    for color in P['colors']:
+    for color in P['colors'] if colors is None else colors:
         ET.SubElement(mats, tag('base'), {'name': color['name'], 'displaycolor': color['hex'] + 'FF'})
     for i, solid in enumerate(parts, 1):
         obj = mesh(solid)

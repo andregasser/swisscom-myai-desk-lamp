@@ -24,6 +24,8 @@ Zehn vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. 
 
 **Der [2-mm-Rasterentwurf](docs/RASTERPROBE.md) ist optisch verworfen. Nicht drucken.** Die Vorschau zeigt die tatsächliche grobe Farbaufteilung, die der Benutzer als No-Go abgelehnt hat. Zusätzlich besteht der Entwurf die vollständige Flächenprüfung nicht. Die Dateien bleiben als Studie erhalten; derzeit gibt es keine empfohlene Raster-Druckdatei. Die regulären Seitenplatten verwenden weiterhin die bisherigen festen Farbbänder.
 
+**[Testkarte 11: gerade 0,48-mm-Farbbahnen](docs/FARBBAHNEN_TEST.md)** ist erstellt und mit Bambu Studio geprüft. Neue Palette: Weiss, Blau, Cyanblau, Rot. Auch nach vier Profileinstellungen bleiben rechnerische Lücken; die beste Variante nach gesamter Lückenfläche liegt bei **0,72 %**. Die Datei ist zur Prüfung enthalten, **nicht als lückenfreier Probedruck freigegeben**.
+
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
 ## Einfarbige Variante v2 drucken

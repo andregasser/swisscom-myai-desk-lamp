@@ -22,4 +22,4 @@ Der [2D-Prüfbericht](preview_checks.json) bestätigt die lückenlose Aufteilung
 - [Logo allein als SVG](proposal.svg), in der vorgesehenen Originalgrösse
 - Reproduzierbarer Generator: `build_preview.py`; benötigt NumPy, Shapely, svgpathtools und CairoSVG. Vom Repository-Stamm mit einem passenden Python ausführen: `python design_studies/line_gradient/build_preview.py`.
 
-Diese Studie liegt ausserhalb des Druckpakets. Erst nach der Beurteilung der Vorschau folgt gegebenenfalls die Konstruktion und Prüfung einer neuen Druckprobe.
+Die ursprüngliche 0,8-mm-Studie bleibt eine Vorschau. Ihre Quellen sind inzwischen zur Reproduktion der Vergleichsansicht im Druckpaket enthalten. Die später vom Benutzer zum Test freigegebene 0,48-mm-Variante wurde als [Testkarte 11](../../docs/FARBBAHNEN_TEST.md) geslict; sie besteht die Flächenprüfung noch nicht.

@@ -1,0 +1,100 @@
+{
+  "size_mm": [
+    96.88442962962964,
+    109.14133710121789,
+    0.6
+  ],
+  "color_depth_mm": 0.2,
+  "white_backing_mm": 0.4,
+  "front_is_bed_face": false,
+  "color_layer_z_mm": 0.6,
+  "print_offset_mm": [
+    40,
+    40,
+    0
+  ],
+  "palette": [
+    {
+      "slot": 1,
+      "name": "Weiss",
+      "hex": "#FFFFFF"
+    },
+    {
+      "slot": 2,
+      "name": "Blau",
+      "hex": "#0445C8"
+    },
+    {
+      "slot": 3,
+      "name": "Cyanblau",
+      "hex": "#1FB9FF"
+    },
+    {
+      "slot": 4,
+      "name": "Rot",
+      "hex": "#F23232"
+    }
+  ],
+  "source_preview_sha256": "81d303cd10170ec2f2d6514cd7e60769e97b229c79426692baba5b205e8fe3c8",
+  "source_preview": "design_studies/line_gradient_fine/proposal.svg",
+  "removed_original_micro_fragment": [
+    {
+      "color": "#1FB9FF",
+      "area_mm2": 0.0005052880019276174,
+      "bounds_mm": [
+        86.88238999992609,
+        97.20799999684095,
+        86.92106000334024,
+        97.24719999730587
+      ]
+    }
+  ],
+  "reference_fields": [
+    {
+      "slot": 4,
+      "xy_mm": [
+        42.44221481481482,
+        2.5
+      ]
+    },
+    {
+      "slot": 3,
+      "xy_mm": [
+        48.44221481481482,
+        2.5
+      ]
+    },
+    {
+      "slot": 2,
+      "xy_mm": [
+        54.44221481481482,
+        2.5
+      ]
+    }
+  ],
+  "one_connected_card": true,
+  "watertight_slot_components": [
+    {
+      "slot": 1,
+      "components": 1,
+      "volume_mm3": 5948.186416646061
+    },
+    {
+      "slot": 2,
+      "components": 93,
+      "volume_mm3": 82.38175235857227
+    },
+    {
+      "slot": 3,
+      "components": 87,
+      "volume_mm3": 248.81770367021818
+    },
+    {
+      "slot": 4,
+      "components": 22,
+      "volume_mm3": 65.07196639634732
+    }
+  ],
+  "material_intersections_mm3": 0,
+  "physical_print_verified": false
+}
