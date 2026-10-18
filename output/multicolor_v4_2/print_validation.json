@@ -817,5 +817,6 @@
       }
     }
   },
-  "raster_print_release_allowed": false
+  "raster_print_release_allowed": false,
+  "raster_preview_rejected_by_user": true
 }

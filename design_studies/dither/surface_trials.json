@@ -1,5 +1,5 @@
 {
-  "status": "Fine-raster candidates rejected. A coarse 2.0 mm candidate is retained as experimental, with coverage still failing.",
+  "status": "Fine-raster candidates rejected. The coarse 2.0 mm candidate was visually rejected by the user on 2026-10-18 based on its preview. Archive only; do not print. Coverage also fails. No physical test of this candidate.",
   "scope": "Diagnostic summary, not reproducible candidate artifacts or physical test results.",
   "geometric_allowance_mm": 0.03,
   "acceptance": {
@@ -198,7 +198,7 @@
       "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error"
     },
     {
-      "description": "2.0 mm with contour feedback; original classic 0.4 mm profile; retained experimental geometry",
+      "description": "2.0 mm with contour feedback; original classic 0.4 mm profile; retained rejected study",
       "print_sha256": "9a9b41efb7a3c0e1ad0566b3f6e3d0784bfb703829d4f2f918ac1b990547a75a",
       "mesh_sha256_by_slot": {
         "1": "284bf5db7a69e8029a9edd76bd107c94086ffbe43637afc68a40b5e3ac6d234a",

@@ -168,7 +168,12 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
             coverage = analyze_coverage(file, 'raster_original_test', .6,
                                         OUT/'raster_original_test/surface_coverage')
             report['plates'][file.name]['surface_coverage'] = coverage
-            report['raster_print_release_allowed'] = coverage['digital_coverage_passed']
+            # User rejected this exact 2 mm print design from its preview on 2026-10-18.
+            rejected_design = report['plates'][file.name]['sha256'] == (
+                '416676fb5b9de9d1f2e5277064a45fa4ce131b134a0a45701090667368fdffa7')
+            report['raster_preview_rejected_by_user'] = rejected_design
+            report['raster_print_release_allowed'] = (
+                coverage['digital_coverage_passed'] and not rejected_design)
         if file.name.startswith('09_'):
             assert config['initial_layer_line_width'] == '0.4'
             assert config['elefant_foot_compensation'] == '0'
@@ -176,14 +181,18 @@ for file in sorted((OUT / 'print').glob('*.3mf')):
 (OUT / 'print_validation.json').write_text(json.dumps(report, indent=2) + '\n')
 (OUT/'print/RASTER_STATUS.md').write_text(
     '# Status der Rasterprobe 10\n\n'
+    + ('**Optisch verworfen am 18. Oktober 2026. Nicht drucken.** '
+       'Der Benutzer hat die tatsächliche 2-mm-Farbaufteilung in der Vorschau als No-Go '
+       'abgelehnt. Nur als archivierte Studie erhalten; kein physischer Test.\n\n'
+       if report['raster_preview_rejected_by_user'] else '')
     + ('Die digitale Flächenprüfung ist bestanden; ein physischer Probedruck bleibt erforderlich.\n\n'
-       if report['raster_print_release_allowed'] else
-       '**Experimenteller Entwurf: Die vollständige Flächenprüfung ist nicht bestanden.** '
+       if coverage['digital_coverage_passed'] else
+       '**Die vollständige Flächenprüfung ist nicht bestanden.** '
        'Es bleiben rechnerische Lücken in der Farbfläche. Diese Datei ist keine bestätigte '
        'Behebung der weißen Stellen und noch nicht auf die Lampenseiten zu übertragen.\n\n')
     + '[Prüfbericht](../raster_original_test/surface_coverage.json) · '
       '[Versuchsaufbau und Grenzen](../../../docs/RASTERPROBE.md).\n')
 print(json.dumps(report['plates'], indent=2))
 if not report['raster_print_release_allowed'] and not args.allow_withheld_raster:
-    raise SystemExit('Rasterprobe 10: Flächendeckung ungenügend. Keine Freigabe als geschlossene Farbfläche. '
+    raise SystemExit('Rasterprobe 10: keine Druckfreigabe; Flächendeckung und Gestaltungsstatus im Bericht prüfen. '
                      'Zum reinen Bestandsaudit --allow-withheld-raster verwenden.')

@@ -1,8 +1,8 @@
-# Rasterprobe 10 — gröberer 2-mm-Entwurf
+# Rasterprobe 10 — verworfener 2-mm-Entwurf
 
-**Status: experimentelle Probe für die vorhandene 0,4-mm-Düse. Der Fehler ist noch nicht vollständig behoben.** Die Geometrie und das Druckprojekt sind geprüft, die neue vollständige Flächenprüfung findet weiterhin Restlücken. Deshalb keine bestätigte Lösung und noch kein Übertrag auf die vier Lampenseiten.
+**Status: am 18. Oktober 2026 anhand der Vorschau optisch verworfen. Nicht drucken.** Der Benutzer lehnt die grobe Farbaufteilung als klares No-Go ab. Das rechte Bild zeigt die tatsächlich vorgesehenen Farbflächen: Die großen weißen Rasterfelder gehören zum Entwurf und sind kein Darstellungsfehler. Die geringere rechnerische Lückenfläche rechtfertigt diese Verschlechterung des Logos nicht. Zusätzlich ist die vollständige Flächenprüfung weiterhin nicht bestanden. Kein physischer Test dieses Entwurfs; kein Übertrag auf die Lampenseiten. Dateien und Prüfungen bleiben ausschließlich zur Nachvollziehbarkeit erhalten.
 
-[Experimentelle P1S-Datei](../output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf) · [Prüfbericht](../output/multicolor_v4_2/raster_original_test/surface_coverage.json)
+[Archivdatei — nicht drucken](../output/multicolor_v4_2/print/10_raster_original_test_P1S.3mf) · [Prüfbericht](../output/multicolor_v4_2/raster_original_test/surface_coverage.json)
 
 ![Original-SVG und gröberer Entwurf](../output/multicolor_v4_2/preview/raster_original_comparison.png)
 
@@ -30,7 +30,7 @@ Das sind **geometrische Modellwerte, keine Messungen am Druck**. Selbst mit 0,03
 
 ## Was am gröberen Entwurf geändert wurde
 
-Der Benutzer möchte die vorhandene **0,4-mm-Düse behalten und ein gröberes Raster erproben**. Die Zellen sind jetzt 2,0 statt 0,8 mm breit. Die tatsächliche Originalkontur und die spätere Logo-Größe bleiben erhalten.
+Der Benutzer hatte die vorhandene **0,4-mm-Düse behalten und ein gröberes Raster erproben** wollen. Daraufhin wurden die Zellen auf 2,0 statt 0,8 mm vergrößert. Die tatsächliche Originalkontur und die spätere Logo-Größe blieben erhalten. Die anschließende Ablehnung der Vorschau verwirft diesen konkreten Entwurf; sie ist keine generelle Aussage über alle Druckmöglichkeiten mit der 0,4-mm-Düse.
 
 Am Rand werden Zellen, die nicht vollständig innerhalb einer um 0,45 mm zurückgesetzten Kontur liegen, mit der lokal vorherrschenden Logofarbe belegt. Dadurch entstehen weniger schmale Farbreste. Diese Vorgabe fließt in die Fehlerverteilung zurück, damit die entfernten weißen Flächen nicht einfach unberücksichtigt bleiben. Sie ist keine exakte farbmetrische Kompensation. Diagonale Verbindungen haben jetzt 0,28 mm Radius. Die blaue Geometrie besteht aus neun, die rote aus drei zusammenhängenden Körpern statt zuvor 22 beziehungsweise 23.
 
@@ -38,18 +38,16 @@ Der Verlauf stammt weiterhin aus **allen tatsächlichen Farbstopps der unveränd
 
 Das originale Cyan und Hellblau sind mit der nominellen Palette nur eingeschränkt erreichbar. Weiße Rasterfelder hellen auf, ersetzen aber keine passende Cyan-Farbe. Der gröbere Entwurf ist sichtbar körniger. Weder die Bildschirmansicht noch die Palettenrechnung sagen die Farbe realer, hinterleuchteter Filamente voraus.
 
-## Druckdaten des Versuchsmodells
+## Archivierte Druckdaten des verworfenen Modells
 
-- **P1S, 0,4-mm-Düse, PLA, strukturierte PEI-Platte und AMS.** Datei als Projekt in Bambu Studio öffnen. Keine andere Düse einplanen.
+- **P1S, 0,4-mm-Düse, PLA, strukturierte PEI-Platte und AMS.** Technische Daten zur Nachvollziehbarkeit, keine Druckempfehlung.
 - Slots: **1 Weiß · 2 Blau · 3 Violett · 4 Rot**. EcoPLA Purple 210 °C, übrige PLA-Profile 220 °C, Bett 55 °C.
 - **Weiße Rückseite unten, Sichtseite oben:** zwei weiße Schichten mit zusammen 0,4 mm, anschließend 0,2 mm Farbe beziehungsweise weiße Rasterfelder. Gesamtdicke 0,6 mm. Nicht spiegeln oder wenden.
 - Karte **96,9 × 109,1 mm**, Logo **86,9 × 99,1 mm**. Raster 2,0 mm.
 - Etwa **1 h 7 min und 10,64 g PLA**, einschließlich Reinigungsturm und Spülmaterial. Drei Farbwechsel, keine Stützen.
 - Eigenes langsames Profil: klassische Wandbahnen, 0,4-mm-Linien auf der Farbseite, keine absichtliche Nahtlücke. Außenwände/Oberseite/Lückenfüllung 25 mm/s, Innenwände 30 mm/s, Vollfüllung 40 mm/s. Zusatzlüfter aus, Bauteillüfter nach den ersten beiden Schichten 50 %.
 
-Wenn diese experimentelle Karte gedruckt wird, die Farbseite **bereits auf der Platte fotografieren**, bevor sie abgelöst wird. Danach bis Raumtemperatur abkühlen lassen, die Federstahlplatte vorsichtig biegen und die dünne Karte flächig unterstützen. Bereits vorher vorhandene helle Stellen sprechen für Druck/Extrusion; erst danach auftretende Veränderungen eher für mechanische Einflüsse. Bambu empfiehlt bei strukturierter PEI mindestens auf 35 °C oder darunter abzukühlen; hier warten wir bis Raumtemperatur. [Herstellerhinweis](https://us.store.bambulab.com/collections/accessories-for-a1-mini/products/bambu-textured-pei-plate).
-
-Geplante weiße Felder mit der Vorschau vergleichen. Die Restlückenprüfung fällt weiterhin negativ aus; ein weiterer Druck ist ein Versuch zur Beurteilung der Verbesserung, keine zugesicherte Fehlerbehebung. Lampe, Führungen und Kühlung werden damit nicht geprüft.
+Für diesen Entwurf ist kein weiterer Probedruck vorgesehen. Die Ursache der weißen Stellen am früheren Druck bleibt teilweise offen. Bei einem späteren geeigneten Test lässt sie sich durch Fotos vor und nach dem Ablösen besser eingrenzen; die Platte dabei vollständig bis Raumtemperatur abkühlen lassen.
 
 ## Prüfung und Reproduktion
 
@@ -74,4 +72,4 @@ blender -b -t 4 --python scripts/render_raster_original_test.py
 .venv/bin/python scripts/package.py
 ```
 
-Bambu Studio 2.8.2.61. Die ältere Probe 09 und ihre Druckdateien bleiben archiviert. Die frühere 0,8-mm-Version der Probe 10 ist über Git-Commit `fcbab89` reproduzierbar. Die aktuelle Probe 10 ersetzt sie ausdrücklich als **gröberer, noch unbestätigter Entwurf**.
+Bambu Studio 2.8.2.61. Die ältere Probe 09 und ihre Druckdateien bleiben archiviert. Die frühere 0,8-mm-Version der Probe 10 ist über Git-Commit `fcbab89` reproduzierbar. Auch der 2-mm-Entwurf ist **verworfen**. Es gibt derzeit keine empfohlene Raster-Druckdatei.

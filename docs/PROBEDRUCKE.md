@@ -41,11 +41,11 @@ Das nachgereichte Foto zeigt helle Stellen insbesondere an Rasterübergängen in
 
 Die erste Probe 10 mit 0,8-mm-Raster hatte ebenfalls digitale Restlücken; ihre Druckempfehlung ist zurückgenommen. Der Benutzer möchte die **0,4-mm-Düse behalten und ein gröberes Raster erproben**. Der neue 2-mm-Entwurf verwendet breitere diagonale Verbindungen und einen zusammenhängenden Farbrand an der Kontur. Die nominell unbedeckte Farbfläche sinkt auf 0,78 %, bleibt aber vorhanden. **Die vollständige Flächenprüfung ist weiterhin nicht bestanden; keine bestätigte Fehlerbehebung und kein physischer Test des neuen Entwurfs.**
 
-Der Aufbau bleibt bei 0,2 mm Farbe + 0,4 mm Weiß, weiße Rückseite auf dem Bett und Farben oben. Falls der experimentelle Entwurf gedruckt wird, vor dem Ablösen fotografieren, bis Raumtemperatur abkühlen lassen und danach vergleichen. Gewollte weiße Rasterfelder mit der Vorschau abgleichen. Die digitalen Prozentwerte sind keine Messung am realen Druck.
+**Anschließende Beurteilung der Vorschau:** Der Benutzer lehnt das rechte Bild mit der groben 2-mm-Farbaufteilung als „klares no go“ ab. Das Bild zeigt die tatsächlich vorgesehenen Farbflächen. Der Entwurf ist deshalb optisch verworfen und soll nicht gedruckt werden. Diese Rückmeldung betrifft die Bildschirmvorschau, keinen physischen Druck. Die 0,4-mm-Düse und der gewählte Schichtaufbau bleiben Anforderungen.
 
 ## Noch zu prüfen
 
-1. **Logo mit gewähltem Aufbau:** Flächenschluss und Farbumsetzung sind noch ungelöst. Der [gröbere Entwurf 10 in Originalgröße](RASTERPROBE.md) ist geslict, fällt aber durch die vollständige Flächenprüfung. Eine Erprobung ist ausdrücklich experimentell. Die verworfene Probe 09 ist physisch beurteilt; Wirkung und Ablösung des neuen Entwurfs sind offen.
+1. **Logo mit gewähltem Aufbau:** Flächenschluss und Farbumsetzung sind noch ungelöst. Der [2-mm-Entwurf 10](RASTERPROBE.md) ist nach Sichtung der Vorschau verworfen; kein weiterer Druck dieser Variante. Derzeit gibt es keine empfohlene Rasterprobe. Die verworfene Probe 09 wurde physisch beurteilt, Probe 10 nicht.
 2. **Führungs-Passprobe:** Der Plattenstreifen soll von oben ohne Gewalt in die Nut gleiten und seitlich gehalten werden.
 3. **Ein Rahmen und eine vollständige Seitenplatte:** Ebenheit, Handhabung der dünnen Platte, Passung über die gesamte Führungslänge und Schatten der inneren Leisten beurteilen. Danach die übrigen drei Seitenplatten drucken.
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.

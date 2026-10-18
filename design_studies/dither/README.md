@@ -8,7 +8,7 @@ Die Originalkonturen und die separaten Verlaufsrichtungen von Sternen und Schrif
 
 Der Vorschlag zeigt eine optische Mischung durch benachbarte Flächen. Aus der Nähe bleibt die Körnung sichtbar. Er enthält weder zusätzliche Filamentfarben noch einen tatsächlich kontinuierlich gemischten Farbton.
 
-**Historische Gestaltungsstudie:** Die Bilder hier sind SVG-/PNG-Vorschläge. Die daraus entstandene [Druckprobe 09](../../docs/RASTERPROBE_09.md) wurde am 18. Oktober 2026 wegen ungenügender Farbqualität verworfen. Sie verwendete künstliche Farbstopps. Die [aktuelle Probe 10](../../docs/RASTERPROBE.md) wertet stattdessen die tatsächlichen SVG-Farbstopps aus und wird mit weißer Rückseite unten gedruckt; ihre reale Wirkung ist noch offen. An den Logokonturen entstehen angeschnittene Zellen, die deutlich schmaler als 0,8 mm sein können. Die Druckprobe übernimmt deshalb nicht jede angeschnittene Farbinsel unverändert. Die Bildschirmansicht sagt weder die echten Filamentfarben noch die beleuchtete Wirkung voraus. Die reguläre v4.2 wird weiterhin aus `cad/build_multicolor.py` erzeugt; diese Studie ist separat und gehört nicht zum Druckpaket.
+**Historische Gestaltungsstudie:** Die Bilder hier sind SVG-/PNG-Vorschläge. Die daraus entstandene [Druckprobe 09](../../docs/RASTERPROBE_09.md) wurde am 18. Oktober 2026 wegen ungenügender Farbqualität verworfen. Sie verwendete künstliche Farbstopps. Die [ebenfalls verworfene Probe 10](../../docs/RASTERPROBE.md) wertet stattdessen die tatsächlichen SVG-Farbstopps aus und wird mit weißer Rückseite unten gedruckt; der Benutzer hat ihre 2-mm-Vorschau als optisches No-Go abgelehnt, ohne physischen Test. An den Logokonturen entstehen angeschnittene Zellen, die deutlich schmaler als 0,8 mm sein können. Die Druckprobe übernimmt deshalb nicht jede angeschnittene Farbinsel unverändert. Die Bildschirmansicht sagt weder die echten Filamentfarben noch die beleuchtete Wirkung voraus. Die reguläre v4.2 wird weiterhin aus `cad/build_multicolor.py` erzeugt; diese Studie ist separat und gehört nicht zum Druckpaket.
 
 Reproduzieren, vom Repository-Stamm:
 
@@ -20,4 +20,4 @@ Reproduzieren, vom Repository-Stamm:
 
 ## Flächenprüfung der Druckversuche
 
-Die neue vollständige Prüfung findet auch außerhalb der Zellmitten Restlücken. [Versuchsübersicht](surface_trials.json) dokumentiert verworfene Profil- und Rastervarianten; sie enthält keine reproduzierbaren Druckartefakte dieser Zwischenstände. Der aktuelle [2-mm-Entwurf](../../docs/RASTERPROBE.md) bleibt experimentell und besteht die Flächenprüfung weiterhin nicht.
+Die neue vollständige Prüfung findet auch außerhalb der Zellmitten Restlücken. [Versuchsübersicht](surface_trials.json) dokumentiert verworfene Profil- und Rastervarianten; sie enthält keine reproduzierbaren Druckartefakte dieser Zwischenstände. Der aktuelle [2-mm-Entwurf](../../docs/RASTERPROBE.md) wurde anhand der Vorschau optisch verworfen und besteht zusätzlich die Flächenprüfung nicht. Nicht drucken.
