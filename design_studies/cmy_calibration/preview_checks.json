@@ -1,0 +1,856 @@
+{
+  "status": "Preview and calibration recipes only; not sliced",
+  "machine": "Bambu Lab P1S",
+  "nozzle_mm": 0.4,
+  "card_dimensions_mm": [
+    90,
+    62
+  ],
+  "white_base_mm": 0.4,
+  "proposed_first_layer_mm": 0.2,
+  "proposed_subsequent_layer_mm": 0.1,
+  "white_layer_tops_mm": [
+    0.2,
+    0.3,
+    0.4
+  ],
+  "max_total_height_mm": 1.0,
+  "slot_mapping": {
+    "1": "PLA Basic Jade White",
+    "2": "PLA Basic Cyan",
+    "3": "PLA Basic Magenta",
+    "4": "PLA Basic Yellow"
+  },
+  "nominal_filament_hex_not_transmission": {
+    "C": "#0086D6",
+    "M": "#EC008C",
+    "Y": "#F4EE2A",
+    "W": "#FFFFFF"
+  },
+  "stack_order_from_bed": [
+    "W",
+    "Y",
+    "M",
+    "C"
+  ],
+  "viewing_side": "Flat white bed-contact side; colored relief faces lamp inside",
+  "physical_labels": false,
+  "fields": [
+    {
+      "id": "A1",
+      "row": "A",
+      "x_mm": 7.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 1,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#6dffff"
+    },
+    {
+      "id": "A2",
+      "row": "A",
+      "x_mm": 15.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 2,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#2fffff"
+    },
+    {
+      "id": "A3",
+      "row": "A",
+      "x_mm": 24.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff"
+    },
+    {
+      "id": "A4",
+      "row": "A",
+      "x_mm": 32.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ff6dff"
+    },
+    {
+      "id": "A5",
+      "row": "A",
+      "x_mm": 41.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff2fff"
+    },
+    {
+      "id": "A6",
+      "row": "A",
+      "x_mm": 49.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 4,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff09ff"
+    },
+    {
+      "id": "A7",
+      "row": "A",
+      "x_mm": 58.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ffff6d"
+    },
+    {
+      "id": "A8",
+      "row": "A",
+      "x_mm": 66.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ffff2f"
+    },
+    {
+      "id": "A9",
+      "row": "A",
+      "x_mm": 75.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 4
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ffff09"
+    },
+    {
+      "id": "B1",
+      "row": "B",
+      "x_mm": 7.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 3
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.7
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.7,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff6d14"
+    },
+    {
+      "id": "B2",
+      "row": "B",
+      "x_mm": 15.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#ff6d2f"
+    },
+    {
+      "id": "B3",
+      "row": "B",
+      "x_mm": 24.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff6d6d"
+    },
+    {
+      "id": "B4",
+      "row": "B",
+      "x_mm": 32.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ff6dff"
+    },
+    {
+      "id": "B5",
+      "row": "B",
+      "x_mm": 41.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 1,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#6d6dff"
+    },
+    {
+      "id": "B6",
+      "row": "B",
+      "x_mm": 49.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 2,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#2f6dff"
+    },
+    {
+      "id": "B7",
+      "row": "B",
+      "x_mm": 58.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 3,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#146dff"
+    },
+    {
+      "id": "B8",
+      "row": "B",
+      "x_mm": 66.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#096dff"
+    },
+    {
+      "id": "B9",
+      "row": "B",
+      "x_mm": 75.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff"
+    },
+    {
+      "id": "C1",
+      "row": "C",
+      "x_mm": 7.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 3
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.7
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.7,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#ff2f14"
+    },
+    {
+      "id": "C2",
+      "row": "C",
+      "x_mm": 15.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff2f2f"
+    },
+    {
+      "id": "C3",
+      "row": "C",
+      "x_mm": 24.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#ff2f6d"
+    },
+    {
+      "id": "C4",
+      "row": "C",
+      "x_mm": 32.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff2fff"
+    },
+    {
+      "id": "C5",
+      "row": "C",
+      "x_mm": 41.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 1,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#6d2fff"
+    },
+    {
+      "id": "C6",
+      "row": "C",
+      "x_mm": 49.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 2,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#2f2fff"
+    },
+    {
+      "id": "C7",
+      "row": "C",
+      "x_mm": 58.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 3,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#142fff"
+    },
+    {
+      "id": "C8",
+      "row": "C",
+      "x_mm": 66.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 1.0
+        }
+      ],
+      "total_height_mm": 1.0,
+      "schematic_hex_not_prediction": "#092fff"
+    },
+    {
+      "id": "C9",
+      "row": "C",
+      "x_mm": 75.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff"
+    }
+  ],
+  "checks": {
+    "field_bounds": true,
+    "nonoverlapping_fields": true,
+    "continuous_vertical_stacks": true,
+    "paired_rows_differ_only_in_magenta": true
+  },
+  "color_model": "Illustrative RGB channel attenuation: channel = round(255*exp(-0.85*layer_count)); C affects R, M affects G, Y affects B. Arbitrary, not calibrated. No scattering, white-base transmission, LED spectrum, or real pigment spectra modeled.",
+  "sliced": false,
+  "physical_print_verified": false,
+  "limitations": [
+    "Stepped calibration samples, not a continuous logo gradient.",
+    "Neither light transmission nor perceived color is predicted.",
+    "No claim of full slicer coverage or gap closure.",
+    "Variable thickness on the inside; not a 0.6 mm production side panel.",
+    "0.5 mm white spaces separate samples intentionally; not print defects.",
+    "Labels in the preview are annotations, not a fifth print color."
+  ]
+}
