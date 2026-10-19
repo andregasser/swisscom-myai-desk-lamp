@@ -32,6 +32,8 @@ Zehn vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. 
 
 **[Nachprüfung nach Foto-Probedruck](docs/LUECKENSCHLUSS_PRUEFUNG.md):** Weisse Streifen stören weiterhin. 20 zusätzliche Profile bei unveränderten Farbflächen geprüft, einschliesslich 2 × 0,1 mm Farbe. Keine Variante besteht die Flächenprüfung. **Keine neue Druckempfehlung; Lückenschluss weiterhin offen.**
 
+**Neu: [CMY-Testkarte 14](docs/CMY_TESTDRUCK.md)** untersucht Farbmischung durch übereinanderliegende Schichten. 90 × 62 mm, P1S mit 0,4-mm-Düse; AMS **Jade White / Cyan / Magenta / Yellow**. Alle neun Materiallagen bestehen die digitale Flächenprüfung. **[P1S-Druckprojekt](output/cmy_calibration/print/14_cmy_calibration_P1S.3mf)**: ca. 1 h 23 min / 10,9 g. Physischer Farbtest ausstehend; noch kein fertiger Logo-Verlauf.
+
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
 ## Einfarbige Variante v2 drucken

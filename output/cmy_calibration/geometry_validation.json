@@ -1,0 +1,1232 @@
+{
+  "plate_name": "14_cmy_calibration",
+  "size_mm": [
+    90,
+    62,
+    1
+  ],
+  "print_offset_mm": [
+    40,
+    40,
+    0
+  ],
+  "front_is_bed_face": true,
+  "palette": [
+    {
+      "slot": 1,
+      "name": "Jade White",
+      "hex": "#FFFFFF"
+    },
+    {
+      "slot": 2,
+      "name": "Cyan",
+      "hex": "#0086D6"
+    },
+    {
+      "slot": 3,
+      "name": "Magenta",
+      "hex": "#EC008C"
+    },
+    {
+      "slot": 4,
+      "name": "Yellow",
+      "hex": "#F4EE2A"
+    }
+  ],
+  "source_study_sha256": "b32ab76d983fec20c631f040bf729bb4db55b99471cda5e9cd88e7538063b73a",
+  "one_connected_card": true,
+  "material_intersections_mm3": 1.3183898417423734e-16,
+  "watertight_slot_components": [
+    {
+      "slot": 1,
+      "volume_mm3": 2230.6245624201206,
+      "components": 1,
+      "sha256": "fe4cd0f3423699b684fdde6420562132024b8835ffb0c9e132c6cc81245cdb0f"
+    },
+    {
+      "slot": 2,
+      "volume_mm3": 268.79999256134033,
+      "components": 13,
+      "sha256": "c92eaded906f684b71e5b3406f155447ebba5fe039f00cd177c79f28704617c2"
+    },
+    {
+      "slot": 3,
+      "volume_mm3": 236.80000400543213,
+      "components": 19,
+      "sha256": "b1ef47c7d06230e27bdc4356eb4399e430025392bc611f0f8d146364e0d3218d"
+    },
+    {
+      "slot": 4,
+      "volume_mm3": 140.80000019073486,
+      "components": 9,
+      "sha256": "15d0c790deb49e68a32cc8da1e7ecbd2b928c835cdc78601c90c9b65fb143e7c"
+    }
+  ],
+  "section_checks": [
+    {
+      "z_mm": 0.2,
+      "slot": 1,
+      "area_mm2": 5576.561324627978,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.2,
+      "slot": 2,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.2,
+      "slot": 3,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.2,
+      "slot": 4,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.3,
+      "slot": 1,
+      "area_mm2": 5576.561324630537,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.3,
+      "slot": 2,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.3,
+      "slot": 3,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.3,
+      "slot": 4,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.4,
+      "slot": 1,
+      "area_mm2": 5576.561324628618,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.4,
+      "slot": 2,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.4,
+      "slot": 3,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.4,
+      "slot": 4,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.5,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.5,
+      "slot": 2,
+      "area_mm2": 352.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.5,
+      "slot": 3,
+      "area_mm2": 992.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.5,
+      "slot": 4,
+      "area_mm2": 672.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.6,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.6,
+      "slot": 2,
+      "area_mm2": 608.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.6,
+      "slot": 3,
+      "area_mm2": 688.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.6,
+      "slot": 4,
+      "area_mm2": 448.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.7,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.7,
+      "slot": 2,
+      "area_mm2": 784.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.7,
+      "slot": 3,
+      "area_mm2": 304.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.7,
+      "slot": 4,
+      "area_mm2": 224.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.8,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.8,
+      "slot": 2,
+      "area_mm2": 624.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.8,
+      "slot": 3,
+      "area_mm2": 304.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.8,
+      "slot": 4,
+      "area_mm2": 64.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.9,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.9,
+      "slot": 2,
+      "area_mm2": 240.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.9,
+      "slot": 3,
+      "area_mm2": 80.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 0.9,
+      "slot": 4,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 1.0,
+      "slot": 1,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 1.0,
+      "slot": 2,
+      "area_mm2": 80.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 1.0,
+      "slot": 3,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    },
+    {
+      "z_mm": 1.0,
+      "slot": 4,
+      "area_mm2": 0.0,
+      "difference_mm2": 0.0
+    }
+  ],
+  "fields": [
+    {
+      "id": "A1",
+      "row": "A",
+      "x_mm": 7.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 1,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#6dffff",
+      "print_xy_mm": [
+        75.0,
+        46
+      ]
+    },
+    {
+      "id": "A2",
+      "row": "A",
+      "x_mm": 15.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 2,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#2fffff",
+      "print_xy_mm": [
+        66.5,
+        46
+      ]
+    },
+    {
+      "id": "A3",
+      "row": "A",
+      "x_mm": 24.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff",
+      "print_xy_mm": [
+        58.0,
+        46
+      ]
+    },
+    {
+      "id": "A4",
+      "row": "A",
+      "x_mm": 32.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ff6dff",
+      "print_xy_mm": [
+        49.5,
+        46
+      ]
+    },
+    {
+      "id": "A5",
+      "row": "A",
+      "x_mm": 41.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff2fff",
+      "print_xy_mm": [
+        41.0,
+        46
+      ]
+    },
+    {
+      "id": "A6",
+      "row": "A",
+      "x_mm": 49.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 4,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff09ff",
+      "print_xy_mm": [
+        32.5,
+        46
+      ]
+    },
+    {
+      "id": "A7",
+      "row": "A",
+      "x_mm": 58.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ffff6d",
+      "print_xy_mm": [
+        24.0,
+        46
+      ]
+    },
+    {
+      "id": "A8",
+      "row": "A",
+      "x_mm": 66.5,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ffff2f",
+      "print_xy_mm": [
+        15.5,
+        46
+      ]
+    },
+    {
+      "id": "A9",
+      "row": "A",
+      "x_mm": 75.0,
+      "y_mm": 8,
+      "width_mm": 8,
+      "height_mm": 8,
+      "layers": {
+        "C": 0,
+        "M": 0,
+        "Y": 4
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ffff09",
+      "print_xy_mm": [
+        7.0,
+        46
+      ]
+    },
+    {
+      "id": "B1",
+      "row": "B",
+      "x_mm": 7.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 3
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.7
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.7,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff6d14",
+      "print_xy_mm": [
+        75.0,
+        27
+      ]
+    },
+    {
+      "id": "B2",
+      "row": "B",
+      "x_mm": 15.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#ff6d2f",
+      "print_xy_mm": [
+        66.5,
+        27
+      ]
+    },
+    {
+      "id": "B3",
+      "row": "B",
+      "x_mm": 24.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff6d6d",
+      "print_xy_mm": [
+        58.0,
+        27
+      ]
+    },
+    {
+      "id": "B4",
+      "row": "B",
+      "x_mm": 32.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        }
+      ],
+      "total_height_mm": 0.5,
+      "schematic_hex_not_prediction": "#ff6dff",
+      "print_xy_mm": [
+        49.5,
+        27
+      ]
+    },
+    {
+      "id": "B5",
+      "row": "B",
+      "x_mm": 41.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 1,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#6d6dff",
+      "print_xy_mm": [
+        41.0,
+        27
+      ]
+    },
+    {
+      "id": "B6",
+      "row": "B",
+      "x_mm": 49.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 2,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#2f6dff",
+      "print_xy_mm": [
+        32.5,
+        27
+      ]
+    },
+    {
+      "id": "B7",
+      "row": "B",
+      "x_mm": 58.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 3,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#146dff",
+      "print_xy_mm": [
+        24.0,
+        27
+      ]
+    },
+    {
+      "id": "B8",
+      "row": "B",
+      "x_mm": 66.5,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 1,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#096dff",
+      "print_xy_mm": [
+        15.5,
+        27
+      ]
+    },
+    {
+      "id": "B9",
+      "row": "B",
+      "x_mm": 75.0,
+      "y_mm": 25,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff",
+      "print_xy_mm": [
+        7.0,
+        27
+      ]
+    },
+    {
+      "id": "C1",
+      "row": "C",
+      "x_mm": 7.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 3
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.7
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.7,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#ff2f14",
+      "print_xy_mm": [
+        75.0,
+        9
+      ]
+    },
+    {
+      "id": "C2",
+      "row": "C",
+      "x_mm": 15.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 2
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#ff2f2f",
+      "print_xy_mm": [
+        66.5,
+        9
+      ]
+    },
+    {
+      "id": "C3",
+      "row": "C",
+      "x_mm": 24.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 1
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "Y",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.5
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.5,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#ff2f6d",
+      "print_xy_mm": [
+        58.0,
+        9
+      ]
+    },
+    {
+      "id": "C4",
+      "row": "C",
+      "x_mm": 32.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 0,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        }
+      ],
+      "total_height_mm": 0.6,
+      "schematic_hex_not_prediction": "#ff2fff",
+      "print_xy_mm": [
+        49.5,
+        9
+      ]
+    },
+    {
+      "id": "C5",
+      "row": "C",
+      "x_mm": 41.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 1,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.7
+        }
+      ],
+      "total_height_mm": 0.7,
+      "schematic_hex_not_prediction": "#6d2fff",
+      "print_xy_mm": [
+        41.0,
+        9
+      ]
+    },
+    {
+      "id": "C6",
+      "row": "C",
+      "x_mm": 49.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 2,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#2f2fff",
+      "print_xy_mm": [
+        32.5,
+        9
+      ]
+    },
+    {
+      "id": "C7",
+      "row": "C",
+      "x_mm": 58.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 3,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 0.9
+        }
+      ],
+      "total_height_mm": 0.9,
+      "schematic_hex_not_prediction": "#142fff",
+      "print_xy_mm": [
+        24.0,
+        9
+      ]
+    },
+    {
+      "id": "C8",
+      "row": "C",
+      "x_mm": 66.5,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 2,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "M",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.6
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.6,
+          "z_end_mm": 1.0
+        }
+      ],
+      "total_height_mm": 1.0,
+      "schematic_hex_not_prediction": "#092fff",
+      "print_xy_mm": [
+        15.5,
+        9
+      ]
+    },
+    {
+      "id": "C9",
+      "row": "C",
+      "x_mm": 75.0,
+      "y_mm": 43,
+      "width_mm": 8,
+      "height_mm": 10,
+      "layers": {
+        "C": 4,
+        "M": 0,
+        "Y": 0
+      },
+      "stack_from_bed": [
+        {
+          "material": "W",
+          "z_start_mm": 0,
+          "z_end_mm": 0.4
+        },
+        {
+          "material": "C",
+          "z_start_mm": 0.4,
+          "z_end_mm": 0.8
+        }
+      ],
+      "total_height_mm": 0.8,
+      "schematic_hex_not_prediction": "#09ffff",
+      "print_xy_mm": [
+        7.0,
+        9
+      ]
+    }
+  ],
+  "physical_print_verified": false,
+  "view_orientation": "White underside: reverse X from print-bed view, same vertical top edge.",
+  "layer_plan": [
+    [
+      0.2,
+      0.2
+    ],
+    [
+      0.3,
+      0.1
+    ],
+    [
+      0.4,
+      0.1
+    ],
+    [
+      0.5,
+      0.1
+    ],
+    [
+      0.6,
+      0.1
+    ],
+    [
+      0.7,
+      0.1
+    ],
+    [
+      0.8,
+      0.1
+    ],
+    [
+      0.9,
+      0.1
+    ],
+    [
+      1.0,
+      0.1
+    ]
+  ]
+}

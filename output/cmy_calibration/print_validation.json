@@ -1,0 +1,1578 @@
+{
+  "slicer_version": "02.08.02.61",
+  "print_sha256": "a6f720c351a5babdeec13db445084be93b155722bde0627595e46a6d94afa938",
+  "gcode_sha256": "5f090f0f009da98de86fb3081b860e6b8af5e593fe4f09577a0ffa08aba38ab3",
+  "gcode_md5_valid": true,
+  "profile_assignments_verified": true,
+  "manufacturer_start_end_gcode_verified": true,
+  "material_layer_schedule": {
+    "0.2": [
+      1
+    ],
+    "0.3": [
+      1
+    ],
+    "0.4": [
+      1
+    ],
+    "0.5": [
+      2,
+      3,
+      4
+    ],
+    "0.6": [
+      2,
+      3,
+      4
+    ],
+    "0.7": [
+      2,
+      3,
+      4
+    ],
+    "0.8": [
+      2,
+      3,
+      4
+    ],
+    "0.9": [
+      2,
+      3
+    ],
+    "1.0": [
+      2
+    ]
+  },
+  "field_layer_checks": [
+    {
+      "field": "A1",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A1",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A1",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A1",
+      "z_mm": 0.5,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A2",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A2",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A2",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A2",
+      "z_mm": 0.5,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A2",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.5,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A3",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.14948843495921998,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A4",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A4",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A4",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A4",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.1494708117324875,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A5",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A5",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A5",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A5",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A5",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.7,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A6",
+      "z_mm": 0.8,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A7",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A7",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A7",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A7",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14947166313526056,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A8",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A8",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A8",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A8",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A8",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14945405922070035,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.05124796915189378,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14947166313526056,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14947166313526056,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.7,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14947166313526056,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "A9",
+      "z_mm": 0.8,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.14947166313526056,
+      "uncovered_beyond_allowance_mm2": 0.012529309337985739,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.7,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B1",
+      "z_mm": 0.8,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B2",
+      "z_mm": 0.7,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B3",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B3",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B3",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B3",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B3",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B4",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B4",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B4",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B4",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B5",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B5",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B5",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B5",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B5",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B6",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16467283959432732,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B7",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B8",
+      "z_mm": 0.9,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578557,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.001665340892383682,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.5,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "B9",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402772142,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987515,
+      "largest_unresolved_mm2": 0.003132327348006003,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.7,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.8,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C1",
+      "z_mm": 0.9,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.6,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.7,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C2",
+      "z_mm": 0.8,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.5,
+      "slot": 4,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C3",
+      "z_mm": 0.7,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C4",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C4",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C4",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C4",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C4",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C5",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C6",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16467283959431364,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C7",
+      "z_mm": 0.9,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.5,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.6,
+      "slot": 3,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 0.9,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C8",
+      "z_mm": 1.0,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.2,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.3,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.0,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_mm2": 0.0,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.4,
+      "slot": 1,
+      "nominal_uncovered_mm2": 0.09194202288578607,
+      "uncovered_beyond_allowance_mm2": 0.00333068178476692,
+      "largest_unresolved_mm2": 0.00166534089238346,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.5,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.6,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.7,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    },
+    {
+      "field": "C9",
+      "z_mm": 0.8,
+      "slot": 2,
+      "nominal_uncovered_mm2": 0.16466704402770693,
+      "uncovered_beyond_allowance_mm2": 0.012529309337987182,
+      "largest_unresolved_mm2": 0.0031323273480059477,
+      "passed": true
+    }
+  ],
+  "field_layer_count": 166,
+  "model_brim_tower_bounds_xy_mm": [
+    [
+      36.259,
+      34.257999999999996
+    ],
+    [
+      221.517,
+      103.742
+    ]
+  ],
+  "supports_generated": false,
+  "slicer_warnings": "",
+  "color_changes": 10,
+  "estimated_minutes": 82.5,
+  "estimated_filament_g_including_flush_and_tower": 10.89,
+  "digital_coverage_passed": true,
+  "physical_print_verified": false,
+  "color_layer_reports": [
+    "coverage/layer_05.json",
+    "coverage/layer_06.json",
+    "coverage/layer_07.json",
+    "coverage/layer_08.json",
+    "coverage/layer_09.json",
+    "coverage/layer_10.json"
+  ],
+  "worst_nominal_unprinted_color_percent": 0.21375470126858923,
+  "worst_unprinted_color_percent_after_allowance": 0.01678032500623234,
+  "largest_color_gap_mm2_after_allowance": 0.003132327348006003,
+  "geometric_allowance_mm": 0.03,
+  "acceptance": {
+    "max_unresolved_ink_percent": 0.1,
+    "max_connected_unresolved_area_mm2": 0.01,
+    "apply_limits_to_own_ink_and_each_backing_layer_also": true
+  },
+  "limitations": "Digital nominal path coverage with fixed tolerance; not zero mathematical gaps, not a prediction of optical CMY mixing, adhesion or real material flow."
+}

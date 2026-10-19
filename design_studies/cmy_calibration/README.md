@@ -1,6 +1,8 @@
 # CMY-Verlaufskarte: Vorschau für den P1S
 
-**Nur Vorschau und konkrete Schichtrezepte. Noch keine STL-, 3MF- oder G-Code-Dateien und keine Slicer-Prüfung.** Der Benutzer möchte zunächst eine kleine Karte sehen und wissen, welche Filamente erforderlich sind.
+**Ursprüngliche Vorschau und konkrete Schichtrezepte.** Der Benutzer wollte zunächst eine kleine Karte sehen und wissen, welche Filamente erforderlich sind. Diese Vorschau und ihr JSON-Bericht dokumentieren den damaligen Stand, keine Farbvorhersage.
+
+**Inzwischen zum Test freigegeben und gebaut:** [CMY-Testkarte 14 mit Druckdatei und Slicer-Prüfung](../../docs/CMY_TESTDRUCK.md). Die Rezepte bleiben unverändert. Alle neun Materiallagen bestehen die digitale Flächenprüfung; physischer Farbtest noch ausstehend.
 
 ![Schematische Testkarte mit Einzel- und Mischfarben sowie Schichtaufbau](preview.png)
 
@@ -51,7 +53,7 @@ Der Generator prüft die 27 Feldpositionen, ihre gegenseitige Trennung, ganzzahl
 
 Nach Rückmeldung zur Vorschau kann daraus ein separates P1S-Druckprojekt mit 0,4-mm-Düse erstellt werden. Vor einer Druckempfehlung müssen die tatsächlichen Bahnen aller Materiallagen geprüft werden. Die bisherigen Prüfgrenzen werden nicht gelockert. Die bewusst unterschiedliche Schichtbelegung braucht eine zum Rezept passende Sollgeometrie für jede Lage; mehrere Lagen dürfen nicht zu einer scheinbaren Deckungsprüfung zusammengefasst werden.
 
-Die Vorschau bleibt ausserhalb des bestehenden Druckpakets. Reproduktion mit den Python-Abhängigkeiten des Projekts:
+Die Vorschau ist inzwischen als Rezeptquelle der Testkarte im aktuellen Druckpaket enthalten. Reproduktion mit den Python-Abhängigkeiten des Projekts:
 
 ```sh
 python design_studies/cmy_calibration/build_preview.py

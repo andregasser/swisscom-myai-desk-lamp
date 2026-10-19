@@ -1,0 +1,7 @@
+{
+  "1": {
+    "wall_loops": "3",
+    "wall_generator": "classic",
+    "infill_direction": "0"
+  }
+}

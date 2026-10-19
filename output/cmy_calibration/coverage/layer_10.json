@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "print_file": "14_cmy_calibration_P1S.3mf",
+  "print_sha256": "a6f720c351a5babdeec13db445084be93b155722bde0627595e46a6d94afa938",
+  "gcode_sha256": "5f090f0f009da98de86fb3081b860e6b8af5e593fe4f09577a0ffa08aba38ab3",
+  "mesh_sha256_by_slot": {
+    "1": "fe4cd0f3423699b684fdde6420562132024b8835ffb0c9e132c6cc81245cdb0f",
+    "2": "c92eaded906f684b71e5b3406f155447ebba5fe039f00cd177c79f28704617c2",
+    "3": "b1ef47c7d06230e27bdc4356eb4399e430025392bc611f0f8d146364e0d3218d",
+    "4": "15d0c790deb49e68a32cc8da1e7ecbd2b928c835cdc78601c90c9b65fb143e7c"
+  },
+  "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+  "color_layer_z_mm": 1.0,
+  "intentional_white_excluded_from_ink_metrics": true,
+  "color_layer_height_mm": 0.1,
+  "ink_area_mm2": 80.0,
+  "nominal_unprinted_ink_area_mm2": 0.16466704402770693,
+  "nominal_unprinted_ink_percent": 0.2058338050346337,
+  "geometric_allowance_mm": 0.03,
+  "unprinted_ink_beyond_allowance_mm2": 0.012529309337987182,
+  "unprinted_ink_beyond_allowance_percent": 0.015661636672483978,
+  "largest_unresolved_area_mm2": 0.0031323273480059477,
+  "own_ink_missing_beyond_allowance_mm2": 0.012529309337987182,
+  "largest_own_ink_deficit_mm2": 0.0031323273480059477,
+  "largest_unresolved_regions": [
+    {
+      "area_mm2": 0.0031323273480059477,
+      "bounds_mm": [
+        15.5,
+        18.91168452054262,
+        15.588315479457378,
+        19.0
+      ]
+    },
+    {
+      "area_mm2": 0.00313232734800567,
+      "bounds_mm": [
+        23.41168452054262,
+        18.91168452054262,
+        23.5,
+        19.0
+      ]
+    },
+    {
+      "area_mm2": 0.003132327320987782,
+      "bounds_mm": [
+        23.41168452054262,
+        9.0,
+        23.5,
+        9.088315472006798
+      ]
+    },
+    {
+      "area_mm2": 0.003132327320987782,
+      "bounds_mm": [
+        15.5,
+        9.0,
+        15.588315479457378,
+        9.088315472006798
+      ]
+    }
+  ],
+  "slots": {
+    "1": {
+      "intended_area_mm2": 0.0,
+      "not_covered_by_own_color_mm2": 0.0,
+      "not_covered_by_any_color_mm2": 0.0,
+      "own_color_missing_beyond_allowance_mm2": 0.0
+    },
+    "2": {
+      "intended_area_mm2": 80.0,
+      "not_covered_by_own_color_mm2": 0.16466704402770693,
+      "not_covered_by_any_color_mm2": 0.16466704402770693,
+      "own_color_missing_beyond_allowance_mm2": 0.012529309337987182
+    },
+    "3": {
+      "intended_area_mm2": 0.0,
+      "not_covered_by_own_color_mm2": 0.0,
+      "not_covered_by_any_color_mm2": 0.0,
+      "own_color_missing_beyond_allowance_mm2": 0.0
+    },
+    "4": {
+      "intended_area_mm2": 0.0,
+      "not_covered_by_own_color_mm2": 0.0,
+      "not_covered_by_any_color_mm2": 0.0,
+      "own_color_missing_beyond_allowance_mm2": 0.0
+    }
+  },
+  "white_backing_layers": {
+    "0.2": {
+      "area_mm2": 5576.5613229504215,
+      "nominal_uncovered_mm2": 0.573813387356026,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_area_mm2": 0.0
+    },
+    "0.3": {
+      "area_mm2": 5576.56132294973,
+      "nominal_uncovered_mm2": 0.6702219660255151,
+      "uncovered_beyond_allowance_mm2": 0.0,
+      "largest_unresolved_area_mm2": 0.0
+    },
+    "0.4": {
+      "area_mm2": 5576.561322950442,
+      "nominal_uncovered_mm2": 2.8403406703941125,
+      "uncovered_beyond_allowance_mm2": 0.05995227212580456,
+      "largest_unresolved_area_mm2": 0.001665340892383682
+    }
+  },
+  "acceptance": {
+    "max_unresolved_ink_percent": 0.1,
+    "max_connected_unresolved_area_mm2": 0.01,
+    "apply_limits_to_own_ink_and_each_backing_layer_also": true
+  },
+  "digital_coverage_passed": true,
+  "physical_print_verified": false,
+  "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+}
