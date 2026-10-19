@@ -39,7 +39,8 @@ def svg_path(region, height, flip_y=True):
                     for p in region.to_polygons())
 
 
-def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, palette=None):
+def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, palette=None,
+            color_layer_height=.2, backing_layers=None):
     root = OUT if output_root is None else Path(output_root)
     palette = P['colors'] if palette is None else palette
     card = json.loads((root/folder/'geometry_validation.json').read_text())
@@ -60,7 +61,8 @@ def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, 
         mesh = trimesh.load_mesh(root/folder/'stl'/f'slot_{slot}.stl')
         assert mesh.is_watertight and mesh.is_winding_consistent
         meshes[slot] = m.Manifold(m.Mesh(np.float32(mesh.vertices), np.uint32(mesh.faces)))
-    regions = {s: mesh.slice(color_layer-.1) for s,mesh in meshes.items()}
+    assert 0 < color_layer_height <= color_layer
+    regions = {s: mesh.slice(color_layer-color_layer_height/2) for s,mesh in meshes.items()}
     all_color_paths = union(coverage.get((color_layer,s),m.CrossSection()) for s in range(1,5))
     ink = union(regions[s] for s in (2,3,4))
     unprinted = ink-all_color_paths
@@ -81,10 +83,15 @@ def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, 
             'own_color_missing_beyond_allowance_mm2': (region-own.offset(allowance,circular_segments=32)).area(),
         }
     backing = {}
-    for z in (.2,.4,.6):
+    # Explicit schedules allow thinner color layers without sampling a material
+    # boundary or silently omitting an intermediate white backing layer.
+    if backing_layers is None:
+        backing_layers = ((.2,.2),(.4,.2),(.6,.2))
+    for z, layer_height in backing_layers:
         if z == color_layer:
             continue
-        intended = meshes[1].slice(z-.1)
+        assert 0 < layer_height <= z
+        intended = meshes[1].slice(z-layer_height/2)
         paths = coverage.get((z,1),m.CrossSection())
         remaining = intended-paths.offset(allowance,circular_segments=32)
         backing[str(z)] = {'area_mm2': intended.area(),
@@ -110,6 +117,7 @@ def analyze(file, folder, color_layer, output_prefix=None, *, output_root=None, 
         'mesh_sha256_by_slot': {str(s):hashlib.sha256((root/folder/'stl'/f'slot_{s}.stl').read_bytes()).hexdigest() for s in range(1,5)},
         'method': 'CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error',
         'color_layer_z_mm': color_layer, 'intentional_white_excluded_from_ink_metrics': True,
+        'color_layer_height_mm': color_layer_height,
         'ink_area_mm2': ink.area(), 'nominal_unprinted_ink_area_mm2': unprinted.area(),
         'nominal_unprinted_ink_percent': 100*unprinted.area()/ink.area(),
         'geometric_allowance_mm': allowance,

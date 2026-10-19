@@ -1,0 +1,473 @@
+{
+  "basis": "output/line_gradient_full",
+  "trials": [
+    {
+      "name": "gap-arachne-preserve",
+      "process": {
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "0%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply"
+      },
+      "tower_position_mm": [
+        205.0,
+        170.0
+      ]
+    },
+    {
+      "name": "gap-fine-arachne",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-bead085",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "85%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "10%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "50",
+        "wall_distribution_count": "3"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-classic",
+      "process": {
+        "layer_height": "0.1",
+        "top_one_wall_type": "not apply",
+        "internal_solid_infill_line_width": "0.3"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-concentric",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "all top",
+        "top_surface_pattern": "concentric"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-contour030",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.3",
+        "inner_wall_line_width": "0.3",
+        "top_surface_line_width": "0.3",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "10%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "50",
+        "wall_distribution_count": "3"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-contourfill",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "50"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-detail040",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.4",
+        "inner_wall_line_width": "0.4",
+        "top_surface_line_width": "0.4",
+        "min_bead_width": "60%",
+        "min_feature_size": "0%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "slice_closing_radius": "0"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-direction0",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "infill_direction": "0",
+        "top_surface_pattern": "monotonic"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-distributed",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "10%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "50",
+        "wall_distribution_count": "3"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-fivewalls",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "5"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-monotonic",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "all top",
+        "top_surface_pattern": "monotonic",
+        "infill_wall_overlap": "60%"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-overlap75",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "infill_wall_overlap": "75%"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-smallfeatures",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "1%",
+        "wall_transition_length": "10%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "0%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "50",
+        "wall_distribution_count": "3"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-twowalls",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "wall_loops": "2"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-fine-zigzag",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "top_surface_pattern": "zig-zag"
+      },
+      "tower_position_mm": [
+        175.0,
+        40.0
+      ]
+    },
+    {
+      "name": "gap-no-closing",
+      "process": {
+        "top_one_wall_type": "not apply",
+        "slice_closing_radius": "0",
+        "enable_arc_fitting": "0"
+      },
+      "tower_position_mm": [
+        205.0,
+        170.0
+      ]
+    },
+    {
+      "name": "gap-overlap60",
+      "process": {
+        "infill_wall_overlap": "60%"
+      },
+      "tower_position_mm": [
+        205.0,
+        170.0
+      ]
+    },
+    {
+      "name": "gap-threewalls",
+      "process": {
+        "top_one_wall_type": "not apply"
+      },
+      "tower_position_mm": [
+        205.0,
+        170.0
+      ]
+    },
+    {
+      "name": "gap-threewalls-solid030",
+      "process": {
+        "top_one_wall_type": "not apply",
+        "internal_solid_infill_line_width": "0.3"
+      },
+      "tower_position_mm": [
+        205.0,
+        170.0
+      ]
+    }
+  ],
+  "excluded_explorations": [
+    {
+      "name": "gap-allwalls",
+      "process": {
+        "only_one_wall_top": "0"
+      },
+      "reason": "Unsupported/ignored parameter(s)",
+      "mismatched_effective_values": {
+        "only_one_wall_top": null
+      }
+    },
+    {
+      "name": "gap-arachne-detail",
+      "process": {
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "0%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "0%",
+        "wall_transition_filter_distance": "0%",
+        "only_one_wall_top": "0"
+      },
+      "reason": "No completed sliced export; the conversion stage returned success, but no final sliced project was produced."
+    },
+    {
+      "name": "gap-concentric",
+      "process": {
+        "wall_loops": "0",
+        "top_surface_pattern": "concentric",
+        "bottom_surface_pattern": "concentric",
+        "only_one_wall_top": "0"
+      },
+      "reason": "Unsupported/ignored parameter(s)",
+      "mismatched_effective_values": {
+        "only_one_wall_top": null
+      }
+    },
+    {
+      "name": "gap-fine-detail",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "60%",
+        "min_feature_size": "0%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "slice_closing_radius": "0"
+      },
+      "reason": "Failed slicing the model. Please verify the slicing of all plates on Bambu Studio before uploading."
+    },
+    {
+      "name": "gap-fine-detail028",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.28",
+        "inner_wall_line_width": "0.28",
+        "top_surface_line_width": "0.28",
+        "min_bead_width": "60%",
+        "min_feature_size": "0%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply",
+        "slice_closing_radius": "0"
+      },
+      "reason": "Failed slicing the model. Please verify the slicing of all plates on Bambu Studio before uploading."
+    },
+    {
+      "name": "gap-fine028",
+      "process": {
+        "layer_height": "0.1",
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.28",
+        "inner_wall_line_width": "0.28",
+        "top_surface_line_width": "0.28",
+        "min_bead_width": "65%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%",
+        "wall_transition_angle": "59",
+        "wall_transition_filter_deviation": "5%",
+        "top_one_wall_type": "not apply"
+      },
+      "reason": "Failed slicing the model. Please verify the slicing of all plates on Bambu Studio before uploading."
+    }
+  ]
+}

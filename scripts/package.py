@@ -11,6 +11,7 @@ for folder in ('assets', 'cad', 'docs', 'scripts', 'output/stl', 'output/3mf',
                'output/print', 'output/profiles', 'output/preview', 'output/multicolor_v3',
                'output/multicolor_v4', 'output/multicolor_v4_1', 'output/multicolor_v4_2',
                'output/line_gradient_test', 'output/line_gradient_refined', 'output/line_gradient_full',
+               'output/line_gradient_gap_audit',
                'design_studies/line_gradient', 'design_studies/line_gradient_fine',
                'design_studies/line_gradient_smooth', 'design_studies/line_gradient_full'):
     files.extend(p for p in (root / folder).rglob('*')

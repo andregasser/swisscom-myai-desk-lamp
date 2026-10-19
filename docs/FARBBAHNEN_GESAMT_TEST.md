@@ -2,6 +2,8 @@
 
 **Testdatei erstellt und geslict; die vollständige Flächenprüfung ist nicht bestanden.** Die akzeptierte Gesamtvorschau wurde unverändert für den **P1S mit 0,4-mm-Düse** umgesetzt. Auch nach fünf Bahneinstellungen bleiben digitale Lücken. Die Datei ist zur Prüfung verfügbar, nicht als lückenfreier Probedruck freigegeben.
 
+**Spätere Rückmeldung:** Fotos des Probedrucks zeigen störende weisse Streifen. Die [anschliessende Untersuchung von 20 weiteren Profileinstellungen](LUECKENSCHLUSS_PRUEFUNG.md) findet ebenfalls keine ausreichend geschlossenen Farbflächen. Die folgende Dokumentation beschreibt den ursprünglichen Auslieferungsstand; keine neue Druckfreigabe.
+
 [P1S-Testdatei mit Restlücken](../output/line_gradient_full/print/13_full_line_test_P1S.3mf) · [Druckprüfung](../output/line_gradient_full/print_validation.json) · [Flächenprüfung](../output/line_gradient_full/surface_coverage.json) · [Profilvergleich](../output/line_gradient_full/profile_trials.json)
 
 ![CAD-Farbaufteilung der Testkarte, keine Simulation des Druckergebnisses](../output/line_gradient_full/preview/card.png)

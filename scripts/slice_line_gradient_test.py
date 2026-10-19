@@ -13,6 +13,8 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('bambu_studio',type=Path)
 parser.add_argument('--process',type=Path,help='Explicit test process override; archived with output')
 parser.add_argument('--output',type=Path,default=OUT,help='Separate card output folder')
+parser.add_argument('--tower-position',type=float,nargs=2,default=(205,170),metavar=('X','Y'),
+                    help='Prime tower origin in mm; validate the complete sliced footprint')
 args=parser.parse_args()
 OUT=args.output.resolve()
 args.bambu_studio=args.bambu_studio.resolve()
@@ -72,7 +74,7 @@ payload['Metadata/model_settings.config']=ET.tostring(config,encoding='utf-8',xm
 settings=json.loads(payload['Metadata/project_settings.config'])
 settings.update(flush_volumes_vector=['140']*8,
                 flush_volumes_matrix=['0' if i==j else ('650' if j==0 else '450') for i in range(4) for j in range(4)],
-                wipe_tower_x=['205'],wipe_tower_y=['170'])
+                wipe_tower_x=[str(args.tower_position[0])],wipe_tower_y=[str(args.tower_position[1])])
 payload['Metadata/project_settings.config']=json.dumps(settings).encode()
 source=scratch/'assigned.3mf'
 with zipfile.ZipFile(source,'w',zipfile.ZIP_DEFLATED) as archive:

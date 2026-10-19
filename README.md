@@ -28,7 +28,9 @@ Zehn vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. 
 
 **[Weiterentwicklung: 0,44-mm-Streifen mit gerundeten Enden](docs/FARBBAHNEN_VERFEINERT.md)**: feinere Bänder, aber sichtbare Randänderungen und weiterhin Restlücken. Sieben neue Slicer-Läufe; beste nominelle Lückenfläche **0,55 %**. **Keine Druckempfehlung.** Der Vergleich und die Prüfdatei sind dokumentiert.
 
-**[Aktuelle Testkarte 13: variable gerade Streifen im gesamten Logo](docs/FARBBAHNEN_GESAMT_TEST.md)** setzt die akzeptierte Gesamtvorschau ohne Randzonen oder geänderte Streifenenden um. Für P1S mit 0,4-mm-Düse geslict, fünf Bahneinstellungen geprüft. Die ausgewählte Datei lässt nominell **0,47 %** Farbfläche unbedeckt; **Flächenprüfung nicht bestanden**, noch kein physischer Druck. [3MF zur Prüfung](output/line_gradient_full/print/13_full_line_test_P1S.3mf).
+**[Testkarte 13: variable gerade Streifen im gesamten Logo](docs/FARBBAHNEN_GESAMT_TEST.md)** setzt die akzeptierte Gesamtvorschau ohne Randzonen oder geänderte Streifenenden um. Für P1S mit 0,4-mm-Düse geslict, ursprünglich fünf Bahneinstellungen geprüft. Die ausgelieferte Datei lässt nominell **0,47 %** Farbfläche unbedeckt; **Flächenprüfung nicht bestanden**. [3MF zur Prüfung](output/line_gradient_full/print/13_full_line_test_P1S.3mf).
+
+**[Nachprüfung nach Foto-Probedruck](docs/LUECKENSCHLUSS_PRUEFUNG.md):** Weisse Streifen stören weiterhin. 20 zusätzliche Profile bei unveränderten Farbflächen geprüft, einschliesslich 2 × 0,1 mm Farbe. Keine Variante besteht die Flächenprüfung. **Keine neue Druckempfehlung; Lückenschluss weiterhin offen.**
 
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
