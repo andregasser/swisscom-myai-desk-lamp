@@ -57,3 +57,9 @@ Die positive Rückmeldung zur kleinen Lichtprobe bestätigt weder die Stabilitä
 ## Verfeinerte Farbbahnen — Testkarte 12
 
 Am 19. Oktober 2026 digital untersucht: 0,44-mm-Streifen, gerundete Enden, weiterhin P1S mit 0,4-mm-Düse. Sieben neue Slicer-Läufe bestehen die vollständige Flächenprüfung nicht; beste nominelle Lückenfläche 0,549 %. Die Randkorrektur verändert das Erscheinungsbild. **Kein physischer Test und keine Druckempfehlung.** [Vergleich und Prüfstand](FARBBAHNEN_VERFEINERT.md).
+
+## Variable gerade Farbbahnen im gesamten Logo — Testkarte 13
+
+Der Benutzer hat die Gesamtvorschau für einen Test mit der **0,4-mm-Düse** freigegeben. Am 19. Oktober 2026 aus exakt dieser Farbaufteilung gebaut und mit Bambu Studio 02.08.02.61 geslict: variable Bänder ab nominell 0,32 mm, alle Übergänge in Sternen und Schrift, keine Randzonen oder abgewinkelten/gerundeten Enden. Aufbau 0,4 mm Weiss + 0,2 mm Farbe, Sichtseite oben; AMS Weiss/Blau/Cyanblau/Rot.
+
+Fünf Slicer-Profile an identischer Geometrie untersucht. Keines besteht die unveränderte Flächenprüfung. Die ausgewählte klassische 0,30-mm-Linieneinstellung hat die kleinste grösste Restlücke der geprüften Profile (0,118 mm²), nominell 0,466 % unbedeckte Farbfläche. Das 0,28-mm-Profil senkt die Gesamtfläche auf 0,440 %, vergrössert aber die grösste Lücke auf 0,142 mm². Beide weissen Rückschichten bestehen beim ausgewählten Profil. **Kein physischer Test, keine bestätigte Behebung der weissen Stellen und keine Freigabe als lückenfreier Druck.** [Datei und vollständiger Prüfstand](FARBBAHNEN_GESAMT_TEST.md).

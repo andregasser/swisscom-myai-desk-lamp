@@ -1,0 +1,3359 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "slicer_version": "02.08.02.61",
+  "nominal_nozzle_mm": 0.4,
+  "identical_material_meshes_all_trials": true,
+  "selected": "baseline-classic030",
+  "selection_reason": "Smallest largest connected unresolved gap among the five tested profiles; not the smallest total missing area. No profile passes the unchanged coverage criteria.",
+  "all_trials_failed_coverage": true,
+  "physical_print_verified": false,
+  "reproduction": "Build cad/build_full_line_test.py. For each non-selected trial copy the generated output directory to a separate directory, write process_overrides to JSON and pass --output and --process to scripts/slice_line_gradient_test.py, then validate that output. Complete effective process profiles are included below.",
+  "trials": [
+    {
+      "name": "baseline-classic030",
+      "selected": true,
+      "process_overrides": {},
+      "process": {
+        "type": "process",
+        "name": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "from": "User",
+        "instantiation": "true",
+        "adaptive_layer_height": "0",
+        "bottom_shell_layers": "5",
+        "bottom_color_penetration_layers": "3",
+        "bottom_shell_thickness": "0",
+        "bottom_surface_pattern": "monotonic",
+        "bottom_surface_density": "100",
+        "bridge_flow": "1",
+        "bridge_no_support": "0",
+        "bridge_speed": [
+          "30",
+          "30"
+        ],
+        "brim_object_gap": "0.15",
+        "brim_width": "4",
+        "compatible_printers_condition": "",
+        "circle_compensation_manual_offset": "0",
+        "default_acceleration": [
+          "3000",
+          "3000"
+        ],
+        "detect_floating_vertical_shell": "1",
+        "detect_overhang_wall": "1",
+        "detect_thin_wall": "1",
+        "draft_shield": "disabled",
+        "elefant_foot_compensation": "0",
+        "enable_arc_fitting": "1",
+        "enable_prime_tower": "1",
+        "enable_support": "0",
+        "enable_circle_compensation": "0",
+        "enable_wrapping_detection": "0",
+        "filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+        "gap_infill_speed": [
+          "25",
+          "25"
+        ],
+        "infill_combination": "0",
+        "infill_direction": "45",
+        "infill_wall_overlap": "30%",
+        "monotonic_travel_into_wall": "0.0",
+        "initial_layer_line_width": "0.4",
+        "initial_layer_print_height": "0.2",
+        "initial_layer_speed": [
+          "25",
+          "25"
+        ],
+        "inner_wall_line_width": "0.3",
+        "inner_wall_speed": [
+          "30",
+          "30"
+        ],
+        "interface_shells": "0",
+        "internal_bridge_support_thickness": "0.8",
+        "internal_solid_infill_line_width": "0.42",
+        "internal_solid_infill_speed": [
+          "40",
+          "40"
+        ],
+        "ironing_flow": "10%",
+        "ironing_inset": "0.21",
+        "ironing_spacing": "0.15",
+        "ironing_speed": "30",
+        "ironing_type": "no ironing",
+        "infill_lock_depth": "1.0",
+        "initial_layer_travel_acceleration": [
+          "6000",
+          "6000"
+        ],
+        "infill_shift_step": "0.4",
+        "infill_rotate_step": "0",
+        "layer_height": "0.2",
+        "layer_time_smoothing": "0",
+        "layer_time_smoothing_threshold": "30",
+        "line_width": "0.4",
+        "locked_skin_infill_pattern": "crosszag",
+        "locked_skeleton_infill_pattern": "zigzag",
+        "max_bridge_length": "0",
+        "max_travel_detour_distance": "0",
+        "avoid_crossing_wall_includes_support": "0",
+        "minimum_sparse_infill_area": "15",
+        "only_one_wall_top": "1",
+        "outer_wall_line_width": "0.3",
+        "outer_wall_speed": [
+          "25",
+          "25"
+        ],
+        "overhang_totally_speed": [
+          "10",
+          "30"
+        ],
+        "override_filament_scarf_seam_setting": "0",
+        "pre_start_fan_time": [
+          "0"
+        ],
+        "prime_tower_width": "35",
+        "print_sequence": "by layer",
+        "print_settings_id": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "prime_tower_brim_width": "3",
+        "prime_tower_enable_framework": "0",
+        "prime_tower_lift_speed": "90",
+        "prime_tower_lift_height": "-1",
+        "prime_tower_max_speed": "90",
+        "prime_tower_flat_ironing": "0",
+        "raft_layers": "0",
+        "reduce_crossing_wall": "0",
+        "reduce_infill_retraction_mode": "Auto",
+        "resolution": "0.001",
+        "scarf_angle_threshold": "155",
+        "seam_position": "back",
+        "seam_placement_away_from_overhangs": "0",
+        "skirt_distance": "2",
+        "skirt_per_object": "1",
+        "skirt_height": "1",
+        "skirt_loops": "0",
+        "smooth_coefficient": "150",
+        "sparse_infill_density": "100%",
+        "fill_multiline": "1",
+        "skeleton_infill_density": "15%",
+        "skin_infill_density": "15%",
+        "sparse_infill_line_width": "0.45",
+        "skin_infill_line_width": "0.45",
+        "skin_infill_depth": "2.0",
+        "skeleton_infill_line_width": "0.45",
+        "sparse_infill_pattern": "zig-zag",
+        "sparse_infill_speed": [
+          "80",
+          "80"
+        ],
+        "spiral_mode": "0",
+        "standby_temperature_delta": "-5",
+        "support_base_pattern": "default",
+        "support_base_pattern_spacing": "2.5",
+        "support_bottom_z_distance": "0.2",
+        "support_expansion": "0",
+        "support_filament": "0",
+        "support_interface_bottom_layers": "2",
+        "support_interface_filament": "0",
+        "support_interface_loop_pattern": "0",
+        "support_interface_pattern": "auto",
+        "support_interface_spacing": "0.5",
+        "support_interface_speed": [
+          "80",
+          "80"
+        ],
+        "support_interface_top_layers": "2",
+        "support_line_width": "0.42",
+        "support_object_xy_distance": "0.35",
+        "support_on_build_plate_only": "0",
+        "support_speed": [
+          "150",
+          "150"
+        ],
+        "support_style": "default",
+        "support_threshold_angle": "30",
+        "support_top_z_distance": "0.2",
+        "support_type": "tree(auto)",
+        "enable_support_ironing": "0",
+        "support_ironing_pattern": "zig-zag",
+        "support_ironing_speed": "30",
+        "support_ironing_flow": "10%",
+        "support_ironing_spacing": "0.15",
+        "support_ironing_inset": "0.0",
+        "support_ironing_direction": "0",
+        "seam_slope_type": "none",
+        "seam_slope_start_height": "10%",
+        "seam_slope_gap": "0",
+        "seam_slope_min_length": "10",
+        "symmetric_infill_y_axis": "0",
+        "sparse_infill_lattice_angle_1": "-45",
+        "sparse_infill_lattice_angle_2": "45",
+        "top_shell_layers": "5",
+        "top_color_penetration_layers": "5",
+        "top_shell_thickness": "1.0",
+        "top_surface_line_width": "0.3",
+        "top_surface_pattern": "monotonicline",
+        "top_surface_density": "100",
+        "top_surface_speed": [
+          "25",
+          "25"
+        ],
+        "top_solid_infill_flow_ratio": [
+          "1",
+          "1"
+        ],
+        "travel_acceleration": [
+          "10000",
+          "10000"
+        ],
+        "travel_short_distance_acceleration": [
+          "250",
+          "250"
+        ],
+        "travel_speed": [
+          "500",
+          "500"
+        ],
+        "tree_support_branch_angle": "45",
+        "tree_support_branch_diameter": "2",
+        "tree_support_wall_count": "-1",
+        "wall_generator": "classic",
+        "wall_infill_order": "inner wall/outer wall/infill",
+        "wall_loops": "3",
+        "wipe_tower_no_sparse_layers": "0",
+        "xy_contour_compensation": "0",
+        "xy_hole_compensation": "0",
+        "z_direction_outwall_speed_continuous": "0",
+        "enable_tower_interface_features": "0",
+        "sparse_infill_filament": "0",
+        "wall_filament": "0",
+        "solid_infill_filament": "0",
+        "infill_instead_top_bottom_surfaces": "0",
+        "fuzzy_skin": "none",
+        "fuzzy_skin_thickness": "0.3",
+        "fuzzy_skin_point_distance": "0.8",
+        "fuzzy_skin_first_layer": "0",
+        "fuzzy_skin_noise_type": "classic",
+        "fuzzy_skin_mode": "displacement",
+        "fuzzy_skin_scale": "1.0",
+        "fuzzy_skin_octaves": "4",
+        "fuzzy_skin_persistence": "0.5",
+        "enable_overhang_speed": [
+          "1",
+          "1"
+        ],
+        "enable_height_slowdown": [
+          "0",
+          "0"
+        ],
+        "initial_layer_acceleration": [
+          "500",
+          "500"
+        ],
+        "initial_layer_infill_speed": [
+          "40",
+          "40"
+        ],
+        "inner_wall_acceleration": [
+          "0",
+          "0"
+        ],
+        "outer_wall_acceleration": [
+          "1500",
+          "1500"
+        ],
+        "overhang_1_4_speed": [
+          "0",
+          "0"
+        ],
+        "overhang_2_4_speed": [
+          "50",
+          "50"
+        ],
+        "overhang_3_4_speed": [
+          "30",
+          "30"
+        ],
+        "overhang_4_4_speed": [
+          "10",
+          "10"
+        ],
+        "print_extruder_id": [
+          "1",
+          "1"
+        ],
+        "print_extruder_variant": [
+          "Direct Drive Standard",
+          "Direct Drive High Flow"
+        ],
+        "slowdown_start_height": [
+          "0",
+          "0"
+        ],
+        "slowdown_start_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_start_acc": [
+          "100000",
+          "100000"
+        ],
+        "slowdown_end_height": [
+          "400",
+          "400"
+        ],
+        "slowdown_end_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_end_acc": [
+          "100000",
+          "100000"
+        ],
+        "small_perimeter_speed": [
+          "50%",
+          "50%"
+        ],
+        "small_perimeter_threshold": [
+          "0",
+          "0"
+        ],
+        "sparse_infill_acceleration": [
+          "100%",
+          "100%"
+        ],
+        "top_surface_acceleration": [
+          "2000",
+          "2000"
+        ],
+        "travel_speed_z": [
+          "0",
+          "0"
+        ],
+        "vertical_shell_speed": [
+          "80%",
+          "80%"
+        ],
+        "setting_id": "GP004",
+        "description": "It has a general layer height, and results in general layer lines and printing quality. It is suitable for most general printing cases.",
+        "compatible_printers": [
+          "Bambu Lab X1 Carbon 0.4 nozzle",
+          "Bambu Lab X1 0.4 nozzle",
+          "Bambu Lab P1S 0.4 nozzle",
+          "Bambu Lab X1E 0.4 nozzle"
+        ],
+        "brim_type": "outer_only",
+        "curr_bed_type": "Textured PEI Plate",
+        "flush_into_infill": "0",
+        "flush_into_objects": "0",
+        "flush_into_support": "0",
+        "seam_gap": "0%"
+      },
+      "geometry": {
+        "size_mm": [
+          96.88442962962964,
+          109.14133710121789,
+          0.6
+        ],
+        "color_depth_mm": 0.2,
+        "white_backing_mm": 0.4,
+        "plate_name": "13_full_line_test",
+        "card_corner_radius_mm": 1.0,
+        "front_is_bed_face": false,
+        "color_layer_z_mm": 0.6,
+        "print_offset_mm": [
+          40,
+          40,
+          0
+        ],
+        "palette": [
+          {
+            "slot": 1,
+            "name": "Weiss",
+            "hex": "#FFFFFF"
+          },
+          {
+            "slot": 2,
+            "name": "Blau",
+            "hex": "#0445C8"
+          },
+          {
+            "slot": 3,
+            "name": "Cyanblau",
+            "hex": "#1FB9FF"
+          },
+          {
+            "slot": 4,
+            "name": "Rot",
+            "hex": "#F23232"
+          }
+        ],
+        "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+        "source_preview": "design_studies/line_gradient_full/proposal.svg",
+        "removed_original_micro_fragment": [],
+        "reference_fields": [
+          {
+            "slot": 4,
+            "xy_mm": [
+              42.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 3,
+            "xy_mm": [
+              48.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 2,
+            "xy_mm": [
+              54.44221481481482,
+              2.5
+            ]
+          }
+        ],
+        "one_connected_card": true,
+        "watertight_slot_components": [
+          {
+            "slot": 1,
+            "components": 1,
+            "volume_mm3": 5947.668354853954
+          },
+          {
+            "slot": 2,
+            "components": 143,
+            "volume_mm3": 82.57100143197904
+          },
+          {
+            "slot": 3,
+            "components": 129,
+            "volume_mm3": 249.2800518793482
+          },
+          {
+            "slot": 4,
+            "components": 37,
+            "volume_mm3": 64.42036114480449
+          }
+        ],
+        "material_intersections_mm3": 0,
+        "physical_print_verified": false,
+        "band_label": "variable Farbbahnen ab 0.32 mm",
+        "minimum_designed_band_mm": 0.32,
+        "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+        "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+        "all_interfaces_straight": true,
+        "endpoint_modifications": false,
+        "contour_border_mm": 0,
+        "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+        "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+      },
+      "print_validation": {
+        "slicer_version": "02.08.02.61",
+        "print_sha256": "8f88c97ddd4d4417f2e3fbafa6416e42f8f5f55eb6aad2c3044edd4a6d42f92d",
+        "sliced_successfully": true,
+        "profile_assignments_verified": true,
+        "gcode_md5_valid": true,
+        "model_layer_slots": {
+          "0.2": [
+            1
+          ],
+          "0.4": [
+            1
+          ],
+          "0.6": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "print_extrusion_bounds_mm": [
+          [
+            36.458,
+            34.458,
+            0.2
+          ],
+          [
+            246.47,
+            208.823,
+            0.6
+          ]
+        ],
+        "supports_generated": false,
+        "slicer_warnings": "",
+        "color_changes": 3,
+        "estimated_minutes": 75.6,
+        "estimated_filament_g_including_flush_and_tower": 10.66,
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "coverage_report": "surface_coverage.json"
+      },
+      "coverage": {
+        "schema_version": 1,
+        "print_file": "13_full_line_test_P1S.3mf",
+        "print_sha256": "8f88c97ddd4d4417f2e3fbafa6416e42f8f5f55eb6aad2c3044edd4a6d42f92d",
+        "gcode_sha256": "ce7765174922731738e8d8763cb132681a06c7b6300e6bb9bf6129d2e073eea3",
+        "mesh_sha256_by_slot": {
+          "1": "a9b9333d3c4bfb9c5cabf636eff07baae8a14e1be5459fe7a18675bdf1c8cb66",
+          "2": "0b30ed5aa7e8381d76764ff89462e00c4a071e0943299df760d87cb3476badc4",
+          "3": "c33a88b97e0107b6ef07871ac8902bfe5187f00e88f0397074e5144fcaa0781a",
+          "4": "57627c39ab5676157c0c3d54421537d01e7c777100021eeaf3ddd29958353bce"
+        },
+        "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+        "color_layer_z_mm": 0.6,
+        "intentional_white_excluded_from_ink_metrics": true,
+        "ink_area_mm2": 1981.3568940358805,
+        "nominal_unprinted_ink_area_mm2": 9.228852828595311,
+        "nominal_unprinted_ink_percent": 0.46578447610197105,
+        "geometric_allowance_mm": 0.03,
+        "unprinted_ink_beyond_allowance_mm2": 3.3331885571550033,
+        "unprinted_ink_beyond_allowance_percent": 0.16822757006515568,
+        "largest_unresolved_area_mm2": 0.11761068990986345,
+        "own_ink_missing_beyond_allowance_mm2": 7.829615288973585,
+        "largest_own_ink_deficit_mm2": 0.11761068990986345,
+        "largest_unresolved_regions": [
+          {
+            "area_mm2": 0.11761068990986345,
+            "bounds_mm": [
+              86.33799999952316,
+              47.6460108011961,
+              86.75653062015772,
+              48.207999996840954
+            ]
+          },
+          {
+            "area_mm2": 0.10765441038692547,
+            "bounds_mm": [
+              20.761490792036057,
+              14.957000002264977,
+              21.181000001728535,
+              15.520284660160542
+            ]
+          },
+          {
+            "area_mm2": 0.06350872124289719,
+            "bounds_mm": [
+              30.586068406701088,
+              93.25335209071636,
+              31.08563133329153,
+              93.64730472117662
+            ]
+          },
+          {
+            "area_mm2": 0.06345214622570552,
+            "bounds_mm": [
+              31.538377948105335,
+              73.87385124713182,
+              32.0372433885932,
+              74.26754984259605
+            ]
+          },
+          {
+            "area_mm2": 0.06338381549281602,
+            "bounds_mm": [
+              40.739685632288456,
+              77.27985049039125,
+              41.238807298243046,
+              77.67305719852448
+            ]
+          },
+          {
+            "area_mm2": 0.06335717102446381,
+            "bounds_mm": [
+              67.8858714401722,
+              66.3315552175045,
+              68.38459125161171,
+              66.72487726807594
+            ]
+          },
+          {
+            "area_mm2": 0.06333194369511858,
+            "bounds_mm": [
+              33.589297249913216,
+              74.63395276665688,
+              34.088351011276245,
+              75.02666667103767
+            ]
+          },
+          {
+            "area_mm2": 0.06321943735189706,
+            "bounds_mm": [
+              66.10311721265316,
+              65.67186018824577,
+              66.60136997699738,
+              66.06428088992834
+            ]
+          },
+          {
+            "area_mm2": 0.06320634547745704,
+            "bounds_mm": [
+              35.73504716902971,
+              75.4277532696724,
+              36.23314689844847,
+              75.82045762985945
+            ]
+          },
+          {
+            "area_mm2": 0.06318377885509818,
+            "bounds_mm": [
+              72.33671645075083,
+              67.9785575196147,
+              72.83486782759428,
+              68.37115553021431
+            ]
+          },
+          {
+            "area_mm2": 0.06317724528841939,
+            "bounds_mm": [
+              61.56996218115091,
+              68.47896134853363,
+              62.068142630159855,
+              68.87144046276808
+            ]
+          },
+          {
+            "area_mm2": 0.06315754076608826,
+            "bounds_mm": [
+              69.92085348069668,
+              67.0845852792263,
+              70.41892456263304,
+              67.47708416730165
+            ]
+          }
+        ],
+        "slots": {
+          "1": {
+            "intended_area_mm2": 8591.875631608922,
+            "not_covered_by_own_color_mm2": 1.915103153886785,
+            "not_covered_by_any_color_mm2": 1.688687683593198,
+            "own_color_missing_beyond_allowance_mm2": 0.5924772450942506
+          },
+          "2": {
+            "intended_area_mm2": 412.85497077785493,
+            "not_covered_by_own_color_mm2": 3.3918402444920592,
+            "not_covered_by_any_color_mm2": 2.769991023287339,
+            "own_color_missing_beyond_allowance_mm2": 2.5137314453043214
+          },
+          "3": {
+            "intended_area_mm2": 1246.4001483975278,
+            "not_covered_by_own_color_mm2": 6.476323241142188,
+            "not_covered_by_any_color_mm2": 5.260896050773369,
+            "own_color_missing_beyond_allowance_mm2": 4.302607361054921
+          },
+          "4": {
+            "intended_area_mm2": 322.1017769850232,
+            "not_covered_by_own_color_mm2": 1.5332340296886777,
+            "not_covered_by_any_color_mm2": 1.1979657417651346,
+            "own_color_missing_beyond_allowance_mm2": 1.0132764827611143
+          }
+        },
+        "white_backing_layers": {
+          "0.2": {
+            "area_mm2": 10573.232530483394,
+            "nominal_uncovered_mm2": 1.2276385804428178,
+            "uncovered_beyond_allowance_mm2": 0.01367923905805557,
+            "largest_unresolved_area_mm2": 0.007035924114854097
+          },
+          "0.4": {
+            "area_mm2": 10573.232530484484,
+            "nominal_uncovered_mm2": 2.0507500289572613,
+            "uncovered_beyond_allowance_mm2": 1.072258345502508e-06,
+            "largest_unresolved_area_mm2": 5.115505763708672e-07
+          }
+        },
+        "acceptance": {
+          "max_unresolved_ink_percent": 0.1,
+          "max_connected_unresolved_area_mm2": 0.01,
+          "apply_limits_to_own_ink_and_each_backing_layer_also": true
+        },
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+      }
+    },
+    {
+      "name": "full-classic032",
+      "selected": false,
+      "process_overrides": {
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32"
+      },
+      "process": {
+        "type": "process",
+        "name": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "from": "User",
+        "instantiation": "true",
+        "adaptive_layer_height": "0",
+        "bottom_shell_layers": "5",
+        "bottom_color_penetration_layers": "3",
+        "bottom_shell_thickness": "0",
+        "bottom_surface_pattern": "monotonic",
+        "bottom_surface_density": "100",
+        "bridge_flow": "1",
+        "bridge_no_support": "0",
+        "bridge_speed": [
+          "30",
+          "30"
+        ],
+        "brim_object_gap": "0.15",
+        "brim_width": "4",
+        "compatible_printers_condition": "",
+        "circle_compensation_manual_offset": "0",
+        "default_acceleration": [
+          "3000",
+          "3000"
+        ],
+        "detect_floating_vertical_shell": "1",
+        "detect_overhang_wall": "1",
+        "detect_thin_wall": "1",
+        "draft_shield": "disabled",
+        "elefant_foot_compensation": "0",
+        "enable_arc_fitting": "1",
+        "enable_prime_tower": "1",
+        "enable_support": "0",
+        "enable_circle_compensation": "0",
+        "enable_wrapping_detection": "0",
+        "filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+        "gap_infill_speed": [
+          "25",
+          "25"
+        ],
+        "infill_combination": "0",
+        "infill_direction": "45",
+        "infill_wall_overlap": "30%",
+        "monotonic_travel_into_wall": "0.0",
+        "initial_layer_line_width": "0.4",
+        "initial_layer_print_height": "0.2",
+        "initial_layer_speed": [
+          "25",
+          "25"
+        ],
+        "inner_wall_line_width": "0.32",
+        "inner_wall_speed": [
+          "30",
+          "30"
+        ],
+        "interface_shells": "0",
+        "internal_bridge_support_thickness": "0.8",
+        "internal_solid_infill_line_width": "0.42",
+        "internal_solid_infill_speed": [
+          "40",
+          "40"
+        ],
+        "ironing_flow": "10%",
+        "ironing_inset": "0.21",
+        "ironing_spacing": "0.15",
+        "ironing_speed": "30",
+        "ironing_type": "no ironing",
+        "infill_lock_depth": "1.0",
+        "initial_layer_travel_acceleration": [
+          "6000",
+          "6000"
+        ],
+        "infill_shift_step": "0.4",
+        "infill_rotate_step": "0",
+        "layer_height": "0.2",
+        "layer_time_smoothing": "0",
+        "layer_time_smoothing_threshold": "30",
+        "line_width": "0.4",
+        "locked_skin_infill_pattern": "crosszag",
+        "locked_skeleton_infill_pattern": "zigzag",
+        "max_bridge_length": "0",
+        "max_travel_detour_distance": "0",
+        "avoid_crossing_wall_includes_support": "0",
+        "minimum_sparse_infill_area": "15",
+        "only_one_wall_top": "1",
+        "outer_wall_line_width": "0.32",
+        "outer_wall_speed": [
+          "25",
+          "25"
+        ],
+        "overhang_totally_speed": [
+          "10",
+          "30"
+        ],
+        "override_filament_scarf_seam_setting": "0",
+        "pre_start_fan_time": [
+          "0"
+        ],
+        "prime_tower_width": "35",
+        "print_sequence": "by layer",
+        "print_settings_id": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "prime_tower_brim_width": "3",
+        "prime_tower_enable_framework": "0",
+        "prime_tower_lift_speed": "90",
+        "prime_tower_lift_height": "-1",
+        "prime_tower_max_speed": "90",
+        "prime_tower_flat_ironing": "0",
+        "raft_layers": "0",
+        "reduce_crossing_wall": "0",
+        "reduce_infill_retraction_mode": "Auto",
+        "resolution": "0.001",
+        "scarf_angle_threshold": "155",
+        "seam_position": "back",
+        "seam_placement_away_from_overhangs": "0",
+        "skirt_distance": "2",
+        "skirt_per_object": "1",
+        "skirt_height": "1",
+        "skirt_loops": "0",
+        "smooth_coefficient": "150",
+        "sparse_infill_density": "100%",
+        "fill_multiline": "1",
+        "skeleton_infill_density": "15%",
+        "skin_infill_density": "15%",
+        "sparse_infill_line_width": "0.45",
+        "skin_infill_line_width": "0.45",
+        "skin_infill_depth": "2.0",
+        "skeleton_infill_line_width": "0.45",
+        "sparse_infill_pattern": "zig-zag",
+        "sparse_infill_speed": [
+          "80",
+          "80"
+        ],
+        "spiral_mode": "0",
+        "standby_temperature_delta": "-5",
+        "support_base_pattern": "default",
+        "support_base_pattern_spacing": "2.5",
+        "support_bottom_z_distance": "0.2",
+        "support_expansion": "0",
+        "support_filament": "0",
+        "support_interface_bottom_layers": "2",
+        "support_interface_filament": "0",
+        "support_interface_loop_pattern": "0",
+        "support_interface_pattern": "auto",
+        "support_interface_spacing": "0.5",
+        "support_interface_speed": [
+          "80",
+          "80"
+        ],
+        "support_interface_top_layers": "2",
+        "support_line_width": "0.42",
+        "support_object_xy_distance": "0.35",
+        "support_on_build_plate_only": "0",
+        "support_speed": [
+          "150",
+          "150"
+        ],
+        "support_style": "default",
+        "support_threshold_angle": "30",
+        "support_top_z_distance": "0.2",
+        "support_type": "tree(auto)",
+        "enable_support_ironing": "0",
+        "support_ironing_pattern": "zig-zag",
+        "support_ironing_speed": "30",
+        "support_ironing_flow": "10%",
+        "support_ironing_spacing": "0.15",
+        "support_ironing_inset": "0.0",
+        "support_ironing_direction": "0",
+        "seam_slope_type": "none",
+        "seam_slope_start_height": "10%",
+        "seam_slope_gap": "0",
+        "seam_slope_min_length": "10",
+        "symmetric_infill_y_axis": "0",
+        "sparse_infill_lattice_angle_1": "-45",
+        "sparse_infill_lattice_angle_2": "45",
+        "top_shell_layers": "5",
+        "top_color_penetration_layers": "5",
+        "top_shell_thickness": "1.0",
+        "top_surface_line_width": "0.32",
+        "top_surface_pattern": "monotonicline",
+        "top_surface_density": "100",
+        "top_surface_speed": [
+          "25",
+          "25"
+        ],
+        "top_solid_infill_flow_ratio": [
+          "1",
+          "1"
+        ],
+        "travel_acceleration": [
+          "10000",
+          "10000"
+        ],
+        "travel_short_distance_acceleration": [
+          "250",
+          "250"
+        ],
+        "travel_speed": [
+          "500",
+          "500"
+        ],
+        "tree_support_branch_angle": "45",
+        "tree_support_branch_diameter": "2",
+        "tree_support_wall_count": "-1",
+        "wall_generator": "classic",
+        "wall_infill_order": "inner wall/outer wall/infill",
+        "wall_loops": "3",
+        "wipe_tower_no_sparse_layers": "0",
+        "xy_contour_compensation": "0",
+        "xy_hole_compensation": "0",
+        "z_direction_outwall_speed_continuous": "0",
+        "enable_tower_interface_features": "0",
+        "sparse_infill_filament": "0",
+        "wall_filament": "0",
+        "solid_infill_filament": "0",
+        "infill_instead_top_bottom_surfaces": "0",
+        "fuzzy_skin": "none",
+        "fuzzy_skin_thickness": "0.3",
+        "fuzzy_skin_point_distance": "0.8",
+        "fuzzy_skin_first_layer": "0",
+        "fuzzy_skin_noise_type": "classic",
+        "fuzzy_skin_mode": "displacement",
+        "fuzzy_skin_scale": "1.0",
+        "fuzzy_skin_octaves": "4",
+        "fuzzy_skin_persistence": "0.5",
+        "enable_overhang_speed": [
+          "1",
+          "1"
+        ],
+        "enable_height_slowdown": [
+          "0",
+          "0"
+        ],
+        "initial_layer_acceleration": [
+          "500",
+          "500"
+        ],
+        "initial_layer_infill_speed": [
+          "40",
+          "40"
+        ],
+        "inner_wall_acceleration": [
+          "0",
+          "0"
+        ],
+        "outer_wall_acceleration": [
+          "1500",
+          "1500"
+        ],
+        "overhang_1_4_speed": [
+          "0",
+          "0"
+        ],
+        "overhang_2_4_speed": [
+          "50",
+          "50"
+        ],
+        "overhang_3_4_speed": [
+          "30",
+          "30"
+        ],
+        "overhang_4_4_speed": [
+          "10",
+          "10"
+        ],
+        "print_extruder_id": [
+          "1",
+          "1"
+        ],
+        "print_extruder_variant": [
+          "Direct Drive Standard",
+          "Direct Drive High Flow"
+        ],
+        "slowdown_start_height": [
+          "0",
+          "0"
+        ],
+        "slowdown_start_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_start_acc": [
+          "100000",
+          "100000"
+        ],
+        "slowdown_end_height": [
+          "400",
+          "400"
+        ],
+        "slowdown_end_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_end_acc": [
+          "100000",
+          "100000"
+        ],
+        "small_perimeter_speed": [
+          "50%",
+          "50%"
+        ],
+        "small_perimeter_threshold": [
+          "0",
+          "0"
+        ],
+        "sparse_infill_acceleration": [
+          "100%",
+          "100%"
+        ],
+        "top_surface_acceleration": [
+          "2000",
+          "2000"
+        ],
+        "travel_speed_z": [
+          "0",
+          "0"
+        ],
+        "vertical_shell_speed": [
+          "80%",
+          "80%"
+        ],
+        "setting_id": "GP004",
+        "description": "It has a general layer height, and results in general layer lines and printing quality. It is suitable for most general printing cases.",
+        "compatible_printers": [
+          "Bambu Lab X1 Carbon 0.4 nozzle",
+          "Bambu Lab X1 0.4 nozzle",
+          "Bambu Lab P1S 0.4 nozzle",
+          "Bambu Lab X1E 0.4 nozzle"
+        ],
+        "brim_type": "outer_only",
+        "curr_bed_type": "Textured PEI Plate",
+        "flush_into_infill": "0",
+        "flush_into_objects": "0",
+        "flush_into_support": "0",
+        "seam_gap": "0%"
+      },
+      "geometry": {
+        "size_mm": [
+          96.88442962962964,
+          109.14133710121789,
+          0.6
+        ],
+        "color_depth_mm": 0.2,
+        "white_backing_mm": 0.4,
+        "plate_name": "13_full_line_test",
+        "card_corner_radius_mm": 1.0,
+        "front_is_bed_face": false,
+        "color_layer_z_mm": 0.6,
+        "print_offset_mm": [
+          40,
+          40,
+          0
+        ],
+        "palette": [
+          {
+            "slot": 1,
+            "name": "Weiss",
+            "hex": "#FFFFFF"
+          },
+          {
+            "slot": 2,
+            "name": "Blau",
+            "hex": "#0445C8"
+          },
+          {
+            "slot": 3,
+            "name": "Cyanblau",
+            "hex": "#1FB9FF"
+          },
+          {
+            "slot": 4,
+            "name": "Rot",
+            "hex": "#F23232"
+          }
+        ],
+        "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+        "source_preview": "design_studies/line_gradient_full/proposal.svg",
+        "removed_original_micro_fragment": [],
+        "reference_fields": [
+          {
+            "slot": 4,
+            "xy_mm": [
+              42.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 3,
+            "xy_mm": [
+              48.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 2,
+            "xy_mm": [
+              54.44221481481482,
+              2.5
+            ]
+          }
+        ],
+        "one_connected_card": true,
+        "watertight_slot_components": [
+          {
+            "slot": 1,
+            "components": 1,
+            "volume_mm3": 5947.668354853954
+          },
+          {
+            "slot": 2,
+            "components": 143,
+            "volume_mm3": 82.57100143197904
+          },
+          {
+            "slot": 3,
+            "components": 129,
+            "volume_mm3": 249.2800518793482
+          },
+          {
+            "slot": 4,
+            "components": 37,
+            "volume_mm3": 64.42036114480449
+          }
+        ],
+        "material_intersections_mm3": 0,
+        "physical_print_verified": false,
+        "band_label": "variable Farbbahnen ab 0.32 mm",
+        "minimum_designed_band_mm": 0.32,
+        "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+        "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+        "all_interfaces_straight": true,
+        "endpoint_modifications": false,
+        "contour_border_mm": 0,
+        "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+        "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+      },
+      "print_validation": {
+        "slicer_version": "02.08.02.61",
+        "print_sha256": "52514d0c11685c208e7ec660f90f585228a017096749e64aca687de6316eff1d",
+        "sliced_successfully": true,
+        "profile_assignments_verified": true,
+        "gcode_md5_valid": true,
+        "model_layer_slots": {
+          "0.2": [
+            1
+          ],
+          "0.4": [
+            1
+          ],
+          "0.6": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "print_extrusion_bounds_mm": [
+          [
+            36.458,
+            34.458,
+            0.2
+          ],
+          [
+            246.47,
+            208.823,
+            0.6
+          ]
+        ],
+        "supports_generated": false,
+        "slicer_warnings": "",
+        "color_changes": 3,
+        "estimated_minutes": 73.6,
+        "estimated_filament_g_including_flush_and_tower": 10.66,
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "coverage_report": "surface_coverage.json"
+      },
+      "coverage": {
+        "schema_version": 1,
+        "print_file": "13_full_line_test_P1S.3mf",
+        "print_sha256": "52514d0c11685c208e7ec660f90f585228a017096749e64aca687de6316eff1d",
+        "gcode_sha256": "8cce0b06afb7143e47cbb19de624c3a0d3fb9711db81343919cb46fc065fd86a",
+        "mesh_sha256_by_slot": {
+          "1": "a9b9333d3c4bfb9c5cabf636eff07baae8a14e1be5459fe7a18675bdf1c8cb66",
+          "2": "0b30ed5aa7e8381d76764ff89462e00c4a071e0943299df760d87cb3476badc4",
+          "3": "c33a88b97e0107b6ef07871ac8902bfe5187f00e88f0397074e5144fcaa0781a",
+          "4": "57627c39ab5676157c0c3d54421537d01e7c777100021eeaf3ddd29958353bce"
+        },
+        "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+        "color_layer_z_mm": 0.6,
+        "intentional_white_excluded_from_ink_metrics": true,
+        "ink_area_mm2": 1981.3568940358805,
+        "nominal_unprinted_ink_area_mm2": 10.523120046435038,
+        "nominal_unprinted_ink_percent": 0.5311067419560241,
+        "geometric_allowance_mm": 0.03,
+        "unprinted_ink_beyond_allowance_mm2": 4.0491581663699,
+        "unprinted_ink_beyond_allowance_percent": 0.20436288780473358,
+        "largest_unresolved_area_mm2": 0.1414426140250562,
+        "own_ink_missing_beyond_allowance_mm2": 8.803133514329074,
+        "largest_own_ink_deficit_mm2": 0.1414426140250562,
+        "largest_unresolved_regions": [
+          {
+            "area_mm2": 0.1414426140250562,
+            "bounds_mm": [
+              32.34020546078682,
+              14.976999998092651,
+              32.79900000244379,
+              15.593583680689335
+            ]
+          },
+          {
+            "area_mm2": 0.08639074775696187,
+            "bounds_mm": [
+              86.35800000280142,
+              47.706043623387814,
+              86.71665313094854,
+              48.18800000101328
+            ]
+          },
+          {
+            "area_mm2": 0.07793074647600529,
+            "bounds_mm": [
+              20.80140207707882,
+              14.976999998092651,
+              21.16099999845028,
+              15.459850758314133
+            ]
+          },
+          {
+            "area_mm2": 0.07630408925690776,
+            "bounds_mm": [
+              30.53743916004896,
+              93.21397054940462,
+              31.08531129360199,
+              93.64693540334702
+            ]
+          },
+          {
+            "area_mm2": 0.07624758102644336,
+            "bounds_mm": [
+              67.88637276738882,
+              66.33213374763727,
+              68.43373952805996,
+              66.76444508880377
+            ]
+          },
+          {
+            "area_mm2": 0.0762444500252073,
+            "bounds_mm": [
+              33.81177540123463,
+              91.53443828225136,
+              34.35974772274494,
+              91.96629197895527
+            ]
+          },
+          {
+            "area_mm2": 0.0761590761451636,
+            "bounds_mm": [
+              39.223116509616375,
+              72.23301932960749,
+              39.770158030092716,
+              72.66545982658863
+            ]
+          },
+          {
+            "area_mm2": 0.07613307983749351,
+            "bounds_mm": [
+              43.4448467195034,
+              73.79493199288845,
+              43.992163479328156,
+              74.22673922777176
+            ]
+          },
+          {
+            "area_mm2": 0.07610440086229531,
+            "bounds_mm": [
+              66.10369596630335,
+              65.67252814024687,
+              66.65083193778992,
+              66.10449103266001
+            ]
+          },
+          {
+            "area_mm2": 0.0761027197053184,
+            "bounds_mm": [
+              35.68514333665371,
+              75.38754882663488,
+              36.23233804106712,
+              75.81952419131994
+            ]
+          },
+          {
+            "area_mm2": 0.0760855520844892,
+            "bounds_mm": [
+              36.07575359940529,
+              71.06859012693167,
+              36.62285113334656,
+              71.5004823282361
+            ]
+          },
+          {
+            "area_mm2": 0.07608350038277928,
+            "bounds_mm": [
+              61.520870096981525,
+              68.43867480754852,
+              62.067617140710354,
+              68.87083397805691
+            ]
+          }
+        ],
+        "slots": {
+          "1": {
+            "intended_area_mm2": 8591.875631608922,
+            "not_covered_by_own_color_mm2": 2.0707458382657946,
+            "not_covered_by_any_color_mm2": 1.8326139554991585,
+            "own_color_missing_beyond_allowance_mm2": 0.5831527880802864
+          },
+          "2": {
+            "intended_area_mm2": 412.85497077785493,
+            "not_covered_by_own_color_mm2": 3.692325672954837,
+            "not_covered_by_any_color_mm2": 3.05476293487753,
+            "own_color_missing_beyond_allowance_mm2": 2.805569849332821
+          },
+          "3": {
+            "intended_area_mm2": 1246.4001483975278,
+            "not_covered_by_own_color_mm2": 7.373999477731106,
+            "not_covered_by_any_color_mm2": 6.122424659375896,
+            "own_color_missing_beyond_allowance_mm2": 4.888173895185417
+          },
+          "4": {
+            "intended_area_mm2": 322.1017769850232,
+            "not_covered_by_own_color_mm2": 1.696714243359689,
+            "not_covered_by_any_color_mm2": 1.3459324605518745,
+            "own_color_missing_beyond_allowance_mm2": 1.1093897699074524
+          }
+        },
+        "white_backing_layers": {
+          "0.2": {
+            "area_mm2": 10573.232530483394,
+            "nominal_uncovered_mm2": 1.2276385804428178,
+            "uncovered_beyond_allowance_mm2": 0.01367923905805557,
+            "largest_unresolved_area_mm2": 0.007035924114854097
+          },
+          "0.4": {
+            "area_mm2": 10573.232530484484,
+            "nominal_uncovered_mm2": 1.9989809666539426,
+            "uncovered_beyond_allowance_mm2": 0.044791614467087015,
+            "largest_unresolved_area_mm2": 0.044791614467087015
+          }
+        },
+        "acceptance": {
+          "max_unresolved_ink_percent": 0.1,
+          "max_connected_unresolved_area_mm2": 0.01,
+          "apply_limits_to_own_ink_and_each_backing_layer_also": true
+        },
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+      }
+    },
+    {
+      "name": "full-arachne032",
+      "selected": false,
+      "process_overrides": {
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "75%",
+        "min_feature_size": "15%",
+        "wall_transition_length": "50%"
+      },
+      "process": {
+        "type": "process",
+        "name": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "from": "User",
+        "instantiation": "true",
+        "adaptive_layer_height": "0",
+        "bottom_shell_layers": "5",
+        "bottom_color_penetration_layers": "3",
+        "bottom_shell_thickness": "0",
+        "bottom_surface_pattern": "monotonic",
+        "bottom_surface_density": "100",
+        "bridge_flow": "1",
+        "bridge_no_support": "0",
+        "bridge_speed": [
+          "30",
+          "30"
+        ],
+        "brim_object_gap": "0.15",
+        "brim_width": "4",
+        "compatible_printers_condition": "",
+        "circle_compensation_manual_offset": "0",
+        "default_acceleration": [
+          "3000",
+          "3000"
+        ],
+        "detect_floating_vertical_shell": "1",
+        "detect_overhang_wall": "1",
+        "detect_thin_wall": "1",
+        "draft_shield": "disabled",
+        "elefant_foot_compensation": "0",
+        "enable_arc_fitting": "1",
+        "enable_prime_tower": "1",
+        "enable_support": "0",
+        "enable_circle_compensation": "0",
+        "enable_wrapping_detection": "0",
+        "filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+        "gap_infill_speed": [
+          "25",
+          "25"
+        ],
+        "infill_combination": "0",
+        "infill_direction": "45",
+        "infill_wall_overlap": "30%",
+        "monotonic_travel_into_wall": "0.0",
+        "initial_layer_line_width": "0.4",
+        "initial_layer_print_height": "0.2",
+        "initial_layer_speed": [
+          "25",
+          "25"
+        ],
+        "inner_wall_line_width": "0.32",
+        "inner_wall_speed": [
+          "30",
+          "30"
+        ],
+        "interface_shells": "0",
+        "internal_bridge_support_thickness": "0.8",
+        "internal_solid_infill_line_width": "0.42",
+        "internal_solid_infill_speed": [
+          "40",
+          "40"
+        ],
+        "ironing_flow": "10%",
+        "ironing_inset": "0.21",
+        "ironing_spacing": "0.15",
+        "ironing_speed": "30",
+        "ironing_type": "no ironing",
+        "infill_lock_depth": "1.0",
+        "initial_layer_travel_acceleration": [
+          "6000",
+          "6000"
+        ],
+        "infill_shift_step": "0.4",
+        "infill_rotate_step": "0",
+        "layer_height": "0.2",
+        "layer_time_smoothing": "0",
+        "layer_time_smoothing_threshold": "30",
+        "line_width": "0.4",
+        "locked_skin_infill_pattern": "crosszag",
+        "locked_skeleton_infill_pattern": "zigzag",
+        "max_bridge_length": "0",
+        "max_travel_detour_distance": "0",
+        "avoid_crossing_wall_includes_support": "0",
+        "minimum_sparse_infill_area": "15",
+        "only_one_wall_top": "1",
+        "outer_wall_line_width": "0.32",
+        "outer_wall_speed": [
+          "25",
+          "25"
+        ],
+        "overhang_totally_speed": [
+          "10",
+          "30"
+        ],
+        "override_filament_scarf_seam_setting": "0",
+        "pre_start_fan_time": [
+          "0"
+        ],
+        "prime_tower_width": "35",
+        "print_sequence": "by layer",
+        "print_settings_id": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "prime_tower_brim_width": "3",
+        "prime_tower_enable_framework": "0",
+        "prime_tower_lift_speed": "90",
+        "prime_tower_lift_height": "-1",
+        "prime_tower_max_speed": "90",
+        "prime_tower_flat_ironing": "0",
+        "raft_layers": "0",
+        "reduce_crossing_wall": "0",
+        "reduce_infill_retraction_mode": "Auto",
+        "resolution": "0.001",
+        "scarf_angle_threshold": "155",
+        "seam_position": "back",
+        "seam_placement_away_from_overhangs": "0",
+        "skirt_distance": "2",
+        "skirt_per_object": "1",
+        "skirt_height": "1",
+        "skirt_loops": "0",
+        "smooth_coefficient": "150",
+        "sparse_infill_density": "100%",
+        "fill_multiline": "1",
+        "skeleton_infill_density": "15%",
+        "skin_infill_density": "15%",
+        "sparse_infill_line_width": "0.45",
+        "skin_infill_line_width": "0.45",
+        "skin_infill_depth": "2.0",
+        "skeleton_infill_line_width": "0.45",
+        "sparse_infill_pattern": "zig-zag",
+        "sparse_infill_speed": [
+          "80",
+          "80"
+        ],
+        "spiral_mode": "0",
+        "standby_temperature_delta": "-5",
+        "support_base_pattern": "default",
+        "support_base_pattern_spacing": "2.5",
+        "support_bottom_z_distance": "0.2",
+        "support_expansion": "0",
+        "support_filament": "0",
+        "support_interface_bottom_layers": "2",
+        "support_interface_filament": "0",
+        "support_interface_loop_pattern": "0",
+        "support_interface_pattern": "auto",
+        "support_interface_spacing": "0.5",
+        "support_interface_speed": [
+          "80",
+          "80"
+        ],
+        "support_interface_top_layers": "2",
+        "support_line_width": "0.42",
+        "support_object_xy_distance": "0.35",
+        "support_on_build_plate_only": "0",
+        "support_speed": [
+          "150",
+          "150"
+        ],
+        "support_style": "default",
+        "support_threshold_angle": "30",
+        "support_top_z_distance": "0.2",
+        "support_type": "tree(auto)",
+        "enable_support_ironing": "0",
+        "support_ironing_pattern": "zig-zag",
+        "support_ironing_speed": "30",
+        "support_ironing_flow": "10%",
+        "support_ironing_spacing": "0.15",
+        "support_ironing_inset": "0.0",
+        "support_ironing_direction": "0",
+        "seam_slope_type": "none",
+        "seam_slope_start_height": "10%",
+        "seam_slope_gap": "0",
+        "seam_slope_min_length": "10",
+        "symmetric_infill_y_axis": "0",
+        "sparse_infill_lattice_angle_1": "-45",
+        "sparse_infill_lattice_angle_2": "45",
+        "top_shell_layers": "5",
+        "top_color_penetration_layers": "5",
+        "top_shell_thickness": "1.0",
+        "top_surface_line_width": "0.32",
+        "top_surface_pattern": "monotonicline",
+        "top_surface_density": "100",
+        "top_surface_speed": [
+          "25",
+          "25"
+        ],
+        "top_solid_infill_flow_ratio": [
+          "1",
+          "1"
+        ],
+        "travel_acceleration": [
+          "10000",
+          "10000"
+        ],
+        "travel_short_distance_acceleration": [
+          "250",
+          "250"
+        ],
+        "travel_speed": [
+          "500",
+          "500"
+        ],
+        "tree_support_branch_angle": "45",
+        "tree_support_branch_diameter": "2",
+        "tree_support_wall_count": "-1",
+        "wall_generator": "arachne",
+        "wall_infill_order": "inner wall/outer wall/infill",
+        "wall_loops": "3",
+        "wipe_tower_no_sparse_layers": "0",
+        "xy_contour_compensation": "0",
+        "xy_hole_compensation": "0",
+        "z_direction_outwall_speed_continuous": "0",
+        "enable_tower_interface_features": "0",
+        "sparse_infill_filament": "0",
+        "wall_filament": "0",
+        "solid_infill_filament": "0",
+        "infill_instead_top_bottom_surfaces": "0",
+        "fuzzy_skin": "none",
+        "fuzzy_skin_thickness": "0.3",
+        "fuzzy_skin_point_distance": "0.8",
+        "fuzzy_skin_first_layer": "0",
+        "fuzzy_skin_noise_type": "classic",
+        "fuzzy_skin_mode": "displacement",
+        "fuzzy_skin_scale": "1.0",
+        "fuzzy_skin_octaves": "4",
+        "fuzzy_skin_persistence": "0.5",
+        "enable_overhang_speed": [
+          "1",
+          "1"
+        ],
+        "enable_height_slowdown": [
+          "0",
+          "0"
+        ],
+        "initial_layer_acceleration": [
+          "500",
+          "500"
+        ],
+        "initial_layer_infill_speed": [
+          "40",
+          "40"
+        ],
+        "inner_wall_acceleration": [
+          "0",
+          "0"
+        ],
+        "outer_wall_acceleration": [
+          "1500",
+          "1500"
+        ],
+        "overhang_1_4_speed": [
+          "0",
+          "0"
+        ],
+        "overhang_2_4_speed": [
+          "50",
+          "50"
+        ],
+        "overhang_3_4_speed": [
+          "30",
+          "30"
+        ],
+        "overhang_4_4_speed": [
+          "10",
+          "10"
+        ],
+        "print_extruder_id": [
+          "1",
+          "1"
+        ],
+        "print_extruder_variant": [
+          "Direct Drive Standard",
+          "Direct Drive High Flow"
+        ],
+        "slowdown_start_height": [
+          "0",
+          "0"
+        ],
+        "slowdown_start_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_start_acc": [
+          "100000",
+          "100000"
+        ],
+        "slowdown_end_height": [
+          "400",
+          "400"
+        ],
+        "slowdown_end_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_end_acc": [
+          "100000",
+          "100000"
+        ],
+        "small_perimeter_speed": [
+          "50%",
+          "50%"
+        ],
+        "small_perimeter_threshold": [
+          "0",
+          "0"
+        ],
+        "sparse_infill_acceleration": [
+          "100%",
+          "100%"
+        ],
+        "top_surface_acceleration": [
+          "2000",
+          "2000"
+        ],
+        "travel_speed_z": [
+          "0",
+          "0"
+        ],
+        "vertical_shell_speed": [
+          "80%",
+          "80%"
+        ],
+        "setting_id": "GP004",
+        "description": "It has a general layer height, and results in general layer lines and printing quality. It is suitable for most general printing cases.",
+        "compatible_printers": [
+          "Bambu Lab X1 Carbon 0.4 nozzle",
+          "Bambu Lab X1 0.4 nozzle",
+          "Bambu Lab P1S 0.4 nozzle",
+          "Bambu Lab X1E 0.4 nozzle"
+        ],
+        "brim_type": "outer_only",
+        "curr_bed_type": "Textured PEI Plate",
+        "flush_into_infill": "0",
+        "flush_into_objects": "0",
+        "flush_into_support": "0",
+        "seam_gap": "0%",
+        "min_bead_width": "75%",
+        "min_feature_size": "15%",
+        "wall_transition_length": "50%"
+      },
+      "geometry": {
+        "size_mm": [
+          96.88442962962964,
+          109.14133710121789,
+          0.6
+        ],
+        "color_depth_mm": 0.2,
+        "white_backing_mm": 0.4,
+        "plate_name": "13_full_line_test",
+        "card_corner_radius_mm": 1.0,
+        "front_is_bed_face": false,
+        "color_layer_z_mm": 0.6,
+        "print_offset_mm": [
+          40,
+          40,
+          0
+        ],
+        "palette": [
+          {
+            "slot": 1,
+            "name": "Weiss",
+            "hex": "#FFFFFF"
+          },
+          {
+            "slot": 2,
+            "name": "Blau",
+            "hex": "#0445C8"
+          },
+          {
+            "slot": 3,
+            "name": "Cyanblau",
+            "hex": "#1FB9FF"
+          },
+          {
+            "slot": 4,
+            "name": "Rot",
+            "hex": "#F23232"
+          }
+        ],
+        "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+        "source_preview": "design_studies/line_gradient_full/proposal.svg",
+        "removed_original_micro_fragment": [],
+        "reference_fields": [
+          {
+            "slot": 4,
+            "xy_mm": [
+              42.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 3,
+            "xy_mm": [
+              48.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 2,
+            "xy_mm": [
+              54.44221481481482,
+              2.5
+            ]
+          }
+        ],
+        "one_connected_card": true,
+        "watertight_slot_components": [
+          {
+            "slot": 1,
+            "components": 1,
+            "volume_mm3": 5947.668354853954
+          },
+          {
+            "slot": 2,
+            "components": 143,
+            "volume_mm3": 82.57100143197904
+          },
+          {
+            "slot": 3,
+            "components": 129,
+            "volume_mm3": 249.2800518793482
+          },
+          {
+            "slot": 4,
+            "components": 37,
+            "volume_mm3": 64.42036114480449
+          }
+        ],
+        "material_intersections_mm3": 0,
+        "physical_print_verified": false,
+        "band_label": "variable Farbbahnen ab 0.32 mm",
+        "minimum_designed_band_mm": 0.32,
+        "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+        "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+        "all_interfaces_straight": true,
+        "endpoint_modifications": false,
+        "contour_border_mm": 0,
+        "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+        "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+      },
+      "print_validation": {
+        "slicer_version": "02.08.02.61",
+        "print_sha256": "7aeb479387d7d0a001ea0d148d5112cd9911d09815b17ef625067489a8cade7b",
+        "sliced_successfully": true,
+        "profile_assignments_verified": true,
+        "gcode_md5_valid": true,
+        "model_layer_slots": {
+          "0.2": [
+            1
+          ],
+          "0.4": [
+            1
+          ],
+          "0.6": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "print_extrusion_bounds_mm": [
+          [
+            36.458,
+            34.458,
+            0.2
+          ],
+          [
+            246.47,
+            208.823,
+            0.6
+          ]
+        ],
+        "supports_generated": false,
+        "slicer_warnings": "",
+        "color_changes": 3,
+        "estimated_minutes": 73.6,
+        "estimated_filament_g_including_flush_and_tower": 10.64,
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "coverage_report": "surface_coverage.json"
+      },
+      "coverage": {
+        "schema_version": 1,
+        "print_file": "13_full_line_test_P1S.3mf",
+        "print_sha256": "7aeb479387d7d0a001ea0d148d5112cd9911d09815b17ef625067489a8cade7b",
+        "gcode_sha256": "ef37fa1f36fdf6fadb7e8f8cbce89b31bf2ed2f584b1f0da426e736f2b5e2311",
+        "mesh_sha256_by_slot": {
+          "1": "a9b9333d3c4bfb9c5cabf636eff07baae8a14e1be5459fe7a18675bdf1c8cb66",
+          "2": "0b30ed5aa7e8381d76764ff89462e00c4a071e0943299df760d87cb3476badc4",
+          "3": "c33a88b97e0107b6ef07871ac8902bfe5187f00e88f0397074e5144fcaa0781a",
+          "4": "57627c39ab5676157c0c3d54421537d01e7c777100021eeaf3ddd29958353bce"
+        },
+        "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+        "color_layer_z_mm": 0.6,
+        "intentional_white_excluded_from_ink_metrics": true,
+        "ink_area_mm2": 1981.3568940358805,
+        "nominal_unprinted_ink_area_mm2": 27.46649185665333,
+        "nominal_unprinted_ink_percent": 1.386246563621664,
+        "geometric_allowance_mm": 0.03,
+        "unprinted_ink_beyond_allowance_mm2": 10.783216650431246,
+        "unprinted_ink_beyond_allowance_percent": 0.5442339380093515,
+        "largest_unresolved_area_mm2": 0.19251934380485558,
+        "own_ink_missing_beyond_allowance_mm2": 21.730978184278445,
+        "largest_own_ink_deficit_mm2": 0.32996494948641697,
+        "largest_unresolved_regions": [
+          {
+            "area_mm2": 0.19251934380485558,
+            "bounds_mm": [
+              27.652544856071472,
+              89.67100654542446,
+              28.420869059860706,
+              90.76526968181133
+            ]
+          },
+          {
+            "area_mm2": 0.19004560438200357,
+            "bounds_mm": [
+              51.86854813992977,
+              57.084801487624645,
+              52.580573827028275,
+              58.11284547299147
+            ]
+          },
+          {
+            "area_mm2": 0.16050526544227783,
+            "bounds_mm": [
+              55.15788511186838,
+              54.12266567349434,
+              55.81129606068134,
+              55.06584273278713
+            ]
+          },
+          {
+            "area_mm2": 0.13664464272618915,
+            "bounds_mm": [
+              36.138787657022476,
+              92.40013448894024,
+              36.891001373529434,
+              93.00803788006306
+            ]
+          },
+          {
+            "area_mm2": 0.12429352496537804,
+            "bounds_mm": [
+              51.05467399209738,
+              54.974074862897396,
+              51.672677136957645,
+              55.85467094182968
+            ]
+          },
+          {
+            "area_mm2": 0.11155294010093011,
+            "bounds_mm": [
+              61.402343697845936,
+              68.33420865982771,
+              62.0874348282814,
+              68.87816972285509
+            ]
+          },
+          {
+            "area_mm2": 0.1113668714553071,
+            "bounds_mm": [
+              26.53745523840189,
+              71.11925525218248,
+              27.044227309525013,
+              71.8549186065793
+            ]
+          },
+          {
+            "area_mm2": 0.11130156490642731,
+            "bounds_mm": [
+              30.41904976963997,
+              93.11012984067202,
+              31.10380458831787,
+              93.65345259010792
+            ]
+          },
+          {
+            "area_mm2": 0.10818948276327234,
+            "bounds_mm": [
+              56.020503863692284,
+              56.29566761106253,
+              56.55307949334383,
+              57.06860587745905
+            ]
+          },
+          {
+            "area_mm2": 0.10081753909850952,
+            "bounds_mm": [
+              21.825194031000137,
+              26.772889710962772,
+              22.487341962754726,
+              27.776880227029324
+            ]
+          },
+          {
+            "area_mm2": 0.09922238968564301,
+            "bounds_mm": [
+              64.46573711931705,
+              65.06792426854372,
+              65.10688695311546,
+              65.58425968140364
+            ]
+          },
+          {
+            "area_mm2": 0.09908827370998752,
+            "bounds_mm": [
+              37.14841318875551,
+              93.40790919214487,
+              37.56995785981417,
+              94.05214659869671
+            ]
+          }
+        ],
+        "slots": {
+          "1": {
+            "intended_area_mm2": 8591.875631608922,
+            "not_covered_by_own_color_mm2": 2.9975065145835402,
+            "not_covered_by_any_color_mm2": 2.804739044657448,
+            "own_color_missing_beyond_allowance_mm2": 0.5359184756353857
+          },
+          "2": {
+            "intended_area_mm2": 412.85497077785493,
+            "not_covered_by_own_color_mm2": 12.552989767980966,
+            "not_covered_by_any_color_mm2": 11.852653183358397,
+            "own_color_missing_beyond_allowance_mm2": 9.764463415236904
+          },
+          "3": {
+            "intended_area_mm2": 1246.4001483975278,
+            "not_covered_by_own_color_mm2": 13.924915877300709,
+            "not_covered_by_any_color_mm2": 12.748354817927959,
+            "own_color_missing_beyond_allowance_mm2": 9.826239469993682
+          },
+          "4": {
+            "intended_area_mm2": 322.1017769850232,
+            "not_covered_by_own_color_mm2": 3.337705144099165,
+            "not_covered_by_any_color_mm2": 2.865483910696235,
+            "own_color_missing_beyond_allowance_mm2": 2.140275301925648
+          }
+        },
+        "white_backing_layers": {
+          "0.2": {
+            "area_mm2": 10573.232530483394,
+            "nominal_uncovered_mm2": 1.9666689723719186,
+            "uncovered_beyond_allowance_mm2": 0.013692273770668645,
+            "largest_unresolved_area_mm2": 0.007080412156006827
+          },
+          "0.4": {
+            "area_mm2": 10573.232530484484,
+            "nominal_uncovered_mm2": 3.5108578209976598,
+            "uncovered_beyond_allowance_mm2": 0.1400010552309599,
+            "largest_unresolved_area_mm2": 0.053249885101058436
+          }
+        },
+        "acceptance": {
+          "max_unresolved_ink_percent": 0.1,
+          "max_connected_unresolved_area_mm2": 0.01,
+          "apply_limits_to_own_ink_and_each_backing_layer_also": true
+        },
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+      }
+    },
+    {
+      "name": "full-arachne-short",
+      "selected": false,
+      "process_overrides": {
+        "wall_generator": "arachne",
+        "outer_wall_line_width": "0.32",
+        "inner_wall_line_width": "0.32",
+        "top_surface_line_width": "0.32",
+        "min_bead_width": "60%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%"
+      },
+      "process": {
+        "type": "process",
+        "name": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "from": "User",
+        "instantiation": "true",
+        "adaptive_layer_height": "0",
+        "bottom_shell_layers": "5",
+        "bottom_color_penetration_layers": "3",
+        "bottom_shell_thickness": "0",
+        "bottom_surface_pattern": "monotonic",
+        "bottom_surface_density": "100",
+        "bridge_flow": "1",
+        "bridge_no_support": "0",
+        "bridge_speed": [
+          "30",
+          "30"
+        ],
+        "brim_object_gap": "0.15",
+        "brim_width": "4",
+        "compatible_printers_condition": "",
+        "circle_compensation_manual_offset": "0",
+        "default_acceleration": [
+          "3000",
+          "3000"
+        ],
+        "detect_floating_vertical_shell": "1",
+        "detect_overhang_wall": "1",
+        "detect_thin_wall": "1",
+        "draft_shield": "disabled",
+        "elefant_foot_compensation": "0",
+        "enable_arc_fitting": "1",
+        "enable_prime_tower": "1",
+        "enable_support": "0",
+        "enable_circle_compensation": "0",
+        "enable_wrapping_detection": "0",
+        "filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+        "gap_infill_speed": [
+          "25",
+          "25"
+        ],
+        "infill_combination": "0",
+        "infill_direction": "45",
+        "infill_wall_overlap": "30%",
+        "monotonic_travel_into_wall": "0.0",
+        "initial_layer_line_width": "0.4",
+        "initial_layer_print_height": "0.2",
+        "initial_layer_speed": [
+          "25",
+          "25"
+        ],
+        "inner_wall_line_width": "0.32",
+        "inner_wall_speed": [
+          "30",
+          "30"
+        ],
+        "interface_shells": "0",
+        "internal_bridge_support_thickness": "0.8",
+        "internal_solid_infill_line_width": "0.42",
+        "internal_solid_infill_speed": [
+          "40",
+          "40"
+        ],
+        "ironing_flow": "10%",
+        "ironing_inset": "0.21",
+        "ironing_spacing": "0.15",
+        "ironing_speed": "30",
+        "ironing_type": "no ironing",
+        "infill_lock_depth": "1.0",
+        "initial_layer_travel_acceleration": [
+          "6000",
+          "6000"
+        ],
+        "infill_shift_step": "0.4",
+        "infill_rotate_step": "0",
+        "layer_height": "0.2",
+        "layer_time_smoothing": "0",
+        "layer_time_smoothing_threshold": "30",
+        "line_width": "0.4",
+        "locked_skin_infill_pattern": "crosszag",
+        "locked_skeleton_infill_pattern": "zigzag",
+        "max_bridge_length": "0",
+        "max_travel_detour_distance": "0",
+        "avoid_crossing_wall_includes_support": "0",
+        "minimum_sparse_infill_area": "15",
+        "only_one_wall_top": "1",
+        "outer_wall_line_width": "0.32",
+        "outer_wall_speed": [
+          "25",
+          "25"
+        ],
+        "overhang_totally_speed": [
+          "10",
+          "30"
+        ],
+        "override_filament_scarf_seam_setting": "0",
+        "pre_start_fan_time": [
+          "0"
+        ],
+        "prime_tower_width": "35",
+        "print_sequence": "by layer",
+        "print_settings_id": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "prime_tower_brim_width": "3",
+        "prime_tower_enable_framework": "0",
+        "prime_tower_lift_speed": "90",
+        "prime_tower_lift_height": "-1",
+        "prime_tower_max_speed": "90",
+        "prime_tower_flat_ironing": "0",
+        "raft_layers": "0",
+        "reduce_crossing_wall": "0",
+        "reduce_infill_retraction_mode": "Auto",
+        "resolution": "0.001",
+        "scarf_angle_threshold": "155",
+        "seam_position": "back",
+        "seam_placement_away_from_overhangs": "0",
+        "skirt_distance": "2",
+        "skirt_per_object": "1",
+        "skirt_height": "1",
+        "skirt_loops": "0",
+        "smooth_coefficient": "150",
+        "sparse_infill_density": "100%",
+        "fill_multiline": "1",
+        "skeleton_infill_density": "15%",
+        "skin_infill_density": "15%",
+        "sparse_infill_line_width": "0.45",
+        "skin_infill_line_width": "0.45",
+        "skin_infill_depth": "2.0",
+        "skeleton_infill_line_width": "0.45",
+        "sparse_infill_pattern": "zig-zag",
+        "sparse_infill_speed": [
+          "80",
+          "80"
+        ],
+        "spiral_mode": "0",
+        "standby_temperature_delta": "-5",
+        "support_base_pattern": "default",
+        "support_base_pattern_spacing": "2.5",
+        "support_bottom_z_distance": "0.2",
+        "support_expansion": "0",
+        "support_filament": "0",
+        "support_interface_bottom_layers": "2",
+        "support_interface_filament": "0",
+        "support_interface_loop_pattern": "0",
+        "support_interface_pattern": "auto",
+        "support_interface_spacing": "0.5",
+        "support_interface_speed": [
+          "80",
+          "80"
+        ],
+        "support_interface_top_layers": "2",
+        "support_line_width": "0.42",
+        "support_object_xy_distance": "0.35",
+        "support_on_build_plate_only": "0",
+        "support_speed": [
+          "150",
+          "150"
+        ],
+        "support_style": "default",
+        "support_threshold_angle": "30",
+        "support_top_z_distance": "0.2",
+        "support_type": "tree(auto)",
+        "enable_support_ironing": "0",
+        "support_ironing_pattern": "zig-zag",
+        "support_ironing_speed": "30",
+        "support_ironing_flow": "10%",
+        "support_ironing_spacing": "0.15",
+        "support_ironing_inset": "0.0",
+        "support_ironing_direction": "0",
+        "seam_slope_type": "none",
+        "seam_slope_start_height": "10%",
+        "seam_slope_gap": "0",
+        "seam_slope_min_length": "10",
+        "symmetric_infill_y_axis": "0",
+        "sparse_infill_lattice_angle_1": "-45",
+        "sparse_infill_lattice_angle_2": "45",
+        "top_shell_layers": "5",
+        "top_color_penetration_layers": "5",
+        "top_shell_thickness": "1.0",
+        "top_surface_line_width": "0.32",
+        "top_surface_pattern": "monotonicline",
+        "top_surface_density": "100",
+        "top_surface_speed": [
+          "25",
+          "25"
+        ],
+        "top_solid_infill_flow_ratio": [
+          "1",
+          "1"
+        ],
+        "travel_acceleration": [
+          "10000",
+          "10000"
+        ],
+        "travel_short_distance_acceleration": [
+          "250",
+          "250"
+        ],
+        "travel_speed": [
+          "500",
+          "500"
+        ],
+        "tree_support_branch_angle": "45",
+        "tree_support_branch_diameter": "2",
+        "tree_support_wall_count": "-1",
+        "wall_generator": "arachne",
+        "wall_infill_order": "inner wall/outer wall/infill",
+        "wall_loops": "3",
+        "wipe_tower_no_sparse_layers": "0",
+        "xy_contour_compensation": "0",
+        "xy_hole_compensation": "0",
+        "z_direction_outwall_speed_continuous": "0",
+        "enable_tower_interface_features": "0",
+        "sparse_infill_filament": "0",
+        "wall_filament": "0",
+        "solid_infill_filament": "0",
+        "infill_instead_top_bottom_surfaces": "0",
+        "fuzzy_skin": "none",
+        "fuzzy_skin_thickness": "0.3",
+        "fuzzy_skin_point_distance": "0.8",
+        "fuzzy_skin_first_layer": "0",
+        "fuzzy_skin_noise_type": "classic",
+        "fuzzy_skin_mode": "displacement",
+        "fuzzy_skin_scale": "1.0",
+        "fuzzy_skin_octaves": "4",
+        "fuzzy_skin_persistence": "0.5",
+        "enable_overhang_speed": [
+          "1",
+          "1"
+        ],
+        "enable_height_slowdown": [
+          "0",
+          "0"
+        ],
+        "initial_layer_acceleration": [
+          "500",
+          "500"
+        ],
+        "initial_layer_infill_speed": [
+          "40",
+          "40"
+        ],
+        "inner_wall_acceleration": [
+          "0",
+          "0"
+        ],
+        "outer_wall_acceleration": [
+          "1500",
+          "1500"
+        ],
+        "overhang_1_4_speed": [
+          "0",
+          "0"
+        ],
+        "overhang_2_4_speed": [
+          "50",
+          "50"
+        ],
+        "overhang_3_4_speed": [
+          "30",
+          "30"
+        ],
+        "overhang_4_4_speed": [
+          "10",
+          "10"
+        ],
+        "print_extruder_id": [
+          "1",
+          "1"
+        ],
+        "print_extruder_variant": [
+          "Direct Drive Standard",
+          "Direct Drive High Flow"
+        ],
+        "slowdown_start_height": [
+          "0",
+          "0"
+        ],
+        "slowdown_start_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_start_acc": [
+          "100000",
+          "100000"
+        ],
+        "slowdown_end_height": [
+          "400",
+          "400"
+        ],
+        "slowdown_end_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_end_acc": [
+          "100000",
+          "100000"
+        ],
+        "small_perimeter_speed": [
+          "50%",
+          "50%"
+        ],
+        "small_perimeter_threshold": [
+          "0",
+          "0"
+        ],
+        "sparse_infill_acceleration": [
+          "100%",
+          "100%"
+        ],
+        "top_surface_acceleration": [
+          "2000",
+          "2000"
+        ],
+        "travel_speed_z": [
+          "0",
+          "0"
+        ],
+        "vertical_shell_speed": [
+          "80%",
+          "80%"
+        ],
+        "setting_id": "GP004",
+        "description": "It has a general layer height, and results in general layer lines and printing quality. It is suitable for most general printing cases.",
+        "compatible_printers": [
+          "Bambu Lab X1 Carbon 0.4 nozzle",
+          "Bambu Lab X1 0.4 nozzle",
+          "Bambu Lab P1S 0.4 nozzle",
+          "Bambu Lab X1E 0.4 nozzle"
+        ],
+        "brim_type": "outer_only",
+        "curr_bed_type": "Textured PEI Plate",
+        "flush_into_infill": "0",
+        "flush_into_objects": "0",
+        "flush_into_support": "0",
+        "seam_gap": "0%",
+        "min_bead_width": "60%",
+        "min_feature_size": "5%",
+        "wall_transition_length": "25%"
+      },
+      "geometry": {
+        "size_mm": [
+          96.88442962962964,
+          109.14133710121789,
+          0.6
+        ],
+        "color_depth_mm": 0.2,
+        "white_backing_mm": 0.4,
+        "plate_name": "13_full_line_test",
+        "card_corner_radius_mm": 1.0,
+        "front_is_bed_face": false,
+        "color_layer_z_mm": 0.6,
+        "print_offset_mm": [
+          40,
+          40,
+          0
+        ],
+        "palette": [
+          {
+            "slot": 1,
+            "name": "Weiss",
+            "hex": "#FFFFFF"
+          },
+          {
+            "slot": 2,
+            "name": "Blau",
+            "hex": "#0445C8"
+          },
+          {
+            "slot": 3,
+            "name": "Cyanblau",
+            "hex": "#1FB9FF"
+          },
+          {
+            "slot": 4,
+            "name": "Rot",
+            "hex": "#F23232"
+          }
+        ],
+        "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+        "source_preview": "design_studies/line_gradient_full/proposal.svg",
+        "removed_original_micro_fragment": [],
+        "reference_fields": [
+          {
+            "slot": 4,
+            "xy_mm": [
+              42.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 3,
+            "xy_mm": [
+              48.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 2,
+            "xy_mm": [
+              54.44221481481482,
+              2.5
+            ]
+          }
+        ],
+        "one_connected_card": true,
+        "watertight_slot_components": [
+          {
+            "slot": 1,
+            "components": 1,
+            "volume_mm3": 5947.668354853954
+          },
+          {
+            "slot": 2,
+            "components": 143,
+            "volume_mm3": 82.57100143197904
+          },
+          {
+            "slot": 3,
+            "components": 129,
+            "volume_mm3": 249.2800518793482
+          },
+          {
+            "slot": 4,
+            "components": 37,
+            "volume_mm3": 64.42036114480449
+          }
+        ],
+        "material_intersections_mm3": 0,
+        "physical_print_verified": false,
+        "band_label": "variable Farbbahnen ab 0.32 mm",
+        "minimum_designed_band_mm": 0.32,
+        "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+        "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+        "all_interfaces_straight": true,
+        "endpoint_modifications": false,
+        "contour_border_mm": 0,
+        "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+        "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+      },
+      "print_validation": {
+        "slicer_version": "02.08.02.61",
+        "print_sha256": "27eb4b15c7f6397c166c2177db18c7d0b5941fd840644bd53342285fd89f4ddf",
+        "sliced_successfully": true,
+        "profile_assignments_verified": true,
+        "gcode_md5_valid": true,
+        "model_layer_slots": {
+          "0.2": [
+            1
+          ],
+          "0.4": [
+            1
+          ],
+          "0.6": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "print_extrusion_bounds_mm": [
+          [
+            36.458,
+            34.458,
+            0.2
+          ],
+          [
+            246.47,
+            208.823,
+            0.6
+          ]
+        ],
+        "supports_generated": false,
+        "slicer_warnings": "",
+        "color_changes": 3,
+        "estimated_minutes": 73.7,
+        "estimated_filament_g_including_flush_and_tower": 10.64,
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "coverage_report": "surface_coverage.json"
+      },
+      "coverage": {
+        "schema_version": 1,
+        "print_file": "13_full_line_test_P1S.3mf",
+        "print_sha256": "27eb4b15c7f6397c166c2177db18c7d0b5941fd840644bd53342285fd89f4ddf",
+        "gcode_sha256": "fe907f6479ea3278c4412d7cff2aaf171bcff636a86414c918862d7a6a951fc3",
+        "mesh_sha256_by_slot": {
+          "1": "a9b9333d3c4bfb9c5cabf636eff07baae8a14e1be5459fe7a18675bdf1c8cb66",
+          "2": "0b30ed5aa7e8381d76764ff89462e00c4a071e0943299df760d87cb3476badc4",
+          "3": "c33a88b97e0107b6ef07871ac8902bfe5187f00e88f0397074e5144fcaa0781a",
+          "4": "57627c39ab5676157c0c3d54421537d01e7c777100021eeaf3ddd29958353bce"
+        },
+        "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+        "color_layer_z_mm": 0.6,
+        "intentional_white_excluded_from_ink_metrics": true,
+        "ink_area_mm2": 1981.3568940358805,
+        "nominal_unprinted_ink_area_mm2": 27.454972931006907,
+        "nominal_unprinted_ink_percent": 1.3856651981099233,
+        "geometric_allowance_mm": 0.03,
+        "unprinted_ink_beyond_allowance_mm2": 10.181492404063198,
+        "unprinted_ink_beyond_allowance_percent": 0.5138646366391991,
+        "largest_unresolved_area_mm2": 0.13664464272618915,
+        "own_ink_missing_beyond_allowance_mm2": 20.180598494836694,
+        "largest_own_ink_deficit_mm2": 0.33363003633740007,
+        "largest_unresolved_regions": [
+          {
+            "area_mm2": 0.13664464272618915,
+            "bounds_mm": [
+              36.138787657022476,
+              92.40013448894024,
+              36.891001373529434,
+              93.00803788006306
+            ]
+          },
+          {
+            "area_mm2": 0.13537326209516154,
+            "bounds_mm": [
+              51.04336528480053,
+              54.94350804388523,
+              51.69049885869026,
+              55.85467094182968
+            ]
+          },
+          {
+            "area_mm2": 0.11903747851432656,
+            "bounds_mm": [
+              26.535267740488052,
+              71.10181777179241,
+              27.057680197060108,
+              71.8549186065793
+            ]
+          },
+          {
+            "area_mm2": 0.1177685887752773,
+            "bounds_mm": [
+              56.00298395007849,
+              56.29566761106253,
+              56.564411006867886,
+              57.099200166761875
+            ]
+          },
+          {
+            "area_mm2": 0.10488843845261897,
+            "bounds_mm": [
+              46.79112505167723,
+              87.97225420176983,
+              47.32115223258734,
+              88.72817017138004
+            ]
+          },
+          {
+            "area_mm2": 0.10359681878230514,
+            "bounds_mm": [
+              21.816377736628056,
+              26.75795228034258,
+              22.487341970205307,
+              27.776880241930485
+            ]
+          },
+          {
+            "area_mm2": 0.09908827370998752,
+            "bounds_mm": [
+              37.14841318875551,
+              93.40790919214487,
+              37.56995785981417,
+              94.05214659869671
+            ]
+          },
+          {
+            "area_mm2": 0.08931337941532647,
+            "bounds_mm": [
+              47.8782587274909,
+              90.90858679264784,
+              48.366266801953316,
+              91.60447388887405
+            ]
+          },
+          {
+            "area_mm2": 0.08625200624951648,
+            "bounds_mm": [
+              53.625596687197685,
+              49.776740461587906,
+              54.10528838634491,
+              50.45974189043045
+            ]
+          },
+          {
+            "area_mm2": 0.08393334673635877,
+            "bounds_mm": [
+              23.339218199253082,
+              28.921416766941547,
+              24.042840510606766,
+              29.64845284074545
+            ]
+          },
+          {
+            "area_mm2": 0.0824299401530485,
+            "bounds_mm": [
+              56.782935962080956,
+              58.2843057513237,
+              57.25106926262379,
+              58.953129179775715
+            ]
+          },
+          {
+            "area_mm2": 0.07800177955760823,
+            "bounds_mm": [
+              20.801405496895313,
+              14.97699499875307,
+              21.16100499778986,
+              15.459819331765175
+            ]
+          }
+        ],
+        "slots": {
+          "1": {
+            "intended_area_mm2": 8591.875631608922,
+            "not_covered_by_own_color_mm2": 2.9975065145835402,
+            "not_covered_by_any_color_mm2": 2.822339292923833,
+            "own_color_missing_beyond_allowance_mm2": 0.5359184756353857
+          },
+          "2": {
+            "intended_area_mm2": 412.85497077785493,
+            "not_covered_by_own_color_mm2": 12.516273693763292,
+            "not_covered_by_any_color_mm2": 12.14662438411384,
+            "own_color_missing_beyond_allowance_mm2": 9.39215680146514
+          },
+          "3": {
+            "intended_area_mm2": 1246.4001483975278,
+            "not_covered_by_own_color_mm2": 13.209105178682927,
+            "not_covered_by_any_color_mm2": 12.63916037744625,
+            "own_color_missing_beyond_allowance_mm2": 9.023660420776627
+          },
+          "4": {
+            "intended_area_mm2": 322.1017769850232,
+            "not_covered_by_own_color_mm2": 2.958940882473567,
+            "not_covered_by_any_color_mm2": 2.6691886481430873,
+            "own_color_missing_beyond_allowance_mm2": 1.764781278839195
+          }
+        },
+        "white_backing_layers": {
+          "0.2": {
+            "area_mm2": 10573.232530483394,
+            "nominal_uncovered_mm2": 1.9666689723719186,
+            "uncovered_beyond_allowance_mm2": 0.013692273770668645,
+            "largest_unresolved_area_mm2": 0.007080412156006827
+          },
+          "0.4": {
+            "area_mm2": 10573.232530484484,
+            "nominal_uncovered_mm2": 3.5108578209976598,
+            "uncovered_beyond_allowance_mm2": 0.1400010552309599,
+            "largest_unresolved_area_mm2": 0.053249885101058436
+          }
+        },
+        "acceptance": {
+          "max_unresolved_ink_percent": 0.1,
+          "max_connected_unresolved_area_mm2": 0.01,
+          "apply_limits_to_own_ink_and_each_backing_layer_also": true
+        },
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+      }
+    },
+    {
+      "name": "full-classic028",
+      "selected": false,
+      "process_overrides": {
+        "outer_wall_line_width": "0.28",
+        "inner_wall_line_width": "0.28",
+        "top_surface_line_width": "0.28"
+      },
+      "process": {
+        "type": "process",
+        "name": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "from": "User",
+        "instantiation": "true",
+        "adaptive_layer_height": "0",
+        "bottom_shell_layers": "5",
+        "bottom_color_penetration_layers": "3",
+        "bottom_shell_thickness": "0",
+        "bottom_surface_pattern": "monotonic",
+        "bottom_surface_density": "100",
+        "bridge_flow": "1",
+        "bridge_no_support": "0",
+        "bridge_speed": [
+          "30",
+          "30"
+        ],
+        "brim_object_gap": "0.15",
+        "brim_width": "4",
+        "compatible_printers_condition": "",
+        "circle_compensation_manual_offset": "0",
+        "default_acceleration": [
+          "3000",
+          "3000"
+        ],
+        "detect_floating_vertical_shell": "1",
+        "detect_overhang_wall": "1",
+        "detect_thin_wall": "1",
+        "draft_shield": "disabled",
+        "elefant_foot_compensation": "0",
+        "enable_arc_fitting": "1",
+        "enable_prime_tower": "1",
+        "enable_support": "0",
+        "enable_circle_compensation": "0",
+        "enable_wrapping_detection": "0",
+        "filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode",
+        "gap_infill_speed": [
+          "25",
+          "25"
+        ],
+        "infill_combination": "0",
+        "infill_direction": "45",
+        "infill_wall_overlap": "30%",
+        "monotonic_travel_into_wall": "0.0",
+        "initial_layer_line_width": "0.4",
+        "initial_layer_print_height": "0.2",
+        "initial_layer_speed": [
+          "25",
+          "25"
+        ],
+        "inner_wall_line_width": "0.28",
+        "inner_wall_speed": [
+          "30",
+          "30"
+        ],
+        "interface_shells": "0",
+        "internal_bridge_support_thickness": "0.8",
+        "internal_solid_infill_line_width": "0.42",
+        "internal_solid_infill_speed": [
+          "40",
+          "40"
+        ],
+        "ironing_flow": "10%",
+        "ironing_inset": "0.21",
+        "ironing_spacing": "0.15",
+        "ironing_speed": "30",
+        "ironing_type": "no ironing",
+        "infill_lock_depth": "1.0",
+        "initial_layer_travel_acceleration": [
+          "6000",
+          "6000"
+        ],
+        "infill_shift_step": "0.4",
+        "infill_rotate_step": "0",
+        "layer_height": "0.2",
+        "layer_time_smoothing": "0",
+        "layer_time_smoothing_threshold": "30",
+        "line_width": "0.4",
+        "locked_skin_infill_pattern": "crosszag",
+        "locked_skeleton_infill_pattern": "zigzag",
+        "max_bridge_length": "0",
+        "max_travel_detour_distance": "0",
+        "avoid_crossing_wall_includes_support": "0",
+        "minimum_sparse_infill_area": "15",
+        "only_one_wall_top": "1",
+        "outer_wall_line_width": "0.28",
+        "outer_wall_speed": [
+          "25",
+          "25"
+        ],
+        "overhang_totally_speed": [
+          "10",
+          "30"
+        ],
+        "override_filament_scarf_seam_setting": "0",
+        "pre_start_fan_time": [
+          "0"
+        ],
+        "prime_tower_width": "35",
+        "print_sequence": "by layer",
+        "print_settings_id": "myAI variable Farbbahnen ab 0.32 mm P1S",
+        "prime_tower_brim_width": "3",
+        "prime_tower_enable_framework": "0",
+        "prime_tower_lift_speed": "90",
+        "prime_tower_lift_height": "-1",
+        "prime_tower_max_speed": "90",
+        "prime_tower_flat_ironing": "0",
+        "raft_layers": "0",
+        "reduce_crossing_wall": "0",
+        "reduce_infill_retraction_mode": "Auto",
+        "resolution": "0.001",
+        "scarf_angle_threshold": "155",
+        "seam_position": "back",
+        "seam_placement_away_from_overhangs": "0",
+        "skirt_distance": "2",
+        "skirt_per_object": "1",
+        "skirt_height": "1",
+        "skirt_loops": "0",
+        "smooth_coefficient": "150",
+        "sparse_infill_density": "100%",
+        "fill_multiline": "1",
+        "skeleton_infill_density": "15%",
+        "skin_infill_density": "15%",
+        "sparse_infill_line_width": "0.45",
+        "skin_infill_line_width": "0.45",
+        "skin_infill_depth": "2.0",
+        "skeleton_infill_line_width": "0.45",
+        "sparse_infill_pattern": "zig-zag",
+        "sparse_infill_speed": [
+          "80",
+          "80"
+        ],
+        "spiral_mode": "0",
+        "standby_temperature_delta": "-5",
+        "support_base_pattern": "default",
+        "support_base_pattern_spacing": "2.5",
+        "support_bottom_z_distance": "0.2",
+        "support_expansion": "0",
+        "support_filament": "0",
+        "support_interface_bottom_layers": "2",
+        "support_interface_filament": "0",
+        "support_interface_loop_pattern": "0",
+        "support_interface_pattern": "auto",
+        "support_interface_spacing": "0.5",
+        "support_interface_speed": [
+          "80",
+          "80"
+        ],
+        "support_interface_top_layers": "2",
+        "support_line_width": "0.42",
+        "support_object_xy_distance": "0.35",
+        "support_on_build_plate_only": "0",
+        "support_speed": [
+          "150",
+          "150"
+        ],
+        "support_style": "default",
+        "support_threshold_angle": "30",
+        "support_top_z_distance": "0.2",
+        "support_type": "tree(auto)",
+        "enable_support_ironing": "0",
+        "support_ironing_pattern": "zig-zag",
+        "support_ironing_speed": "30",
+        "support_ironing_flow": "10%",
+        "support_ironing_spacing": "0.15",
+        "support_ironing_inset": "0.0",
+        "support_ironing_direction": "0",
+        "seam_slope_type": "none",
+        "seam_slope_start_height": "10%",
+        "seam_slope_gap": "0",
+        "seam_slope_min_length": "10",
+        "symmetric_infill_y_axis": "0",
+        "sparse_infill_lattice_angle_1": "-45",
+        "sparse_infill_lattice_angle_2": "45",
+        "top_shell_layers": "5",
+        "top_color_penetration_layers": "5",
+        "top_shell_thickness": "1.0",
+        "top_surface_line_width": "0.28",
+        "top_surface_pattern": "monotonicline",
+        "top_surface_density": "100",
+        "top_surface_speed": [
+          "25",
+          "25"
+        ],
+        "top_solid_infill_flow_ratio": [
+          "1",
+          "1"
+        ],
+        "travel_acceleration": [
+          "10000",
+          "10000"
+        ],
+        "travel_short_distance_acceleration": [
+          "250",
+          "250"
+        ],
+        "travel_speed": [
+          "500",
+          "500"
+        ],
+        "tree_support_branch_angle": "45",
+        "tree_support_branch_diameter": "2",
+        "tree_support_wall_count": "-1",
+        "wall_generator": "classic",
+        "wall_infill_order": "inner wall/outer wall/infill",
+        "wall_loops": "3",
+        "wipe_tower_no_sparse_layers": "0",
+        "xy_contour_compensation": "0",
+        "xy_hole_compensation": "0",
+        "z_direction_outwall_speed_continuous": "0",
+        "enable_tower_interface_features": "0",
+        "sparse_infill_filament": "0",
+        "wall_filament": "0",
+        "solid_infill_filament": "0",
+        "infill_instead_top_bottom_surfaces": "0",
+        "fuzzy_skin": "none",
+        "fuzzy_skin_thickness": "0.3",
+        "fuzzy_skin_point_distance": "0.8",
+        "fuzzy_skin_first_layer": "0",
+        "fuzzy_skin_noise_type": "classic",
+        "fuzzy_skin_mode": "displacement",
+        "fuzzy_skin_scale": "1.0",
+        "fuzzy_skin_octaves": "4",
+        "fuzzy_skin_persistence": "0.5",
+        "enable_overhang_speed": [
+          "1",
+          "1"
+        ],
+        "enable_height_slowdown": [
+          "0",
+          "0"
+        ],
+        "initial_layer_acceleration": [
+          "500",
+          "500"
+        ],
+        "initial_layer_infill_speed": [
+          "40",
+          "40"
+        ],
+        "inner_wall_acceleration": [
+          "0",
+          "0"
+        ],
+        "outer_wall_acceleration": [
+          "1500",
+          "1500"
+        ],
+        "overhang_1_4_speed": [
+          "0",
+          "0"
+        ],
+        "overhang_2_4_speed": [
+          "50",
+          "50"
+        ],
+        "overhang_3_4_speed": [
+          "30",
+          "30"
+        ],
+        "overhang_4_4_speed": [
+          "10",
+          "10"
+        ],
+        "print_extruder_id": [
+          "1",
+          "1"
+        ],
+        "print_extruder_variant": [
+          "Direct Drive Standard",
+          "Direct Drive High Flow"
+        ],
+        "slowdown_start_height": [
+          "0",
+          "0"
+        ],
+        "slowdown_start_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_start_acc": [
+          "100000",
+          "100000"
+        ],
+        "slowdown_end_height": [
+          "400",
+          "400"
+        ],
+        "slowdown_end_speed": [
+          "1000",
+          "1000"
+        ],
+        "slowdown_end_acc": [
+          "100000",
+          "100000"
+        ],
+        "small_perimeter_speed": [
+          "50%",
+          "50%"
+        ],
+        "small_perimeter_threshold": [
+          "0",
+          "0"
+        ],
+        "sparse_infill_acceleration": [
+          "100%",
+          "100%"
+        ],
+        "top_surface_acceleration": [
+          "2000",
+          "2000"
+        ],
+        "travel_speed_z": [
+          "0",
+          "0"
+        ],
+        "vertical_shell_speed": [
+          "80%",
+          "80%"
+        ],
+        "setting_id": "GP004",
+        "description": "It has a general layer height, and results in general layer lines and printing quality. It is suitable for most general printing cases.",
+        "compatible_printers": [
+          "Bambu Lab X1 Carbon 0.4 nozzle",
+          "Bambu Lab X1 0.4 nozzle",
+          "Bambu Lab P1S 0.4 nozzle",
+          "Bambu Lab X1E 0.4 nozzle"
+        ],
+        "brim_type": "outer_only",
+        "curr_bed_type": "Textured PEI Plate",
+        "flush_into_infill": "0",
+        "flush_into_objects": "0",
+        "flush_into_support": "0",
+        "seam_gap": "0%"
+      },
+      "geometry": {
+        "size_mm": [
+          96.88442962962964,
+          109.14133710121789,
+          0.6
+        ],
+        "color_depth_mm": 0.2,
+        "white_backing_mm": 0.4,
+        "plate_name": "13_full_line_test",
+        "card_corner_radius_mm": 1.0,
+        "front_is_bed_face": false,
+        "color_layer_z_mm": 0.6,
+        "print_offset_mm": [
+          40,
+          40,
+          0
+        ],
+        "palette": [
+          {
+            "slot": 1,
+            "name": "Weiss",
+            "hex": "#FFFFFF"
+          },
+          {
+            "slot": 2,
+            "name": "Blau",
+            "hex": "#0445C8"
+          },
+          {
+            "slot": 3,
+            "name": "Cyanblau",
+            "hex": "#1FB9FF"
+          },
+          {
+            "slot": 4,
+            "name": "Rot",
+            "hex": "#F23232"
+          }
+        ],
+        "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+        "source_preview": "design_studies/line_gradient_full/proposal.svg",
+        "removed_original_micro_fragment": [],
+        "reference_fields": [
+          {
+            "slot": 4,
+            "xy_mm": [
+              42.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 3,
+            "xy_mm": [
+              48.44221481481482,
+              2.5
+            ]
+          },
+          {
+            "slot": 2,
+            "xy_mm": [
+              54.44221481481482,
+              2.5
+            ]
+          }
+        ],
+        "one_connected_card": true,
+        "watertight_slot_components": [
+          {
+            "slot": 1,
+            "components": 1,
+            "volume_mm3": 5947.668354853954
+          },
+          {
+            "slot": 2,
+            "components": 143,
+            "volume_mm3": 82.57100143197904
+          },
+          {
+            "slot": 3,
+            "components": 129,
+            "volume_mm3": 249.2800518793482
+          },
+          {
+            "slot": 4,
+            "components": 37,
+            "volume_mm3": 64.42036114480449
+          }
+        ],
+        "material_intersections_mm3": 0,
+        "physical_print_verified": false,
+        "band_label": "variable Farbbahnen ab 0.32 mm",
+        "minimum_designed_band_mm": 0.32,
+        "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+        "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+        "all_interfaces_straight": true,
+        "endpoint_modifications": false,
+        "contour_border_mm": 0,
+        "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+        "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+      },
+      "print_validation": {
+        "slicer_version": "02.08.02.61",
+        "print_sha256": "a091cfd0126459af1665f0654c7f29eef78ec8057341e4d1cc070e6e15d8a6cf",
+        "sliced_successfully": true,
+        "profile_assignments_verified": true,
+        "gcode_md5_valid": true,
+        "model_layer_slots": {
+          "0.2": [
+            1
+          ],
+          "0.4": [
+            1
+          ],
+          "0.6": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "print_extrusion_bounds_mm": [
+          [
+            36.458,
+            34.458,
+            0.2
+          ],
+          [
+            246.47,
+            208.823,
+            0.6
+          ]
+        ],
+        "supports_generated": false,
+        "slicer_warnings": "",
+        "color_changes": 3,
+        "estimated_minutes": 78.1,
+        "estimated_filament_g_including_flush_and_tower": 10.66,
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "coverage_report": "surface_coverage.json"
+      },
+      "coverage": {
+        "schema_version": 1,
+        "print_file": "13_full_line_test_P1S.3mf",
+        "print_sha256": "a091cfd0126459af1665f0654c7f29eef78ec8057341e4d1cc070e6e15d8a6cf",
+        "gcode_sha256": "aae5175359a8b754eaf463908708ae07dcacec8365f20dd1b57837460785bd03",
+        "mesh_sha256_by_slot": {
+          "1": "a9b9333d3c4bfb9c5cabf636eff07baae8a14e1be5459fe7a18675bdf1c8cb66",
+          "2": "0b30ed5aa7e8381d76764ff89462e00c4a071e0943299df760d87cb3476badc4",
+          "3": "c33a88b97e0107b6ef07871ac8902bfe5187f00e88f0397074e5144fcaa0781a",
+          "4": "57627c39ab5676157c0c3d54421537d01e7c777100021eeaf3ddd29958353bce"
+        },
+        "method": "CAD layer cross-sections minus union of nominal G-code width capsules with round end caps; arcs flattened to <=0.001 mm chord error",
+        "color_layer_z_mm": 0.6,
+        "intentional_white_excluded_from_ink_metrics": true,
+        "ink_area_mm2": 1981.3568940358805,
+        "nominal_unprinted_ink_area_mm2": 8.713393623894424,
+        "nominal_unprinted_ink_percent": 0.43976901133373664,
+        "geometric_allowance_mm": 0.03,
+        "unprinted_ink_beyond_allowance_mm2": 2.9825782162432843,
+        "unprinted_ink_beyond_allowance_percent": 0.1505321037931732,
+        "largest_unresolved_area_mm2": 0.1420056449385667,
+        "own_ink_missing_beyond_allowance_mm2": 7.4489697548291955,
+        "largest_own_ink_deficit_mm2": 0.1420056449385667,
+        "largest_unresolved_regions": [
+          {
+            "area_mm2": 0.1420056449385667,
+            "bounds_mm": [
+              20.722182549536228,
+              14.936999998986721,
+              21.20099999755621,
+              15.581168353557587
+            ]
+          },
+          {
+            "area_mm2": 0.051453680887242115,
+            "bounds_mm": [
+              63.036625787615776,
+              64.5372920781374,
+              63.48509003221989,
+              64.89107429981232
+            ]
+          },
+          {
+            "area_mm2": 0.05145035593247016,
+            "bounds_mm": [
+              67.88588646799326,
+              66.33157256245613,
+              68.33497613668442,
+              66.68505212664604
+            ]
+          },
+          {
+            "area_mm2": 0.051409496652739944,
+            "bounds_mm": [
+              61.61998250335455,
+              68.51791539788246,
+              62.0681973695755,
+              68.87150362879038
+            ]
+          },
+          {
+            "area_mm2": 0.051398246466241915,
+            "bounds_mm": [
+              69.92078684270382,
+              67.0845083668828,
+              70.36891265958548,
+              67.43812453746796
+            ]
+          },
+          {
+            "area_mm2": 0.05139822269515126,
+            "bounds_mm": [
+              30.637024216353893,
+              93.2931560203433,
+              31.085361748933792,
+              93.64699362963438
+            ]
+          },
+          {
+            "area_mm2": 0.05139373648968615,
+            "bounds_mm": [
+              66.10320378094912,
+              65.67196010798216,
+              66.55170782655478,
+              66.02539321780205
+            ]
+          },
+          {
+            "area_mm2": 0.051287141358400845,
+            "bounds_mm": [
+              64.50150740891695,
+              65.07931461185217,
+              64.94943375885487,
+              65.432398930192
+            ]
+          },
+          {
+            "area_mm2": 0.0512694264398057,
+            "bounds_mm": [
+              72.3365528434515,
+              67.97836869955063,
+              72.78439155220985,
+              68.33139128983021
+            ]
+          },
+          {
+            "area_mm2": 0.05126937799806086,
+            "bounds_mm": [
+              39.22334785759449,
+              72.23328632861376,
+              39.671371512115,
+              72.58619646728039
+            ]
+          },
+          {
+            "area_mm2": 0.05126050506968127,
+            "bounds_mm": [
+              33.81191360205412,
+              91.53459774702787,
+              34.259365648031235,
+              91.88803523033857
+            ]
+          },
+          {
+            "area_mm2": 0.05124754855103847,
+            "bounds_mm": [
+              33.639607302844524,
+              74.67290759086609,
+              34.08757612854242,
+              75.02577240020037
+            ]
+          }
+        ],
+        "slots": {
+          "1": {
+            "intended_area_mm2": 8591.875631608922,
+            "not_covered_by_own_color_mm2": 1.47533907631468,
+            "not_covered_by_any_color_mm2": 1.2986975592010486,
+            "own_color_missing_beyond_allowance_mm2": 0.4597109150412411
+          },
+          "2": {
+            "intended_area_mm2": 412.85497077785493,
+            "not_covered_by_own_color_mm2": 3.4079540405609885,
+            "not_covered_by_any_color_mm2": 2.7709377170213725,
+            "own_color_missing_beyond_allowance_mm2": 2.4985822194779326
+          },
+          "3": {
+            "intended_area_mm2": 1246.4001483975278,
+            "not_covered_by_own_color_mm2": 6.010154902556483,
+            "not_covered_by_any_color_mm2": 4.822645187461744,
+            "own_color_missing_beyond_allowance_mm2": 3.9638483816178716
+          },
+          "4": {
+            "intended_area_mm2": 322.1017769850232,
+            "not_covered_by_own_color_mm2": 1.4463539330327029,
+            "not_covered_by_any_color_mm2": 1.1198107250078786,
+            "own_color_missing_beyond_allowance_mm2": 0.9865391540705741
+          }
+        },
+        "white_backing_layers": {
+          "0.2": {
+            "area_mm2": 10573.232530483394,
+            "nominal_uncovered_mm2": 1.2276385804428178,
+            "uncovered_beyond_allowance_mm2": 0.01367923905805557,
+            "largest_unresolved_area_mm2": 0.007035924114854097
+          },
+          "0.4": {
+            "area_mm2": 10573.232530484484,
+            "nominal_uncovered_mm2": 2.181399949967215,
+            "uncovered_beyond_allowance_mm2": 0.001917608932594711,
+            "largest_unresolved_area_mm2": 7.315014548925358e-06
+          }
+        },
+        "acceptance": {
+          "max_unresolved_ink_percent": 0.1,
+          "max_connected_unresolved_area_mm2": 0.01,
+          "apply_limits_to_own_ink_and_each_backing_layer_also": true
+        },
+        "digital_coverage_passed": false,
+        "physical_print_verified": false,
+        "limitations": "Nominal planar footprint, not measured filament flow, surface sheen, bonding or optical opacity. Does not model the order/overlap of neighboring colors. Tiny CAD corner differences and molten material behavior remain uncertain."
+      }
+    }
+  ]
+}

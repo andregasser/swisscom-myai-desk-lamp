@@ -19,13 +19,16 @@ args.bambu_studio=args.bambu_studio.resolve()
 card=json.loads((OUT/'geometry_validation.json').read_text())
 plate_name=card.get('plate_name','11_line_gradient_test')
 process=json.loads((ROOT/'output/multicolor_v4_2/profiles/process_raster_original.json').read_text())
-profile_name=f'myAI Farbbahnen {card.get("stripe_pitch_mm",.48):g}mm P1S'
+band_label=card.get('band_label',f'Farbbahnen {card.get("stripe_pitch_mm",.48):g}mm')
+profile_name=f'myAI {band_label} P1S'
 process.update(name=profile_name,print_settings_id=profile_name,
                wall_generator='classic',detect_thin_wall='1',wall_loops='1',
                outer_wall_line_width='0.4',inner_wall_line_width='0.4',top_surface_line_width='0.4',
                seam_gap='0%',resolution='0.005')
 if plate_name=='12_refined_line_test':
     process.update(json.loads((ROOT/'cad/refined_line_process.json').read_text()))
+if plate_name=='13_full_line_test':
+    process.update(json.loads((ROOT/'cad/full_line_process.json').read_text()))
 if args.process: process.update(json.loads(args.process.read_text()))
 profile=OUT/'profiles/process.json'
 profile.write_text(json.dumps(process,indent=2)+'\n')
@@ -40,7 +43,8 @@ for color in card['palette']:
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
 scratch=ROOT/'output/logs'/OUT.name
 scratch.mkdir(parents=True,exist_ok=True)
-for name in ('print_validation.json','surface_coverage.json','surface_coverage.svg','surface_coverage.png'):
+for name in ('print_validation.json','surface_coverage.json','surface_coverage.svg','surface_coverage.png',
+             f'print/{plate_name}_P1S.3mf','print/slicer_result.json'):
     (OUT/name).unlink(missing_ok=True)
 (OUT/'print/STATUS.md').write_text(f'# Testkarte {plate_name.split("_")[0]}\n\nSlicing gestartet; vor einer neuen Flächenprüfung keine Druckfreigabe.\n')
 common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',

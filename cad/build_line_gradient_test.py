@@ -35,6 +35,7 @@ def main(source=SOURCE, out=OUT, corner_radius=0., plate_name='11_line_gradient_
     SOURCE, OUT = Path(source), Path(out)
     invalidate(OUT,plate_name)
     pitch=(design_metadata or {}).get("stripe_pitch_mm",.48)
+    band_label=(design_metadata or {}).get("band_label",f"{pitch:g}mm gerade Farbbahnen")
     for folder in ('stl','geometry','print','profiles','preview'):
         (OUT/folder).mkdir(parents=True,exist_ok=True)
     svg = ET.parse(SOURCE).getroot()
@@ -91,7 +92,7 @@ def main(source=SOURCE, out=OUT, corner_radius=0., plate_name='11_line_gradient_
         mesh.export(OUT/'stl'/f'slot_{slot}.stl')
         meshes.append({'slot':slot,'components':len(mesh.split()),'volume_mm3':float(mesh.volume)})
     ams.multipart_3mf(parts,OUT/'geometry'/f'{plate_name}.3mf',
-                      f'myAI {pitch:g}mm gerade Farbbahnen',OFFSET,colors=COLORS)
+                      f'myAI {band_label}',OFFSET,colors=COLORS)
     preview=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}mm" height="{height}mm" viewBox="0 0 {width} {height}">',
              f'<rect width="{width}" height="{height}" rx="{corner_radius}" fill="white"/>']
     for region,color in zip(ink_regions,COLORS[1:]):
@@ -111,7 +112,7 @@ def main(source=SOURCE, out=OUT, corner_radius=0., plate_name='11_line_gradient_
     if design_metadata: report.update(design_metadata)
     (OUT/'geometry_validation.json').write_text(json.dumps(report,indent=2)+'\n')
     (OUT/'print/STATUS.md').write_text(f'# Testkarte {plate_name.split("_")[0]}\n\nGeometrie neu erstellt. Slicing und Flächenprüfung erforderlich.\n')
-    print(f'Card {width:.3f} x {height:.3f} x 0.6 mm; {pitch:g} mm straight bands, white first, cyan in slot 3.')
+    print(f'Card {width:.3f} x {height:.3f} x 0.6 mm; {band_label}, white first, cyan in slot 3.')
 
 
 if __name__=='__main__': main()

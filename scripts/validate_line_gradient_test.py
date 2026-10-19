@@ -85,8 +85,10 @@ report={'slicer_version':'02.08.02.61','print_sha256':hashlib.sha256(file.read_b
         'coverage_report':'surface_coverage.json'}
 (OUT/'print_validation.json').write_text(json.dumps(report,indent=2)+'\n')
 passed=coverage['digital_coverage_passed']
+band_label=card.get('band_label',f'{card.get("stripe_pitch_mm",.48):g}-mm-Farbbahnen')
+documentation=card.get('documentation','FARBBAHNEN_VERFEINERT.md' if card.get('plate_name','').startswith('12_') else 'FARBBAHNEN_TEST.md')
 (OUT/'print/STATUS.md').write_text(
-    f'# Testkarte {card.get("plate_name","11_line_gradient_test").split("_")[0]} — {card.get("stripe_pitch_mm",.48):g}-mm-Farbbahnen\n\n'+
+    f'# Testkarte {card.get("plate_name","11_line_gradient_test").split("_")[0]} — {band_label}\n\n'+
     ('**Digitale Flächenprüfung bestanden; physischer Probedruck noch ausstehend.**\n\n' if passed else
      '**Nicht als lückenfreier Testdruck freigegeben.** Die Slicer-Datei bleibt zur Prüfung erhalten; '
      'die vollständige Flächenprüfung findet weiterhin Restlücken. Kein bestätigter Fix der weissen Stellen.\n\n')+
@@ -94,7 +96,7 @@ passed=coverage['digital_coverage_passed']
     f'Nach 0,03 mm Rechentoleranz: {coverage["unprinted_ink_beyond_allowance_mm2"]:.3f} mm².\n\n'+
     'AMS: 1 Weiss, 2 Blau, **3 Cyanblau**, 4 Rot. Cyan ersetzt Violett.\n\n'+
     '[Vollständiger Prüfbericht](../surface_coverage.json) · '+
-    f'[Anleitung](../../../docs/{"FARBBAHNEN_VERFEINERT" if card.get("plate_name","").startswith("12_") else "FARBBAHNEN_TEST"}.md).\n')
+    f'[Anleitung](../../../docs/{documentation}).\n')
 print(json.dumps({**report,'nominal_unprinted_ink_percent':coverage['nominal_unprinted_ink_percent'],
                  'unprinted_ink_beyond_allowance_percent':coverage['unprinted_ink_beyond_allowance_percent'],
                  'largest_unresolved_area_mm2':coverage['largest_unresolved_area_mm2']},indent=2))

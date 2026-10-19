@@ -37,4 +37,4 @@ Der Bericht enthält Originaldatei-Hash, alte zusammenhängende Farbläufe, neue
 python design_studies/line_gradient_smooth/build_preview.py
 ```
 
-Benötigt die Python-Abhängigkeiten aus `cad/requirements.txt`. Diese Studie liegt separat ausserhalb des Druckpakets; vorhandene Druckdateien und ZIP-Pakete bleiben unverändert. Nach Beurteilung der Vorschau wären CAD, Slicing und die unveränderte vollständige Flächenprüfung die nächsten Schritte.
+Benötigt die Python-Abhängigkeiten aus `cad/requirements.txt`. Diese frühere Teilvorschau wird inzwischen zur Reproduktion der [Gesamtvariante und Testkarte 13](../../docs/FARBBAHNEN_GESAMT_TEST.md) im aktuellen Druckpaket mitgeführt. Sie ist selbst keine Druckdatei; ihr Vorschau-Prüfstand bleibt erhalten.

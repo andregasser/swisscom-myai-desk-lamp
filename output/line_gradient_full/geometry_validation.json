@@ -1,0 +1,100 @@
+{
+  "size_mm": [
+    96.88442962962964,
+    109.14133710121789,
+    0.6
+  ],
+  "color_depth_mm": 0.2,
+  "white_backing_mm": 0.4,
+  "plate_name": "13_full_line_test",
+  "card_corner_radius_mm": 1.0,
+  "front_is_bed_face": false,
+  "color_layer_z_mm": 0.6,
+  "print_offset_mm": [
+    40,
+    40,
+    0
+  ],
+  "palette": [
+    {
+      "slot": 1,
+      "name": "Weiss",
+      "hex": "#FFFFFF"
+    },
+    {
+      "slot": 2,
+      "name": "Blau",
+      "hex": "#0445C8"
+    },
+    {
+      "slot": 3,
+      "name": "Cyanblau",
+      "hex": "#1FB9FF"
+    },
+    {
+      "slot": 4,
+      "name": "Rot",
+      "hex": "#F23232"
+    }
+  ],
+  "source_preview_sha256": "4ee5b36d3d9b976fec023998951fd6b0f4ac158a05599958469ae6d3dd52d96c",
+  "source_preview": "design_studies/line_gradient_full/proposal.svg",
+  "removed_original_micro_fragment": [],
+  "reference_fields": [
+    {
+      "slot": 4,
+      "xy_mm": [
+        42.44221481481482,
+        2.5
+      ]
+    },
+    {
+      "slot": 3,
+      "xy_mm": [
+        48.44221481481482,
+        2.5
+      ]
+    },
+    {
+      "slot": 2,
+      "xy_mm": [
+        54.44221481481482,
+        2.5
+      ]
+    }
+  ],
+  "one_connected_card": true,
+  "watertight_slot_components": [
+    {
+      "slot": 1,
+      "components": 1,
+      "volume_mm3": 5947.668354853954
+    },
+    {
+      "slot": 2,
+      "components": 143,
+      "volume_mm3": 82.57100143197904
+    },
+    {
+      "slot": 3,
+      "components": 129,
+      "volume_mm3": 249.2800518793482
+    },
+    {
+      "slot": 4,
+      "components": 37,
+      "volume_mm3": 64.42036114480449
+    }
+  ],
+  "material_intersections_mm3": 0,
+  "physical_print_verified": false,
+  "band_label": "variable Farbbahnen ab 0.32 mm",
+  "minimum_designed_band_mm": 0.32,
+  "source_svg_sha256": "808fe9c6b439c8cef880830ef09f2ccd65d91cf749f3decd268abe1b6bcab4cc",
+  "source_study_sha256": "695ec41eee0d67182f423b5e43285b9c7b2646c7d8c6278763142dd2c8df42d8",
+  "all_interfaces_straight": true,
+  "endpoint_modifications": false,
+  "contour_border_mm": 0,
+  "documentation": "FARBBAHNEN_GESAMT_TEST.md",
+  "method": "Extrusion of the approved full-gradient SVG; no endpoint reassignment or added border."
+}

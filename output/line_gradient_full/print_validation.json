@@ -1,0 +1,41 @@
+{
+  "slicer_version": "02.08.02.61",
+  "print_sha256": "8f88c97ddd4d4417f2e3fbafa6416e42f8f5f55eb6aad2c3044edd4a6d42f92d",
+  "sliced_successfully": true,
+  "profile_assignments_verified": true,
+  "gcode_md5_valid": true,
+  "model_layer_slots": {
+    "0.2": [
+      1
+    ],
+    "0.4": [
+      1
+    ],
+    "0.6": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "print_extrusion_bounds_mm": [
+    [
+      36.458,
+      34.458,
+      0.2
+    ],
+    [
+      246.47,
+      208.823,
+      0.6
+    ]
+  ],
+  "supports_generated": false,
+  "slicer_warnings": "",
+  "color_changes": 3,
+  "estimated_minutes": 75.6,
+  "estimated_filament_g_including_flush_and_tower": 10.66,
+  "digital_coverage_passed": false,
+  "physical_print_verified": false,
+  "coverage_report": "surface_coverage.json"
+}
