@@ -26,6 +26,8 @@ Zehn vorbereitete P1S-Projekte einschließlich Vergleichstests, keine Stützen. 
 
 **[Testkarte 11: gerade 0,48-mm-Farbbahnen](docs/FARBBAHNEN_TEST.md)** ist erstellt und mit Bambu Studio geprüft. Neue Palette: Weiss, Blau, Cyanblau, Rot. Auch nach vier Profileinstellungen bleiben rechnerische Lücken; die beste Variante nach gesamter Lückenfläche liegt bei **0,72 %**. Die Datei ist zur Prüfung enthalten, **nicht als lückenfreier Probedruck freigegeben**.
 
+**[Weiterentwicklung: 0,44-mm-Streifen mit gerundeten Enden](docs/FARBBAHNEN_VERFEINERT.md)**: feinere Bänder, aber sichtbare Randänderungen und weiterhin Restlücken. Sieben neue Slicer-Läufe; beste nominelle Lückenfläche **0,55 %**. **Keine Druckempfehlung.** Der Vergleich und die Prüfdatei sind dokumentiert.
+
 **Stand: Prototyp.** Die einfarbige Lichtprobe mit 0,6 mm überzeugt beim Probedruck: gute Helligkeit ohne sichtbare einzelne LEDs. LED-Passring und Kabel passen. Violett wirkt mit 0,2 mm Farbeinlage laut Vergleichstest deutlich besser. Die komplette Montage, das vollständige Logo mit diesem Aufbau und das Temperaturverhalten bleiben zu prüfen. [Probedruck-Ergebnisse](docs/PROBEDRUCKE.md).
 
 ## Einfarbige Variante v2 drucken

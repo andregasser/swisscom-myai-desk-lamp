@@ -1,0 +1,96 @@
+{
+  "error_string": "Success.",
+  "export_time": 222,
+  "layer_height": 0.20000000298023224,
+  "plate_index": 0,
+  "prepare_time": 151,
+  "return_code": 0,
+  "sliced_plates": [
+    {
+      "feature_type_times": {
+        "Bottom surface": 737.3546752929688,
+        "Brim": 169.28573608398438,
+        "Custom": 417.3059997558594,
+        "Flush": 369.39434814453125,
+        "Gap infill": 55.877891540527344,
+        "Inner wall": 59.86392593383789,
+        "Internal solid infill": 686.8325805664062,
+        "Outer wall": 216.88702392578125,
+        "Prime tower": 200.4917449951172,
+        "Top surface": 1464.3489990234375,
+        "Travel": 193.26553344726562,
+        "Undefined": 178.02305603027344
+      },
+      "filament_change_times": 3,
+      "filaments": [
+        {
+          "filament_id": "GFL99",
+          "id": 1,
+          "main_used_g": 7.693180561065674,
+          "total_used_g": 8.454916000366211
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 2,
+          "main_used_g": 0.08919905871152878,
+          "total_used_g": 0.7121652364730835
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 3,
+          "main_used_g": 0.3011683523654938,
+          "total_used_g": 0.9241345524787903
+        },
+        {
+          "filament_id": "GFL99",
+          "id": 4,
+          "main_used_g": 0.07811733335256577,
+          "total_used_g": 0.5684034824371338
+        }
+      ],
+      "generate_support_material_time": 9,
+      "id": 1,
+      "infill_time": 288,
+      "layer_filament_change": 0,
+      "main_predication": 3554.748779296875,
+      "make_perimeters_time": 344,
+      "obj_cached_cnt": 0,
+      "objects": [
+        {
+          "bbox": {
+            "depth": 109.1413345336914,
+            "height": 0.6000000238418579,
+            "width": 96.88442993164062,
+            "x": 40.0,
+            "y": 40.0,
+            "z": 7.907102750337458e-11
+          },
+          "id": 5,
+          "name": "myAI 0.44mm gerade Farbbahnen",
+          "triangle_count": 77510
+        }
+      ],
+      "sliced_time": 754,
+      "sliced_time_with_cache": 75,
+      "total_predication": 4555.66748046875,
+      "triangle_count": 77510,
+      "warning_message": ""
+    }
+  ],
+  "sparse_infill_density": 100.0,
+  "upward_compatible_machine": [
+    "Bambu Lab P1P 0.4 nozzle",
+    "Bambu Lab X1 0.4 nozzle",
+    "Bambu Lab X1 Carbon 0.4 nozzle",
+    "Bambu Lab X1E 0.4 nozzle",
+    "Bambu Lab A1 0.4 nozzle",
+    "Bambu Lab H2D 0.4 nozzle",
+    "Bambu Lab H2D Pro 0.4 nozzle",
+    "Bambu Lab H2S 0.4 nozzle",
+    "Bambu Lab P2S 0.4 nozzle",
+    "Bambu Lab H2C 0.4 nozzle",
+    "Bambu Lab X2D 0.4 nozzle",
+    "Bambu Lab A2L 0.4 nozzle"
+  ],
+  "wall_loops": 3
+}

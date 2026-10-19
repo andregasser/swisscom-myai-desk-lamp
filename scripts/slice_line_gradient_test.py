@@ -1,4 +1,4 @@
-"""Slice only the 0.48 mm straight-band card, with cyan replacing violet."""
+"""Slice a straight-band card, with cyan replacing violet; separate output per trial."""
 import argparse
 import json
 from pathlib import Path
@@ -12,14 +12,20 @@ OUT=ROOT/'output/line_gradient_test'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('bambu_studio',type=Path)
 parser.add_argument('--process',type=Path,help='Explicit test process override; archived with output')
+parser.add_argument('--output',type=Path,default=OUT,help='Separate card output folder')
 args=parser.parse_args()
+OUT=args.output.resolve()
 args.bambu_studio=args.bambu_studio.resolve()
 card=json.loads((OUT/'geometry_validation.json').read_text())
+plate_name=card.get('plate_name','11_line_gradient_test')
 process=json.loads((ROOT/'output/multicolor_v4_2/profiles/process_raster_original.json').read_text())
-process.update(name='myAI Farbbahnen 0.48mm P1S',print_settings_id='myAI Farbbahnen 0.48mm P1S',
+profile_name=f'myAI Farbbahnen {card.get("stripe_pitch_mm",.48):g}mm P1S'
+process.update(name=profile_name,print_settings_id=profile_name,
                wall_generator='classic',detect_thin_wall='1',wall_loops='1',
                outer_wall_line_width='0.4',inner_wall_line_width='0.4',top_surface_line_width='0.4',
                seam_gap='0%',resolution='0.005')
+if plate_name=='12_refined_line_test':
+    process.update(json.loads((ROOT/'cad/refined_line_process.json').read_text()))
 if args.process: process.update(json.loads(args.process.read_text()))
 profile=OUT/'profiles/process.json'
 profile.write_text(json.dumps(process,indent=2)+'\n')
@@ -32,18 +38,18 @@ for color in card['palette']:
     data['from']='User'
     # Cyan is a new generic PLA profile, not the former 210 C ecoPLA Purple.
     (OUT/'profiles'/f'filament_{color["slot"]}.json').write_text(json.dumps(data,indent=2)+'\n')
-scratch=ROOT/'output/logs/line_gradient_test'
+scratch=ROOT/'output/logs'/OUT.name
 scratch.mkdir(parents=True,exist_ok=True)
 for name in ('print_validation.json','surface_coverage.json','surface_coverage.svg','surface_coverage.png'):
     (OUT/name).unlink(missing_ok=True)
-(OUT/'print/STATUS.md').write_text('# Testkarte 11\n\nSlicing gestartet; vor einer neuen Flächenprüfung keine Druckfreigabe.\n')
+(OUT/'print/STATUS.md').write_text(f'# Testkarte {plate_name.split("_")[0]}\n\nSlicing gestartet; vor einer neuen Flächenprüfung keine Druckfreigabe.\n')
 common=[str(args.bambu_studio),'--datadir',str(scratch/'config'),'--debug','2',
         '--load-settings',f'{ROOT/"output/profiles/p1s_0.4.json"};{profile}',
         '--load-filaments',';'.join(str(OUT/'profiles'/f'filament_{i}.json') for i in range(1,5)),
         '--arrange','0','--orient','0']
 with (scratch/'convert.log').open('w') as log:
     subprocess.run(common+['--export-3mf','native.3mf','--outputdir',str(scratch),
-                          str(OUT/'geometry/11_line_gradient_test.3mf')],
+                          str(OUT/'geometry'/f'{plate_name}.3mf')],
                    cwd=scratch,stdout=log,stderr=subprocess.STDOUT,check=True)
 with zipfile.ZipFile(scratch/'native.3mf') as archive:
     payload={n:archive.read(n) for n in archive.namelist()}
@@ -67,7 +73,7 @@ payload['Metadata/project_settings.config']=json.dumps(settings).encode()
 source=scratch/'assigned.3mf'
 with zipfile.ZipFile(source,'w',zipfile.ZIP_DEFLATED) as archive:
     for name,data in payload.items(): archive.writestr(name,data)
-name='11_line_gradient_test_P1S.3mf'
+name=f'{plate_name}_P1S.3mf'
 with (scratch/'slicer.log').open('w') as log:
     subprocess.run(common+['--slice','0','--export-3mf',name,'--outputdir',str(scratch),str(source)],
                    cwd=scratch,stdout=log,stderr=subprocess.STDOUT,check=True)
@@ -75,5 +81,5 @@ result=json.loads((scratch/'result.json').read_text())
 assert result['return_code']==0
 shutil.copyfile(scratch/name,OUT/'print'/name)
 (OUT/'print/slicer_result.json').write_text(json.dumps(result,indent=2)+'\n')
-(OUT/'print/STATUS.md').write_text('# Testkarte 11\n\nNeu geslict. Flächenprüfung vor Druckempfehlung erforderlich.\n')
+(OUT/'print/STATUS.md').write_text(f'# Testkarte {plate_name.split("_")[0]}\n\nNeu geslict. Flächenprüfung vor Druckempfehlung erforderlich.\n')
 print(json.dumps(result['sliced_plates'],indent=2))

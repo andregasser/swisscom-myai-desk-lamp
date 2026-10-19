@@ -53,3 +53,7 @@ Die erste Probe 10 mit 0,8-mm-Raster hatte ebenfalls digitale Restlücken; ihre 
 4. **Komplette Lampe:** Gleichmäßigkeit der Beleuchtung, Kabelverlauf sowie Temperaturen bis zum stabilen Betriebszustand prüfen.
 
 Die positive Rückmeldung zur kleinen Lichtprobe bestätigt weder die Stabilität der großen Seitenplatte noch das Wärmeverhalten der vollständigen Lampe.
+
+## Verfeinerte Farbbahnen — Testkarte 12
+
+Am 19. Oktober 2026 digital untersucht: 0,44-mm-Streifen, gerundete Enden, weiterhin P1S mit 0,4-mm-Düse. Sieben neue Slicer-Läufe bestehen die vollständige Flächenprüfung nicht; beste nominelle Lückenfläche 0,549 %. Die Randkorrektur verändert das Erscheinungsbild. **Kein physischer Test und keine Druckempfehlung.** [Vergleich und Prüfstand](FARBBAHNEN_VERFEINERT.md).

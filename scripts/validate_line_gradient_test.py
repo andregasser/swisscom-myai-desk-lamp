@@ -17,9 +17,11 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'output/line_gradient_test'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--allow-withheld',action='store_true',help='Audit only; does not approve printing')
+parser.add_argument('--output',type=Path,default=OUT)
 args=parser.parse_args()
+OUT=args.output.resolve()
 card=json.loads((OUT/'geometry_validation.json').read_text())
-file=OUT/'print/11_line_gradient_test_P1S.3mf'
+file=OUT/'print'/f'{card.get("plate_name","11_line_gradient_test")}_P1S.3mf'
 for slot in range(1,5):
     mesh=trimesh.load_mesh(OUT/'stl'/f'slot_{slot}.stl')
     assert mesh.is_watertight and mesh.is_winding_consistent and mesh.volume>0
@@ -84,14 +86,15 @@ report={'slicer_version':'02.08.02.61','print_sha256':hashlib.sha256(file.read_b
 (OUT/'print_validation.json').write_text(json.dumps(report,indent=2)+'\n')
 passed=coverage['digital_coverage_passed']
 (OUT/'print/STATUS.md').write_text(
-    '# Testkarte 11 — 0,48-mm-Farbbahnen\n\n'+
+    f'# Testkarte {card.get("plate_name","11_line_gradient_test").split("_")[0]} — {card.get("stripe_pitch_mm",.48):g}-mm-Farbbahnen\n\n'+
     ('**Digitale Flächenprüfung bestanden; physischer Probedruck noch ausstehend.**\n\n' if passed else
      '**Nicht als lückenfreier Testdruck freigegeben.** Die Slicer-Datei bleibt zur Prüfung erhalten; '
      'die vollständige Flächenprüfung findet weiterhin Restlücken. Kein bestätigter Fix der weissen Stellen.\n\n')+
     f'Nominell unbedeckte Farbfläche: {coverage["nominal_unprinted_ink_percent"]:.3f} %. '
     f'Nach 0,03 mm Rechentoleranz: {coverage["unprinted_ink_beyond_allowance_mm2"]:.3f} mm².\n\n'+
     'AMS: 1 Weiss, 2 Blau, **3 Cyanblau**, 4 Rot. Cyan ersetzt Violett.\n\n'+
-    '[Vollständiger Prüfbericht](../surface_coverage.json) · [Anleitung](../../../docs/FARBBAHNEN_TEST.md).\n')
+    '[Vollständiger Prüfbericht](../surface_coverage.json) · '+
+    f'[Anleitung](../../../docs/{"FARBBAHNEN_VERFEINERT" if card.get("plate_name","").startswith("12_") else "FARBBAHNEN_TEST"}.md).\n')
 print(json.dumps({**report,'nominal_unprinted_ink_percent':coverage['nominal_unprinted_ink_percent'],
                  'unprinted_ink_beyond_allowance_percent':coverage['unprinted_ink_beyond_allowance_percent'],
                  'largest_unresolved_area_mm2':coverage['largest_unresolved_area_mm2']},indent=2))
